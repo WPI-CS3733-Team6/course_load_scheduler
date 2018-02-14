@@ -1,5 +1,7 @@
 package org.dselent.course_load_scheduler.client.view;
 
-public interface AccountInfoView {
+import org.dselent.course_load_scheduler.client.presenter.AccountInfoPresenter;
 
+public interface AccountInfoView extends BaseView<AccountInfoPresenter>{
+	
 }
