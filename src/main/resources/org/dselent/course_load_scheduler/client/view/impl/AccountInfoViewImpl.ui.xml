@@ -5,26 +5,12 @@
 	
 	</ui:style>
 	<g:HTMLPanel>
-		<g:LayoutPanel width="100%" height="100%">
-			<g:layer bottom="2.2pct" top="2.2pct" right="2.2pct" left="2.2pct">
-				<g:AbsolutePanel width="100%" height="10%">
-					<g:at top="0" left="0">
-						<g:LayoutPanel width="100%" height="100%">
-							<g:layer bottom="0.0pct" top="0.0pct" left="0.0pct" width="20.0pct">
-								<g:Label text="You are logged in as: ID / Name" width="100%" height="100%"/>
-							</g:layer>
-							<g:layer left="85.0pct" width="10.0pct" top="0.0pct" height="68.2pct">
-								<g:Button>Logout</g:Button>
-							</g:layer>
-							<g:layer left="69.0pct" width="10.0pct" top="0.0pct" height="68.2pct">
-								<g:Button>Home</g:Button>
-							</g:layer>
-							<g:layer left="58.0pct" width="10.0pct" top="0.0pct" height="68.2pct">
-								<g:Button ui:field="button" text="Admin"/>
-							</g:layer>
-						</g:LayoutPanel>
-					</g:at>
-				</g:AbsolutePanel>
+		<g:LayoutPanel width="100%" height="100%" ui:field="AccountInfoBaseLayoutPanel">
+			<g:layer>
+				<g:TextBox text="Account Information" width="100%" alignment="CENTER" textAlignment="ALIGN_CENTER" ui:field="AccountInfoPgTitle" height="5%"/>
+			</g:layer>
+			<g:layer left="1.5pct" width="100.0pct" top="13.5pct" height="100.0pct">
+				<g:FlexTable width="97%" borderWidth="2" height="85%" ui:field="AccountInfoFlexTable" cellPadding="5" cellSpacing="5"/>
 			</g:layer>
 		</g:LayoutPanel>
 	</g:HTMLPanel>
