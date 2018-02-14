@@ -6,11 +6,8 @@
 	</ui:style>
 	<g:HTMLPanel ui:field="basePanel">
 		<g:LayoutPanel width="446px" height="332px" ui:field="layoutPanel">
-			<g:layer left="3.0pct" width="32.5pct" top="0.0pct" height="5.4pct">
+			<g:layer left="3.0pct" top="0.0pct" height="5.4pct" right="6.0pct">
 				<g:Label text="Report A Problem" ui:field="titleLabel"/>
-			</g:layer>
-			<g:layer width="25.0pct" top="0.0pct" height="9.0pct" right="4.5pct">
-				<g:Button ui:field="exitButton">Exit</g:Button>
 			</g:layer>
 			<g:layer left="3.0pct" width="51.8pct" top="7.2pct" height="6.6pct">
 				<g:ListBox name="Type Of Problem (Required)" ui:field="typeList"/>

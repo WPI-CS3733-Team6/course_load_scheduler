@@ -25,7 +25,6 @@ public class ReportProblemViewImpl extends BaseViewImpl<ReportProblemPresenter> 
 	private static ReportProblemViewImplUiBinder uiBinder = GWT.create(ReportProblemViewImplUiBinder.class);
 	@UiField HTMLPanel basePanel;
 	@UiField Label titleLabel;
-	@UiField Button exitButton;
 	@UiField LayoutPanel layoutPanel;
 	@UiField ListBox typeList;
 	@UiField TextBox nameBox;
@@ -72,10 +71,6 @@ public class ReportProblemViewImpl extends BaseViewImpl<ReportProblemPresenter> 
 		this.descriptionArea = descriptionArea;
 	}
 
-	public Button getExitButton() {
-		return exitButton;
-	}
-
 	public Button getSubmitButton() {
 		return submitButton;
 	}
@@ -96,14 +91,8 @@ public class ReportProblemViewImpl extends BaseViewImpl<ReportProblemPresenter> 
 		return basePanel;
 	}
 	
-	@UiHandler("exitButton")
-	void onExitButtonClicked() {
-		//add to this during event handling stage
-	}
-	
 	@UiHandler("submitButton")
 	void onSubmitButtonClicked() {
 		//add to this during event handling stage
 	}
-	
 }

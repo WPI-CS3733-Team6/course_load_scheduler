@@ -19,7 +19,6 @@ public interface ReportProblemView extends BaseView<ReportProblemPresenter> {
 	public void setEmailBox(TextBox emailBox);
 	public TextArea getDescriptionArea();
 	public void setDescriptionArea(TextArea descriptionArea);
-	public Button getExitButton();
 	public Button getSubmitButton();
 	
 }
