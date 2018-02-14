@@ -26,14 +26,13 @@ public class ReportProblemViewImpl extends BaseViewImpl<ReportProblemPresenter> 
 
 	@Override
 	public void setPresenter(ReportProblemPresenter presenter) {
-		// TODO Auto-generated method stub
+		this.presenter = presenter;
 		
 	}
 
 	@Override
 	public Widget getWidgetContainer() {
-		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 
 	@Override
