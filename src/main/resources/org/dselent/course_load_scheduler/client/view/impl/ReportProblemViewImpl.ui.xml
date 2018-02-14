@@ -1,0 +1,32 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+	
+	</ui:style>
+	<g:HTMLPanel>
+		<g:LayoutPanel width="446px" height="332px">
+			<g:layer left="3.0pct" width="32.5pct" top="0.0pct" height="5.4pct">
+				<g:Label text="Report A Problem"/>
+			</g:layer>
+			<g:layer width="25.0pct" top="0.0pct" height="9.0pct" right="4.5pct">
+				<g:Button>Exit</g:Button>
+			</g:layer>
+			<g:layer left="3.0pct" width="51.8pct" top="7.2pct" height="6.6pct">
+				<g:ListBox name="Type Of Problem (Required)"/>
+			</g:layer>
+			<g:layer left="3.0pct" top="15.7pct" height="10.2pct" right="4.5pct">
+				<g:TextBox text="Name (Optional)"/>
+			</g:layer>
+			<g:layer top="27.7pct" height="10.2pct" right="4.5pct" left="3.0pct">
+				<g:TextBox text="Email (Optional)"/>
+			</g:layer>
+			<g:layer left="3.0pct" top="39.8pct" height="41.9pct" right="4.5pct">
+				<g:TextArea name="description"/>
+			</g:layer>
+			<g:layer left="3.0pct" width="25.0pct" top="83.4pct" height="9.0pct">
+				<g:Button>Submit</g:Button>
+			</g:layer>
+		</g:LayoutPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 
