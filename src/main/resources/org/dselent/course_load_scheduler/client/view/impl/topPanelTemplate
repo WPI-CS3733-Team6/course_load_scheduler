@@ -3,20 +3,20 @@
 	</ui:style>
 	<g:HTMLPanel>
 		<g:LayoutPanel width="100%" height="100%">
-			<g:layer bottom="10px" top="10px" right="10px" left="10px">
+			<g:layer bottom="2.2pct" top="2.2pct" right="2.2pct" left="2.2pct">
 				<g:AbsolutePanel width="100%" height="10%">
 					<g:at top="0" left="0">
 						<g:LayoutPanel width="100%" height="100%">
-							<g:layer bottom="0px" top="0px" left="0px" width="204px">
+							<g:layer bottom="0.0pct" top="0.0pct" left="0.0pct" width="20.0pct">
 								<g:Label text="You are logged in as: ID / Name" width="100%" height="100%"/>
 							</g:layer>
-							<g:layer left="548px" width="83px" top="0px" height="30px">
+							<g:layer left="85.0pct" width="10.0pct" top="0.0pct" height="68.2pct">
 								<g:Button>Logout</g:Button>
 							</g:layer>
-							<g:layer left="459px" width="83px" top="0px" height="30px">
+							<g:layer left="69.0pct" width="10.0pct" top="0.0pct" height="68.2pct">
 								<g:Button>Home</g:Button>
 							</g:layer>
-							<g:layer left="370px" width="83px" top="0px" height="30px">
+							<g:layer left="58.0pct" width="10.0pct" top="0.0pct" height="68.2pct">
 								<g:Button ui:field="button" text="Admin"/>
 							</g:layer>
 						</g:LayoutPanel>
