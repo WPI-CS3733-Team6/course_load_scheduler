@@ -11,6 +11,10 @@ import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.user.client.ui.LayoutPanel;
+import com.google.gwt.user.client.ui.AbsolutePanel;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.Button;
 
 public class IndexViewImpl extends BaseViewImpl<IndexPresenter> implements IndexView
 {
@@ -19,13 +23,15 @@ public class IndexViewImpl extends BaseViewImpl<IndexPresenter> implements Index
 	interface IndexViewImplUiBinder extends UiBinder<Widget, IndexViewImpl> {}
 	
 	@UiField
-	HTMLPanel mainPanel;
-	
-	@UiField
-	Image loadingImage;
-	
-	@UiField
-	PopupPanel glassLoadingPanel;
+	HTMLPanel topPanel;
+	@UiField LayoutPanel layoutPanel;
+	@UiField AbsolutePanel absolutePanel;
+	@UiField LayoutPanel innerlayoutPanel;
+	@UiField Label identification;
+	@UiField LayoutPanel lowerPanel;
+	@UiField HTMLPanel bottonPanel;
+	@UiField HTMLPanel middlePanel;
+	@UiField Button viewCurrentClasses;
 	
 	public IndexViewImpl()
 	{
@@ -35,13 +41,13 @@ public class IndexViewImpl extends BaseViewImpl<IndexPresenter> implements Index
 	@Override
 	public HTMLPanel getMainPanel()
 	{
-		return mainPanel;
+		return topPanel;
 	}
 
 	@Override
 	public void setMainPanel(HTMLPanel mainPanel)
 	{
-		this.mainPanel = mainPanel;
+		this.topPanel = mainPanel;
 	}
 
 	@Override
@@ -49,17 +55,20 @@ public class IndexViewImpl extends BaseViewImpl<IndexPresenter> implements Index
 	{
 		this.presenter = presenter;
 	}
+
+// Part of the template code from Doug:
+// Not necessary for now, but keep it for reference
 	
 	@Override
 	public PopupPanel getGlassLoadingPanel()
 	{
-		return glassLoadingPanel;
+		return null; //glassLoadingPanel;
 	}
 	
 	@Override
 	public Image getLoadingImage()
 	{
-		return loadingImage;
+		return null; //loadingImage;
 	}
 	
 	@Override
@@ -71,7 +80,7 @@ public class IndexViewImpl extends BaseViewImpl<IndexPresenter> implements Index
 	@Override
 	public HasWidgets getViewRootPanel()
 	{
-		return mainPanel;
+		return topPanel;
 	}
 
 }

@@ -1,0 +1,79 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.button-blue {
+		color: white;
+		font-size: 12px;
+		font-family: Times
+		New Roman;
+		background: #0558b2;
+		}
+
+		.button-bluelight {
+		color: white;
+		font-size: 12px;
+		font-family: Times New Roman;
+		background: #05abc1;
+		}
+
+		.panel-grey {
+		background: #DCDCDC;
+		}
+
+		.panel-greydark {
+		background: #989b9b;
+		}
+
+	</ui:style>
+	
+	<g:HTMLPanel width="430" height="300">
+		<g:LayoutPanel width="100%" height="100%" addStyleNames="{style.panel-grey}">
+			<g:layer width="28.3pct" top="15.0pct" height="6.4pct" right="1.9pct">
+				<g:Button text="Create a Request" addStyleNames="{style.button-bluelight}" />
+			</g:layer>
+			<g:layer left="2.0pct" width="49.5pct" top="15.0pct" height="9.8pct">
+				<g:Button text="Generate Complete Department Schedule"
+					width="" addStyleNames="{style.button-blue}" />
+			</g:layer>
+			<g:layer top="29.3pct" height="67.3pct" left="2.0pct" right="2.0pct">
+				<g:LayoutPanel width="100%" height="100%"
+					addStyleNames="{style.panel-grey}">
+					<g:layer left="4.5pct" right="3.5pct" top="11.8pct" bottom="2.2pct">
+						<g:SplitLayoutPanel width="100%" height="100%">
+							<g:north size="26.0">
+								<g:HorizontalPanel horizontalAlignment="ALIGN_CENTER"
+									verticalAlignment="ALIGN_MIDDLE" width="100%" height="100%">
+									<g:TextBox width="100%" height="100%" text="Registered Courses"
+										addStyleNames="{style.panel-greydark}" />
+									<g:TextBox width="100%" height="100%" text="Pending Courses"
+										addStyleNames="{style.panel-greydark}" />
+								</g:HorizontalPanel>
+							</g:north>
+							<g:west size="289.0">
+								<g:ListBox visibleItemCount="5" width="100%" height="100%" />
+							</g:west>
+							<g:center>
+								<g:ListBox visibleItemCount="5" />
+							</g:center>
+						</g:SplitLayoutPanel>
+					</g:layer>
+					<g:layer left="35.0pct" right="35.0pct">
+						<g:TextBox height="6%" width="100%" text="Course Summaries"
+							textAlignment="ALIGN_CENTER" />
+					</g:layer>
+				</g:LayoutPanel>
+			</g:layer>
+			<g:layer left="2.0pct" top="3.0pct" height="33.3pct" right="2.0pct">
+				<g:HorizontalPanel width="100%" height="25%"
+					horizontalAlignment="ALIGN_CENTER">
+					<g:Button ui:field="button" text="Current Classes" width="100%"
+						height="100%%" />
+					<g:Button text="Search for Classes" width="100%" height="100%%" />
+					<g:Button width="100%" height="100%%">Account Info</g:Button>
+					<g:Button width="100%" height="100%%">Course Registration Cart</g:Button>
+				</g:HorizontalPanel>
+			</g:layer>
+		</g:LayoutPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 
