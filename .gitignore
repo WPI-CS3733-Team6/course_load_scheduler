@@ -3,3 +3,4 @@
 /war/WEB-INF/*
 /war/course_load_scheduler/*
 .classpath
+.gwt/.gwt-log
