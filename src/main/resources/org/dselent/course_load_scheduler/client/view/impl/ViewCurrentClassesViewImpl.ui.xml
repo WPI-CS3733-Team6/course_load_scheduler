@@ -4,15 +4,27 @@
 	<ui:style>
 	
 	</ui:style>
-	<g:HTMLPanel>
+	<g:HTMLPanel width="450" height="300">
 		<g:LayoutPanel width="100%" height="100%">
 			<g:layer>
 				<g:TabPanel width="100%" height="100%" animationEnabled="true">
 					<g:Tab text="Current Courses">
-						<g:LayoutPanel width="100%" height="250px" ui:field="CurrentCourses"/>
+						<g:LayoutPanel width="100%" height="250px" ui:field="currentCourses">
+							<g:layer>
+								<g:ScrollPanel width="100%" height="100%" ui:field="panelForScrollingCourseTable" alwaysShowScrollBars="true">
+									<g:FlexTable width="100%" height="100%" ui:field="tableDisplayCurrentCourses" borderWidth="1" cellPadding="1" cellSpacing="1"/>
+								</g:ScrollPanel>
+							</g:layer>
+						</g:LayoutPanel>
 					</g:Tab>
-					<g:Tab text="Detailed Current Courses">
-						<g:LayoutPanel width="100%" height="250px" ui:field="DetailedCurrentCourses"/>
+					<g:Tab text="Detailed Schedule">
+						<g:LayoutPanel width="100%" height="250px" ui:field="detailedSchedule">
+							<g:layer>
+								<g:ScrollPanel ui:field="panelForScrollingDetailedSchedule" width="100%" height="100%" alwaysShowScrollBars="true">
+									<g:FlexTable width="100%" height="100%" ui:field="tableDisplayDetailedSchedule" borderWidth="1" cellSpacing="1" cellPadding="1"/>
+								</g:ScrollPanel>
+							</g:layer>
+						</g:LayoutPanel>
 					</g:Tab>
 				</g:TabPanel>
 			</g:layer>
