@@ -33,8 +33,26 @@ public class ViewCurrentClassesViewImpl extends Composite {
 		tableDisplayCurrentCourses.setText(0, 3, "Instance ID");
 		tableDisplayCurrentCourses.setText(0, 4, "Status");
 		
-		tableDisplayDetailedSchedule.setText(0, 4, "Number of Sections");
-
+		tableDisplayDetailedSchedule.setText(0, 0, "Times");
+		tableDisplayDetailedSchedule.setText(0, 1, "Mon");
+		tableDisplayDetailedSchedule.setText(0, 2, "Tue");
+		tableDisplayDetailedSchedule.setText(0, 3, "Wed");
+		tableDisplayDetailedSchedule.setText(0, 4, "Thur");
+		tableDisplayDetailedSchedule.setText(0, 5, "Fri");
+		tableDisplayDetailedSchedule.setText(1, 0, "8:00 AM");
+		tableDisplayDetailedSchedule.setText(2, 0, "9:00 AM");
+		tableDisplayDetailedSchedule.setText(3, 0, "10:00 AM");
+		tableDisplayDetailedSchedule.setText(4, 0, "11:00 AM");
+		tableDisplayDetailedSchedule.setText(5, 0, "12:00 PM");
+		tableDisplayDetailedSchedule.setText(5, 0, "1:00 PM");
+		tableDisplayDetailedSchedule.setText(6, 0, "2:00 PM");
+		tableDisplayDetailedSchedule.setText(7, 0, "3:00 PM");
+		tableDisplayDetailedSchedule.setText(8, 0, "4:00 PM");
+		tableDisplayDetailedSchedule.setText(9, 0, "5:00 PM");
+		tableDisplayDetailedSchedule.setText(10, 0, "6:00 PM");
+		tableDisplayDetailedSchedule.setText(11, 0, "7:00 PM");
+		tableDisplayDetailedSchedule.setText(12, 0, "8:00 PM");
+		
 	    // ...and set it's column span so that it takes up the whole row.
 		tableDisplayCurrentCourses.getFlexCellFormatter().setColSpan(1, 0, 3);
 
