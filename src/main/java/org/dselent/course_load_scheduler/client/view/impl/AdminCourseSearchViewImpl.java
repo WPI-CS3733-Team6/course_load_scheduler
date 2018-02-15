@@ -10,7 +10,7 @@ import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.FlexTable;
 
-public class AdminCourseSearchImpl extends Composite{
+public class AdminCourseSearchViewImpl extends Composite{
 
 	private static AdminCourseSearchImplUiBinder uiBinder = GWT.create(AdminCourseSearchImplUiBinder.class);
 	@UiField ListBox semesterList;
@@ -21,10 +21,10 @@ public class AdminCourseSearchImpl extends Composite{
 	@UiField LayoutPanel layoutPanel;
 	@UiField FlexTable resultTable;
 
-	interface AdminCourseSearchImplUiBinder extends UiBinder<Widget, AdminCourseSearchImpl> {
+	interface AdminCourseSearchImplUiBinder extends UiBinder<Widget, AdminCourseSearchViewImpl> {
 	}
 
-	public AdminCourseSearchImpl() {
+	public AdminCourseSearchViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 
