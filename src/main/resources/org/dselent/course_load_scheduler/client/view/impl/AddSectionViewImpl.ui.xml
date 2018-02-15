@@ -39,23 +39,23 @@
 					<g:LayoutPanel width="100%" height="95%" ui:field="sectionInfoPanel" styleName="{style.layoutPanelB}">
 					
 						<g:layer left="20.0pct" width="100.0pct" top="15.0pct" height="35.0pct">
-							<g:TextBox width="20%" height="100%" text="Course Num" ui:field="courseNumberHeader" enabled="false" styleName="{style.tableHeader}"/>
+							<g:TextBox width="20%" height="100%" text="Course Num" ui:field="courseNumberHeader" styleName="{style.tableHeader}" readOnly="true"/>
 						</g:layer>
 						<g:layer left="40.0pct" width="100.0pct" top="15.0pct" height="35.0pct">
-							<g:TextBox width="20%" height="100%" text="Instance No" ui:field="instanceNumberHeader" enabled="false" styleName="{style.tableHeader}"/>
+							<g:TextBox width="20%" height="100%" text="Instance No" ui:field="instanceNumberHeader" styleName="{style.tableHeader}" readOnly="true"/>
 						</g:layer>
 						<g:layer left="60.0pct" width="100.0pct" top="15.0pct" height="35.0pct">
-							<g:TextBox width="20%" height="100%" text="Section No" ui:field="sectionNumberHeader" enabled="false" styleName="{style.tableHeader}"/>
+							<g:TextBox width="20%" height="100%" text="Section No" ui:field="sectionNumberHeader" styleName="{style.tableHeader}" readOnly="true"/>
 						</g:layer>
 						
 						<g:layer left="20.0pct" width="100.0pct" top="50.0pct" height="35.0pct">
-							<g:TextBox width="20%" height="100%" ui:field="courseNumberField" enabled="false"/>
+							<g:TextBox width="20%" height="100%" ui:field="courseNumberField" readOnly="true"/>
 						</g:layer>
 						<g:layer left="40.0pct" width="100.0pct" top="50.0pct" height="35.0pct">
-							<g:TextBox width="20%" height="100%" ui:field="instanceNumberField" enabled="false"/>
+							<g:TextBox width="20%" height="100%" ui:field="instanceNumberField" readOnly="true"/>
 						</g:layer>
 						<g:layer left="60.0pct" width="100.0pct" top="50.0pct" height="35.0pct">
-							<g:TextBox width="20%" height="100%" ui:field="sectionNumberField" enabled="false"/>
+							<g:TextBox width="20%" height="100%" ui:field="sectionNumberField" readOnly="true"/>
 						</g:layer>
 					</g:LayoutPanel>
 				</g:north>
@@ -78,14 +78,14 @@
 				<g:center>
 					<g:LayoutPanel width="100%" height="100%" styleName="{style.layoutPanel}" ui:field="detailsPanel">
 						<g:layer left="5.0pct" width="100.0pct" top="15.0pct" height="15.0pct">
-							<g:TextBox width="30%" height="100%" text="Expected Population" ui:field="expectedPopHeader" enabled="false" styleName="{style.tableHeader}"/>
+							<g:TextBox width="30%" height="100%" text="Expected Population" ui:field="expectedPopHeader" styleName="{style.tableHeader}" readOnly="true"/>
 						</g:layer>
 						<g:layer left="5.0pct" width="100.0pct" top="30.0pct" height="15.0pct">
 							<g:TextBox width="30%" height="100%" ui:field="expectedPopField" enabled="true"/>
 						</g:layer>
 						
 						<g:layer left="5.0pct" width="100.0pct" top="55.0pct" height="15.0pct">
-							<g:TextBox width="30%" height="100%" text="Type" ui:field="typeHeader" enabled="false" styleName="{style.tableHeader}"/>
+							<g:TextBox width="30%" height="100%" text="Type" ui:field="typeHeader" styleName="{style.tableHeader}" readOnly="true"/>
 						</g:layer>
 						<g:layer left="5.0pct" width="100.0pct" top="70.0pct" height="15.0pct">
 							<g:TextBox width="30%" height="100%" ui:field="typeField" enabled="true"/>
