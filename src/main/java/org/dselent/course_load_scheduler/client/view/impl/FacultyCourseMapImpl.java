@@ -16,7 +16,7 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.LayoutPanel;
 
 public class FacultyCourseMapImpl extends BaseViewImpl<FacultyCourseMapPresenter> implements FacultyCourseMapView {
-
+	//will need to modify to make table work properly
 	private static FacultyCourseMapImplUiBinder uiBinder = GWT.create(FacultyCourseMapImplUiBinder.class);
 	@UiField Button backButton;
 	@UiField Label titleLabel;
