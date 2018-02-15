@@ -62,12 +62,12 @@
 			</g:north>
 			
 			<g:south size="20.0">
-				<g:LayoutPanel width="100%" height="100%" styleName="{style.layoutPanelB}">
+				<g:LayoutPanel width="100%" height="100%" styleName="{style.layoutPanelB}" ui:field="saveDeletePanel">
 					<g:layer left="15%" width="30%" top="20%" height="60%">
-						<g:Button text="Save Changes" styleName="{style.greenButton}"/>
+						<g:Button text="Save Changes" styleName="{style.greenButton}" ui:field="saveCourseButton"/>
 					</g:layer>
 					<g:layer left="55%" width="30%" top="20%" height="60%">
-						<g:Button text="Delete Course" styleName="{style.redButton}"/>
+						<g:Button text="Delete Course" styleName="{style.redButton}" ui:field="deleteCourseButton"/>
 					</g:layer>
 				
 				</g:LayoutPanel>
@@ -76,28 +76,28 @@
 			<g:center>
 				<g:DockLayoutPanel unit="PCT" width="100%" height="100%" styleName="{style.layoutPanel}">
 					<g:east size="45">
-						<g:LayoutPanel width="100%" height="100%" styleName="{style.layoutPanel}">
+						<g:LayoutPanel width="100%" height="100%" styleName="{style.layoutPanel}" ui:field="instancePanel">
 							<g:layer left="5%" width="50%" top="5%" height="90%">
-								<g:ListBox visibleItemCount="8" styleName="dialogVPanel">
+								<g:ListBox visibleItemCount="8" styleName="dialogVPanel" ui:field="instanceList">
 								</g:ListBox>
 							</g:layer>
 							<g:layer left="60%" width="33%" top="20%" height="25%">
-								<g:Button text="Create Instance" styleName="{style.greenButton}"/>
+								<g:Button text="Create Instance" styleName="{style.greenButton}" ui:field="createInstanceButton"/>
 							</g:layer>
 							<g:layer left="60%" width="33%" top="55%" height="25%">
-								<g:Button text="Edit Instance" styleName="{style.orangeButton}"/>
+								<g:Button text="Edit Instance" styleName="{style.orangeButton}" ui:field="editInstanceButton"/>
 							</g:layer>
 							
 						</g:LayoutPanel>
 					</g:east>
 					<g:center>
-						<g:LayoutPanel>
+						<g:LayoutPanel ui:field="descriptionPanel">
 							<g:layer left="0%" width="100%" top="0%" height="15%">
-								<g:TextBox text="Course Description" alignment="CENTER" enabled="false" styleName="{style.tableHeader}"/>
+								<g:TextBox text="Course Description" alignment="CENTER" enabled="false" styleName="{style.tableHeader}" ui:field="courseDescHeader"/>
 							</g:layer>
 							
 							<g:layer left="0%" width="100%" height="85%" top="15%">
-								<g:TextArea/>
+								<g:TextArea ui:field="courseDescField"/>
 							</g:layer>
 							
 						</g:LayoutPanel>
