@@ -25,6 +25,8 @@ public class AccountInfoViewImpl extends Composite {
 	public PasswordTextBox currPassword = new PasswordTextBox();
 	public PasswordTextBox newPassword = new PasswordTextBox();
 	public PasswordTextBox repeatNewPassword = new PasswordTextBox();
+	public TextBox preferedEmail = new TextBox();
+	public TextBox phoneNumber = new TextBox();
 	
 	public Button getSubmitChangesButton() {
 		return submitChangesButton;
@@ -40,6 +42,14 @@ public class AccountInfoViewImpl extends Composite {
 	
 	public PasswordTextBox getRepeatNewPassword() {
 		return repeatNewPassword;
+	}
+	
+	public TextBox getPreferedEmail() {
+		return preferedEmail;
+	}
+	
+	public TextBox getPhoneNumber() {
+		return phoneNumber;
 	}
 	
 	interface AccountInfoUiBinder extends UiBinder<Widget, AccountInfoViewImpl> {
@@ -59,13 +69,13 @@ public class AccountInfoViewImpl extends Composite {
 	    t.setText(10, 0, "Phone number (optional):");
 	    
 	    // Create the widgets
-	    t.setWidget(6, 2, new PasswordTextBox()); // Enter current password
-	    t.setWidget(6, 3, new PasswordTextBox()); // Enter new password
-	    t.setWidget(6, 4, new PasswordTextBox()); //Repeat new password
+	    t.setWidget(6, 2, currPassword);
+	    t.setWidget(6, 3, newPassword);
+	    t.setWidget(6, 4, repeatNewPassword);
 	    
-	    t.setWidget(8, 2, new TextBox()); // Preferred email
-	    t.setWidget(10, 2, new TextBox()); // Phone Number
-	    t.setWidget(10, 10, submitChangesButton); // Submit Changes
+	    t.setWidget(8, 2, preferedEmail);
+	    t.setWidget(10, 2, phoneNumber);
+	    t.setWidget(10, 10, submitChangesButton);
 	    
 	    // ...and set it's column span so that it takes up the whole row.
 	    t.getFlexCellFormatter().setColSpan(1, 0, 3);
