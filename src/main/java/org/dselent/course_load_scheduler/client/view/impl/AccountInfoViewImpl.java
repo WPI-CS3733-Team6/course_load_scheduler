@@ -15,12 +15,21 @@ import com.google.gwt.user.client.ui.FlexTable;
 public class AccountInfoViewImpl extends Composite {
 
 	private static AccountInfoUiBinder uiBinder = GWT.create(AccountInfoUiBinder.class);
+	
 	@UiField TextBox AccountInfoPgTitle;
 	@UiField LayoutPanel AccountInfoBaseLayoutPanel;
-
+	// I'm not sure how to use this but this might be necessary
+	// @UiField Button SubmitChangesButton 
+	
+	public Button submitChangesButton = new Button("Submit Changes");
+	
+	public Button getSubmitChangesButton() {
+		return submitChangesButton;
+	}
+	
 	interface AccountInfoUiBinder extends UiBinder<Widget, AccountInfoViewImpl> {
 	}
-
+	
 	public AccountInfoViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 		
@@ -33,7 +42,7 @@ public class AccountInfoViewImpl extends Composite {
 	    t.setText(6, 0, "Change password:");
 	    t.setText(8, 0, "Prefered email (optional):");
 	    t.setText(10, 0, "Phone number (optional):");
-
+	    
 	    // Create the widgets
 	    t.setWidget(6, 2, new PasswordTextBox()); // Enter current password
 	    t.setWidget(6, 3, new PasswordTextBox()); // Enter new password
@@ -41,8 +50,8 @@ public class AccountInfoViewImpl extends Composite {
 	    
 	    t.setWidget(8, 2, new TextBox()); // Preferred email
 	    t.setWidget(10, 2, new TextBox()); // Phone Number
-	    t.setWidget(10, 10, new Button("Submit Changes")); // Submit Changes
-
+	    t.setWidget(10, 10, submitChangesButton); // Submit Changes
+	    
 	    // ...and set it's column span so that it takes up the whole row.
 	    t.getFlexCellFormatter().setColSpan(1, 0, 3);
 
