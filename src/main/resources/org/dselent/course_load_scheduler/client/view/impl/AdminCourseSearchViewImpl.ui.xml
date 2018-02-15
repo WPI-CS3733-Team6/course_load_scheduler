@@ -11,11 +11,11 @@
 		}
 			
 		.advSearchButton{
-			background:#E1A956;
+			background:#efbb43;
 		}
 
 		.addCourseButton{
-			background:#5ED85E;
+			background:#78e268;
 		}
 	</ui:style>
 	
