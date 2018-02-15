@@ -22,9 +22,24 @@ public class AccountInfoViewImpl extends Composite {
 	// @UiField Button SubmitChangesButton 
 	
 	public Button submitChangesButton = new Button("Submit Changes");
+	public PasswordTextBox currPassword = new PasswordTextBox();
+	public PasswordTextBox newPassword = new PasswordTextBox();
+	public PasswordTextBox repeatNewPassword = new PasswordTextBox();
 	
 	public Button getSubmitChangesButton() {
 		return submitChangesButton;
+	}
+	
+	public PasswordTextBox getCurrPassword() {
+		return currPassword;
+	}
+	
+	public PasswordTextBox getNewPassword() {
+		return newPassword;
+	}
+	
+	public PasswordTextBox getRepeatNewPassword() {
+		return repeatNewPassword;
 	}
 	
 	interface AccountInfoUiBinder extends UiBinder<Widget, AccountInfoViewImpl> {
