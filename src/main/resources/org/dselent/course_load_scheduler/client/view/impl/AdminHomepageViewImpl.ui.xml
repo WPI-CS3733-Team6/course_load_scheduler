@@ -2,29 +2,83 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
 	<ui:style>
-	
+		.main-title
+		{
+		font-family:Times New Roman;
+		font-size:30px;
+		font-weight: bold;
+		margin-top:4px;
+		padding-right:5px;
+		background:
+		#DCDCDC;
+		}
+
+		.button-green {
+		color: white;
+		font-size: 12px;
+		font-family:
+		Times New Roman;
+		background: #13c144;
+		}
+
+		.button-yellowish {
+		color: white;
+		font-size: 12px;
+		font-family: Times New Roman;
+		background: #fcb605;
+		}
+
+		.back-tab {
+		background-color: #DCDCDC;
+		}
+
+		.grey-back {
+		background: #DCDCDC;
+		}
+
 	</ui:style>
-	<g:HTMLPanel>
+	<g:HTMLPanel ui:field="adminHomepageView">
 		<g:LayoutPanel width="100%" height="100%" ui:field="layoutPanel">
-			<g:layer bottom="10px" top="10px" right="10px" left="10px">
-				<g:AbsolutePanel width="100%" height="10%" ui:field="absolutePanel">
-					<g:at top="0" left="0">
-						<g:LayoutPanel width="100%" height="100%" ui:field="layoutPanelInner">
-							<g:layer bottom="0px" top="0px" left="0px" width="135px">
-								<g:Label text="You are logged in as: ID / Name" width="100%" height="100%" ui:field="label"/>
+			<g:layer top="2.0pct" bottom="2.0pct" left="2.0pct" right="2.0pct">
+				<g:DecoratedTabPanel width="100%" height="100%"
+					ui:field="tabPanel" styleName="serverResponseLabelError">
+					<g:Tab text="View as Administrator">
+						<g:LayoutPanel width="100%" height="437px"
+							addStyleNames="{style.back-tab}">
+							<g:layer left="0.0pct" width="75.0pct" top="0.0pct"
+								height="17.2pct">
+								<g:TextBox text="Department of CS" addStyleNames="{style.main-title}"
+									width="50%" height="100%" />
 							</g:layer>
-							<g:layer left="550px" width="80px" top="0px" height="30px">
-								<g:Button ui:field="buttonLogout">Logout</g:Button>
+							<g:layer left="0.0pct" width="47.0pct" top="22.2pct"
+								height="62.5pct">
+								<g:ListBox visibleItemCount="5" />
 							</g:layer>
-							<g:layer left="455px" width="80px" top="0px" height="30px">
-								<g:Button ui:field="home">Home</g:Button>
+							<g:layer left="335px" width="275px" top="97px" height="273px">
+								<g:ListBox visibleItemCount="5" />
 							</g:layer>
-							<g:layer left="370px" width="80px" top="0px" height="30px">
-								<g:Button ui:field="button" text="Admin"/>
+							<g:layer left="103px" width="83px" top="388px" height="30px">
+								<g:Button addStyleNames="{style.button-green}">Add User</g:Button>
+							</g:layer>
+							<g:layer left="212px" width="83px" top="388px" height="30px">
+								<g:Button addStyleNames="{style.button-yellowish}">Edit User</g:Button>
+							</g:layer>
+							<g:layer left="388px" width="102px" top="388px" height="30px">
+								<g:Button addStyleNames="{style.button-green}">Add Course</g:Button>
+							</g:layer>
+							<g:layer left="507px" width="103px" top="388px" height="30px">
+								<g:Button addStyleNames="{style.button-yellowish}">Modify Course</g:Button>
+							</g:layer>
+							<g:layer left="335px" width="266px" top="25px" height="55px">
+								<g:TextBox text="Courses You Recently Added/Changed:"
+									alignment="LEFT" width="100%" height="100%" addStyleNames="{style.grey-back}" />
 							</g:layer>
 						</g:LayoutPanel>
-					</g:at>
-				</g:AbsolutePanel>
+					</g:Tab>
+					<g:Tab text="View as Instructor">
+						<g:LayoutPanel width="100%" height="435px" />
+					</g:Tab>
+				</g:DecoratedTabPanel>
 			</g:layer>
 		</g:LayoutPanel>
 	</g:HTMLPanel>
