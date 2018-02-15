@@ -5,11 +5,14 @@
 	
 	</ui:style>
 	<g:HTMLPanel>
-		<g:LayoutPanel width="100%" height="100%" ui:field="basePanelViewCurrentClasses">
-			<g:layer left="0px" width="100.0pct" top="0px" height="100.0pct">
-				<g:TabPanel width="100%" height="100%" animationEnabled="true" title="Courses" ui:field="SwitchBetweenTabBar">
+		<g:LayoutPanel width="100%" height="100%">
+			<g:layer>
+				<g:TabPanel width="100%" height="100%" animationEnabled="true">
 					<g:Tab text="Current Courses">
-						<g:LayoutPanel width="100%" height="-100%" ui:field="SimpleCurrentClasses"/>
+						<g:LayoutPanel width="100%" height="250px" ui:field="CurrentCourses"/>
+					</g:Tab>
+					<g:Tab text="Detailed Current Courses">
+						<g:LayoutPanel width="100%" height="250px" ui:field="DetailedCurrentCourses"/>
 					</g:Tab>
 				</g:TabPanel>
 			</g:layer>
