@@ -5,7 +5,10 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.dselent.course_load_scheduler.client.action.InvalidReportAction;
 import org.dselent.course_load_scheduler.client.action.SubmitReportAction;
+import org.dselent.course_load_scheduler.client.errorstring.InvalidReportStrings;
+import org.dselent.course_load_scheduler.client.event.InvalidReportEvent;
 import org.dselent.course_load_scheduler.client.event.SubmitReportEvent;
 import org.dselent.course_load_scheduler.client.exceptions.EmptyStringException;
 import org.dselent.course_load_scheduler.client.model.Model;
@@ -80,7 +83,7 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 				validateReportType(typeList);
 			}
 			catch(EmptyStringException e) {
-				//invalidReasonList.add(write in error code for actions or whatever)
+				invalidReasonList.add(InvalidReportStrings.NULL_TYPE);
 				validType = false;
 			}
 			
@@ -88,7 +91,7 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 				validateReportDesc(description);
 			}
 			catch(EmptyStringException e) {
-				//invalidReasonList.add(write in error code for actions or whatever)
+				invalidReasonList.add(InvalidReportStrings.NULL_DESC);
 				validDescription = false;
 			}
 			
@@ -96,11 +99,10 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 				sendReport(typeList, nameBox, emailBox, description);
 				submitClickInProgress = false;
 			} else {
-				//write in error handling
+				InvalidReportAction ira = new InvalidReportAction(invalidReasonList);
+				InvalidReportEvent ire = new InvalidReportEvent(ira);
+				eventBus.fireEvent(ire);
 			}
-			
-			//maybe reset click in progress bool, or do that in a called function.
-			
 		}
 	}
 	
