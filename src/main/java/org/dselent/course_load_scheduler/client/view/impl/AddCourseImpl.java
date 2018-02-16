@@ -32,6 +32,33 @@ public class AddCourseImpl extends Composite{
 	@UiField LayoutPanel instancePanel;
 	@UiField LayoutPanel descriptionPanel;
 	@UiField LayoutPanel saveDeletePanel;
+	
+	
+
+	public TextBox getCourseNumberField() {
+		return courseNumberField;
+	}
+
+	public TextBox getCourseNameField() {
+		return courseNameField;
+	}
+
+	public TextBox getInstanceNumberField() {
+		return instanceNumberField;
+	}
+
+	public TextArea getCourseDescField() {
+		return courseDescField;
+	}
+
+	public TextBox getStatusField() {
+		return statusField;
+	}
+	public Button getSaveCourseButton() {
+		return saveCourseButton;
+	}
+
+
 
 	interface AddCourseImplUiBinder extends UiBinder<Widget, AddCourseImpl> {
 	}
@@ -39,5 +66,4 @@ public class AddCourseImpl extends Composite{
 	public AddCourseImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
-
 }
