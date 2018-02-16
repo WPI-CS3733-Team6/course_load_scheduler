@@ -10,9 +10,9 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.FlexTable;
 
-public class ViewCurrentClassesViewImpl extends Composite {
+public class ViewCurrentCoursesViewImpl extends Composite {
 
-	private static ViewCurrentClassesViewImplUiBinder uiBinder = GWT.create(ViewCurrentClassesViewImplUiBinder.class);
+	private static ViewCurrentCoursesViewImplUiBinder uiBinder = GWT.create(ViewCurrentCoursesViewImplUiBinder.class);
 	@UiField LayoutPanel currentCourses;
 	@UiField LayoutPanel detailedSchedule;
 	@UiField ScrollPanel panelForScrollingCourseTable;
@@ -20,10 +20,10 @@ public class ViewCurrentClassesViewImpl extends Composite {
 	@UiField FlexTable tableDisplayCurrentCourses;
 	@UiField FlexTable tableDisplayDetailedSchedule;
 
-	interface ViewCurrentClassesViewImplUiBinder extends UiBinder<Widget, ViewCurrentClassesViewImpl> {
+	interface ViewCurrentCoursesViewImplUiBinder extends UiBinder<Widget, ViewCurrentCoursesViewImpl> {
 	}
 
-	public ViewCurrentClassesViewImpl() {
+	public ViewCurrentCoursesViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 
 	    // Create the text fields (This table is a K x 5, with K being the number of courses they have registered for)
