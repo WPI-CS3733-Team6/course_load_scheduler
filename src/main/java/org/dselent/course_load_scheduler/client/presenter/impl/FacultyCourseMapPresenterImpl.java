@@ -2,12 +2,14 @@ package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import javax.inject.Inject;
 
+import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.BasePresenter;
 import org.dselent.course_load_scheduler.client.presenter.FacultyCourseMapPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.BaseView;
 import org.dselent.course_load_scheduler.client.view.FacultyCourseMapView;
 
+import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.HasWidgets;
 
 public class FacultyCourseMapPresenterImpl extends BasePresenterImpl implements FacultyCourseMapPresenter {
@@ -28,7 +30,14 @@ public class FacultyCourseMapPresenterImpl extends BasePresenterImpl implements 
 		bind();
 	}
 	
-	
+	@Override
+	public void bind()
+	{
+		HandlerRegistration registration;
+		
+		registration = eventBus.addHandler(InvalidLoginEvent.TYPE, this);
+		eventBusRegistration.put(InvalidLoginEvent.TYPE, registration);
+	}
 
 	@Override
 	public void go(HasWidgets container) {
