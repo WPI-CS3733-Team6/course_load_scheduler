@@ -15,7 +15,7 @@
 	}
 
 	</ui:style>
-	<g:HTMLPanel>
+	<g:HTMLPanel ui:field="rootPanel">
 		<g:LayoutPanel width="100%" height="100%" ui:field="AccountInfoBaseLayoutPanel">
 			<g:layer>
 				<g:TextBox text="Account Information" width="100%" alignment="CENTER" textAlignment="ALIGN_CENTER" ui:field="AccountInfoPgTitle" height="5%"/>
