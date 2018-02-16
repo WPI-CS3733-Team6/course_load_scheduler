@@ -20,6 +20,10 @@
 		background-color:#C1C1C1;
 	}
 
+	.whiteButton{
+		background:#ffffff;
+	}
+
 	.greenButton{
 		background:#78e268;
 	}
@@ -86,7 +90,7 @@
 							<g:Button text="Save Changes" styleName="{style.greenButton}" ui:field="saveButton"/>
 						</g:layer>
 						<g:layer left="5%" width="30%" top="20%" height="60%">
-							<g:Button text="Back to Course" ui:field="backButton"/>
+							<g:Button text="Back to Course" ui:field="backButton" styleName="{style.whiteButton}"/>
 						</g:layer>
 						<g:layer left="70%" width="25%" top="20%" height="60%">
 							<g:Button text="Delete Instance" styleName="{style.redButton}" ui:field="deleteButton"/>
