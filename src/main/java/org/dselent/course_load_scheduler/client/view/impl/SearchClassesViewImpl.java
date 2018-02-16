@@ -14,11 +14,9 @@ public class SearchClassesViewImpl extends Composite {
 
 	private static SearchClassesViewImplUiBinder uiBinder = GWT.create(SearchClassesViewImplUiBinder.class);
 	@UiField ListBox Semester;
-	@UiField Button button;
+	@UiField Button advSearchButton;
 	@UiField ListBox Subject;
-	@UiField ListBox Course_Name;
-	@UiField ListBox Registration_Status;
-	@UiField ListBox Course_Number;
+	@UiField Button searchButton;
 
 	interface SearchClassesViewImplUiBinder extends UiBinder<Widget, SearchClassesViewImpl> {
 	}
@@ -27,7 +25,7 @@ public class SearchClassesViewImpl extends Composite {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 
-	@UiHandler("button")
-	void onButtonClick(ClickEvent event) {
+	@UiHandler("advSearchButton")
+	void onAdvSearchButtonClick(ClickEvent event) {
 	}
 }
