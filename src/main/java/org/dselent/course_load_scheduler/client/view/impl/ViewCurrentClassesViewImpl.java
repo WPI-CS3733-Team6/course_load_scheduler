@@ -53,11 +53,6 @@ public class ViewCurrentClassesViewImpl extends Composite {
 		tableDisplayDetailedSchedule.setText(11, 0, "7:00 PM");
 		tableDisplayDetailedSchedule.setText(12, 0, "8:00 PM");
 		
-	    // ...and set it's column span so that it takes up the whole row.
-		tableDisplayCurrentCourses.getFlexCellFormatter().setColSpan(1, 0, 3);
-
-		
-		
 	    RootPanel.get().add(tableDisplayCurrentCourses);
 	    RootPanel.get().add(tableDisplayDetailedSchedule);
 	}
