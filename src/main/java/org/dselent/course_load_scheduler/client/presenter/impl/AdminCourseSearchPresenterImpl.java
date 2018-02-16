@@ -81,15 +81,15 @@ public class AdminCourseSearchPresenterImpl extends BasePresenterImpl implements
 			String subject = view.getCourseList().toString();
 			String term = view.getSemesterList().toString();
 			
-			
+			adminCourseSearch(subject, term);
 		}
 		
 	}
 	
 	public void adminCourseSearch(String subject, String term) {
-		AdminCourseSearchAction acsa = new AdminCourseSearchAction(subject, term);
-		AdminCourseSearchEvent asce = new AdminCourseSearchEvent(acsa);
-		//eventBus.fireEvent(acsa);
+		AdminCourseSearchAction asca = new AdminCourseSearchAction(subject, term);
+		AdminCourseSearchEvent asce = new AdminCourseSearchEvent(asca);
+		eventBus.fireEvent(asce);
 	}
 
 }
