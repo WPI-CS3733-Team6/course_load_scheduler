@@ -39,9 +39,8 @@ public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> impl
 	@UiField LayoutPanel sectionInfoPanel;
 	@UiField LayoutPanel saveDeletePanel;
 	@UiField LayoutPanel instanceInfoPanel;
+	
 	@Override
-	
-	
 	public void setPresenter(AddInstancePresenter presenter) {
 		// TODO Auto-generated method stub
 		

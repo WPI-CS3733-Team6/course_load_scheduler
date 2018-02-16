@@ -32,8 +32,12 @@
 		background:#efbb43;
 	}
 
+	.blueButton{
+		background:#7FCEE2;
+	}
+
 	</ui:style>
-	<g:HTMLPanel>
+	<g:HTMLPanel ui:field="basePanel">
 		<g:DockLayoutPanel unit="PCT" width="100%" height="100%">
 			<g:north size="30.0">
 				<g:LayoutPanel width="100%" height="100%" styleName="{style.layoutPanel}" ui:field="searchPanel">
@@ -86,8 +90,11 @@
 							</g:item>
 						</g:ListBox>
 					</g:layer>
-					<g:layer left="75%" width="20%" top="20%" height="50%">
+					<g:layer left="75%" width="20%" top="10%" height="35%">
 						<g:Button text="Add Course" styleName="{style.greenButton}" ui:field="addCourseButton"/>
+					</g:layer>
+					<g:layer left="75%" width="20%" top="55%" height="35%">
+						<g:Button text="Search" styleName="{style.blueButton}" ui:field="searchButton"/>
 					</g:layer>
 					<g:layer left="4%" width="15%" top="50%" height="30%">
 						<g:TextBox readOnly="true" text="Name" styleName="{style.tableHeader}" ui:field="courseNameHeader"/>
