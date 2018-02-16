@@ -12,16 +12,11 @@ import com.google.gwt.event.dom.client.ClickEvent;
 public class InstructorHomepageViewImpl extends Composite {
 
 	private static InstructorHomepageUiBinder uiBinder = GWT.create(InstructorHomepageUiBinder.class);
-	@UiField Button button;
 
 	interface InstructorHomepageUiBinder extends UiBinder<Widget, InstructorHomepageViewImpl> {
 	}
 
 	public InstructorHomepageViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
-	}
-
-	@UiHandler("button")
-	void onButtonClick(ClickEvent event) {
 	}
 }

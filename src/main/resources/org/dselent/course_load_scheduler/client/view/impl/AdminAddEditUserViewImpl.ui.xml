@@ -6,26 +6,31 @@
 	</ui:style>
 	<g:HTMLPanel>
 		<g:LayoutPanel width="100%" height="100%">
-			<g:layer bottom="2.8pct" top="2.8pct" right="2.8pct" left="2.8pct">
-				<g:AbsolutePanel width="100%" height="12%">
-					<g:at top="0" left="0">
-						<g:LayoutPanel width="100%" height="100%">
-							<g:layer bottom="0.0pct" top="0.0pct" left="0.0pct" width="20.0pct">
-								<g:Label text="You are logged in as: ID / Name" width="100%" height="100%"/>
-							</g:layer>
-							<g:layer left="80.0pct" width="12.0pct" top="0.0pct" height="75.0pct">
-								<g:Button ui:field="logout">Logout</g:Button>
-							</g:layer>
-							<g:layer left="65.0pct" width="10.0pct" top="0.0pct" height="75.0pct">
-								<g:Button ui:field="home">Home</g:Button>
-							</g:layer>
-							<g:layer left="53.0pct" width="12.0pct" top="0.0pct" height="75.0pct">
-								<g:Button ui:field="Admin" text="Admin"/>
-							</g:layer>
-						</g:LayoutPanel>
-					</g:at>
-				</g:AbsolutePanel>
-			</g:layer>
-		</g:LayoutPanel>
+            <g:layer left="40.0pct" top="3.0pct" height="10.0pct" right="40.0pct">
+                <g:TextBox text="Create User" width="100%" height="100%" textAlignment="ALIGN_CENTER" readOnly="true"/>
+            </g:layer>
+            <g:layer left="3.0pct" top="17.0pct" right="3.0pct" bottom="3.0pct">
+                <g:LayoutPanel width="100$" height="100%">
+                    <g:layer left="8.3pct" top="9.2pct" right="55.0pct" bottom="76.7pct">
+                        <g:TextBox text="First Name"/>
+                    </g:layer>
+                    <g:layer left="55.0pct" top="9.2pct" right="8.3pct" bottom="76.7pct">
+                        <g:TextBox text="Last Name"/>
+                    </g:layer>
+                    <g:layer left="8.3pct" top="30.0pct" right="8.3pct" bottom="55.0pct">
+                        <g:TextBox text="WPI E-mail"/>
+                    </g:layer>
+                    <g:layer left="8.3pct" top="53.0pct" right="60.0pct" bottom="40.0pct">
+                        <g:CheckBox text="Administrator" width="100%" height="100%"/>
+                    </g:layer>
+                    <g:layer left="55.0pct" top="53.0pct" right="8.3pct" bottom="33.0pct">
+                        <g:TextBox text="Last Name"/>
+                    </g:layer>
+                    <g:layer left="40.0pct" top="78.8pct" right="40.0pct" bottom="8.8pct">
+                        <g:Button>Submit</g:Button>
+                    </g:layer>
+                </g:LayoutPanel>
+            </g:layer>
+        </g:LayoutPanel>
 	</g:HTMLPanel>
 </ui:UiBinder> 
