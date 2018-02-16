@@ -1,21 +1,26 @@
 package org.dselent.course_load_scheduler.client.view.impl;
 
+import org.dselent.course_load_scheduler.client.presenter.AccountInfoPresenter;
+import org.dselent.course_load_scheduler.client.view.AccountInfoView;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.FlexTable;
+import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
-import com.google.gwt.user.client.ui.FlexTable;
+import com.google.gwt.user.client.ui.Widget;
 
-public class AccountInfoViewImpl extends Composite {
+public class AccountInfoViewImpl extends BaseViewImpl<AccountInfoPresenter> implements AccountInfoView{
 
 	private static AccountInfoUiBinder uiBinder = GWT.create(AccountInfoUiBinder.class);
 	
+	@UiField HTMLPanel rootPanel;
 	@UiField TextBox AccountInfoPgTitle;
 	@UiField LayoutPanel AccountInfoBaseLayoutPanel;
 	// I'm not sure how to use this but this might be necessary
@@ -81,6 +86,24 @@ public class AccountInfoViewImpl extends Composite {
 	    t.getFlexCellFormatter().setColSpan(1, 0, 3);
 
 	    RootPanel.get().add(t);
+	}
+
+	@Override
+	public Widget getWidgetContainer()
+	{
+		return this;
+	}
+	
+	@Override
+	public HasWidgets getViewRootPanel()
+	{
+		return rootPanel;
+	}
+	
+	@Override
+	public void setPresenter(AccountInfoPresenter presenter)
+	{
+		this.presenter = presenter;
 	}
 	
 	
