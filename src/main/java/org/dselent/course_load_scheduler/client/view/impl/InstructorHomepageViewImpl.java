@@ -9,15 +9,15 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
 
-public class InstructorHomepage extends Composite {
+public class InstructorHomepageViewImpl extends Composite {
 
 	private static InstructorHomepageUiBinder uiBinder = GWT.create(InstructorHomepageUiBinder.class);
 	@UiField Button button;
 
-	interface InstructorHomepageUiBinder extends UiBinder<Widget, InstructorHomepage> {
+	interface InstructorHomepageUiBinder extends UiBinder<Widget, InstructorHomepageViewImpl> {
 	}
 
-	public InstructorHomepage() {
+	public InstructorHomepageViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 

@@ -7,17 +7,17 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Button;
 
-public class AdminAddEditUser extends Composite {
+public class AdminAddEditUserViewImpl extends Composite {
 
 	private static AdminAddEditUserUiBinder uiBinder = GWT.create(AdminAddEditUserUiBinder.class);
 	@UiField Button home;
 	@UiField Button logout;
 	@UiField Button admin;
 
-	interface AdminAddEditUserUiBinder extends UiBinder<Widget, AdminAddEditUser> {
+	interface AdminAddEditUserUiBinder extends UiBinder<Widget, AdminAddEditUserViewImpl> {
 	}
 
-	public AdminAddEditUser() {
+	public AdminAddEditUserViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 

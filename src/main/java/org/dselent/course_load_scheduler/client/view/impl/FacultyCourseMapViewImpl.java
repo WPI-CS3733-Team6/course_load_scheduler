@@ -15,7 +15,7 @@ import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.LayoutPanel;
 
-public class FacultyCourseMapImpl extends BaseViewImpl<FacultyCourseMapPresenter> implements FacultyCourseMapView {
+public class FacultyCourseMapViewImpl extends BaseViewImpl<FacultyCourseMapPresenter> implements FacultyCourseMapView {
 	//will need to modify to make table work properly
 	private static FacultyCourseMapImplUiBinder uiBinder = GWT.create(FacultyCourseMapImplUiBinder.class);
 	@UiField Button backButton;
@@ -24,10 +24,10 @@ public class FacultyCourseMapImpl extends BaseViewImpl<FacultyCourseMapPresenter
 	@UiField HTMLPanel basePanel;
 	@UiField LayoutPanel layoutPanel;
 
-	interface FacultyCourseMapImplUiBinder extends UiBinder<Widget, FacultyCourseMapImpl> {
+	interface FacultyCourseMapImplUiBinder extends UiBinder<Widget, FacultyCourseMapViewImpl> {
 	}
 
-	public FacultyCourseMapImpl() {
+	public FacultyCourseMapViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 

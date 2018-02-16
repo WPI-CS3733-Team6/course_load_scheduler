@@ -1,28 +1,27 @@
 package org.dselent.course_load_scheduler.client.view.impl;
 
+import org.dselent.course_load_scheduler.client.presenter.AddInstancePresenter;
+import org.dselent.course_load_scheduler.client.view.AddInstanceView;
+
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HasText;
-import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.user.client.ui.FlexTable;
+import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
-import com.google.gwt.user.client.ui.FlexTable;
-import com.google.gwt.user.client.ui.LayoutPanel;
+import com.google.gwt.user.client.ui.Widget;
 
-public class AddInstance extends Composite {
+public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> implements AddInstanceView {
 
 	private static AddInstanceUiBinder uiBinder = GWT.create(AddInstanceUiBinder.class);
 
-	interface AddInstanceUiBinder extends UiBinder<Widget, AddInstance> {
+	interface AddInstanceUiBinder extends UiBinder<Widget, AddInstanceViewImpl> {
 	}
 
-	public AddInstance() {
+	public AddInstanceViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 
@@ -40,4 +39,21 @@ public class AddInstance extends Composite {
 	@UiField LayoutPanel sectionInfoPanel;
 	@UiField LayoutPanel saveDeletePanel;
 	@UiField LayoutPanel instanceInfoPanel;
+	@Override
+	
+	
+	public void setPresenter(AddInstancePresenter presenter) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public Widget getWidgetContainer() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public HasWidgets getViewRootPanel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

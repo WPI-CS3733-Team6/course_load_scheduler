@@ -8,17 +8,17 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
 
-public class CourseRegistrationCart extends Composite {
+public class CourseRegistrationCartViewImpl extends Composite {
 
 	private static CourseRegistrationCartUiBinder uiBinder = GWT.create(CourseRegistrationCartUiBinder.class);
 	@UiField Button submitForApproval;
 	@UiField Button removeCourse;
 	@UiField FlexTable flexTableFor;
 
-	interface CourseRegistrationCartUiBinder extends UiBinder<Widget, CourseRegistrationCart> {
+	interface CourseRegistrationCartUiBinder extends UiBinder<Widget, CourseRegistrationCartViewImpl> {
 	}
 
-	public CourseRegistrationCart() {
+	public CourseRegistrationCartViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));		
 		
 	    // ...and set it's column span so that it takes up the whole row.

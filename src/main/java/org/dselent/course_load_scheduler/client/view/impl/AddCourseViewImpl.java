@@ -11,7 +11,7 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.ListBox;
 
-public class AddCourseImpl extends Composite{
+public class AddCourseViewImpl extends Composite{
 
 	private static AddCourseImplUiBinder uiBinder = GWT.create(AddCourseImplUiBinder.class);
 	@UiField TextBox courseNumberHeader;
@@ -60,10 +60,10 @@ public class AddCourseImpl extends Composite{
 
 
 
-	interface AddCourseImplUiBinder extends UiBinder<Widget, AddCourseImpl> {
+	interface AddCourseImplUiBinder extends UiBinder<Widget, AddCourseViewImpl> {
 	}
 
-	public AddCourseImpl() {
+	public AddCourseViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 }
