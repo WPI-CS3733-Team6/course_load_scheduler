@@ -47,16 +47,16 @@
 					</g:layer>
 					
 					<g:layer left="2.0pct" width="100.0pct" top="50.0pct" height="35.0pct">
-						<g:TextBox width="39%" height="100%" ui:field="courseNameField" enabled="false"/>
+						<g:TextBox width="39%" height="100%" ui:field="courseNameField"/>
 					</g:layer>
 					<g:layer left="41.0pct" width="100.0pct" top="50.0pct" height="35.0pct">
-						<g:TextBox height="100%" width="21%" ui:field="courseNumberField" enabled="false"/>
+						<g:TextBox height="100%" width="21%" ui:field="courseNumberField"/>
 					</g:layer>
 					<g:layer left="82.0pct" width="100.0pct" top="50.0pct" height="35.0pct">
-						<g:TextBox height="100%" width="14%" ui:field="statusField" enabled="false"/>
+						<g:TextBox height="100%" width="14%" ui:field="statusField"/>
 					</g:layer>
 					<g:layer left="64.0pct" width="100.0pct" top="50.0pct" height="35.0pct">
-						<g:TextBox height="100%" width="16%" ui:field="instanceNumberField" enabled="false"/>
+						<g:TextBox height="100%" width="16%" ui:field="instanceNumberField"/>
 					</g:layer>
 				</g:LayoutPanel>
 			</g:north>

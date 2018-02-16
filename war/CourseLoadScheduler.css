@@ -21,7 +21,7 @@ h1 {
 }
 
 .dialogVPanel {
-  margin: 5px;
+	background-color: White;
 }
 
 .serverResponseLabelError {
@@ -31,4 +31,9 @@ h1 {
 /** Set ids using widget.getElement().setId("idOfElement") */
 #closeButton {
   margin: 15px 6px 6px;
+  
+}
+.hourText {
+  font-size: 16pt;
+  font-weight: bold;
 }
