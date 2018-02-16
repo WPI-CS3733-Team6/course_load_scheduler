@@ -12,8 +12,8 @@
 			<g:layer left="0.0pct" width="27.9pct" top="0.0pct" height="10.1pct">
 				<g:Button ui:field="backButton">Go Back</g:Button>
 			</g:layer>
-			<g:layer top="11.8pct" bottom="0.0pct" right="81.1pct" left="0.0pct">
-				<g:FlexTable ui:field="dataTable"/>
+			<g:layer top="11.8pct" bottom="0.0pct" right="0.0pct" left="0.0pct">
+				<g:FlexTable ui:field="dataTable" width="100%" height="88.9%"/>
 			</g:layer>
 		</g:LayoutPanel>
 	</g:HTMLPanel>
