@@ -6,11 +6,8 @@
 	</ui:style>
 	<g:HTMLPanel ui:field="basePanel">
 		<g:LayoutPanel width="447px" height="297px" ui:field="layoutPanel">
-			<g:layer left="44.4pct" top="0.0pct" height="6.1pct" right="0.0pct">
+			<g:layer left="0.0pct" top="0.0pct" height="6.1pct" right="0.0pct">
 				<g:Label text="Faculty Course Map" horizontalAlignment="ALIGN_CENTER" ui:field="titleLabel"/>
-			</g:layer>
-			<g:layer left="0.0pct" width="27.9pct" top="0.0pct" height="10.1pct">
-				<g:Button ui:field="backButton">Go Back</g:Button>
 			</g:layer>
 			<g:layer top="11.8pct" bottom="0.0pct" right="0.0pct" left="0.0pct">
 				<g:FlexTable ui:field="dataTable" width="100%" height="88.9%"/>

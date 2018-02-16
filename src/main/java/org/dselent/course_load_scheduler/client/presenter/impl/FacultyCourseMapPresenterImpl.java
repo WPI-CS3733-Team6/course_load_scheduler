@@ -34,7 +34,7 @@ public class FacultyCourseMapPresenterImpl extends BasePresenterImpl implements 
 	public void bind()
 	{
 		HandlerRegistration registration;
-		
+		//need to fix this up as well
 		registration = eventBus.addHandler(InvalidLoginEvent.TYPE, this);
 		eventBusRegistration.put(InvalidLoginEvent.TYPE, registration);
 	}

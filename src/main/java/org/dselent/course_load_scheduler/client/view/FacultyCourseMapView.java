@@ -15,5 +15,4 @@ import com.google.gwt.user.client.ui.FlexTable;
 public interface FacultyCourseMapView extends BaseView<FacultyCourseMapPresenter> {
 	public FlexTable getDataTable();
 	public void setDataTable(FlexTable dataTable);
-	public Button getBackButton();
 }

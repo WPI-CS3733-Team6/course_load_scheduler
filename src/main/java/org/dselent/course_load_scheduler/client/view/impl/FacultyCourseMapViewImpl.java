@@ -17,18 +17,30 @@ import com.google.gwt.user.client.ui.LayoutPanel;
 
 public class FacultyCourseMapViewImpl extends BaseViewImpl<FacultyCourseMapPresenter> implements FacultyCourseMapView {
 	//will need to modify to make table work properly
-	private static FacultyCourseMapImplUiBinder uiBinder = GWT.create(FacultyCourseMapImplUiBinder.class);
-	@UiField Button backButton;
+	private static FacultyCourseMapViewImplUiBinder uiBinder = GWT.create(FacultyCourseMapViewImplUiBinder.class);
 	@UiField Label titleLabel;
 	@UiField FlexTable dataTable;
 	@UiField HTMLPanel basePanel;
 	@UiField LayoutPanel layoutPanel;
 
-	interface FacultyCourseMapImplUiBinder extends UiBinder<Widget, FacultyCourseMapViewImpl> {
+	interface FacultyCourseMapViewImplUiBinder extends UiBinder<Widget, FacultyCourseMapViewImpl> {
 	}
 
 	public FacultyCourseMapViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
+		
+		FlexTable t = new FlexTable();
+		
+		t.setText(0, 0, "Faculty");
+		t.setText(0, 1, "# of courses");
+		t.setText(0, 2, "Assigned Courses");
+		
+		//for loops to present appropriate number of cells, assuming  that I don't just move all of this back a layer or two.
+		
+		//set up column spans and so forth
+		
+		setDataTable(t);
+		
 	}
 
 	public FlexTable getDataTable() {
@@ -37,10 +49,6 @@ public class FacultyCourseMapViewImpl extends BaseViewImpl<FacultyCourseMapPrese
 
 	public void setDataTable(FlexTable dataTable) {
 		this.dataTable = dataTable;
-	}
-
-	public Button getBackButton() {
-		return backButton;
 	}
 
 	@Override
