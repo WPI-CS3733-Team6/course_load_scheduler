@@ -92,7 +92,7 @@
 						</g:layer>
 						
 						<g:layer left="50.0pct" width="100.0pct" top="15.0pct" height="15.0pct">
-							<g:TextBox width="40%" height="100%" text="Days" ui:field="daysHeader" styleName="{style.tableHeader}" alignment="CENTER" readOnly="true"/>
+							<g:TextBox width="40%" height="100%" text="Days" ui:field="daysHeader" enabled="false" styleName="{style.tableHeader}" alignment="CENTER"/>
 						</g:layer>
 						<g:layer left="51.0pct" width="8.0pct" top="30.0pct" height="15.0pct">
 							<g:CheckBox text="M" ui:field="mondayCheck"/>
@@ -111,7 +111,7 @@
 						</g:layer>
 						
 						<g:layer left="50.0pct" width="100.0pct" top="55.0pct" height="15.0pct">
-							<g:TextBox width="15%" height="100%" text="Time Start" ui:field="timeStartHeader" styleName="{style.tableHeader}" readOnly="true"/>
+							<g:TextBox width="15%" height="100%" text="Time Start" ui:field="timeStartHeader" enabled="false" styleName="{style.tableHeader}"/>
 						</g:layer>
 						<g:layer left="50.0pct" width="100.0pct" top="70.0pct" height="15.0pct">
 							<g:TextBox width="4%" height="100%" ui:field="startHoursField" enabled="true" maxLength="2"/>
@@ -124,7 +124,7 @@
 						</g:layer>
 						
 						<g:layer left="75.0pct" width="100.0pct" top="55.0pct" height="15.0pct">
-							<g:TextBox width="15%" height="100%" text="Time End" ui:field="timeEndHeader" styleName="{style.tableHeader}" readOnly="true"/>
+							<g:TextBox width="15%" height="100%" text="Time End" ui:field="timeEndHeader" enabled="false" styleName="{style.tableHeader}"/>
 						</g:layer>
 						<g:layer left="75.0pct" width="100.0pct" top="70.0pct" height="15.0pct">
 							<g:TextBox width="4%" height="100%" ui:field="endHoursField" enabled="true" maxLength="2"/>
