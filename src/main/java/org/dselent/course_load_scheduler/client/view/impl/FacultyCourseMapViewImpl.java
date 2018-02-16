@@ -5,10 +5,8 @@ import org.dselent.course_load_scheduler.client.view.FacultyCourseMapView;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HasWidgets;
@@ -63,7 +61,6 @@ public class FacultyCourseMapViewImpl extends BaseViewImpl<FacultyCourseMapPrese
 
 	@Override
 	public HasWidgets getViewRootPanel() {
-		// TODO Auto-generated method stub
 		return basePanel;
 	}
 

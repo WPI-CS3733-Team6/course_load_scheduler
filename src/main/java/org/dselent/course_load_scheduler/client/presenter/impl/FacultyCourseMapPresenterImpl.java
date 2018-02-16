@@ -2,6 +2,8 @@ package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import javax.inject.Inject;
 
+import org.dselent.course_load_scheduler.client.action.FacultyCourseMapAction;
+import org.dselent.course_load_scheduler.client.event.FacultyCourseMapEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.BasePresenter;
 import org.dselent.course_load_scheduler.client.presenter.FacultyCourseMapPresenter;
@@ -45,6 +47,13 @@ public class FacultyCourseMapPresenterImpl extends BasePresenterImpl implements 
 
 	public void setView(FacultyCourseMapView view) {
 		this.view = view;
+	}
+
+	@Override
+	public void getFaculty() {
+		FacultyCourseMapAction fcma = new FacultyCourseMapAction();
+		FacultyCourseMapEvent fcme = new FacultyCourseMapEvent(fcma);
+		eventBus.fireEvent(fcme);
 	}
 
 }
