@@ -20,6 +20,10 @@
 		background-color:#C1C1C1;
 	}
 
+	.whiteButton{
+		background:#ffffff;
+	}
+
 	.greenButton{
 		background:#78e268;
 	}
@@ -66,7 +70,7 @@
 							<g:Button text="Save Changes" styleName="{style.greenButton}" ui:field="saveButton"/>
 						</g:layer>
 						<g:layer left="5%" width="30%" top="20%" height="60%">
-							<g:Button text="Back to Instance" ui:field="backButton"/>
+							<g:Button text="Back to Instance" ui:field="backButton" styleName="{style.whiteButton}"/>
 						</g:layer>
 						<g:layer left="70%" width="25%" top="20%" height="60%">
 							<g:Button text="Delete Instance" styleName="{style.redButton}" ui:field="deleteButton"/>
@@ -92,7 +96,7 @@
 						</g:layer>
 						
 						<g:layer left="50.0pct" width="100.0pct" top="15.0pct" height="15.0pct">
-							<g:TextBox width="40%" height="100%" text="Days" ui:field="daysHeader" enabled="false" styleName="{style.tableHeader}" alignment="CENTER"/>
+							<g:TextBox width="40%" height="100%" text="Days" ui:field="daysHeader" styleName="{style.tableHeader}" alignment="CENTER" readOnly="true"/>
 						</g:layer>
 						<g:layer left="51.0pct" width="8.0pct" top="30.0pct" height="15.0pct">
 							<g:CheckBox text="M" ui:field="mondayCheck"/>
@@ -111,7 +115,7 @@
 						</g:layer>
 						
 						<g:layer left="50.0pct" width="100.0pct" top="55.0pct" height="15.0pct">
-							<g:TextBox width="15%" height="100%" text="Time Start" ui:field="timeStartHeader" enabled="false" styleName="{style.tableHeader}"/>
+							<g:TextBox width="15%" height="100%" text="Time Start" ui:field="timeStartHeader" styleName="{style.tableHeader}" readOnly="true"/>
 						</g:layer>
 						<g:layer left="50.0pct" width="100.0pct" top="70.0pct" height="15.0pct">
 							<g:TextBox width="4%" height="100%" ui:field="startHoursField" enabled="true" maxLength="2"/>
@@ -124,7 +128,7 @@
 						</g:layer>
 						
 						<g:layer left="75.0pct" width="100.0pct" top="55.0pct" height="15.0pct">
-							<g:TextBox width="15%" height="100%" text="Time End" ui:field="timeEndHeader" enabled="false" styleName="{style.tableHeader}"/>
+							<g:TextBox width="15%" height="100%" text="Time End" ui:field="timeEndHeader" styleName="{style.tableHeader}" readOnly="true"/>
 						</g:layer>
 						<g:layer left="75.0pct" width="100.0pct" top="70.0pct" height="15.0pct">
 							<g:TextBox width="4%" height="100%" ui:field="endHoursField" enabled="true" maxLength="2"/>
