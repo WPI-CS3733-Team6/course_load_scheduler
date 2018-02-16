@@ -102,6 +102,7 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 				InvalidReportAction ira = new InvalidReportAction(invalidReasonList);
 				InvalidReportEvent ire = new InvalidReportEvent(ira);
 				eventBus.fireEvent(ire);
+				submitClickInProgress = false;
 			}
 		}
 	}
