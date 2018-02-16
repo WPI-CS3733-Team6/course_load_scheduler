@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.dselent.course_load_scheduler.client.action.SubmitReportAction;
+import org.dselent.course_load_scheduler.client.event.SubmitReportEvent;
 import org.dselent.course_load_scheduler.client.exceptions.EmptyStringException;
 import org.dselent.course_load_scheduler.client.model.Model;
 import org.dselent.course_load_scheduler.client.presenter.BasePresenter;
@@ -92,6 +94,7 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 			
 			if(validType && validDescription) {
 				sendReport(typeList, nameBox, emailBox, description);
+				submitClickInProgress = false;
 			} else {
 				//write in error handling
 			}
@@ -103,6 +106,9 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 	
 	private void sendReport(String type, String name, String email, String desc) {
 		//write in actions and event handling gubbins
+		SubmitReportAction sra = new SubmitReportAction(name, email, type, desc);
+		SubmitReportEvent sre = new SubmitReportEvent(sra);
+		eventBus.fireEvent(sre);
 	}
 	
 	private void validateReportType(String type) throws EmptyStringException {
@@ -119,18 +125,6 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 		{
 			throw new EmptyStringException();
 		}
-	}
-
-	@Override
-	public void showLoadScreen() {
-		// TODO Auto-generated method stub
-		//not sure if need this
-	}
-
-	@Override
-	public void hideLoadScreen() {
-		// TODO Auto-generated method stub
-		//not sure if need this
 	}
 
 }

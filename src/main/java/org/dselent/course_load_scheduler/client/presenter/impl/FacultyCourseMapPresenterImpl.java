@@ -23,21 +23,6 @@ public class FacultyCourseMapPresenterImpl extends BasePresenterImpl implements 
 		this.parentPresenter = parentPresenter;
 		view.setPresenter(this);
 	}
-	
-	@Override
-	public void init()
-	{
-		bind();
-	}
-	
-	@Override
-	public void bind()
-	{
-		HandlerRegistration registration;
-		//need to fix this up as well
-		registration = eventBus.addHandler(InvalidLoginEvent.TYPE, this);
-		eventBusRegistration.put(InvalidLoginEvent.TYPE, registration);
-	}
 
 	@Override
 	public void go(HasWidgets container) {
