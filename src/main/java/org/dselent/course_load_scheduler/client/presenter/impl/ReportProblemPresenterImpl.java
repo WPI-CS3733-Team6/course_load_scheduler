@@ -37,6 +37,10 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 	{
 		return null;
 	}
+	
+	public void submitReport() {
+		
+	}
 
 	@Override
 	public void showLoadScreen() {
