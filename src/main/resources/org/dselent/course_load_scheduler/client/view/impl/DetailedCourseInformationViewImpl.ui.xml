@@ -1,0 +1,71 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+	
+	</ui:style>
+	<g:HTMLPanel>
+		<g:LayoutPanel width="100%" height="100%">
+			<g:layer left="27px" width="141px" top="14px" height="28px">
+				<g:Button>Return to Search</g:Button>
+			</g:layer>
+			<g:layer left="17px" width="165px" top="179px" height="16px">
+				<g:Label text="Course Name" horizontalAlignment="ALIGN_CENTER"/>
+			</g:layer>
+			<g:layer left="17px" width="165px" top="201px" height="32px">
+				<g:TextBox text="Sample Name" ui:field="Course_Name" readOnly="true"/>
+			</g:layer>
+			<g:layer left="188px" width="141px" top="201px" height="32px">
+				<g:TextBox text="Yes/No" ui:field="Registration_Status" readOnly="true"/>
+			</g:layer>
+			<g:layer left="188px" width="141px" top="179px" height="16px">
+				<g:Label horizontalAlignment="ALIGN_CENTER" text="Registration Status"/>
+			</g:layer>
+			<g:layer left="335px" width="165px" top="201px" height="32px">
+				<g:TextBox text="1234567890" ui:field="Course_Number" readOnly="true"/>
+			</g:layer>
+			<g:layer left="335px" width="165px" top="179px" height="16px">
+				<g:Label horizontalAlignment="ALIGN_CENTER" text="Course Number"/>
+			</g:layer>
+			<g:layer left="506px" width="122px" top="201px" height="32px">
+				<g:TextBox text="Sample Days" ui:field="Schedule_Days" readOnly="true"/>
+			</g:layer>
+			<g:layer left="506px" width="122px" top="179px" height="16px">
+				<g:Label horizontalAlignment="ALIGN_CENTER" text="Schedule (Days)"/>
+			</g:layer>
+			<g:layer left="634px" width="165px" top="201px" height="32px">
+				<g:TextBox text="Sample Level" ui:field="Level" readOnly="true"/>
+			</g:layer>
+			<g:layer left="634px" width="165px" top="179px" height="16px">
+				<g:Label horizontalAlignment="ALIGN_CENTER" text="Level"/>
+			</g:layer>
+			<g:layer left="909px" width="165px" top="201px" height="32px">
+				<g:TextBox text="Sample ID" ui:field="Section_Id" readOnly="true"/>
+			</g:layer>
+			<g:layer left="909px" width="165px" top="179px" height="16px">
+				<g:Label horizontalAlignment="ALIGN_CENTER" text="Section ID"/>
+			</g:layer>
+			<g:layer left="1080px" width="165px" top="201px" height="32px">
+				<g:TextBox text="Sample Type" ui:field="Section_Type" readOnly="true"/>
+			</g:layer>
+			<g:layer left="1080px" width="165px" top="179px" height="16px">
+				<g:Label horizontalAlignment="ALIGN_CENTER" text="Section Type"/>
+			</g:layer>
+			<g:layer left="805px" width="98px" top="201px" height="32px">
+				<g:TextBox text="0123456789" readOnly="true"/>
+			</g:layer>
+			<g:layer left="805px" width="98px" top="179px" height="16px">
+				<g:Label horizontalAlignment="ALIGN_CENTER" text="Expected Pop."/>
+			</g:layer>
+			<g:layer left="27px" width="1218px" top="261px" height="126px">
+				<g:TextBox text="Sample Description" ui:field="description" readOnly="true" textAlignment="ALIGN_LEFT" direction="LTR" alignment="LEFT" visibleLength="2000"/>
+			</g:layer>
+			<g:layer left="27px" width="1218px" top="239px" height="16px">
+				<g:Label horizontalAlignment="ALIGN_CENTER" text="Course Description"/>
+			</g:layer>
+			<g:layer left="554px" width="194px" top="539px" height="28px">
+				<g:Button>Submit to Registration Cart</g:Button>
+			</g:layer>
+		</g:LayoutPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 
