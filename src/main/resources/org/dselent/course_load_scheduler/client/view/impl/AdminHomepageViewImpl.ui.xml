@@ -82,22 +82,22 @@
 								height="62.5pct">
 								<g:ListBox visibleItemCount="5" ui:field="department" />
 							</g:layer>
-							<g:layer left="335px" width="275px" top="97px" height="273px">
+							<g:layer left="50.0pct" width="47.0pct" top="22.5pct" height="63.2pct">
 								<g:ListBox visibleItemCount="5" ui:field="courses" />
 							</g:layer>
-							<g:layer left="103px" width="83px" top="388px" height="30px">
-								<g:Button addStyleNames="{style.button-green}" ui:field="addUser">Add User</g:Button>
+							<g:layer left="15.0pct" width="15.0pct" top="88.0pct" height="8.0pct">
+								<g:Button addStyleNames="{style.button-green}" ui:field="addUser" width="100%" height="100%">Add User</g:Button>
 							</g:layer>
-							<g:layer left="212px" width="83px" top="388px" height="30px">
+							<g:layer left="32.0pct" width="15.0pct" top="88.0pct" height="8.0pct">
 								<g:Button addStyleNames="{style.button-yellowish}" ui:field="editUser">Edit User</g:Button>
 							</g:layer>
-							<g:layer left="388px" width="102px" top="388px" height="30px">
+							<g:layer left="65.0pct" width="15.0pct" top="88.0pct" height="8.0pct">
 								<g:Button addStyleNames="{style.button-green}" ui:field="addCourse">Add Course</g:Button>
 							</g:layer>
-							<g:layer left="507px" width="103px" top="388px" height="30px">
+							<g:layer left="82.0pct" width="15.0pct" top="88.0pct" height="8.0pct">
 								<g:Button addStyleNames="{style.button-yellowish}" ui:field="modifyCourse">Modify Course</g:Button>
 							</g:layer>
-							<g:layer left="335px" width="266px" top="25px" height="55px">
+							<g:layer left="50.0pct" width="40.0pct" top="5.8pct" height="12.7pct">
 								<g:TextBox text="Courses You Recently Added/Changed:"
 									alignment="LEFT" width="100%" height="100%" addStyleNames="{style.grey-back}" ui:field="courseText" />
 							</g:layer>
