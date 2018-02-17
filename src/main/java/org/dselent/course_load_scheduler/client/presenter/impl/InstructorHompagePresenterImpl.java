@@ -66,27 +66,39 @@ public class InstructorHompagePresenterImpl extends BasePresenterImpl implements
 	}
 	
 	public void currentClasses() {
-		
+		if(!clickInProgress) {
+			
+		}
 	}
 	
 	public void classSearch() {
-		
+		if(!clickInProgress) {
+			
+		}
 	}
 	
 	public void accountInfo() {
-		
+		if(!clickInProgress) {
+			
+		}
 	}
 	
 	public void courseCart() {
-		
+		if(!clickInProgress) {
+			
+		}
 	}
 	
 	public void createRequest() {
-		
+		if(!clickInProgress) {
+			
+		}
 	}
 	
 	public void generateSchedule() {
-		
+		if(!clickInProgress) {
+			
+		}
 	}
 	
 }
