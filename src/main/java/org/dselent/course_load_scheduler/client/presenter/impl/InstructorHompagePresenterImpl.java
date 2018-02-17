@@ -88,5 +88,5 @@ public class InstructorHompagePresenterImpl extends BasePresenterImpl implements
 	public void generateSchedule() {
 		
 	}
-
+	
 }
