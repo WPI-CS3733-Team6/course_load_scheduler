@@ -1,6 +1,15 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.dselent.course_load_scheduler.client.action.AddInstanceAction;
+import org.dselent.course_load_scheduler.client.action.InvalidInstanceAction;
+import org.dselent.course_load_scheduler.client.errorstring.InvalidInstanceStrings;
+import org.dselent.course_load_scheduler.client.event.AddInstanceEvent;
+import org.dselent.course_load_scheduler.client.event.InvalidInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
+import org.dselent.course_load_scheduler.client.exceptions.EmptyStringException;
 import org.dselent.course_load_scheduler.client.presenter.AddInstancePresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.AddInstanceView;
@@ -66,7 +75,54 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 
 	@Override
 	public void addInstance() {
-		// TODO Auto-generated method stub
+		
+		if(!addInstanceClickInProgress) {
+			
+			addInstanceClickInProgress = false;
+			view.getSaveButton().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			String number = view.getCourseNumberField().getText();
+			Integer instanceNum = view.getInstanceNumberField().getValue();
+			Integer term = view.getTermList().getSelectedIndex();
+			
+			boolean validNumber = true;
+			
+			List<String> invalidReasonList = new ArrayList<>();
+			
+			try {
+				validateCourseNum(number);
+			}
+			catch(EmptyStringException e) {
+				//add error
+				invalidReasonList.add(InvalidInstanceStrings.NULL_NUMBER);
+				validNumber = false;
+			}
+			
+			if(validNumber) {
+				AddInstanceAction aia = new AddInstanceAction(number, instanceNum, term);
+				AddInstanceEvent aie = new AddInstanceEvent(aia);
+				eventBus.fireEvent(aie);
+			} else {
+				InvalidInstanceAction iia = new InvalidInstanceAction(invalidReasonList);
+				InvalidInstanceEvent iie = new InvalidInstanceEvent(iia);
+				eventBus.fireEvent(iie);
+			}
+			
+		}
 		
 	}
+	
+	private void validateCourseNum(String number) throws EmptyStringException {
+		checkEmptyString(number);
+	}
+	
+	private void checkEmptyString(String string) throws EmptyStringException
+	{
+		if(string == null || string.equals(""))
+		{
+			throw new EmptyStringException();
+		}
+	}
+	
 }

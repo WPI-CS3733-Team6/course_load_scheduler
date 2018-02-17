@@ -29,6 +29,8 @@ public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> impl
 	}
 
 	@UiField HTMLPanel rootPanel;
+
+
 	@UiField TextBox courseNumberHeader;
 	@UiField TextBox instanceNumberHeader;
 	@UiField TextBox termHeader;
@@ -60,6 +62,9 @@ public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> impl
 	@UiHandler("saveButton")
 	void onSaveButtonClicked() {
 		presenter.addInstance();
+	}
+	public Button getSaveButton() {
+		return saveButton;
 	}
 	public TextBox getCourseNumberField() {
 		return courseNumberField;
