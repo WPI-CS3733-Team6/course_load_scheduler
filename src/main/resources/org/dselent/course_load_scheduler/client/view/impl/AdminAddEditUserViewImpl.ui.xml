@@ -18,7 +18,7 @@
 		}
 
 	</ui:style>
-	<g:HTMLPanel width="100%" height="100%">
+	<g:HTMLPanel width="100%" height="100%" ui:field="rootPanel">
 		<g:LayoutPanel width="100%" height="100%" addStyleNames="{style.panel-grey}">
 			<g:layer left="40.0pct" top="3.0pct" height="10.0pct" right="40.0pct">
 				<g:TextBox text="Create User" width="100%" height="100%"
@@ -27,25 +27,25 @@
 			<g:layer left="3.0pct" top="17.0pct" right="3.0pct" bottom="3.0pct">
 				<g:LayoutPanel width="100%" height="100%">
 					<g:layer left="8.3pct" top="9.2pct" right="55.0pct" bottom="76.7pct">
-						<g:TextBox text="First Name" />
+						<g:TextBox text="First Name" ui:field="firstNameField" />
 					</g:layer>
 					<g:layer left="55.0pct" top="9.2pct" right="8.3pct" bottom="76.7pct">
-						<g:TextBox text="Last Name" />
+						<g:TextBox text="Last Name" ui:field="lastNameField" />
 					</g:layer>
 					<g:layer left="8.3pct" top="30.0pct" right="8.3pct" bottom="55.0pct">
-						<g:TextBox text="WPI E-mail" />
+						<g:TextBox text="WPI E-mail" ui:field="emailField" />
 					</g:layer>
 					<g:layer left="8.3pct" top="53.0pct" right="60.0pct"
 						bottom="40.0pct">
-						<g:CheckBox text="Administrator" width="100%" height="100%" />
+						<g:CheckBox text="Administrator" width="100%" height="100%" ui:field="adminCheckBox" />
 					</g:layer>
 					<g:layer left="55.0pct" top="53.0pct" right="8.3pct"
 						bottom="33.0pct">
-						<g:TextBox text="Last Name" />
+						<g:DoubleBox ui:field="requirementField" text="Teaching Requirement" />
 					</g:layer>
 					<g:layer left="40.0pct" top="78.8pct" right="40.0pct"
 						bottom="8.8pct">
-						<g:Button addStyleNames="{style.button-green}">Submit</g:Button>
+						<g:Button addStyleNames="{style.button-green}" ui:field="submitButton">Submit</g:Button>
 					</g:layer>
 				</g:LayoutPanel>
 			</g:layer>
