@@ -12,10 +12,8 @@ import org.dselent.course_load_scheduler.client.event.InvalidReportEvent;
 import org.dselent.course_load_scheduler.client.event.SubmitReportEvent;
 import org.dselent.course_load_scheduler.client.exceptions.EmptyStringException;
 import org.dselent.course_load_scheduler.client.model.Model;
-import org.dselent.course_load_scheduler.client.presenter.BasePresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.presenter.ReportProblemPresenter;
-import org.dselent.course_load_scheduler.client.view.BaseView;
 import org.dselent.course_load_scheduler.client.view.ReportProblemView;
 
 import com.google.gwt.user.client.ui.HasWidgets;
