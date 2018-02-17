@@ -55,4 +55,47 @@ public class AdminHomepageViewImpl extends Composite {
 	public AdminHomepageViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
+
+	public Button getAccountInfoButton() {
+		return accountInfoButton;
+	}
+
+	public void setAccountInfoButton(Button accountInfoButton) {
+		this.accountInfoButton = accountInfoButton;
+	}
+
+	public Button getAddUser() {
+		return addUser;
+	}
+
+	public Button getEditUser() {
+		return editUser;
+	}
+
+	public Button getAddCourse() {
+		return addCourse;
+	}
+
+	public Button getModifyCourse() {
+		return modifyCourse;
+	}
+
+	public Button getGeneratedCompleteDepartmentSchedule() {
+		return generatedCompleteDepartmentSchedule;
+	}
+
+	public Button getCurrentClassesButton() {
+		return currentClassesButton;
+	}
+
+	public Button getSearchClassesButton() {
+		return searchClassesButton;
+	}
+
+	public Button getCourseRegistrationCart() {
+		return courseRegistrationCart;
+	}
+	
+	
+	//currentClassesButton, searchClassesButton, accountInfoButton, courseRegistrationCart, generatedCompleteDepartmentSchedule, addUser, editUser, addCourse, modifyCourse
 }
