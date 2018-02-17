@@ -12,15 +12,13 @@ import com.google.inject.Inject;
 public class AdminHomepagePresenterImpl extends BasePresenterImpl implements AdminHomepagePresenter{
 	private IndexPresenter parentPresenter;
 	private AdminHomepageView view;
-	private boolean loginClickInProgress;
-
+	
 	@Inject
 	public AdminHomepagePresenterImpl(IndexPresenter parentPresenter, AdminHomepageView view)
 	{
 		this.view = view;
 		this.parentPresenter = parentPresenter;
 		view.setPresenter(this);
-		loginClickInProgress = false;
 	}
 	
 	@Override
