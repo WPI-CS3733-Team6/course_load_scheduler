@@ -18,6 +18,12 @@ h1 {
 /** Most GWT widgets already have a style name defined */
 .gwt-DialogBox {
   width: 400px;
+	color: Black;
+	font-variant: normal;
+	font-weight: normal;
+	font-size: 12px;
+	font-style: normal;
+	font-stretch: normal;
 }
 
 .dialogVPanel {
@@ -37,4 +43,11 @@ color: #777777;
 background-color: dodgerblue;
 }
 .gwt-Button GKGQBVYAJ {
+}
+generalTextBox {
+  font-size: 2em;
+  color: #0;
+  margin: 40px 0px 70px;
+  text-align: center;
+  font-size: 12pt;
 }
