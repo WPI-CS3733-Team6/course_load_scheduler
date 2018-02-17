@@ -91,7 +91,7 @@
 						</g:LayoutPanel>
 					</g:east>
 					<g:center>
-						<g:LayoutPanel ui:field="descriptionPanel">
+						<g:LayoutPanel ui:field="descriptionPanel" styleName="{style.layoutPanel}">
 							<g:layer left="0%" width="100%" top="0%" height="15%">
 								<g:TextBox text="Course Description" alignment="CENTER" styleName="{style.tableHeader}" ui:field="courseDescHeader" readOnly="true"/>
 							</g:layer>
