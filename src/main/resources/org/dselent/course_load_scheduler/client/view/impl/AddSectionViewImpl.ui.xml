@@ -70,7 +70,7 @@
 							<g:Button text="Save Changes" styleName="{style.greenButton}" ui:field="saveButton"/>
 						</g:layer>
 						<g:layer left="5%" width="30%" top="20%" height="60%">
-							<g:Button text="Back to Instance" ui:field="backButton" styleName="{style.whiteButton}"/>
+							<g:Button text="Back" ui:field="backButton" styleName="{style.whiteButton}"/>
 						</g:layer>
 						<g:layer left="70%" width="25%" top="20%" height="60%">
 							<g:Button text="Delete Instance" styleName="{style.redButton}" ui:field="deleteButton"/>
