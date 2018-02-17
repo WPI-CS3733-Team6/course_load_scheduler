@@ -73,17 +73,18 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 			addCourseClickInProgress = false;
 			view.getSaveCourseButton().setEnabled(false);
 			
-			sendAddCourseAction(view.getCourseNumberField().getText(), 
-					view.getCourseNameField().getText(),
-					view.getInstanceNumberField().getText(), 
-					view.getCourseDescField().getText(), 
-					view.getStatusField().getText());
+			sendAddCourseAction(view.getCourseNameField().getValue(),
+					view.getCourseNumberField().getValue(),
+					view.getTypeField().getValue(),
+					view.getLevelList().getSelectedIndex(),
+					view.getDepartmentList().getSelectedIndex(),
+					view.getCourseDescField().getValue());
 		}
 		
 	}
 	
-	public void sendAddCourseAction(String number, String name, String level, String description, String status){
-		AddCourseAction aca = new AddCourseAction(number, name, level, description, status);
+	public void sendAddCourseAction(String name, String number, String type, Integer level, Integer department, String description){
+		AddCourseAction aca = new AddCourseAction(name, number, type, level, department, description);
 		AddCourseEvent ace = new AddCourseEvent(aca);
 		eventBus.fireEvent(ace);
 	}

@@ -4,16 +4,18 @@ public class AddCourseAction {
 	
 	private String number;
 	private String name;
-	private String level;
+	private String type;
 	private String description;
-	private String status;
+	private Integer level;
+	private Integer department;
 	
-	public AddCourseAction(String number, String name, String level, String description, String status) {
+	public AddCourseAction(String name, String number, String type, Integer level, Integer department, String description) {
 		this.number = number;
 		this.name = name;
-		this.level = level;
+		this.type = type;
 		this.description = description;
-		this.status = status;
+		this.level = level;
+		this.department = department;
 	}
 
 	public String getNumber() {
@@ -24,22 +26,26 @@ public class AddCourseAction {
 		return name;
 	}
 
-	public String getLevel() {
-		return level;
+	public String getType() {
+		return type;
 	}
 
 	public String getDescription() {
 		return description;
 	}
 
-	public String getStatus() {
-		return status;
+	public Integer getLevel() {
+		return level;
+	}
+
+	public Integer getDepartment() {
+		return department;
 	}
 
 	@Override
 	public String toString() {
-		return "AddCourseAction [number=" + number + ", name=" + name + ", level=" + level
-				+ ", description=" + description + ", status=" + status + "]";
+		return "AddCourseAction [number=" + number + ", name=" + name + ", type=" + type + ", description="
+				+ description + ", level=" + level + ", department=" + department + "]";
 	}
 	
 }

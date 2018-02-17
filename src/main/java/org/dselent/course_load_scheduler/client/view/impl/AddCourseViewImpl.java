@@ -1,39 +1,33 @@
 package org.dselent.course_load_scheduler.client.view.impl;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.user.client.ui.Composite;
+import org.dselent.course_load_scheduler.client.presenter.AddCoursePresenter;
+import org.dselent.course_load_scheduler.client.view.AddCourseView;
+import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.ListBox;
 
-public class AddCourseViewImpl extends Composite{
+public class AddCourseViewImpl extends BaseViewImpl<AddCoursePresenter> implements AddCourseView{
 
-	private static AddCourseImplUiBinder uiBinder = GWT.create(AddCourseImplUiBinder.class);
-	@UiField TextBox courseNumberHeader;
-	@UiField TextBox courseNameHeader;
-	@UiField TextBox instanceNumberHeader;
-	@UiField TextBox statusHeader;
 	@UiField TextBox courseNumberField;
 	@UiField TextBox courseNameField;
-	@UiField TextBox instanceNumberField;
-	@UiField TextBox statusField;
+	@UiField TextBox typeField;
+	@UiField ListBox levelList;
+	@UiField ListBox departmentList;
+	@UiField TextArea courseDescField;
+	
 	@UiField Button saveCourseButton;
 	@UiField Button deleteCourseButton;
+	
 	@UiField Button editInstanceButton;
 	@UiField Button createInstanceButton;
-	@UiField ListBox instanceList;	
-	@UiField TextArea courseDescField;
-	@UiField TextBox courseDescHeader;
-	@UiField LayoutPanel instancePanel;
-	@UiField LayoutPanel descriptionPanel;
-	@UiField LayoutPanel saveDeletePanel;
+	@UiField ListBox instanceList;
 	
-	
+	@UiField HTMLPanel rootPanel;
 
 	public TextBox getCourseNumberField() {
 		return courseNumberField;
@@ -43,27 +37,56 @@ public class AddCourseViewImpl extends Composite{
 		return courseNameField;
 	}
 
-	public TextBox getInstanceNumberField() {
-		return instanceNumberField;
+	public TextBox getTypeField() {
+		return typeField;
+	}
+
+	public ListBox getLevelList() {
+		return levelList;
+	}
+
+	public ListBox getDepartmentList() {
+		return departmentList;
 	}
 
 	public TextArea getCourseDescField() {
 		return courseDescField;
 	}
 
-	public TextBox getStatusField() {
-		return statusField;
-	}
 	public Button getSaveCourseButton() {
 		return saveCourseButton;
 	}
 
-
-
-	interface AddCourseImplUiBinder extends UiBinder<Widget, AddCourseViewImpl> {
+	public Button getDeleteCourseButton() {
+		return deleteCourseButton;
 	}
 
-	public AddCourseViewImpl() {
-		initWidget(uiBinder.createAndBindUi(this));
+	public Button getEditInstanceButton() {
+		return editInstanceButton;
 	}
+
+	public Button getCreateInstanceButton() {
+		return createInstanceButton;
+	}
+
+	public ListBox getInstanceList() {
+		return instanceList;
+	}
+
+	@Override
+	public void setPresenter(AddCoursePresenter presenter) {
+		this.presenter = presenter;
+	}
+
+	@Override
+	public Widget getWidgetContainer() {
+		return this;
+	}
+
+	@Override
+	public HasWidgets getViewRootPanel() {
+		return rootPanel;
+	}
+
+	
 }
