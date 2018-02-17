@@ -4,67 +4,67 @@
 	<ui:style>
 	
 	</ui:style>
-	<g:HTMLPanel>
-		<g:LayoutPanel width="100%" height="100%">
-			<g:layer left="27px" width="141px" top="14px" height="28px">
-				<g:Button>Return to Search</g:Button>
+	<g:HTMLPanel width="100%" height="100%" ui:field="rootPanel">
+		<g:LayoutPanel width="100%" height="100%" ui:field="LayoutPanel">
+			<g:layer left="5.0pct" width="15.0pct" top="5.0pct" height="5.0pct">
+				<g:Button ui:field="returnToSearchButton">Return to Search</g:Button>
 			</g:layer>
-			<g:layer left="17px" width="165px" top="179px" height="16px">
+			<g:layer left="2.0pct" width="13.0pct" top="27.0pct" height="3.0pct">
 				<g:Label text="Course Name" horizontalAlignment="ALIGN_CENTER"/>
 			</g:layer>
-			<g:layer left="17px" width="165px" top="201px" height="32px">
+			<g:layer left="2.0pct" width="13.0pct" top="30.0pct" height="5.0pct">
 				<g:TextBox text="Sample Name" ui:field="courseName" readOnly="true"/>
 			</g:layer>
-			<g:layer left="188px" width="141px" top="201px" height="32px">
+			<g:layer left="17.0pct" width="10.0pct" top="30.0pct" height="5.0pct">
 				<g:TextBox text="Yes/No" ui:field="registrationStatus" readOnly="true"/>
 			</g:layer>
-			<g:layer left="188px" width="141px" top="179px" height="16px">
+			<g:layer left="17.0pct" width="10.0pct" top="27.0pct" height="3.0pct">
 				<g:Label horizontalAlignment="ALIGN_CENTER" text="Registration Status"/>
 			</g:layer>
-			<g:layer left="335px" width="165px" top="201px" height="32px">
+			<g:layer left="29.0pct" width="10.0pct" top="30.0pct" height="5.0pct">
 				<g:TextBox text="1234567890" ui:field="courseNumber" readOnly="true"/>
 			</g:layer>
-			<g:layer left="335px" width="165px" top="179px" height="16px">
+			<g:layer left="29.0pct" width="10.0pct" top="27.0pct" height="3.0pct">
 				<g:Label horizontalAlignment="ALIGN_CENTER" text="Course Number"/>
 			</g:layer>
-			<g:layer left="506px" width="122px" top="201px" height="32px">
+			<g:layer left="40.0pct" width="9.0pct" top="30.0pct" height="5.0pct">
 				<g:TextBox text="Sample Days" ui:field="scheduleDays" readOnly="true"/>
 			</g:layer>
-			<g:layer left="506px" width="122px" top="179px" height="16px">
+			<g:layer left="40.0pct" width="9.0pct" top="27.0pct" height="3.0pct">
 				<g:Label horizontalAlignment="ALIGN_CENTER" text="Schedule (Days)"/>
 			</g:layer>
-			<g:layer left="634px" width="165px" top="201px" height="32px">
+			<g:layer left="50.0pct" width="14.0pct" top="30.0pct" height="5.0pct">
 				<g:TextBox text="Sample Level" ui:field="level" readOnly="true"/>
 			</g:layer>
-			<g:layer left="634px" width="165px" top="179px" height="16px">
+			<g:layer left="50.0pct" width="14.0pct" top="27.0pct" height="3.0pct">
 				<g:Label horizontalAlignment="ALIGN_CENTER" text="Level"/>
 			</g:layer>
-			<g:layer left="909px" width="165px" top="201px" height="32px">
+			<g:layer left="71.0pct" width="10.0pct" top="30.0pct" height="5.0pct">
 				<g:TextBox text="Sample ID" ui:field="sectionId" readOnly="true"/>
 			</g:layer>
-			<g:layer left="909px" width="165px" top="179px" height="16px">
+			<g:layer left="71.0pct" width="10.0pct" top="27.0pct" height="3.0pct">
 				<g:Label horizontalAlignment="ALIGN_CENTER" text="Section ID"/>
 			</g:layer>
-			<g:layer left="1080px" width="165px" top="201px" height="32px">
+			<g:layer left="83.0pct" width="15.0pct" top="30.0pct" height="5.0pct">
 				<g:TextBox text="Sample Type" ui:field="sectionType" readOnly="true"/>
 			</g:layer>
-			<g:layer left="1080px" width="165px" top="179px" height="16px">
+			<g:layer left="83.0pct" width="15.0pct" top="27.0pct" height="3.0pct">
 				<g:Label horizontalAlignment="ALIGN_CENTER" text="Section Type"/>
 			</g:layer>
-			<g:layer left="805px" width="98px" top="201px" height="32px">
+			<g:layer left="65.0pct" width="5.0pct" top="30.0pct" height="5.0pct">
 				<g:TextBox text="0123456789" readOnly="true" ui:field="expectedPop"/>
 			</g:layer>
-			<g:layer left="805px" width="98px" top="179px" height="16px">
+			<g:layer left="65.0pct" width="5.0pct" top="27.0pct" height="3.0pct">
 				<g:Label horizontalAlignment="ALIGN_CENTER" text="Expected Pop."/>
 			</g:layer>
-			<g:layer left="27px" width="1218px" top="261px" height="126px">
-				<g:TextBox text="Sample Description" ui:field="description" readOnly="true" textAlignment="ALIGN_LEFT" direction="LTR" alignment="LEFT" visibleLength="2000"/>
+			<g:layer left="2.0pct" width="96.0pct" top="40.0pct" height="30.0pct">
+				<g:TextBox text="Sample Description" ui:field="description" readOnly="true" textAlignment="ALIGN_LEFT" direction="LTR" alignment="LEFT" visibleLength="2000" width="100%" height="100%"/>
 			</g:layer>
-			<g:layer left="27px" width="1218px" top="239px" height="16px">
+			<g:layer left="2.0pct" width="96.0pct" top="36.5pct" height="3.0pct">
 				<g:Label horizontalAlignment="ALIGN_CENTER" text="Course Description"/>
 			</g:layer>
-			<g:layer left="554px" width="194px" top="539px" height="28px">
-				<g:Button ui:field="submitToCart">Submit to Registration Cart</g:Button>
+			<g:layer left="40.0pct" width="20.0pct" top="85.0pct" height="5.0pct">
+				<g:Button ui:field="submitToCartButton">Submit to Registration Cart</g:Button>
 			</g:layer>
 		</g:LayoutPanel>
 	</g:HTMLPanel>

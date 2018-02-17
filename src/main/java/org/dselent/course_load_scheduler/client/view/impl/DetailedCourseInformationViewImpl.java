@@ -7,6 +7,8 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.LayoutPanel;
+import com.google.gwt.user.client.ui.HTMLPanel;
 
 public class DetailedCourseInformationViewImpl extends Composite {
 
@@ -21,7 +23,10 @@ public class DetailedCourseInformationViewImpl extends Composite {
 	@UiField TextBox scheduleDays;
 	@UiField TextBox description;
 	@UiField TextBox expectedPop;
-	@UiField Button submitToCart;
+	@UiField Button submitToCartButton;
+	@UiField Button returnToSearchButton;
+	@UiField LayoutPanel LayoutPanel;
+	@UiField HTMLPanel rootPanel;
 
 	interface DetailedCourseInformationViewImplUiBinder extends UiBinder<Widget, DetailedCourseInformationViewImpl> {
 	}
