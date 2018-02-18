@@ -13,4 +13,5 @@ public interface AddInstanceView extends BaseView<AddInstancePresenter>{
 	public IntegerBox getInstanceNumberField();
 	public ListBox getTermList();
 	public Button getSaveButton();
+	public ListBox getSectionDropList();
 }

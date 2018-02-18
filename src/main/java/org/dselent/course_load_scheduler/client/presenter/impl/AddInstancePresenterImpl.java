@@ -4,9 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.dselent.course_load_scheduler.client.action.AddInstanceAction;
+import org.dselent.course_load_scheduler.client.action.CreateSectionAction;
+import org.dselent.course_load_scheduler.client.action.DeleteInstanceAction;
+import org.dselent.course_load_scheduler.client.action.GoToEditCourseAction;
+import org.dselent.course_load_scheduler.client.action.GoToEditSectionAction;
 import org.dselent.course_load_scheduler.client.action.InvalidInstanceAction;
 import org.dselent.course_load_scheduler.client.errorstring.InvalidInstanceStrings;
 import org.dselent.course_load_scheduler.client.event.AddInstanceEvent;
+import org.dselent.course_load_scheduler.client.event.CreateSectionEvent;
+import org.dselent.course_load_scheduler.client.event.DeleteInstanceEvent;
+import org.dselent.course_load_scheduler.client.event.GoToEditCourseEvent;
+import org.dselent.course_load_scheduler.client.event.GoToEditSectionEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.exceptions.EmptyStringException;
@@ -74,7 +82,7 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 	}
 
 	@Override
-	public void addInstance() {
+	public void saveInstance() {
 		
 		if(!addInstanceClickInProgress) {
 			
@@ -123,6 +131,47 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 		{
 			throw new EmptyStringException();
 		}
+	}
+
+	@Override
+	public void deleteInstance() {
+		String courseNum = view.getCourseNumberField().getValue();
+		Integer instanceNum = view.getInstanceNumberField().getValue();
+		
+		DeleteInstanceAction dia = new DeleteInstanceAction(courseNum, instanceNum);
+		DeleteInstanceEvent die = new DeleteInstanceEvent(dia);
+		eventBus.fireEvent(die);
+	}
+
+	@Override
+	public void createSection() {
+		String courseNum = view.getCourseNumberField().getValue();
+		Integer instanceNum = view.getInstanceNumberField().getValue();
+		
+		CreateSectionAction dia = new CreateSectionAction(courseNum, instanceNum);
+		CreateSectionEvent die = new CreateSectionEvent(dia);
+		eventBus.fireEvent(die);
+	}
+
+	@Override
+	public void goToEditSection() {
+		String courseNum = view.getCourseNumberField().getValue();
+		Integer instanceNum = view.getInstanceNumberField().getValue();
+		Integer sectionNum = view.getSectionDropList().getSelectedIndex();
+		
+		GoToEditSectionAction dia = new GoToEditSectionAction(courseNum, instanceNum, sectionNum);
+		GoToEditSectionEvent die = new GoToEditSectionEvent(dia);
+		eventBus.fireEvent(die);
+	}
+
+	@Override
+	public void goToEditCourse() {
+		String courseNum = view.getCourseNumberField().getValue();
+		
+		GoToEditCourseAction dia = new GoToEditCourseAction(courseNum);
+		GoToEditCourseEvent die = new GoToEditCourseEvent(dia);
+		eventBus.fireEvent(die);
+		
 	}
 	
 }

@@ -37,6 +37,7 @@ public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> impl
 	@UiField TextBox courseNumberField;
 	@UiField IntegerBox instanceNumberField;
 	@UiField ListBox termList;
+
 	@UiField FlexTable sectionInfoList;
 	@UiField ListBox sectionDropList;
 	@UiField Button backButton;
@@ -61,7 +62,7 @@ public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> impl
 	
 	@UiHandler("saveButton")
 	void onSaveButtonClicked() {
-		presenter.addInstance();
+		presenter.saveInstance();
 	}
 	public Button getSaveButton() {
 		return saveButton;
@@ -74,5 +75,9 @@ public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> impl
 	}
 	public ListBox getTermList() {
 		return termList;
+	}
+	
+	public ListBox getSectionDropList() {
+		return sectionDropList;
 	}
 }
