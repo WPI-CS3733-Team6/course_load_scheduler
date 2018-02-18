@@ -2,6 +2,7 @@ package org.dselent.course_load_scheduler.client.view;
 
 import org.dselent.course_load_scheduler.client.presenter.AdminAddEditUserPresenter;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.IntegerBox;
 import com.google.gwt.user.client.ui.TextBox;
 
@@ -15,4 +16,5 @@ public interface AdminAddEditUserView extends BaseView<AdminAddEditUserPresenter
 	
 	//Button
 	public Button getSubmitButton();
+	public CheckBox getAdministrator();
 }

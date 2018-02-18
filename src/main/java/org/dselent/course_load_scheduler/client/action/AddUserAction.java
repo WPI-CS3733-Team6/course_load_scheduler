@@ -8,7 +8,7 @@ public class AddUserAction {
 	private Integer requirments;
 	private Boolean administrator;
 	
-	private AddUserAction(String firstName, String lastName, String email, Integer requirments, Boolean administrator)
+	public AddUserAction(String firstName, String lastName, String email, Integer requirments, Boolean administrator)
 	{
 		this.firstName = firstName;
 		this.lastName = lastName;

@@ -1,5 +1,7 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
+import org.dselent.course_load_scheduler.client.action.AddUserAction;
+import org.dselent.course_load_scheduler.client.event.AddUserEvent;
 import org.dselent.course_load_scheduler.client.presenter.AdminAddEditUserPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.AdminAddEditUserView;
@@ -67,8 +69,24 @@ public class AdminAddEditUserPresenterImpl extends BasePresenterImpl implements 
 
 	@Override
 	public void addUser() {
-		// TODO Auto-generated method stub
 		
+		if(!addCourseClickInProgress) {
+			addCourseClickInProgress = false;
+			view.getSubmitButton().setEnabled(false);
+			
+			sendAddUserAction(view.getFirstNameField().getValue(),
+					view.getLastNameField().getValue(),
+					view.getEmailField().getValue(),
+					view.getTeachingRequirments().getValue(),
+					view.getAdministrator().getValue());
+		}
+	}
+	
+	public void sendAddUserAction(String firstName, String lastName, String email, Integer requirments, Boolean administrator)
+	{
+		AddUserAction aua = new AddUserAction(firstName, lastName, email, requirments, administrator);
+		AddUserEvent aue = new AddUserEvent(aua);
+		eventBus.fireEvent(aue);
 	}
 
 	@Override
