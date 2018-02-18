@@ -4,6 +4,10 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
 
+import org.dselent.course_load_scheduler.client.action.GoToAcctInfoAction;
+import org.dselent.course_load_scheduler.client.action.GoToCartAction;
+import org.dselent.course_load_scheduler.client.event.GoToAcctInfoEvent;
+import org.dselent.course_load_scheduler.client.event.GoToCartEvent;
 import org.dselent.course_load_scheduler.client.presenter.BasePresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.presenter.InstructorHomepagePresenter;
@@ -96,7 +100,9 @@ public class InstructorHompagePresenterImpl extends BasePresenterImpl implements
 			view.getAccountInfoButton().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
-			
+			GoToAcctInfoAction gaa = new GoToAcctInfoAction();
+			GoToAcctInfoEvent gae = new GoToAcctInfoEvent(gaa);
+			eventBus.fireEvent(gae);
 			
 		}
 	}
@@ -108,7 +114,9 @@ public class InstructorHompagePresenterImpl extends BasePresenterImpl implements
 			view.getCourseCartButton().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
-			
+			GoToCartAction gca = new GoToCartAction();
+			GoToCartEvent gce = new GoToCartEvent(gca);
+			eventBus.fireEvent(gce);
 			
 		}
 	}

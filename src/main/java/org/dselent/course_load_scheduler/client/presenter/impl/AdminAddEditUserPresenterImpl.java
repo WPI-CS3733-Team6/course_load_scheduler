@@ -77,12 +77,12 @@ public class AdminAddEditUserPresenterImpl extends BasePresenterImpl implements 
 			sendAddUserAction(view.getFirstNameField().getValue(),
 					view.getLastNameField().getValue(),
 					view.getEmailField().getValue(),
-					view.getTeachingRequirments().getValue(),
-					view.getAdministrator().getValue());
+					view.getRequirementField().getValue(),
+					view.getAdminCheckBox().getValue());
 		}
 	}
 	
-	public void sendAddUserAction(String firstName, String lastName, String email, Integer requirments, Boolean administrator)
+	public void sendAddUserAction(String firstName, String lastName, String email, Double requirments, Boolean administrator)
 	{
 		AddUserAction aua = new AddUserAction(firstName, lastName, email, requirments, administrator);
 		AddUserEvent aue = new AddUserEvent(aua);

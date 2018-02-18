@@ -5,10 +5,10 @@ public class AddUserAction {
 	private String firstName;
 	private String lastName;
 	private String email;
-	private Integer requirments;
+	private Double requirments;
 	private Boolean administrator;
 	
-	public AddUserAction(String firstName, String lastName, String email, Integer requirments, Boolean administrator)
+	public AddUserAction(String firstName, String lastName, String email, Double requirments, Boolean administrator)
 	{
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -29,7 +29,7 @@ public class AddUserAction {
 		return email;
 	}
 
-	public Integer getRequirments() {
+	public Double getRequirments() {
 		return requirments;
 	}
 
