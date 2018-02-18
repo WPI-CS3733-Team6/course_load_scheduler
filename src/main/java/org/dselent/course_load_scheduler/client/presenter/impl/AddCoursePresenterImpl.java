@@ -5,11 +5,13 @@ import org.dselent.course_load_scheduler.client.action.CreateInstanceAction;
 import org.dselent.course_load_scheduler.client.action.DeleteCourseAction;
 import org.dselent.course_load_scheduler.client.action.EditCourseAction;
 import org.dselent.course_load_scheduler.client.action.GoToEditInstanceAction;
+import org.dselent.course_load_scheduler.client.action.InvalidCourseIdAction;
 import org.dselent.course_load_scheduler.client.event.AddCourseEvent;
 import org.dselent.course_load_scheduler.client.event.CreateInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteCourseEvent;
 import org.dselent.course_load_scheduler.client.event.EditCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditInstanceEvent;
+import org.dselent.course_load_scheduler.client.event.InvalidCourseIdEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.AddCoursePresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
@@ -103,11 +105,15 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 		Integer courseId = view.getCourseIdField().getValue();
 		
 		if (courseId == 0) {
-			//Just Leave
+			InvalidCourseIdAction ica = new InvalidCourseIdAction();
+			InvalidCourseIdEvent ice = new InvalidCourseIdEvent(ica);
+			eventBus.fireEvent(ice);
+		} else {
+			DeleteCourseAction dca = new DeleteCourseAction(courseId);
+			DeleteCourseEvent dce = new DeleteCourseEvent(dca);
+			eventBus.fireEvent(dce);
 		}
-		DeleteCourseAction dca = new DeleteCourseAction(courseId);
-		DeleteCourseEvent dce = new DeleteCourseEvent(dca);
-		eventBus.fireEvent(dce);
+
 	}
 	
 	public void createInstance() {
