@@ -75,25 +75,79 @@ public class CourseLoadScheduler implements EntryPoint
 		/* LOGIN
 		LoginPresenterImpl loginPresenter = injector.getLoginPresenter();
 		loginPresenter.init();
-		loginPresenter.go(indexView.getCenterPanel());
+		LoginPresenter.go(indexView.getCenterPanel());
 		*/
 		
 		/* ADD COURSE
-		AddCoursePresenterImpl AddCoursePresenter = injector.getAddCoursePresenter(); 
-		AddCoursePresenter.init();
-		AddCoursePresenter.go(indexView.getCenterPanel());
+		AddCoursePresenterImpl addCoursePresenter = injector.getAddCoursePresenter(); 
+		addCoursePresenter.init();
+		addCoursePresenter.go(indexView.getCenterPanel());
 		*/
 		
 		/* ADD INSTANCE
-		AddInstancePresenterImpl AddInstancePresenter = injector.getAddInstancePresenter(); 
-		AddInstancePresenter.init();
-		AddInstancePresenter.go(indexView.getCenterPanel());
+		AddInstancePresenterImpl addInstancePresenter = injector.getAddInstancePresenter(); 
+		addInstancePresenter.init();
+		addInstancePresenter.go(indexView.getCenterPanel());
 		*/
 		
 		/* ADD SECTION
-		AddSectionPresenterImpl AddSectionPresenter = injector.getAddSectionPresenter(); 
-		AddSectionPresenter.init();
-		AddSectionPresenter.go(indexView.getCenterPanel());
+		AddSectionPresenterImpl addSectionPresenter = injector.getAddSectionPresenter(); 
+		addSectionPresenter.init();
+		addSectionPresenter.go(indexView.getCenterPanel());
+		*/
+		
+		/* TEMPLATE
+		AdminAddEditUserPresenterImpl adminAddEditUserPresenter = injector.getAdminAddEditUserPresenter();
+		adminAddEditUserPresenter.init();
+		adminAddEditUserPresenter.go(indexView.getCenterPanel());
+		*/
+		
+		/* TEMPLATE
+		AdminHomepagePresenterImpl adminHomepagePresenter = injector.getAdminHomepagePresenter();
+		adminHomepagePresenter.init();
+		adminHomepagePresenter.go(indexView.getCenterPanel());
+		*/
+		
+		/* TEMPLATE
+		BasePresenterImpl basePresenter = injector.getBasePresenter();
+		basePresenter.init();
+		basePresenter.go(indexView.getCenterPanel());
+		*/
+		
+		/* TEMPLATE
+		CourseRegistrationCartPresenterImpl courseRegistrationCartPresenter = injector.getCourseRegistrationCartPresenter();
+		courseRegistrationCartPresenter.init();
+		courseRegistrationCartPresenter.go(indexView.getCenterPanel());
+		*/
+		
+		/* TEMPLATE
+		DetailedCourseInformationPresenterImpl detailedCourseInformationPresenter = injector.getDetailedCourseInformationPresenter();
+		detailedCourseInformationPresenter.init();
+		detailedCourseInformationPresenter.go(indexView.getCenterPanel());
+		*/
+		
+		/* TEMPLATE
+		FacultyCourseMapPresenterImpl facultyCourseMapPresenter = injector.getFacultyCourseMapPresenter();
+		facultyCourseMapPresenter.init();
+		facultyCourseMapPresenter.go(indexView.getCenterPanel());
+		*/
+		
+		/* TEMPLATE
+		IndexPresenterImpl indexPresenter = injector.getIndexPresenter();
+		indexPresenter.init();
+		indexPresenter.go(indexView.getCenterPanel());
+		*/
+		
+		/* TEMPLATE
+		InstructorHompagePresenterImpl instructorHompagePresenter = injector.getInstructorHompagePresenter();
+		instructorHompagePresenter.init();
+		instructorHompagePresenter.go(indexView.getCenterPanel());
+		*/
+		
+		/* TEMPLATE
+		ReportProblemPresenterImpl reportProblemPresenter = injector.getReportProblemPresenter();
+		reportProblemPresenter.init();
+		reportProblemPresenter.go(indexView.getCenterPanel());
 		*/
 		
 		/* TEMPLATE
@@ -101,5 +155,6 @@ public class CourseLoadScheduler implements EntryPoint
 		xxxxxPresenter.init();
 		xxxxxPresenter.go(indexView.getCenterPanel());
 		*/
+		
 	}
 }
