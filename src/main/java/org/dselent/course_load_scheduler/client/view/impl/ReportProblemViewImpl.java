@@ -23,7 +23,7 @@ import com.google.gwt.user.client.ui.TextArea;
 public class ReportProblemViewImpl extends BaseViewImpl<ReportProblemPresenter> implements ReportProblemView {
 
 	private static ReportProblemViewImplUiBinder uiBinder = GWT.create(ReportProblemViewImplUiBinder.class);
-	@UiField HTMLPanel basePanel;
+	@UiField HTMLPanel rootPanel;
 	@UiField Label titleLabel;
 	@UiField LayoutPanel layoutPanel;
 	@UiField ListBox typeList;
@@ -88,7 +88,7 @@ public class ReportProblemViewImpl extends BaseViewImpl<ReportProblemPresenter> 
 
 	@Override
 	public HasWidgets getViewRootPanel() {
-		return basePanel;
+		return rootPanel;
 	}
 	
 	@UiHandler("submitButton")

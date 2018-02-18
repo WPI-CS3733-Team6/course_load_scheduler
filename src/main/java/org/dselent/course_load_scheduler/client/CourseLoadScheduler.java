@@ -1,10 +1,17 @@
 package org.dselent.course_load_scheduler.client;
 
 import org.dselent.course_load_scheduler.client.gin.Injector;
+import org.dselent.course_load_scheduler.client.presenter.AccountInfoPresenter;
 import org.dselent.course_load_scheduler.client.presenter.impl.AccountInfoPresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.AddCoursePresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.AddInstancePresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.AddSectionPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.IndexPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.LoginPresenterImpl;
 import org.dselent.course_load_scheduler.client.view.AccountInfoView;
+import org.dselent.course_load_scheduler.client.view.AddCourseView;
+import org.dselent.course_load_scheduler.client.view.AddInstanceView;
+import org.dselent.course_load_scheduler.client.view.AddSectionView;
 import org.dselent.course_load_scheduler.client.view.IndexView;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
@@ -54,6 +61,28 @@ public class CourseLoadScheduler implements EntryPoint
 
 		// Get the injector, which injected objects can be retrieved from
 		final Injector injector = Injector.INSTANCE;
+		
+		// added by me and javier root.add(injector.getIndexPresenter().getView().getMainPanel());
+		
+		//Initialize all presenters
+		AccountInfoPresenterImpl AccountInfoPresenter = injector.getAccountInfoPresenter(); 
+		AccountInfoPresenter.init();
+		AccountInfoView AccountInfoView = AccountInfoPresenter.getView();	
+		
+		AddCoursePresenterImpl AddCoursePresenter = injector.getAddCoursePresenter(); 
+		AddCoursePresenter.init();
+		AddCourseView AddCourseView = AddCoursePresenter.getView();	
+		
+		AddInstancePresenterImpl AddInstancePresenter = injector.getAddInstancePresenter(); 
+		AddInstancePresenter.init();
+		AddInstanceView AddInstanceView = AddInstancePresenter.getView();	
+		
+		AddSectionPresenterImpl AddSectionPresenter = injector.getAddSectionPresenter(); 
+		AddSectionPresenter.init();
+		AddSectionView AddSectionView = AddSectionPresenter.getView();	
+		
+		
+		
 		
 		IndexPresenterImpl indexPresenter = injector.getIndexPresenter(); // on-demand injection
 		indexPresenter.init();

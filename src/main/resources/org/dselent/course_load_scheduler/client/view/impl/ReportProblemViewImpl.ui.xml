@@ -4,7 +4,7 @@
 	<ui:style>
 	
 	</ui:style>
-	<g:HTMLPanel ui:field="basePanel">
+	<g:HTMLPanel ui:field="rootPanel">
 		<g:LayoutPanel width="446px" height="332px" ui:field="layoutPanel">
 			<g:layer left="3.0pct" top="0.0pct" height="5.4pct" right="6.0pct">
 				<g:Label text="Report A Problem" ui:field="titleLabel"/>
