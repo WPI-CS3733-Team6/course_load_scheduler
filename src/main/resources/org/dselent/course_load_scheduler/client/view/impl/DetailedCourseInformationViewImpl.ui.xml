@@ -44,13 +44,13 @@
 				<g:TextBox ui:field="courseName"/>
 			</g:layer>
 			<g:layer left="35.0pct" width="55.0pct" top="22.0pct" height="5.0pct">
-				<g:TextBox ui:field="courseNumber"/>
+				<g:IntegerBox ui:field="courseNumber"/>
 			</g:layer>
 			<g:layer left="35.0pct" width="55.0pct" top="29.0pct" height="5.0pct">
 				<g:TextBox ui:field="level"/>
 			</g:layer>
 			<g:layer left="35.0pct" width="55.0pct" top="36.0pct" height="5.0pct">
-				<g:TextBox ui:field="expectedPopulation"/>
+				<g:IntegerBox ui:field="expectedPopulation"/>
 			</g:layer>
 			<g:layer left="35.0pct" width="55.0pct" top="43.0pct" height="5.0pct">
 				<g:TextBox ui:field="meetingDays"/>
