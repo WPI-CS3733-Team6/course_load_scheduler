@@ -24,8 +24,7 @@ public class AdminHomepageViewImpl extends Composite {
 	private static AdminHomepageViewImplUiBinder uiBinder = GWT.create(AdminHomepageViewImplUiBinder.class);
 	@UiField LayoutPanel layoutPanel;
 	@UiField HTMLPanel adminHomepageView;
-	@UiField LayoutPanel viewAsAdministrator;
-	@UiField LayoutPanel viewAsInstructor;
+	@UiField LayoutPanel viewAsAdmin;
 	@UiField ListBox department;
 	@UiField TextBox departmentName;
 	@UiField ListBox courses;
@@ -34,7 +33,7 @@ public class AdminHomepageViewImpl extends Composite {
 	@UiField Button addCourse;
 	@UiField Button modifyCourse;
 	@UiField TextBox courseText;
-	@UiField LayoutPanel layoutPanelInstructor;
+	@UiField LayoutPanel viewAsInstructor;
 	@UiField Button createRequest;
 	@UiField Button generatedCompleteDepartmentSchedule;
 	@UiField LayoutPanel courseSummariesPanel;
@@ -42,7 +41,6 @@ public class AdminHomepageViewImpl extends Composite {
 	@UiField HorizontalPanel north;
 	@UiField ListBox west;
 	@UiField ListBox center;
-	@UiField TextBox courseSummaries;
 	@UiField HorizontalPanel horizontalPanel;
 	@UiField Button currentClassesButton;
 	@UiField Button searchClassesButton;
