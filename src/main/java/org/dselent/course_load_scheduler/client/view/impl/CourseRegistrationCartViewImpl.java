@@ -10,15 +10,17 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.HTMLPanel;
 
 public class CourseRegistrationCartViewImpl extends BaseViewImpl<CourseRegistrationCartPresenter> implements CourseRegistrationCartView{
 
 
 	private static CourseRegistrationCartUiBinder uiBinder = GWT.create(CourseRegistrationCartUiBinder.class);
-
+	
 	@UiField Button submitForApproval;
 	@UiField Button removeCourse;
 	@UiField FlexTable flexTableFor;
+	@UiField HTMLPanel rootPanel;
 	
 	interface CourseRegistrationCartUiBinder extends UiBinder<Widget, CourseRegistrationCartViewImpl> {
 	}
@@ -71,8 +73,7 @@ public class CourseRegistrationCartViewImpl extends BaseViewImpl<CourseRegistrat
 
 	@Override
 	public HasWidgets getViewRootPanel() {
-		// TODO Auto-generated method stub
-		return null;
+		return rootPanel;
 	}
 
 
