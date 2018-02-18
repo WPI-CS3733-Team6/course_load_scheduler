@@ -19,6 +19,11 @@ public class DetailedCourseInformationViewImpl extends Composite {
 	@UiField Button returnToSearchButton;
 	@UiField LayoutPanel LayoutPanel;
 	@UiField HTMLPanel rootPanel;
+	@UiField TextBox courseName;
+	@UiField TextBox courseNumber;
+	@UiField TextBox level;
+	@UiField TextBox expectedPopulation;
+	@UiField TextBox meetingDays;
 
 	interface DetailedCourseInformationViewImplUiBinder extends UiBinder<Widget, DetailedCourseInformationViewImpl> {
 	}
