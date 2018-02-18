@@ -1,7 +1,9 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import org.dselent.course_load_scheduler.client.action.AddUserAction;
+import org.dselent.course_load_scheduler.client.action.EditUserAction;
 import org.dselent.course_load_scheduler.client.event.AddUserEvent;
+import org.dselent.course_load_scheduler.client.event.EditUserEvent;
 import org.dselent.course_load_scheduler.client.presenter.AdminAddEditUserPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.AdminAddEditUserView;
@@ -92,18 +94,24 @@ public class AdminAddEditUserPresenterImpl extends BasePresenterImpl implements 
 
 	@Override
 	public void editUser() {
-		// TODO Auto-generated method stub *****Don't know how to do it
 		
 		if(!editUserClickInProgress) {
 			editUserClickInProgress = false;
-			//view.getEditButton().setEnabled(false);
+			view.getSubmitButton().setEnabled(false);
 			
-			//sendEditUserAction(view.getFirstNameField().getValue(),
-//			view.getLastNameField().getValue(),
-//			view.getEmailField().getValue(),
-//			view.getRequirementField().getValue(),
-//			view.getAdminCheckBox().getValue());
+			sendEditUserAction(
+			view.getLastNameField().getValue(),
+			view.getEmailField().getValue(),
+			view.getRequirementField().getValue(),
+			view.getAdminCheckBox().getValue());
 		}
+	}
+	
+	public void sendEditUserAction(String lastName, String email, Double requirments, Boolean administrator)
+	{
+		EditUserAction eua = new EditUserAction(lastName, email, requirments, administrator);
+		EditUserEvent eue = new EditUserEvent(eua);
+		eventBus.fireEvent(eue);	
 	}
 
 }

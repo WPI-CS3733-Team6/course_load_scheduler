@@ -4,14 +4,14 @@ public class EditUserAction {
 
 	private String newLastName;
 	private String newEmail;
-	private Double newRequierments;
+	private Double newRequirements;
 	private Boolean newAdministrator;
 	
-	public EditUserAction(String newLastName, String newEmail, Double newRequierments, Boolean newAdministrator)
+	public EditUserAction(String newLastName, String newEmail, Double newRequirements, Boolean newAdministrator)
 	{
 		this.newLastName = newLastName;
 		this.newEmail = newEmail;
-		this.newRequierments = newRequierments;
+		this.newRequirements = newRequirements;
 		this.newAdministrator = newAdministrator;
 	}
 
@@ -23,8 +23,8 @@ public class EditUserAction {
 		return newEmail;
 	}
 
-	public Double getNewRequierments() {
-		return newRequierments;
+	public Double getNewRequirements() {
+		return newRequirements;
 	}
 
 	public Boolean getNewAdministrator() {
@@ -33,8 +33,8 @@ public class EditUserAction {
 
 	@Override
 	public String toString() {
-		return "EditUserAction [newLastName=" + newLastName + ", newEmail=" + newEmail + ", newRequierments="
-				+ newRequierments + ", newAdministrator=" + newAdministrator + "]";
+		return "EditUserAction [newLastName=" + newLastName + ", newEmail=" + newEmail + ", newRequirements="
+				+ newRequirements + ", newAdministrator=" + newAdministrator + "]";
 	}
 
 	

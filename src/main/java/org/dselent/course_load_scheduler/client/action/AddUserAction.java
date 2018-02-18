@@ -5,15 +5,15 @@ public class AddUserAction {
 	private String firstName;
 	private String lastName;
 	private String email;
-	private Double requierments;
+	private Double requirements;
 	private Boolean administrator;
 	
-	public AddUserAction(String firstName, String lastName, String email, Double requirments, Boolean administrator)
+	public AddUserAction(String firstName, String lastName, String email, Double requirements, Boolean administrator)
 	{
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.requierments = requirments;
+		this.requirements = requirements;
 		this.administrator = administrator;
 	}
 
@@ -29,8 +29,8 @@ public class AddUserAction {
 		return email;
 	}
 
-	public Double getRequirments() {
-		return requierments;
+	public Double getRequirements() {
+		return requirements;
 	}
 
 	public Boolean getAdministrator() {
@@ -40,6 +40,6 @@ public class AddUserAction {
 	@Override
 	public String toString() {
 		return "AddUserAction [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", requirments=" + requierments + ", administrator=" + administrator + "]";
+				+ ", requirements=" + requirements + ", administrator=" + administrator + "]";
 	}
 }
