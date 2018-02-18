@@ -1,5 +1,8 @@
 package org.dselent.course_load_scheduler.client.view.impl;
 
+import org.dselent.course_load_scheduler.client.presenter.SearchClassesPresenter;
+import org.dselent.course_load_scheduler.client.view.SearchClassesView;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Composite;
@@ -13,8 +16,9 @@ import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.HasWidgets;
 
-public class SearchClassesViewImpl extends Composite {
+public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> implements SearchClassesView {
 
 	private static SearchClassesViewImplUiBinder uiBinder = GWT.create(SearchClassesViewImplUiBinder.class);
 	@UiField ListBox semester;
@@ -33,4 +37,111 @@ public class SearchClassesViewImpl extends Composite {
 	public SearchClassesViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
+
+	@Override
+	public void setPresenter(SearchClassesPresenter presenter) {
+		this.presenter = presenter;
+	}
+
+	@Override
+	public Widget getWidgetContainer() {
+		return this;
+	}
+
+	@Override
+	public HasWidgets getViewRootPanel() {
+		// TODO Auto-generated method stub
+		return rootPanel;
+	}
+
+	public ListBox getSemester() {
+		return semester;
+	}
+
+	public void setSemester(ListBox semester) {
+		this.semester = semester;
+	}
+
+	public ListBox getSubject() {
+		return subject;
+	}
+
+	public void setSubject(ListBox subject) {
+		this.subject = subject;
+	}
+
+	public ListBox getLevel() {
+		return level;
+	}
+
+	public void setLevel(ListBox level) {
+		this.level = level;
+	}
+
+	public Grid getGridCourses() {
+		return gridCourses;
+	}
+
+	public void setGridCourses(Grid gridCourses) {
+		this.gridCourses = gridCourses;
+	}
+
+	public ScrollPanel getScrollPanel() {
+		return scrollPanel;
+	}
+
+	public void setScrollPanel(ScrollPanel scrollPanel) {
+		this.scrollPanel = scrollPanel;
+	}
+
+	public LayoutPanel getBottomPanel() {
+		return bottomPanel;
+	}
+
+	public void setBottomPanel(LayoutPanel bottomPanel) {
+		this.bottomPanel = bottomPanel;
+	}
+
+	public LayoutPanel getTopPanel() {
+		return topPanel;
+	}
+
+	public void setTopPanel(LayoutPanel topPanel) {
+		this.topPanel = topPanel;
+	}
+
+	public Button getSearchButton() {
+		return searchButton;
+	}
+
+	public HTMLPanel getRootPanel() {
+		return rootPanel;
+	}
+
+	@Override
+	public ListBox getSemesterField() {
+		// TODO Auto-generated method stub
+		return semester;
+	}
+
+	@Override
+	public ListBox getSubjectField() {
+		// TODO Auto-generated method stub
+		return subject;
+	}
+
+	@Override
+	public ListBox getLevelField() {
+		// TODO Auto-generated method stub
+		return level;
+	}
+
+	@Override
+	public LayoutPanel getLayoutPanel() {
+		// TODO Auto-generated method stub
+		return bottomPanel;
+	}
+	
+	
+	
 }
