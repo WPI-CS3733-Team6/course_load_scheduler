@@ -14,8 +14,8 @@ public class AdminAddEditUserPresenterImpl extends BasePresenterImpl implements 
 
 	private IndexPresenter parentPresenter;
 	private AdminAddEditUserView view;
-	//don't know what clickInProgress means, but it's here because it's in LoginPresenterImpl
-	private boolean addCourseClickInProgress;
+	private boolean addUserClickInProgress;
+	private boolean editUserClickInProgress;
 
 	@Inject
 	public AdminAddEditUserPresenterImpl(IndexPresenter parentPresenter, AdminAddEditUserView view)
@@ -23,7 +23,8 @@ public class AdminAddEditUserPresenterImpl extends BasePresenterImpl implements 
 		this.view = view;
 		this.parentPresenter = parentPresenter;
 		view.setPresenter(this);
-		addCourseClickInProgress = false;
+		addUserClickInProgress = false;
+		editUserClickInProgress = false;
 	}
 
 	@Override
@@ -70,8 +71,8 @@ public class AdminAddEditUserPresenterImpl extends BasePresenterImpl implements 
 	@Override
 	public void addUser() {
 		
-		if(!addCourseClickInProgress) {
-			addCourseClickInProgress = false;
+		if(!addUserClickInProgress) {
+			addUserClickInProgress = false;
 			view.getSubmitButton().setEnabled(false);
 			
 			sendAddUserAction(view.getFirstNameField().getValue(),
@@ -86,13 +87,23 @@ public class AdminAddEditUserPresenterImpl extends BasePresenterImpl implements 
 	{
 		AddUserAction aua = new AddUserAction(firstName, lastName, email, requirments, administrator);
 		AddUserEvent aue = new AddUserEvent(aua);
-		eventBus.fireEvent(aue);
+		eventBus.fireEvent(aue);	
 	}
 
 	@Override
 	public void editUser() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub *****Don't know how to do it
 		
+		if(!editUserClickInProgress) {
+			editUserClickInProgress = false;
+			//view.getEditButton().setEnabled(false);
+			
+			//sendEditUserAction(view.getFirstNameField().getValue(),
+//			view.getLastNameField().getValue(),
+//			view.getEmailField().getValue(),
+//			view.getRequirementField().getValue(),
+//			view.getAdminCheckBox().getValue());
+		}
 	}
 
 }
