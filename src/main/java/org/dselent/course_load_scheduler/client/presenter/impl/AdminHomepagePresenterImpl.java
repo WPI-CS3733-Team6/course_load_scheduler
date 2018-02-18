@@ -1,5 +1,9 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
+import org.dselent.course_load_scheduler.client.action.GoToClassSearchAction;
+import org.dselent.course_load_scheduler.client.action.GoToCurrentCoursesAction;
+import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
+import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.AdminHomepagePresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
@@ -12,6 +16,7 @@ import com.google.inject.Inject;
 public class AdminHomepagePresenterImpl extends BasePresenterImpl implements AdminHomepagePresenter{
 	private IndexPresenter parentPresenter;
 	private AdminHomepageView view;
+	private boolean clickInProgress;
 	
 	@Inject
 	public AdminHomepagePresenterImpl(IndexPresenter parentPresenter, AdminHomepageView view)
@@ -99,14 +104,32 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 
 	@Override
 	public void goToCurrentClasses() {
-		// TODO Auto-generated method stub
-		
+		if(!clickInProgress) {
+			
+			clickInProgress = true;
+			view.getCurrentClassesButton().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			GoToCurrentCoursesAction gcca = new GoToCurrentCoursesAction();
+			GoToCurrentCoursesEvent gcce = new GoToCurrentCoursesEvent(gcca);
+			eventBus.fireEvent(gcce);
+			
+		}
 	}
 
 	@Override
 	public void goToSearchClasses() {
-		// TODO Auto-generated method stub
-		
+		if(!clickInProgress) {
+			
+			clickInProgress = true;
+			view.getSearchClassesButton().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			GoToClassSearchAction gcsa = new GoToClassSearchAction();
+			GoToClassSearchEvent gcse = new GoToClassSearchEvent(gcsa);
+			eventBus.fireEvent(gcse);
+			
+		}
 	}
 
 	@Override
