@@ -27,7 +27,7 @@ public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> 
 
 	private static AdminHomepageViewImplUiBinder uiBinder = GWT.create(AdminHomepageViewImplUiBinder.class);
 	@UiField LayoutPanel layoutPanel;
-	@UiField HTMLPanel adminHomepageView;
+	@UiField HTMLPanel rootPanel;
 	@UiField LayoutPanel viewAsAdmin;
 	@UiField ListBox department;
 	@UiField TextBox departmentName;
@@ -110,7 +110,7 @@ public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> 
 
 	@Override
 	public HasWidgets getViewRootPanel() {
-		return adminHomepageView;
+		return rootPanel;
 	}
 	
 	
