@@ -68,11 +68,23 @@ public class InstructorHompagePresenterImpl extends BasePresenterImpl implements
 	public void currentClasses() {
 		if(!clickInProgress) {
 			
+			clickInProgress = true;
+			view.getCurrentClassButton().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			
+			
 		}
 	}
 	
 	public void classSearch() {
 		if(!clickInProgress) {
+			
+			clickInProgress = true;
+			view.getClassSearchButton().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			
 			
 		}
 	}
@@ -80,11 +92,23 @@ public class InstructorHompagePresenterImpl extends BasePresenterImpl implements
 	public void accountInfo() {
 		if(!clickInProgress) {
 			
+			clickInProgress = true;
+			view.getAccountInfoButton().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			
+			
 		}
 	}
 	
 	public void courseCart() {
 		if(!clickInProgress) {
+			
+			clickInProgress = true;
+			view.getCourseCartButton().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			
 			
 		}
 	}
@@ -92,11 +116,23 @@ public class InstructorHompagePresenterImpl extends BasePresenterImpl implements
 	public void createRequest() {
 		if(!clickInProgress) {
 			
+			clickInProgress = true;
+			view.getCreateRequestButton().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			
+			
 		}
 	}
 	
 	public void generateSchedule() {
 		if(!clickInProgress) {
+			
+			clickInProgress = true;
+			view.getGenerateScheduleButton().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			
 			
 		}
 	}
