@@ -4,8 +4,18 @@ import org.dselent.course_load_scheduler.client.presenter.impl.AccountInfoPresen
 import org.dselent.course_load_scheduler.client.presenter.impl.AddCoursePresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.AddInstancePresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.AddSectionPresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.AdminAddEditUserPresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.AdminHomepagePresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.BasePresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.CourseRegistrationCartPresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.DetailedCourseInformationPresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.FacultyCourseMapPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.IndexPresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.InstructorHompagePresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.LoginPresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.ReportProblemPresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.SearchClassesPresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.ViewCurrentCoursesPresenterImpl;
 import org.dselent.course_load_scheduler.client.view.impl.IndexViewImpl;
 import org.dselent.course_load_scheduler.client.view.impl.LoginViewImpl;
 
@@ -41,7 +51,16 @@ public interface Injector extends Ginjector
     public AddCoursePresenterImpl getAddCoursePresenter(); 
     public AddInstancePresenterImpl getAddInstancePresenter();
     public AddSectionPresenterImpl getAddSectionPresenter();
-    
+    public AdminAddEditUserPresenterImpl getAdminAddEditUserPresenter();
+    public AdminHomepagePresenterImpl getAdminHomepagePresenter();
+    public BasePresenterImpl getBasePresenter();
+    public CourseRegistrationCartPresenterImpl getCourseRegistrationCartPresenter();
+    public DetailedCourseInformationPresenterImpl getDetailedCourseInformationPresenter();
+    public FacultyCourseMapPresenterImpl getFacultyCourseMapPresenter();
+    public InstructorHompagePresenterImpl getInstructorHomepagePresenter();
+    public ReportProblemPresenterImpl getReportProblemPresenter();
+    public SearchClassesPresenterImpl getSearchClassesPresenter();
+    public ViewCurrentCoursesPresenterImpl getViewCurrentCoursesPresenter();
     
     //views
     public IndexViewImpl getIndexView();
@@ -50,4 +69,15 @@ public interface Injector extends Ginjector
     public AddCoursePresenterImpl getAddCourseInfoView();
     public AddInstancePresenterImpl getAddInstanceInfoView();
     public AddSectionPresenterImpl getAddSectionInfoView();
+    public AdminAddEditUserPresenterImpl getAdminAddEditUserInfoView();
+    public AdminHomepagePresenterImpl getAdminHomepageInfoView();
+    public BasePresenterImpl getBaseInfoView();
+    public CourseRegistrationCartPresenterImpl getCourseRegistrationCartView();
+    public DetailedCourseInformationPresenterImpl getDetailedCourseInformationView();
+    public FacultyCourseMapPresenterImpl getFacultyCourseMapView();
+    public InstructorHompagePresenterImpl getInstructorHomepageView();
+    public ReportProblemPresenterImpl getReportProblemView();
+    public SearchClassesPresenterImpl getSearchClassesView();
+    public ViewCurrentCoursesPresenterImpl getViewCurrentCoursesView();
+   
 }
