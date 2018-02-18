@@ -136,11 +136,11 @@ public class InstructorHompagePresenterImpl extends BasePresenterImpl implements
 			view.getCreateRequestButton().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
-			
+			//event and checking
 			
 		}
 	}
-	
+	/*
 	public void generateSchedule() {
 		if(!clickInProgress) {
 			
@@ -148,9 +148,9 @@ public class InstructorHompagePresenterImpl extends BasePresenterImpl implements
 			view.getGenerateScheduleButton().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
-			
+			//event and checking
 			
 		}
 	}
-	
+	*/
 }

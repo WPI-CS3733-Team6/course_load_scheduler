@@ -9,7 +9,7 @@ public interface AdminHomepagePresenter extends BasePresenter
 	void goToAcctInfo();
 	void goToEditUser();
 	void goToModifyCourse();
-	void goToGeneratedCompleteDepartmentSchedule();
+	//void goToGeneratedCompleteDepartmentSchedule();
 	void goToCurrentClasses();
 	void goToSearchClasses();
 	void goToCart();

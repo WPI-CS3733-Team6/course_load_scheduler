@@ -152,7 +152,7 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 			
 		}
 	}
-
+/*
 	@Override
 	public void goToGeneratedCompleteDepartmentSchedule() {
 		if(!clickInProgress) {
@@ -165,7 +165,7 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 			
 		}
 	}
-
+*/
 	@Override
 	public void goToCurrentClasses() {
 		if(!clickInProgress) {
