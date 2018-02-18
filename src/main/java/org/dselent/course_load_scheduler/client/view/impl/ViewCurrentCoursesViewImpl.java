@@ -1,5 +1,8 @@
 package org.dselent.course_load_scheduler.client.view.impl;
 
+import org.dselent.course_load_scheduler.client.presenter.ViewCurrentCoursesPresenter;
+import org.dselent.course_load_scheduler.client.view.ViewCurrentCoursesView;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Composite;
@@ -9,8 +12,10 @@ import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.FlexTable;
+import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.HTMLPanel;
 
-public class ViewCurrentCoursesViewImpl extends Composite {
+public class ViewCurrentCoursesViewImpl extends BaseViewImpl<ViewCurrentCoursesPresenter> implements ViewCurrentCoursesView {
 
 	private static ViewCurrentCoursesViewImplUiBinder uiBinder = GWT.create(ViewCurrentCoursesViewImplUiBinder.class);
 	@UiField LayoutPanel currentCourses;
@@ -19,6 +24,7 @@ public class ViewCurrentCoursesViewImpl extends Composite {
 	@UiField ScrollPanel panelForScrollingDetailedSchedule;
 	@UiField FlexTable tableDisplayCurrentCourses;
 	@UiField FlexTable tableDisplayDetailedSchedule;
+	@UiField HTMLPanel rootPanel;
 
 	interface ViewCurrentCoursesViewImplUiBinder extends UiBinder<Widget, ViewCurrentCoursesViewImpl> {
 	}
@@ -55,6 +61,77 @@ public class ViewCurrentCoursesViewImpl extends Composite {
 		
 	    RootPanel.get().add(tableDisplayCurrentCourses);
 	    RootPanel.get().add(tableDisplayDetailedSchedule);
+	}
+
+	@Override
+	public void setPresenter(ViewCurrentCoursesPresenter presenter) {
+		this.presenter = presenter;
+	}
+
+	@Override
+	public Widget getWidgetContainer() {
+		return this;
+	}
+
+	@Override
+	public HasWidgets getViewRootPanel() {
+		return rootPanel;
+	}
+
+	public LayoutPanel getCurrentCourses() {
+		return currentCourses;
+	}
+
+	public void setCurrentCourses(LayoutPanel currentCourses) {
+		this.currentCourses = currentCourses;
+	}
+
+	public LayoutPanel getDetailedSchedule() {
+		return detailedSchedule;
+	}
+
+	public void setDetailedSchedule(LayoutPanel detailedSchedule) {
+		this.detailedSchedule = detailedSchedule;
+	}
+
+	public ScrollPanel getPanelForScrollingCourseTable() {
+		return panelForScrollingCourseTable;
+	}
+
+	public void setPanelForScrollingCourseTable(ScrollPanel panelForScrollingCourseTable) {
+		this.panelForScrollingCourseTable = panelForScrollingCourseTable;
+	}
+
+	public ScrollPanel getPanelForScrollingDetailedSchedule() {
+		return panelForScrollingDetailedSchedule;
+	}
+
+	public void setPanelForScrollingDetailedSchedule(ScrollPanel panelForScrollingDetailedSchedule) {
+		this.panelForScrollingDetailedSchedule = panelForScrollingDetailedSchedule;
+	}
+
+	public FlexTable getTableDisplayCurrentCourses() {
+		return tableDisplayCurrentCourses;
+	}
+
+	public void setTableDisplayCurrentCourses(FlexTable tableDisplayCurrentCourses) {
+		this.tableDisplayCurrentCourses = tableDisplayCurrentCourses;
+	}
+
+	public FlexTable getTableDisplayDetailedSchedule() {
+		return tableDisplayDetailedSchedule;
+	}
+
+	public void setTableDisplayDetailedSchedule(FlexTable tableDisplayDetailedSchedule) {
+		this.tableDisplayDetailedSchedule = tableDisplayDetailedSchedule;
+	}
+
+	public HTMLPanel getRootPanel() {
+		return rootPanel;
+	}
+
+	public void setRootPanel(HTMLPanel rootPanel) {
+		this.rootPanel = rootPanel;
 	}
 
 }
