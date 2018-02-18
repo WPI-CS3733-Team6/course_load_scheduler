@@ -5,19 +5,26 @@ import org.dselent.course_load_scheduler.client.view.AddCourseView;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.ListBox;
 
-public class AddCourseViewImpl extends BaseViewImpl<AddCoursePresenter> implements AddCourseView{
+public class AddCourseViewImpl extends BaseViewImpl<AddCoursePresenter> implements AddCourseView {
+
+	private static AddCourseViewImplUiBinder uiBinder = GWT.create(AddCourseViewImplUiBinder.class);
+
+	interface AddCourseViewImplUiBinder extends UiBinder<Widget, AddCourseViewImpl> {
+	}
 
 	@UiField TextBox courseNumberField;
 	@UiField TextBox courseNameField;
 	@UiField TextBox typeField;
 	@UiField ListBox levelList;
-	@UiField ListBox departmentList;
+	@UiField TextBox departmentField;
 	@UiField TextArea courseDescField;
 	
 	@UiField Button saveCourseButton;
@@ -45,8 +52,8 @@ public class AddCourseViewImpl extends BaseViewImpl<AddCoursePresenter> implemen
 		return levelList;
 	}
 
-	public ListBox getDepartmentList() {
-		return departmentList;
+	public TextBox getDepartmentField() {
+		return departmentField;
 	}
 
 	public TextArea getCourseDescField() {

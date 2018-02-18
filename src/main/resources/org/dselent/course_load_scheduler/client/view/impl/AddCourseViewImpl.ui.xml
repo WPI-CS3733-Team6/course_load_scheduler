@@ -69,7 +69,7 @@
 						</g:ListBox>
 					</g:layer>
 					<g:layer left="75.0pct" width="23.0pct" top="74.0pct" height="23.0pct">
-						<g:ListBox height="100%" width="100%" ui:field="departmentList"/>
+						<g:TextBox height="100%" width="100%" ui:field="departmentField"/>
 					</g:layer>
 				</g:LayoutPanel>
 			</g:north>

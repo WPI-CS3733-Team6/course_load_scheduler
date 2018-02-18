@@ -17,7 +17,7 @@ public interface AddCourseView extends BaseView<AddCoursePresenter>{
 	
 	public ListBox getLevelList();
 	
-	public ListBox getDepartmentList();
+	public TextBox getDepartmentField();
 
 	public TextArea getCourseDescField();
 	

@@ -77,13 +77,13 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 					view.getCourseNumberField().getValue(),
 					view.getTypeField().getValue(),
 					view.getLevelList().getSelectedIndex(),
-					view.getDepartmentList().getSelectedIndex(),
+					view.getDepartmentField().getValue(),
 					view.getCourseDescField().getValue());
 		}
 		
 	}
 	
-	public void sendAddCourseAction(String name, String number, String type, Integer level, Integer department, String description){
+	public void sendAddCourseAction(String name, String number, String type, Integer level, String department, String description){
 		AddCourseAction aca = new AddCourseAction(name, number, type, level, department, description);
 		AddCourseEvent ace = new AddCourseEvent(aca);
 		eventBus.fireEvent(ace);
