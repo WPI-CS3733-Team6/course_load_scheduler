@@ -63,7 +63,7 @@
 
 
 
-	<g:HTMLPanel ui:field="adminHomepageView" width="450"
+	<g:HTMLPanel ui:field="rootPanel" width="450"
 		height="300">
 
 		<g:LayoutPanel width="100%" height="100%" ui:field="layoutPanel">
