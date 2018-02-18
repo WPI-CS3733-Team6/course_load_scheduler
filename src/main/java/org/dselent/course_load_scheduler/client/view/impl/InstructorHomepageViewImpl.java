@@ -244,10 +244,10 @@ public class InstructorHomepageViewImpl extends BaseViewImpl<InstructorHomepageP
 	void onCreateRequestButtonClicked(ClickEvent evt) {
 		presenter.createRequest();
 	}
-	
+	/*
 	@UiHandler("generateScheduleButton")
 	void onGenerateScheduleButtonClicked(ClickEvent evt) {
 		presenter.generateSchedule();
 	}
-	
+	*/
 }
