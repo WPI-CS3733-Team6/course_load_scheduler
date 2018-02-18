@@ -1,7 +1,11 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import org.dselent.course_load_scheduler.client.action.AddSectionAction;
+import org.dselent.course_load_scheduler.client.action.DeleteSectionAction;
+import org.dselent.course_load_scheduler.client.action.GoToEditInstanceAction;
 import org.dselent.course_load_scheduler.client.event.AddSectionEvent;
+import org.dselent.course_load_scheduler.client.event.DeleteSectionEvent;
+import org.dselent.course_load_scheduler.client.event.GoToEditInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.AddSectionPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
@@ -102,5 +106,24 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 		AddSectionAction asa = new AddSectionAction(expectedPop, lectureType, days, timeStart, timeEnd);
 		AddSectionEvent ase = new AddSectionEvent(asa);
 		eventBus.fireEvent(ase);
+	}
+	
+	public void deleteSection() {
+		String courseNum = view.getCourseNumberField().getValue();
+		Integer instanceNum = view.getInstanceNumberField().getValue();
+		Integer sectionNum = view.getSectionNumberField().getValue();
+		
+		DeleteSectionAction dsa = new DeleteSectionAction(courseNum, instanceNum, sectionNum);
+		DeleteSectionEvent dse = new DeleteSectionEvent(dsa);
+		eventBus.fireEvent(dse);
+	}
+	
+	public void goToInstanceEdit() {
+		//String courseNum = view.getCourseNumberField().getValue();
+		Integer instanceNum = view.getInstanceNumberField().getValue();
+		
+		GoToEditInstanceAction eia = new GoToEditInstanceAction(instanceNum);
+		GoToEditInstanceEvent eie = new GoToEditInstanceEvent(eia);
+		eventBus.fireEvent(eie);
 	}
 }

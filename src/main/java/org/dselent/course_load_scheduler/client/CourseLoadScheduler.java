@@ -62,45 +62,44 @@ public class CourseLoadScheduler implements EntryPoint
 		// Get the injector, which injected objects can be retrieved from
 		final Injector injector = Injector.INSTANCE;
 		
-		// added by me and javier root.add(injector.getIndexPresenter().getView().getMainPanel());
+		/*
+		 * Uncomment the panel you want to have displayed on the indexd panel
+		 */
 		
-		//Initialize all presenters
-		AccountInfoPresenterImpl AccountInfoPresenter = injector.getAccountInfoPresenter(); 
-		AccountInfoPresenter.init();
-		AccountInfoView AccountInfoView = AccountInfoPresenter.getView();	
-		
-		AddCoursePresenterImpl AddCoursePresenter = injector.getAddCoursePresenter(); 
-		AddCoursePresenter.init();
-		AddCourseView AddCourseView = AddCoursePresenter.getView();	
-		
-		AddInstancePresenterImpl AddInstancePresenter = injector.getAddInstancePresenter(); 
-		AddInstancePresenter.init();
-		AddInstanceView AddInstanceView = AddInstancePresenter.getView();	
-		
-		AddSectionPresenterImpl AddSectionPresenter = injector.getAddSectionPresenter(); 
-		AddSectionPresenter.init();
-		AddSectionView AddSectionView = AddSectionPresenter.getView();	
-		
-		
-		
-		
+		//Setup Index panel
 		IndexPresenterImpl indexPresenter = injector.getIndexPresenter(); // on-demand injection
 		indexPresenter.init();
-		IndexView indexView = indexPresenter.getView();		
+		IndexView indexView = indexPresenter.getView();	
+		indexPresenter.go(root);
 		
+		/* LOGIN
 		LoginPresenterImpl loginPresenter = injector.getLoginPresenter();
 		loginPresenter.init();
-		//LoginView loginView = loginPresenter.getView();	
+		loginPresenter.go(indexView.getCenterPanel());
+		*/
 		
-		//indexPresenter.go(RootPanel.get("indexContainer"));
-		indexPresenter.go(root);
-		loginPresenter.go(indexView.getViewRootPanel());
+		/* ADD COURSE
+		AddCoursePresenterImpl AddCoursePresenter = injector.getAddCoursePresenter(); 
+		AddCoursePresenter.init();
+		AddCoursePresenter.go(indexView.getCenterPanel());
+		*/
 		
-		AccountInfoPresenterImpl accountInfoPresenter = injector.getAccountInfoPresenter();
-		accountInfoPresenter.init();
-		AccountInfoView accountInfoView = accountInfoPresenter.getView();
+		/* ADD INSTANCE
+		AddInstancePresenterImpl AddInstancePresenter = injector.getAddInstancePresenter(); 
+		AddInstancePresenter.init();
+		AddInstancePresenter.go(indexView.getCenterPanel());
+		*/
 		
-		accountInfoPresenter.go(accountInfoView.getViewRootPanel());
+		/* ADD SECTION
+		AddSectionPresenterImpl AddSectionPresenter = injector.getAddSectionPresenter(); 
+		AddSectionPresenter.init();
+		AddSectionPresenter.go(indexView.getCenterPanel());
+		*/
 		
+		/* TEMPLATE
+		XXXXXPresenterImpl xxxxxPresenter = injector.getXXXXXPresenter();
+		xxxxxPresenter.init();
+		xxxxxPresenter.go(indexView.getCenterPanel());
+		*/
 	}
 }

@@ -83,4 +83,9 @@ public class IndexViewImpl extends BaseViewImpl<IndexPresenter> implements Index
 		return topPanel;
 	}
 
+	@Override
+	public HTMLPanel getCenterPanel() {
+		return middlePanel;
+	}
+
 }

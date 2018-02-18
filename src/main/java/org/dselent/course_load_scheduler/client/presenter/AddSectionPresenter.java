@@ -4,4 +4,6 @@ public interface AddSectionPresenter extends BasePresenter{
 	IndexPresenter getParentPresenter();
 	void setParentPresenter(IndexPresenter parentPresenter);
 	void addSection();
+	void deleteSection();
+	void goToInstanceEdit();
 }
