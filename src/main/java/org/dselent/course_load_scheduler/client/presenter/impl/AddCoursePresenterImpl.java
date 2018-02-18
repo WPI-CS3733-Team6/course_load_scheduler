@@ -5,12 +5,14 @@ import org.dselent.course_load_scheduler.client.action.CreateInstanceAction;
 import org.dselent.course_load_scheduler.client.action.DeleteCourseAction;
 import org.dselent.course_load_scheduler.client.action.EditCourseAction;
 import org.dselent.course_load_scheduler.client.action.GoToEditInstanceAction;
+import org.dselent.course_load_scheduler.client.action.InvalidCourseAction;
 import org.dselent.course_load_scheduler.client.action.InvalidCourseIdAction;
 import org.dselent.course_load_scheduler.client.event.AddCourseEvent;
 import org.dselent.course_load_scheduler.client.event.CreateInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteCourseEvent;
 import org.dselent.course_load_scheduler.client.event.EditCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditInstanceEvent;
+import org.dselent.course_load_scheduler.client.event.InvalidCourseEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidCourseIdEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.AddCoursePresenter;
@@ -84,8 +86,10 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 		String description = view.getCourseDescField().getValue();
 		Integer courseId = view.getCourseIdField().getValue();
 		
-		if (number == "" || name == "" || type == "") {
-			//Invalid Course
+		if (number == "" || name == "" || type == "" || number == null || name == null || type == null) {
+			InvalidCourseAction ica = new InvalidCourseAction();
+			InvalidCourseEvent ice = new InvalidCourseEvent(ica);
+			eventBus.fireEvent(ice);
 		}
 		
 		if (courseId == 0) {
@@ -105,9 +109,9 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 		Integer courseId = view.getCourseIdField().getValue();
 		
 		if (courseId == 0) {
-			InvalidCourseIdAction ica = new InvalidCourseIdAction();
-			InvalidCourseIdEvent ice = new InvalidCourseIdEvent(ica);
-			eventBus.fireEvent(ice);
+			InvalidCourseIdAction icia = new InvalidCourseIdAction();
+			InvalidCourseIdEvent icie = new InvalidCourseIdEvent(icia);
+			eventBus.fireEvent(icie);
 		} else {
 			DeleteCourseAction dca = new DeleteCourseAction(courseId);
 			DeleteCourseEvent dce = new DeleteCourseEvent(dca);
