@@ -4,6 +4,7 @@ import org.dselent.course_load_scheduler.client.presenter.AddCoursePresenter;
 import org.dselent.course_load_scheduler.client.view.AddCourseView;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.IntegerBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -35,6 +36,7 @@ public class AddCourseViewImpl extends BaseViewImpl<AddCoursePresenter> implemen
 	@UiField ListBox instanceList;
 	
 	@UiField HTMLPanel rootPanel;
+	@UiField IntegerBox courseIdField;
 
 	public TextBox getCourseNumberField() {
 		return courseNumberField;
@@ -78,6 +80,10 @@ public class AddCourseViewImpl extends BaseViewImpl<AddCoursePresenter> implemen
 
 	public ListBox getInstanceList() {
 		return instanceList;
+	}
+	
+	public IntegerBox getCourseIdField() {
+		return courseIdField;
 	}
 
 	@Override
