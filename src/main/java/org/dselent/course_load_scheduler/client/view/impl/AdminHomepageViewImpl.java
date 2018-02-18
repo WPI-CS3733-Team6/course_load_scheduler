@@ -1,5 +1,8 @@
 package org.dselent.course_load_scheduler.client.view.impl;
 
+import org.dselent.course_load_scheduler.client.presenter.AdminHomepagePresenter;
+import org.dselent.course_load_scheduler.client.view.AdminHomepageView;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Composite;
@@ -13,13 +16,14 @@ import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TabPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.DecoratedTabPanel;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.SplitLayoutPanel;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 
-public class AdminHomepageViewImpl extends Composite {
+public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> implements AdminHomepageView {
 
 	private static AdminHomepageViewImplUiBinder uiBinder = GWT.create(AdminHomepageViewImplUiBinder.class);
 	@UiField LayoutPanel layoutPanel;
@@ -92,6 +96,21 @@ public class AdminHomepageViewImpl extends Composite {
 
 	public Button getCourseRegistrationCart() {
 		return courseRegistrationCart;
+	}
+
+	@Override
+	public void setPresenter(AdminHomepagePresenter presenter) {
+		this.presenter = presenter;
+	}
+
+	@Override
+	public Widget getWidgetContainer() {
+		return this;
+	}
+
+	@Override
+	public HasWidgets getViewRootPanel() {
+		return adminHomepageView;
 	}
 	
 	
