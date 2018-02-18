@@ -3,8 +3,8 @@
 
 /** Example rules used by the template application (remove for your app) */
 h1 {
-  font-size: 2em;
-  font-weight: bold;
+  font-size: 4em;
+  font-weight: bolder;
   color: #0;
   margin: 40px 0px 70px;
   text-align: center;
@@ -50,4 +50,23 @@ generalTextBox {
   margin: 40px 0px 70px;
   text-align: center;
   font-size: 12pt;
+}
+.smallerTextBox{
+  background:#DCDCDC;
+	color: #0;
+	margin: 0px;
+	border: 1px;
+	font-weight: bold;
+	font-size: 8px;
+	text-align: center;
+}
+.lightblueTextBox {
+	color: #0;
+	font-variant: normal;
+	font-weight: bold;
+	font-size: 14pt;
+	font-style: normal;
+	font-stretch: normal;
+	text-decoration: none;
+	text-align: center;
 }

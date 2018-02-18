@@ -4,13 +4,19 @@
 	<ui:style>
 	
 	</ui:style>
-	<g:HTMLPanel ui:field="basePanel">
-		<g:LayoutPanel width="447px" height="297px" ui:field="layoutPanel">
-			<g:layer left="0.0pct" top="0.0pct" height="6.1pct" right="0.0pct">
-				<g:Label text="Faculty Course Map" horizontalAlignment="ALIGN_CENTER" ui:field="titleLabel"/>
+	<g:HTMLPanel ui:field="rootPanel">
+		<g:LayoutPanel width="100%" height="100%">
+			<g:layer>
+				<g:ScrollPanel width="100%" height="100%" alwaysShowScrollBars="true">
+			<g:LayoutPanel width="100%" height="280px" ui:field="layoutPanel">
+			<g:layer left="0.0pct" top="1.5pct" height="100.0pct" right="0.0pct">
+				<g:Label text="Faculty Course Map" horizontalAlignment="ALIGN_CENTER" ui:field="titleLabel" width="100%" height="10%" styleName="h1"/>
 			</g:layer>
 			<g:layer top="11.8pct" bottom="0.0pct" right="0.0pct" left="0.0pct">
 				<g:FlexTable ui:field="dataTable" width="100%" height="88.9%"/>
+			</g:layer>
+		</g:LayoutPanel>
+		</g:ScrollPanel>
 			</g:layer>
 		</g:LayoutPanel>
 	</g:HTMLPanel>

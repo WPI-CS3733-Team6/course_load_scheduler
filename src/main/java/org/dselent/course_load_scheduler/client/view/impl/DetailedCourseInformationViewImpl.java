@@ -14,15 +14,7 @@ public class DetailedCourseInformationViewImpl extends Composite {
 
 	private static DetailedCourseInformationViewImplUiBinder uiBinder = GWT
 			.create(DetailedCourseInformationViewImplUiBinder.class);
-	@UiField TextBox registrationStatus;
-	@UiField TextBox courseName;
-	@UiField TextBox courseNumber;
-	@UiField TextBox level;
-	@UiField TextBox sectionId;
-	@UiField TextBox sectionType;
-	@UiField TextBox scheduleDays;
 	@UiField TextBox description;
-	@UiField TextBox expectedPop;
 	@UiField Button submitToCartButton;
 	@UiField Button returnToSearchButton;
 	@UiField LayoutPanel LayoutPanel;

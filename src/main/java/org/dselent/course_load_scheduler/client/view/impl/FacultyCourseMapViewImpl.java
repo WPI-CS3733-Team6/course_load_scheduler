@@ -18,7 +18,7 @@ public class FacultyCourseMapViewImpl extends BaseViewImpl<FacultyCourseMapPrese
 	private static FacultyCourseMapViewImplUiBinder uiBinder = GWT.create(FacultyCourseMapViewImplUiBinder.class);
 	@UiField Label titleLabel;
 	@UiField FlexTable dataTable;
-	@UiField HTMLPanel basePanel;
+	@UiField HTMLPanel rootPanel;
 	@UiField LayoutPanel layoutPanel;
 
 	interface FacultyCourseMapViewImplUiBinder extends UiBinder<Widget, FacultyCourseMapViewImpl> {
@@ -61,7 +61,7 @@ public class FacultyCourseMapViewImpl extends BaseViewImpl<FacultyCourseMapPrese
 
 	@Override
 	public HasWidgets getViewRootPanel() {
-		return basePanel;
+		return rootPanel;
 	}
 
 }
