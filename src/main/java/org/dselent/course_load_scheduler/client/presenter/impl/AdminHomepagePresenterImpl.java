@@ -1,10 +1,12 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import org.dselent.course_load_scheduler.client.action.GoToAcctInfoAction;
+import org.dselent.course_load_scheduler.client.action.GoToAddCourseAction;
 import org.dselent.course_load_scheduler.client.action.GoToCartAction;
 import org.dselent.course_load_scheduler.client.action.GoToClassSearchAction;
 import org.dselent.course_load_scheduler.client.action.GoToCurrentCoursesAction;
 import org.dselent.course_load_scheduler.client.event.GoToAcctInfoEvent;
+import org.dselent.course_load_scheduler.client.event.GoToAddCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCartEvent;
 import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
@@ -72,14 +74,32 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 
 	@Override
 	public void goToAddCourse() {
-		// TODO Auto-generated method stub
-		
+		if(!clickInProgress) {
+			
+			clickInProgress = true;
+			view.getAddCourse().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			//event and checking
+			
+			GoToAddCourseAction gaca = new GoToAddCourseAction();
+			GoToAddCourseEvent gace = new GoToAddCourseEvent(gaca);
+			eventBus.fireEvent(gace);
+			
+		}
 	}
 
 	@Override
 	public void goToAddUser() {
-		// TODO Auto-generated method stub
-		
+		if(!clickInProgress) {
+			
+			clickInProgress = true;
+			view.getAddUser().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			//event and checking
+			
+		}
 	}
 
 	@Override
@@ -99,20 +119,41 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 
 	@Override
 	public void goToEditUser() {
-		// TODO Auto-generated method stub
-		
+		if(!clickInProgress) {
+			
+			clickInProgress = true;
+			view.getEditUser().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			//event and checking
+			
+		}
 	}
 
 	@Override
 	public void goToModifyCourse() {
-		// TODO Auto-generated method stub
-		
+		if(!clickInProgress) {
+			
+			clickInProgress = true;
+			view.getModifyCourse().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			//event and checking
+			
+		}
 	}
 
 	@Override
 	public void goToGeneratedCompleteDepartmentSchedule() {
-		// TODO Auto-generated method stub
-		
+		if(!clickInProgress) {
+			
+			clickInProgress = true;
+			view.getGeneratedCompleteDepartmentSchedule().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			//event and checking
+			
+		}
 	}
 
 	@Override
