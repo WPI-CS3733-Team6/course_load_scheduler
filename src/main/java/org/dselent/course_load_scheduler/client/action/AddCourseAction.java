@@ -7,9 +7,9 @@ public class AddCourseAction {
 	private String type;
 	private String description;
 	private Integer level;
-	private Integer department;
+	private String department;
 	
-	public AddCourseAction(String name, String number, String type, Integer level, Integer department, String description) {
+	public AddCourseAction(String name, String number, String type, Integer level, String department, String description) {
 		this.number = number;
 		this.name = name;
 		this.type = type;
@@ -38,7 +38,7 @@ public class AddCourseAction {
 		return level;
 	}
 
-	public Integer getDepartment() {
+	public String getDepartment() {
 		return department;
 	}
 
