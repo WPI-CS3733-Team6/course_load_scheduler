@@ -150,11 +150,16 @@ public class CourseLoadScheduler implements EntryPoint
 		reportProblemPresenter.go(indexView.getCenterPanel());
 		*/
 		
-		/* TEMPLATE
-		XXXXXPresenterImpl xxxxxPresenter = injector.getXXXXXPresenter();
-		xxxxxPresenter.init();
-		xxxxxPresenter.go(indexView.getCenterPanel());
+		/* VIEW CURRENT COURSES
+		ViewCurrentCoursesPresenterImpl viewCurrentCoursesPresenter = injector.getViewCurrentCoursesPresenter();
+		viewCurrentCoursesPresenter.init();
+		viewCurrentCoursesPresenter.go(indexView.getCenterPanel());
 		*/
 		
+		/* SEARCH CLASSES
+		SearchClassesPresenterPresenterImpl searchClassesPresenterPresenter = injector.getSearchClassesPresenterPresenter();
+		searchClassesPresenterPresenter.init();
+		searchClassesPresenterPresenter.go(indexView.getCenterPanel());
+		*/
 	}
 }
