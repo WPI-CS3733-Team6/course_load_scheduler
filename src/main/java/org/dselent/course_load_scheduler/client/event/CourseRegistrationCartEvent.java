@@ -6,7 +6,7 @@ import org.dselent.course_load_scheduler.client.event_handler.CourseRegistration
 import com.google.gwt.event.shared.GwtEvent;
 
 public class CourseRegistrationCartEvent  extends GwtEvent<CourseRegistrationCartEventHandler>{
-public static Type< CourseRegistrationCartEventHandler> TYPE = new Type< CourseRegistrationCartEventHandler>();
+	public static Type< CourseRegistrationCartEventHandler> TYPE = new Type<CourseRegistrationCartEventHandler>();
 	
 	private  CourseRegistrationCartAction action;
 	
@@ -24,7 +24,7 @@ public static Type< CourseRegistrationCartEventHandler> TYPE = new Type< CourseR
 	 * 
 	 */
 	@Override
-	public Type< CourseRegistrationCartEventHandler> getAssociatedType()
+	public Type<CourseRegistrationCartEventHandler> getAssociatedType()
 	{
 		return TYPE;
 	}

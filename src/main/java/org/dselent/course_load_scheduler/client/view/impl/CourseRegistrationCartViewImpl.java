@@ -4,9 +4,11 @@ import org.dselent.course_load_scheduler.client.presenter.CourseRegistrationCart
 import org.dselent.course_load_scheduler.client.view.CourseRegistrationCartView;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HasWidgets;
@@ -36,6 +38,7 @@ public class CourseRegistrationCartViewImpl extends BaseViewImpl<CourseRegistrat
 		flexTableFor.setText(1, 1, "Course Number");
 		flexTableFor.setText(1, 2, "Term");
 		flexTableFor.setText(1, 3, "Instance ID");
+		flexTableFor.setText(1, 4, "Check to select");
 	}
 
 	/**
@@ -75,6 +78,15 @@ public class CourseRegistrationCartViewImpl extends BaseViewImpl<CourseRegistrat
 	public HasWidgets getViewRootPanel() {
 		return rootPanel;
 	}
-
+	
+	@UiHandler("submitForApproval")
+	void onSubmitButtonClicked(ClickEvent evt) {
+		presenter.submitCart();
+	}
+	
+	@UiHandler("removeCourse")
+	void onRemoveCourseButtonClicked(ClickEvent evt) {
+		//presenter call
+	}
 
 }

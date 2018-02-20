@@ -81,4 +81,19 @@ public class CourseRegistrationCartPresenterImpl extends BasePresenterImpl imple
 		CourseRegistrationCartEvent crce = new CourseRegistrationCartEvent(crca);
 		eventBus.fireEvent(crce);
 	}
+	
+	public void removeCourse() {
+		if(!submitCartClickInProgress) {
+			submitCartClickInProgress = false;
+			
+			view.getRemoveCourse().setEnabled(false);
+			
+			//view.getFlexTableFor()
+			
+			//remove course.  should I take any arguments?
+			
+			
+		}
+	}
+	
 }
