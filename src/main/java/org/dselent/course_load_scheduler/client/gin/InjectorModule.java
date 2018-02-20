@@ -8,6 +8,7 @@ import org.dselent.course_load_scheduler.client.presenter.AdminAddEditUserPresen
 import org.dselent.course_load_scheduler.client.presenter.AdminHomepagePresenter;
 import org.dselent.course_load_scheduler.client.presenter.CourseRegistrationCartPresenter;
 import org.dselent.course_load_scheduler.client.presenter.DetailedCourseInformationPresenter;
+import org.dselent.course_load_scheduler.client.presenter.ExamplePresenter;
 import org.dselent.course_load_scheduler.client.presenter.FacultyCourseMapPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.presenter.InstructorHomepagePresenter;
@@ -23,6 +24,7 @@ import org.dselent.course_load_scheduler.client.presenter.impl.AdminAddEditUserP
 import org.dselent.course_load_scheduler.client.presenter.impl.AdminHomepagePresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.CourseRegistrationCartPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.DetailedCourseInformationPresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.ExamplePresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.FacultyCourseMapPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.IndexPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.InstructorHomepagePresenterImpl;
@@ -30,6 +32,8 @@ import org.dselent.course_load_scheduler.client.presenter.impl.LoginPresenterImp
 import org.dselent.course_load_scheduler.client.presenter.impl.ReportProblemPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.SearchClassesPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.ViewCurrentCoursesPresenterImpl;
+import org.dselent.course_load_scheduler.client.service.UserService;
+import org.dselent.course_load_scheduler.client.service.impl.UserServiceImpl;
 import org.dselent.course_load_scheduler.client.view.AccountInfoView;
 import org.dselent.course_load_scheduler.client.view.AddCourseView;
 import org.dselent.course_load_scheduler.client.view.AddInstanceView;
@@ -38,6 +42,7 @@ import org.dselent.course_load_scheduler.client.view.AdminAddEditUserView;
 import org.dselent.course_load_scheduler.client.view.AdminHomepageView;
 import org.dselent.course_load_scheduler.client.view.CourseRegistrationCartView;
 import org.dselent.course_load_scheduler.client.view.DetailedCourseInformationView;
+import org.dselent.course_load_scheduler.client.view.ExampleView;
 import org.dselent.course_load_scheduler.client.view.FacultyCourseMapView;
 import org.dselent.course_load_scheduler.client.view.IndexView;
 import org.dselent.course_load_scheduler.client.view.InstructorHomepageView;
@@ -53,6 +58,7 @@ import org.dselent.course_load_scheduler.client.view.impl.AdminAddEditUserViewIm
 import org.dselent.course_load_scheduler.client.view.impl.AdminHomepageViewImpl;
 import org.dselent.course_load_scheduler.client.view.impl.CourseRegistrationCartViewImpl;
 import org.dselent.course_load_scheduler.client.view.impl.DetailedCourseInformationViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.ExampleViewImpl;
 import org.dselent.course_load_scheduler.client.view.impl.FacultyCourseMapViewImpl;
 import org.dselent.course_load_scheduler.client.view.impl.IndexViewImpl;
 import org.dselent.course_load_scheduler.client.view.impl.InstructorHomepageViewImpl;
@@ -95,6 +101,7 @@ public class InjectorModule extends AbstractGinModule
 		bind(ReportProblemPresenter.class).to(ReportProblemPresenterImpl.class).in(Singleton.class);
 		bind(SearchClassesPresenter.class).to(SearchClassesPresenterImpl.class).in(Singleton.class);
 		bind(ViewCurrentCoursesPresenter.class).to(ViewCurrentCoursesPresenterImpl.class).in(Singleton.class);
+		bind(ExamplePresenter.class).to(ExamplePresenterImpl.class).in(Singleton.class);
 
 		// views
 		bind(IndexView.class).to(IndexViewImpl.class).in(Singleton.class);
@@ -112,6 +119,10 @@ public class InjectorModule extends AbstractGinModule
 		bind(ReportProblemView.class).to(ReportProblemViewImpl.class).in(Singleton.class);
 		bind(SearchClassesView.class).to(SearchClassesViewImpl.class).in(Singleton.class);
 		bind(ViewCurrentCoursesView.class).to(ViewCurrentCoursesViewImpl.class).in(Singleton.class);
+		bind(ExampleView.class).to(ExampleViewImpl.class).in(Singleton.class);
+		
+		// services
+		bind(UserService.class).to(UserServiceImpl.class).in(Singleton.class);
 
 	}
 
