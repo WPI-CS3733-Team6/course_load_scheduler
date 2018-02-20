@@ -17,7 +17,7 @@ public final class HTMLCleanser
 	}
 	
 	/**
-	 * Escapes HTML text from the given string
+	 * Escapes HTML text from the given string  
 	 * @param message The String to escape
 	 * @return An HTML escaped string
 	 */
