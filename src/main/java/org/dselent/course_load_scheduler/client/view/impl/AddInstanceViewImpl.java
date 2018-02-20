@@ -17,6 +17,7 @@ import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ChangeEvent;
 
 public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> implements AddInstanceView {
 
@@ -126,4 +127,7 @@ public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> impl
 	}
 	
 
+	@UiHandler("termList")
+	void onTermListChange(ChangeEvent event) {
+	}
 }
