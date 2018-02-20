@@ -11,8 +11,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 
-import com.google.gwt.dev.json.Pair;
-
 /**
  * <code>Util</code> contains a variety of constants and static utility methods.
  */
