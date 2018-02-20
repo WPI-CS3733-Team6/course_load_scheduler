@@ -25,7 +25,7 @@ import com.google.inject.Inject;
  * @author bobbyshome
  *
  */
-public class InstructorHompagePresenterImpl extends BasePresenterImpl implements InstructorHomepagePresenter {
+public class InstructorHomepagePresenterImpl extends BasePresenterImpl implements InstructorHomepagePresenter {
 	
 	private IndexPresenter parentPresenter;
 	private InstructorHomepageView view;
@@ -35,7 +35,7 @@ public class InstructorHompagePresenterImpl extends BasePresenterImpl implements
 	 * 
 	 */
 	@Inject
-	public InstructorHompagePresenterImpl(IndexPresenter parentPresenter, InstructorHomepageView view) {
+	public InstructorHomepagePresenterImpl(IndexPresenter parentPresenter, InstructorHomepageView view) {
 		this.view = view;
 		this.parentPresenter = parentPresenter;
 		view.setPresenter(this);

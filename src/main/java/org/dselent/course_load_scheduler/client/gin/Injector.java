@@ -11,7 +11,7 @@ import org.dselent.course_load_scheduler.client.presenter.impl.CourseRegistratio
 import org.dselent.course_load_scheduler.client.presenter.impl.DetailedCourseInformationPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.FacultyCourseMapPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.IndexPresenterImpl;
-import org.dselent.course_load_scheduler.client.presenter.impl.InstructorHompagePresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.InstructorHomepagePresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.LoginPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.ReportProblemPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.SearchClassesPresenterImpl;
@@ -57,7 +57,7 @@ public interface Injector extends Ginjector
     public CourseRegistrationCartPresenterImpl getCourseRegistrationCartPresenter();
     public DetailedCourseInformationPresenterImpl getDetailedCourseInformationPresenter();
     public FacultyCourseMapPresenterImpl getFacultyCourseMapPresenter();
-    public InstructorHompagePresenterImpl getInstructorHomepagePresenter();
+    public InstructorHomepagePresenterImpl getInstructorHomepagePresenter();
     public ReportProblemPresenterImpl getReportProblemPresenter();
     public SearchClassesPresenterImpl getSearchClassesPresenter();
     public ViewCurrentCoursesPresenterImpl getViewCurrentCoursesPresenter();
@@ -75,7 +75,7 @@ public interface Injector extends Ginjector
     public CourseRegistrationCartPresenterImpl getCourseRegistrationCartView();
     public DetailedCourseInformationPresenterImpl getDetailedCourseInformationView();
     public FacultyCourseMapPresenterImpl getFacultyCourseMapView();
-    public InstructorHompagePresenterImpl getInstructorHomepageView();
+    public InstructorHomepagePresenterImpl getInstructorHomepageView();
     public ReportProblemPresenterImpl getReportProblemView();
     public SearchClassesPresenterImpl getSearchClassesView();
     public ViewCurrentCoursesPresenterImpl getViewCurrentCoursesView();
