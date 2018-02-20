@@ -97,10 +97,10 @@
 								<g:ListBox visibleItemCount="8" styleName="dialogVPanel" ui:field="instanceList">
 								</g:ListBox>
 							</g:layer>
-							<g:layer width="33%" height="28.0pct" bottom="55.0pct" right="10.0pct">
+							<g:layer left="60%" width="33%" top="20%" height="25%">
 								<g:Button text="Create Instance" styleName="{style.greenButton}" ui:field="createInstanceButton"/>
 							</g:layer>
-							<g:layer width="33%" height="28.0pct" right="10.0pct" bottom="18.0pct">
+							<g:layer left="60%" width="33%" top="55%" height="25%">
 								<g:Button text="Edit Instance" styleName="{style.orangeButton}" ui:field="editInstanceButton"/>
 							</g:layer>
 							
