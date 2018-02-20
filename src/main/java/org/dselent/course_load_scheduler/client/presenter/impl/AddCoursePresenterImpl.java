@@ -47,8 +47,8 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 	{
 		HandlerRegistration registration;
 		
-		registration = eventBus.addHandler(InvalidLoginEvent.TYPE, this);
-		eventBusRegistration.put(InvalidLoginEvent.TYPE, registration);
+		registration = eventBus.addHandler(InvalidCourseEvent.TYPE, this);
+		eventBusRegistration.put(InvalidCourseEvent.TYPE, registration);
 	}
 		
 	@Override

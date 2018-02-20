@@ -17,11 +17,13 @@ import org.dselent.course_load_scheduler.client.presenter.impl.InstructorHomepag
 import org.dselent.course_load_scheduler.client.presenter.impl.LoginPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.ReportProblemPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.ViewCurrentCoursesPresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.ExamplePresenterImpl;
 import org.dselent.course_load_scheduler.client.view.AccountInfoView;
 import org.dselent.course_load_scheduler.client.view.AddCourseView;
 import org.dselent.course_load_scheduler.client.view.AddInstanceView;
 import org.dselent.course_load_scheduler.client.view.AddSectionView;
 import org.dselent.course_load_scheduler.client.view.IndexView;
+
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
 
