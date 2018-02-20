@@ -4,8 +4,10 @@ import org.dselent.course_load_scheduler.client.presenter.AddSectionPresenter;
 import org.dselent.course_load_scheduler.client.view.AddSectionView;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.HTMLPanel;
@@ -163,4 +165,127 @@ public class AddSectionViewImpl extends BaseViewImpl<AddSectionPresenter> implem
 	{
 		this.presenter = presenter;
 	}
+	
+	//Button
+	@UiHandler("saveButton")
+	void onSaveButtonClicked(ClickEvent evt)
+	{
+		presenter.addSection();
+	}
+	
+	@UiHandler("deleteButton")
+	void onDeleteButtonClicked(ClickEvent evt)
+	{
+		presenter.deleteSection();
+	}
+	
+	@UiHandler("backButton")
+	void onBackClicked(ClickEvent evt)
+	{
+		presenter.goToInstanceEdit();
+	}
+	
+	//Setters
+	
+	@Override
+	public void setCourseNumberHeaderTextBox(TextBox courseNumberHeader) {
+		this.courseNumberHeader = courseNumberHeader;
+	}
+	
+	@Override
+	public void setInstanceNumberHeaderTextBox(TextBox instanceNumberHeader) {
+		this.instanceNumberHeader = instanceNumberHeader;
+	}
+	
+	@Override
+	public void setSectionNumberHeaderTextBox(TextBox sectionNumberHeader) {
+		this.sectionNumberHeader = sectionNumberHeader;
+	}
+	
+	@Override
+	public void setCourseNumberFieldTextBox(TextBox courseNumberField) {
+		this.courseNumberField = courseNumberField;
+	}
+	
+	@Override
+	public void setExpectedPopHeaderTextBox(TextBox expectedPopHeader) {
+		this.expectedPopHeader = expectedPopHeader;
+		
+	}
+	@Override
+	public void setTypeHeaderTextBox(TextBox typeHeader) {
+		this.typeHeader = typeHeader; 
+		
+	}
+	@Override
+	public void setTypeFieldTextBox(TextBox typeField) {
+		this.typeField = typeField;
+		
+	}
+	@Override
+	public void setDaysHeaderTextBox(TextBox daysHeader) {
+		this.daysHeader = daysHeader;
+		
+	}
+	@Override
+	public void setInstanceNumberFieldIntegerBox(IntegerBox instanceNumberField) {
+		this.instanceNumberField = instanceNumberField;
+		
+	}
+	@Override
+	public void setSectionNumberFieldIntegerBox(IntegerBox sectionNumberField) {
+		this.sectionNumberField = sectionNumberField;
+		
+	}
+	@Override
+	public void setExpectedPopFieldIntegerBox(IntegerBox expectedPopField) {
+		this.expectedPopField = expectedPopField;
+		
+	}
+	@Override
+	public void setMondayCheckBox(CheckBox mondayCheck) {
+		this.mondayCheck = mondayCheck;
+		
+	}
+	@Override
+	public void setTuesdayCheckBox(CheckBox tuesdayCheck) {
+		this.tuesdayCheck = tuesdayCheck;
+		
+	}
+	@Override
+	public void setWednesdayCheckBox(CheckBox wednesdayCheck) {
+		this.wednesdayCheck = wednesdayCheck;
+		
+	}
+	@Override
+	public void setThursdayCheckBox(CheckBox thursdayCheck) {
+		this.thursdayCheck = thursdayCheck;
+		
+	}
+	@Override
+	public void setFridayCheckBox(CheckBox fridayCheck) {
+		this.fridayCheck = fridayCheck;
+		
+	}
+	@Override
+	public void setStartMinutesFieldIntegerBox(IntegerBox startMinutesField) {
+		this.startMinutesField = startMinutesField;
+		
+	}
+	@Override
+	public void setStartHoursFieldIntegerBox(IntegerBox startHoursField) {
+		this.startHoursField = startHoursField;
+		
+	}
+	@Override
+	public void setEndMinutesFieldIntegerBox(IntegerBox endMinutesField) {
+		this.endMinutesField = endMinutesField;
+		
+	}
+	@Override
+	public void setEndHoursFieldIntegerBox(IntegerBox endHoursField) {
+		this.endHoursField = endHoursField;
+		
+	}	
+	
 }
