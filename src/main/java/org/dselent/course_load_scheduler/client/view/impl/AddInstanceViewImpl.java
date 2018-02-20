@@ -77,6 +77,10 @@ public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> impl
 	@UiHandler("backButton")
 	void onBackButtonClick(ClickEvent event) {
 	}
+	@UiHandler("termList")
+	void onTermListChange(ChangeEvent event) {
+	}
+	
 	public static AddInstanceUiBinder getUiBinder() {
 		return uiBinder;
 	}
@@ -127,7 +131,5 @@ public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> impl
 	}
 	
 
-	@UiHandler("termList")
-	void onTermListChange(ChangeEvent event) {
-	}
+
 }
