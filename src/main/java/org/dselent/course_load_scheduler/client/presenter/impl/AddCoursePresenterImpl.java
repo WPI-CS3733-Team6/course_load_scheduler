@@ -14,7 +14,6 @@ import org.dselent.course_load_scheduler.client.event.EditCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidCourseEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidCourseIdEvent;
-import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.AddCoursePresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.AddCourseView;
@@ -77,7 +76,7 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 	}
 
 	@Override
-	public void saveCourse() {
+	public void saveChanges() {
 		String name = view.getCourseNameField().getValue();
 		String number = view.getCourseNumberField().getValue();
 		String type = view.getTypeField().getValue();

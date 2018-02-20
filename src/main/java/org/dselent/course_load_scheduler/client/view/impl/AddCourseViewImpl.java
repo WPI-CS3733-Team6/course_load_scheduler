@@ -38,6 +38,11 @@ public class AddCourseViewImpl extends BaseViewImpl<AddCoursePresenter> implemen
 	@UiField HTMLPanel rootPanel;
 	@UiField IntegerBox courseIdField;
 
+	public AddCourseViewImpl()
+	{
+		initWidget(uiBinder.createAndBindUi(this));
+	}
+	
 	public TextBox getCourseNumberField() {
 		return courseNumberField;
 	}
