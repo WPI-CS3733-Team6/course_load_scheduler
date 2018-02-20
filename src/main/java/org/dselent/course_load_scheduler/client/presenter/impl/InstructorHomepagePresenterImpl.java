@@ -4,11 +4,11 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
 
-import org.dselent.course_load_scheduler.client.action.GoToAcctInfoAction;
+import org.dselent.course_load_scheduler.client.action.GoToAccoutInfoAction;
 import org.dselent.course_load_scheduler.client.action.GoToCartAction;
 import org.dselent.course_load_scheduler.client.action.GoToClassSearchAction;
 import org.dselent.course_load_scheduler.client.action.GoToCurrentCoursesAction;
-import org.dselent.course_load_scheduler.client.event.GoToAcctInfoEvent;
+import org.dselent.course_load_scheduler.client.event.GoToAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCartEvent;
 import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
@@ -108,8 +108,8 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 			view.getAccountInfoButton().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
-			GoToAcctInfoAction gaa = new GoToAcctInfoAction();
-			GoToAcctInfoEvent gae = new GoToAcctInfoEvent(gaa);
+			GoToAccoutInfoAction gaa = new GoToAccoutInfoAction();
+			GoToAccountInfoEvent gae = new GoToAccountInfoEvent(gaa);
 			eventBus.fireEvent(gae);
 			
 		}
