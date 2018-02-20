@@ -18,6 +18,9 @@ import org.dselent.course_load_scheduler.client.presenter.impl.SearchClassesPres
 import org.dselent.course_load_scheduler.client.presenter.impl.ViewCurrentCoursesPresenterImpl;
 import org.dselent.course_load_scheduler.client.view.impl.IndexViewImpl;
 import org.dselent.course_load_scheduler.client.view.impl.LoginViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.ExampleViewImpl;
+import org.dselent.course_load_scheduler.client.service.impl.UserServiceImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.ExamplePresenterImpl;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.SimpleEventBus;
@@ -61,6 +64,7 @@ public interface Injector extends Ginjector
     public ReportProblemPresenterImpl getReportProblemPresenter();
     public SearchClassesPresenterImpl getSearchClassesPresenter();
     public ViewCurrentCoursesPresenterImpl getViewCurrentCoursesPresenter();
+    public ExamplePresenterImpl getExamplePresenter();
     
     //views
     public IndexViewImpl getIndexView();
@@ -79,5 +83,9 @@ public interface Injector extends Ginjector
     public ReportProblemPresenterImpl getReportProblemView();
     public SearchClassesPresenterImpl getSearchClassesView();
     public ViewCurrentCoursesPresenterImpl getViewCurrentCoursesView();
+    public ExampleViewImpl geExampleView();
+    
+    // services
+    public UserServiceImpl getUserService();
    
 }
