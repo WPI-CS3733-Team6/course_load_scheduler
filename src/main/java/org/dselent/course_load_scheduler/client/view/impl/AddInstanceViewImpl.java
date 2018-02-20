@@ -16,6 +16,7 @@ import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.event.dom.client.ClickEvent;
 
 public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> implements AddInstanceView {
 
@@ -59,10 +60,54 @@ public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> impl
 	public HasWidgets getViewRootPanel() {
 		return rootPanel;
 	}
-	
+	@UiHandler("deleteButton")
+	void onDeleteButtonClick(ClickEvent event) {
+	}
+	@UiHandler("editSectionButton")
+	void onEditSectionButtonClick(ClickEvent event) {
+	}
+	@UiHandler("createSectionButton")
+	void onCreateSectionButtonClick(ClickEvent event) {
+	}
 	@UiHandler("saveButton")
 	void onSaveButtonClicked() {
 		presenter.saveInstance();
+	}
+	@UiHandler("backButton")
+	void onBackButtonClick(ClickEvent event) {
+	}
+	public static AddInstanceUiBinder getUiBinder() {
+		return uiBinder;
+	}
+	public HTMLPanel getRootPanel() {
+		return rootPanel;
+	}
+	public TextBox getCourseNumberHeader() {
+		return courseNumberHeader;
+	}
+	public TextBox getInstanceNumberHeader() {
+		return instanceNumberHeader;
+	}
+	public TextBox getTermHeader() {
+		return termHeader;
+	}
+	public FlexTable getSectionInfoList() {
+		return sectionInfoList;
+	}
+	public Button getBackButton() {
+		return backButton;
+	}
+	public Button getDeleteButton() {
+		return deleteButton;
+	}
+	public LayoutPanel getSectionInfoPanel() {
+		return sectionInfoPanel;
+	}
+	public LayoutPanel getSaveDeletePanel() {
+		return saveDeletePanel;
+	}
+	public LayoutPanel getInstanceInfoPanel() {
+		return instanceInfoPanel;
 	}
 	public Button getSaveButton() {
 		return saveButton;
@@ -76,8 +121,9 @@ public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> impl
 	public ListBox getTermList() {
 		return termList;
 	}
-	
 	public ListBox getSectionDropList() {
 		return sectionDropList;
 	}
+	
+
 }
