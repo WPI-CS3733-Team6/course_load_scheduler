@@ -79,8 +79,9 @@ public class CourseRegistrationCartPresenterImpl extends BasePresenterImpl imple
 	
 	private void sendSubmitCart()
 	{
+		HasWidgets container = parentPresenter.getView().getViewRootPanel();
 		CourseRegistrationCartAction crca = new CourseRegistrationCartAction();
-		CourseRegistrationCartEvent crce = new CourseRegistrationCartEvent(crca);
+		CourseRegistrationCartEvent crce = new CourseRegistrationCartEvent(crca, container);
 		eventBus.fireEvent(crce);
 	}
 	
