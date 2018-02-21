@@ -12,4 +12,5 @@ public interface IndexView extends BaseView<IndexPresenter>
 	PopupPanel getGlassLoadingPanel();
 	Image getLoadingImage();
 	HTMLPanel getCenterPanel();
+	
 }

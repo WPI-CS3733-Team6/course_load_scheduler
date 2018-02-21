@@ -126,7 +126,7 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 			
 			if(validNumber) {
 				AddInstanceAction aia = new AddInstanceAction(number, instanceNum, term);
-				AddInstanceEvent aie = new AddInstanceEvent(aia, container);
+				AddInstanceEvent aie = new AddInstanceEvent(aia, parentPresenter.getView().getCenterPanel()); //TODO: Very help please confused
 				eventBus.fireEvent(aie);
 			} else {
 				InvalidInstanceAction iia = new InvalidInstanceAction(invalidReasonList);
