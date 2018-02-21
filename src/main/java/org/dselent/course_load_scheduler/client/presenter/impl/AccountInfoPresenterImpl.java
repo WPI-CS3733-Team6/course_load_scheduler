@@ -1,6 +1,10 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
+import java.util.ArrayList;
+
+import org.dselent.course_load_scheduler.client.action.InvalidAccountInfoAction;
 import org.dselent.course_load_scheduler.client.action.UpdateAccountAction;
+import org.dselent.course_load_scheduler.client.event.InvalidAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
 import org.dselent.course_load_scheduler.client.presenter.AccountInfoPresenter;
@@ -83,6 +87,8 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 			boolean repeatIsCorrect;
 			boolean validEmail;
 			
+			ArrayList<String> invalidReasonList = new ArrayList<>();
+			
 			//Check if fields either pass requirements or are empty
 			if (newPassword.compareTo("") == 0 && repeatPassword.compareTo("") == 0 ) {
 				isPasswordValid = true;
@@ -100,8 +106,19 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 				updateInfo(currentPassword, newPassword, preferedEmail, phoneNumber);
 			}
 			else {
-				//TODO throw expection
-				}
+					if(!isPasswordValid) {
+						invalidReasonList.add("Invalid password.");
+					}
+					if(!repeatIsCorrect) {
+						invalidReasonList.add("Passwords do not match.");
+					}
+					if(!validEmail) {
+						invalidReasonList.add("Invalid Email.");
+					}
+					InvalidAccountInfoAction iaa = new InvalidAccountInfoAction(invalidReasonList);
+					InvalidAccountInfoEvent iae = new InvalidAccountInfoEvent(iaa);
+					eventBus.fireEvent(iae);
+			}
 		}
 	}
 	
