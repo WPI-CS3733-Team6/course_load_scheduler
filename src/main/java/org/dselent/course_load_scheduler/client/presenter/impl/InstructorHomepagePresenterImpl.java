@@ -28,6 +28,7 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 	private IndexPresenter parentPresenter;
 	private InstructorHomepageView view;
 	private boolean clickInProgress;
+	private HasWidgets container = parentPresenter.getView().getViewRootPanel();
 
 	/**
 	 * 
@@ -79,7 +80,7 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 			parentPresenter.showLoadScreen();
 			
 			GoToCurrentCoursesAction gcca = new GoToCurrentCoursesAction();
-			GoToCurrentCoursesEvent gcce = new GoToCurrentCoursesEvent(gcca);
+			GoToCurrentCoursesEvent gcce = new GoToCurrentCoursesEvent(gcca, container);
 			eventBus.fireEvent(gcce);
 			
 		}
