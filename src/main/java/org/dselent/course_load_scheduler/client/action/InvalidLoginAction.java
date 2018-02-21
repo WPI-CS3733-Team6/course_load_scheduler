@@ -24,6 +24,13 @@ public class InvalidLoginAction
 		this.reasonList = reasonList;
 	}
 
+
+	public InvalidLoginAction(String reason)
+	{
+		reasonList = new ArrayList<>();
+		reasonList.add(reason);
+	}
+	
 	public boolean addReasons(List<String> reasonList)
 	{
 		return reasonList.addAll(reasonList);
