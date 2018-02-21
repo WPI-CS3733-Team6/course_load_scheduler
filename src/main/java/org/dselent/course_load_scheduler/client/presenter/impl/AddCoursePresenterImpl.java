@@ -1,5 +1,7 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
+import java.util.ArrayList;
+
 import org.dselent.course_load_scheduler.client.action.AddCourseAction;
 import org.dselent.course_load_scheduler.client.action.CreateInstanceAction;
 import org.dselent.course_load_scheduler.client.action.DeleteCourseAction;
@@ -7,6 +9,7 @@ import org.dselent.course_load_scheduler.client.action.EditCourseAction;
 import org.dselent.course_load_scheduler.client.action.GoToEditInstanceAction;
 import org.dselent.course_load_scheduler.client.action.InvalidCourseAction;
 import org.dselent.course_load_scheduler.client.action.InvalidCourseIdAction;
+import org.dselent.course_load_scheduler.client.errorstring.InvalidCourseStrings;
 import org.dselent.course_load_scheduler.client.event.AddCourseEvent;
 import org.dselent.course_load_scheduler.client.event.CreateInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteCourseEvent;
@@ -14,6 +17,7 @@ import org.dselent.course_load_scheduler.client.event.EditCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidCourseEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidCourseIdEvent;
+import org.dselent.course_load_scheduler.client.exceptions.EmptyStringException;
 import org.dselent.course_load_scheduler.client.presenter.AddCoursePresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.AddCourseView;
@@ -103,22 +107,52 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 		String description = view.getCourseDescField().getValue();
 		Integer courseId = view.getCourseIdField().getValue();
 		
-		if (number == "" || name == "" || type == "" || number == null || name == null || type == null) {
-			InvalidCourseAction ica = new InvalidCourseAction();
+		Boolean validNumber = true;
+		Boolean validName = true;
+		Boolean validType = true;
+		
+		ArrayList<String> reasonList = new ArrayList<String>();
+		
+		try {
+			validateNumber(number);
+		}
+		catch(EmptyStringException e) {
+			reasonList.add(InvalidCourseStrings.NULL_COURSE_NUMBER);
+			validNumber = false;
+		}
+		
+		try {
+			validateName(name);
+		}
+		catch(EmptyStringException e) {
+			reasonList.add(InvalidCourseStrings.NULL_COURSE_NAME);
+			validName = false;
+		}
+		
+		try {
+			validateType(type);
+		}
+		catch(EmptyStringException e) {
+			reasonList.add(InvalidCourseStrings.NULL_COURSE_TYPE);
+			validType = false;
+		}
+		
+		if (validNumber && validName && validType) {
+			EditCourseAction eca = new EditCourseAction(name, number, type, level, department, description, courseId);
+			EditCourseEvent ece = new EditCourseEvent(eca);
+			eventBus.fireEvent(ece);
+		}
+		
+		else {
+			InvalidCourseAction ica = new InvalidCourseAction(reasonList);
 			InvalidCourseEvent ice = new InvalidCourseEvent(ica);
 			eventBus.fireEvent(ice);
 		}
 		
-		if (courseId == 0) {
+		if (courseId == 0 && (validNumber && validName && validType)) {
 			AddCourseAction aca = new AddCourseAction(name, number, type, level, department, description);
 			AddCourseEvent ace = new AddCourseEvent(aca);
 			eventBus.fireEvent(ace);
-		}
-		
-		else {
-			EditCourseAction eca = new EditCourseAction(name, number, type, level, department, description, courseId);
-			EditCourseEvent ece = new EditCourseEvent(eca);
-			eventBus.fireEvent(ece);
 		}
 	}
 	
@@ -148,5 +182,25 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 		GoToEditInstanceAction eia = new GoToEditInstanceAction(instance);
 		GoToEditInstanceEvent eie = new GoToEditInstanceEvent(eia);
 		eventBus.fireEvent(eie);
+	}
+	
+	public void validateNumber(String courseNum) throws EmptyStringException {
+		checkEmptyString(courseNum);
+	}
+	
+	public void validateName(String courseName) throws EmptyStringException {
+		checkEmptyString(courseName);
+	}
+	
+	public void validateType(String type) throws EmptyStringException {
+		checkEmptyString(type);
+	}
+	
+	private void checkEmptyString(String string) throws EmptyStringException
+	{
+		if(string == null || string.equals(""))
+		{
+			throw new EmptyStringException();
+		}
 	}
 }
