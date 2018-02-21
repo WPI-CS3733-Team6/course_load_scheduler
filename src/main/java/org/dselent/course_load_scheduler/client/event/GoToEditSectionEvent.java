@@ -3,15 +3,15 @@ package org.dselent.course_load_scheduler.client.event;
 import org.dselent.course_load_scheduler.client.action.GoToEditSectionAction;
 import org.dselent.course_load_scheduler.client.event_handler.GoToEditSectionEventHandler;
 
-import com.google.gwt.event.shared.GwtEvent;
+import com.google.gwt.user.client.ui.HasWidgets;
 
-public class GoToEditSectionEvent extends GwtEvent<GoToEditSectionEventHandler>{
+public class GoToEditSectionEvent extends DisplayEvent<GoToEditSectionAction, GoToEditSectionEventHandler>{
 	public static Type<GoToEditSectionEventHandler> TYPE = new Type<GoToEditSectionEventHandler>();
 
 	private GoToEditSectionAction action;
 	
-	public GoToEditSectionEvent(GoToEditSectionAction action) {
-		this.action = action;
+	public GoToEditSectionEvent(GoToEditSectionAction action, HasWidgets container) {
+		super(action, container);
 	}
 	
 	public GoToEditSectionAction getAction() {
