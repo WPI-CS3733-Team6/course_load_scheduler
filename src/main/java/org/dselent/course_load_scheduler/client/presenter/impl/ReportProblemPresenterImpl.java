@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.dselent.course_load_scheduler.client.action.InvalidReportAction;
 import org.dselent.course_load_scheduler.client.action.SubmitReportAction;
 import org.dselent.course_load_scheduler.client.errorstring.InvalidReportStrings;
+import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidReportEvent;
 import org.dselent.course_load_scheduler.client.event.SubmitReportEvent;
 import org.dselent.course_load_scheduler.client.exceptions.EmptyStringException;
@@ -15,6 +16,7 @@ import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.presenter.ReportProblemPresenter;
 import org.dselent.course_load_scheduler.client.view.ReportProblemView;
 
+import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.HasWidgets;
 
 public class ReportProblemPresenterImpl extends BasePresenterImpl implements ReportProblemPresenter {
@@ -30,7 +32,20 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 		this.parentPresenter = parentPresenter;
 		submitClickInProgress = false;
 	}
-
+	
+	@Override
+	public void init() {
+		bind();
+	}
+	
+	@Override
+	public void bind() {
+		HandlerRegistration registration;
+		
+		registration = eventBus.addHandler(SubmitReportEvent.TYPE, this);
+		eventBusRegistration.put(SubmitReportEvent.TYPE, registration);
+	}
+	
 	@Override
 	public void go(HasWidgets container) {
 		container.clear();
