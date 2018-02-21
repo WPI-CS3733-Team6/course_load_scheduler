@@ -2,13 +2,11 @@ package org.dselent.course_load_scheduler.client.action;
 
 public class UpdateAccountAction extends Action {
 	
-	private String oldPassword;
 	private String newPassword;
 	private String newEmail;
-	private Integer newPhoneNum;
+	private String newPhoneNum;
 	
-	public UpdateAccountAction(String oldPassword, String newPassword, String newEmail, Integer newPhoneNum) {
-		this.oldPassword = oldPassword;
+	public UpdateAccountAction(String newPassword, String newEmail, String newPhoneNum) {
 		this.newEmail = newEmail;
 		this.newPassword = newPassword;
 		this.newPhoneNum = newPhoneNum;
@@ -22,17 +20,13 @@ public class UpdateAccountAction extends Action {
 		return newEmail;
 	}
 
-	public Integer getNewPhoneNum() {
+	public String getNewPhoneNum() {
 		return newPhoneNum;
-	}
-
-	public String getOldPassword() {
-		return oldPassword;
 	}
 
 	@Override
 	public String toString() {
-		return "UpdateAccountAction [oldPassword=" + oldPassword + ", newPassword=" + newPassword + ", newEmail="
-				+ newEmail + ", newPhoneNum=" + newPhoneNum + "]";
+		return "SendAccountUpdate [newPassword=" + newPassword + ", newEmail=" + newEmail + ", newPhoneNum="
+				+ newPhoneNum + "]";
 	}
 }

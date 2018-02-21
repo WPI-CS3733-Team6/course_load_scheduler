@@ -10,7 +10,6 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HasWidgets;
-import com.google.gwt.user.client.ui.IntegerBox;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -24,13 +23,15 @@ public class AccountInfoViewImpl extends BaseViewImpl<AccountInfoPresenter> impl
 	@UiField HTMLPanel rootPanel;
 	@UiField TextBox AccountInfoPgTitle;
 	@UiField LayoutPanel AccountInfoBaseLayoutPanel;
-	@UiField Button submitChangesButton;
+	// I'm not sure how to use this but this might be necessary
+	// @UiField Button SubmitChangesButton 
 	
-	private PasswordTextBox currPassword;
-	private PasswordTextBox newPassword;
-	private PasswordTextBox repeatNewPassword;
-	private TextBox preferedEmail;
-	private IntegerBox phoneNumber;
+	public Button submitChangesButton = new Button("Submit Changes");
+	public PasswordTextBox currPassword = new PasswordTextBox();
+	public PasswordTextBox newPassword = new PasswordTextBox();
+	public PasswordTextBox repeatNewPassword = new PasswordTextBox();
+	public TextBox preferedEmail = new TextBox();
+	public TextBox phoneNumber = new TextBox();
 	
 	public Button getSubmitChangesButton() {
 		return submitChangesButton;
@@ -52,7 +53,7 @@ public class AccountInfoViewImpl extends BaseViewImpl<AccountInfoPresenter> impl
 		return preferedEmail;
 	}
 	
-	public IntegerBox getPhoneNumber() {
+	public TextBox getPhoneNumber() {
 		return phoneNumber;
 	}
 	
@@ -63,11 +64,6 @@ public class AccountInfoViewImpl extends BaseViewImpl<AccountInfoPresenter> impl
 		initWidget(uiBinder.createAndBindUi(this));
 		
 	    FlexTable t = new FlexTable();
-	    currPassword = new PasswordTextBox();
-	    newPassword = new PasswordTextBox();
-	    repeatNewPassword = new PasswordTextBox();
-	    preferedEmail = new TextBox();
-	    phoneNumber = new IntegerBox();
 
 	    // Create the text fields (This table is a 10x10)
 	    t.setText(0, 0, "Your username is:");
@@ -84,6 +80,7 @@ public class AccountInfoViewImpl extends BaseViewImpl<AccountInfoPresenter> impl
 	    
 	    t.setWidget(8, 2, preferedEmail);
 	    t.setWidget(10, 2, phoneNumber);
+	    t.setWidget(10, 10, submitChangesButton);
 	    
 	    // ...and set it's column span so that it takes up the whole row.
 	    t.getFlexCellFormatter().setColSpan(1, 0, 3);
