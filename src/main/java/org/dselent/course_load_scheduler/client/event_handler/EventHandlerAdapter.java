@@ -5,8 +5,6 @@ import org.dselent.course_load_scheduler.client.event.AddInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.AddSectionEvent;
 import org.dselent.course_load_scheduler.client.event.AddUserEvent;
 import org.dselent.course_load_scheduler.client.event.CourseRegistrationCartEvent;
-import org.dselent.course_load_scheduler.client.event.CreateInstanceEvent;
-import org.dselent.course_load_scheduler.client.event.CreateSectionEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteCourseEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteSectionEvent;
@@ -46,7 +44,7 @@ import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
  */
 public abstract class EventHandlerAdapter
 implements InvalidLoginEventHandler, SendLoginEventHandler, InvalidCourseEventHandler, ReceiveLoginEventHandler, AddCourseEventHandler, AddInstanceEventHandler, AddSectionEventHandler,
-AddUserEventHandler, CourseRegistrationCartEventHandler, CreateInstanceEventHandler, CreateSectionEventHandler, DeleteCourseEventHandler, DeleteInstanceEventHandler, DeleteSectionEventHandler, 
+AddUserEventHandler, CourseRegistrationCartEventHandler, DeleteCourseEventHandler, DeleteInstanceEventHandler, DeleteSectionEventHandler, 
 EditCourseEventHandler, EditUserEventHandler, FacultyCourseMapEventHandler, GoToAccountInfoEventHandler, GoToAddCourseEventHandler, GoToAddEditUserEventHandler, GoToCartEventHandler, 
 GoToClassSearchEventHandler, GoToCurrentCoursesEventHandler, GoToEditCourseEventHandler, GoToEditInstanceEventHandler, GoToEditSectionEventHandler, InvalidCourseIdEventHandler, 
 InvalidInstanceEventHandler, InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SubmitReportEventHandler, UpdateAccountEventHandler
@@ -134,12 +132,6 @@ InvalidInstanceEventHandler, InvalidReportEventHandler, SaveInstanceEventHandler
 	
 	@Override
 	public void onSubmitCart(CourseRegistrationCartEvent evt) {}
-	
-	@Override
-	public void onCreateInstance(CreateInstanceEvent evt) {}
-	
-	@Override
-	public void onCreateSection(CreateSectionEvent evt) {}
 	
 	@Override
 	public void onDeleteCourse(DeleteCourseEvent evt) {}

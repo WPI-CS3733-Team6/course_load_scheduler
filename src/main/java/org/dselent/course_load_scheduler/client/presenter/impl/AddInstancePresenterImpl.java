@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.dselent.course_load_scheduler.client.action.AddInstanceAction;
-import org.dselent.course_load_scheduler.client.action.CreateSectionAction;
+import org.dselent.course_load_scheduler.client.action.AddSectionAction;
 import org.dselent.course_load_scheduler.client.action.DeleteInstanceAction;
 import org.dselent.course_load_scheduler.client.action.GoToEditCourseAction;
 import org.dselent.course_load_scheduler.client.action.GoToEditSectionAction;
 import org.dselent.course_load_scheduler.client.action.InvalidInstanceAction;
 import org.dselent.course_load_scheduler.client.errorstring.InvalidInstanceStrings;
 import org.dselent.course_load_scheduler.client.event.AddInstanceEvent;
-import org.dselent.course_load_scheduler.client.event.CreateSectionEvent;
+import org.dselent.course_load_scheduler.client.event.AddSectionEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditSectionEvent;
@@ -54,8 +54,8 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 		registration = eventBus.addHandler(AddInstanceEvent.TYPE, this);
 		eventBusRegistration.put(AddInstanceEvent.TYPE, registration);
 		
-		registration = eventBus.addHandler(CreateSectionEvent.TYPE, this);
-		eventBusRegistration.put(CreateSectionEvent.TYPE, registration);
+		registration = eventBus.addHandler(AddSectionEvent.TYPE, this);
+		eventBusRegistration.put(AddSectionEvent.TYPE, registration);
 
 		registration = eventBus.addHandler(DeleteInstanceEvent.TYPE, this);
 		eventBusRegistration.put(DeleteInstanceEvent.TYPE, registration);
@@ -158,12 +158,12 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 	}
 
 	@Override
-	public void createSection() {
+	public void goToAddSection() {
 		String courseNum = view.getCourseNumberField().getValue();
 		Integer instanceNum = view.getInstanceNumberField().getValue();
 		
-		CreateSectionAction dia = new CreateSectionAction(courseNum, instanceNum);
-		CreateSectionEvent die = new CreateSectionEvent(dia);
+		AddSectionAction dia = new AddSectionAction(courseNum, instanceNum);
+		AddSectionEvent die = new AddSectionEvent(dia);
 		eventBus.fireEvent(die);
 	}
 

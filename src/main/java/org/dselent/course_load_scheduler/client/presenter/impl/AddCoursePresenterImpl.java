@@ -3,7 +3,7 @@ package org.dselent.course_load_scheduler.client.presenter.impl;
 import java.util.ArrayList;
 
 import org.dselent.course_load_scheduler.client.action.AddCourseAction;
-import org.dselent.course_load_scheduler.client.action.CreateInstanceAction;
+import org.dselent.course_load_scheduler.client.action.AddInstanceAction;
 import org.dselent.course_load_scheduler.client.action.DeleteCourseAction;
 import org.dselent.course_load_scheduler.client.action.EditCourseAction;
 import org.dselent.course_load_scheduler.client.action.GoToEditInstanceAction;
@@ -11,7 +11,7 @@ import org.dselent.course_load_scheduler.client.action.InvalidCourseAction;
 import org.dselent.course_load_scheduler.client.action.InvalidCourseIdAction;
 import org.dselent.course_load_scheduler.client.errorstring.InvalidCourseStrings;
 import org.dselent.course_load_scheduler.client.event.AddCourseEvent;
-import org.dselent.course_load_scheduler.client.event.CreateInstanceEvent;
+import org.dselent.course_load_scheduler.client.event.AddInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteCourseEvent;
 import org.dselent.course_load_scheduler.client.event.EditCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditInstanceEvent;
@@ -53,8 +53,8 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 		registration = eventBus.addHandler(AddCourseEvent.TYPE, this);
 		eventBusRegistration.put(AddCourseEvent.TYPE, registration);
 		
-		registration = eventBus.addHandler(CreateInstanceEvent.TYPE, this);
-		eventBusRegistration.put(CreateInstanceEvent.TYPE, registration);
+		registration = eventBus.addHandler(AddInstanceEvent.TYPE, this);
+		eventBusRegistration.put(AddInstanceEvent.TYPE, registration);
 		
 		registration = eventBus.addHandler(DeleteCourseEvent.TYPE, this);
 		eventBusRegistration.put(DeleteCourseEvent.TYPE, registration);
@@ -173,8 +173,10 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 	}
 	
 	public void createInstance() {
-		CreateInstanceAction cia = new CreateInstanceAction();
-		CreateInstanceEvent cie = new CreateInstanceEvent(cia);
+		String courseNumber = view.getCourseNumberField().getValue();
+		
+		AddInstanceAction cia = new AddInstanceAction(courseNumber);
+		AddInstanceEvent cie = new AddInstanceEvent(cia);
 		eventBus.fireEvent(cie);
 	}
 	

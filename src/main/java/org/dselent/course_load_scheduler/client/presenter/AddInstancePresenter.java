@@ -5,7 +5,7 @@ public interface AddInstancePresenter extends BasePresenter{
 	void setParentPresenter(IndexPresenter parentPresenter);
 	void saveInstance();
 	void deleteInstance();
-	void createSection();
+	void goToAddSection();
 	void goToEditSection();
 	void goToEditCourse();
 }

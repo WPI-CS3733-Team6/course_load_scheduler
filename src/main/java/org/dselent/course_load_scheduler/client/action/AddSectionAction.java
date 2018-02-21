@@ -2,11 +2,18 @@ package org.dselent.course_load_scheduler.client.action;
 
 public class AddSectionAction extends Action {
 
+	private String courseNumber;
+	private Integer instanceNumber;
 	private Integer expectedPop;
 	private String lectureType;
 	private String days;
 	private Integer timeStart;
 	private Integer timeEnd;
+	
+	public AddSectionAction(String CourseNumber, Integer InstanceNumber) {
+		this.courseNumber = CourseNumber;
+		this.instanceNumber = InstanceNumber;
+	}
 	
 	public AddSectionAction(Integer expectedPop, String lectureType, String days, Integer timeStart, Integer timeEnd) {
 		this.expectedPop = expectedPop;
@@ -16,6 +23,14 @@ public class AddSectionAction extends Action {
 		this.timeEnd = timeEnd;
 	}
 
+	public Integer getInstanceNumber() {
+		return instanceNumber;
+	}
+
+	public String getCourseNumber() {
+		return courseNumber;
+	}
+	
 	public Integer getExpectedPop() {
 		return expectedPop;
 	}
@@ -38,10 +53,10 @@ public class AddSectionAction extends Action {
 
 	@Override
 	public String toString() {
-		return "AddSectionAction [expectedPop=" + expectedPop + ", lectureType=" + lectureType + ", days=" + days
-				+ ", timeStart=" + timeStart + ", timeEnd=" + timeEnd + "]";
+		return "AddSectionAction [courseNumber=" + courseNumber + ", instanceNumber=" + instanceNumber
+				+ ", expectedPop=" + expectedPop + ", lectureType=" + lectureType + ", days=" + days + ", timeStart="
+				+ timeStart + ", timeEnd=" + timeEnd + "]";
 	}
-	
 	
 	
 }
