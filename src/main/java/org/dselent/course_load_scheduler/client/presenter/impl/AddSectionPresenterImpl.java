@@ -19,17 +19,21 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 
 	private IndexPresenter parentPresenter;
 	private AddSectionView view;
-	private boolean addSectionClickInProgress;
-	
+	private boolean saveClickInProgress;
+	private boolean backClickInProgress;
+	private boolean deleteClickInProgress;
+
 	@Inject
 	public AddSectionPresenterImpl(IndexPresenter parentPresenter, AddSectionView view)
 	{
 		this.view = view;
 		this.parentPresenter = parentPresenter;
 		view.setPresenter(this);
-		addSectionClickInProgress = false;
+		saveClickInProgress = false;
+		backClickInProgress = false;
+		deleteClickInProgress = false;
 	}
-	
+
 	@Override
 	public void init()
 	{
@@ -40,11 +44,11 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 	public void bind()
 	{
 		HandlerRegistration registration;
-		
+
 		registration = eventBus.addHandler(InvalidLoginEvent.TYPE, this);
 		eventBusRegistration.put(InvalidLoginEvent.TYPE, registration);
 	}
-		
+
 	@Override
 	public void go(HasWidgets container)
 	{
@@ -57,7 +61,7 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 	{
 		return view;
 	}
-	
+
 	@Override
 	public IndexPresenter getParentPresenter()
 	{
@@ -72,10 +76,10 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 
 	@Override
 	public void addSection() {
-		if (!addSectionClickInProgress) {
-			addSectionClickInProgress = false;
+		if (!saveClickInProgress) {
+			saveClickInProgress = false;
 			view.getSaveButton().setEnabled(false);
-			
+
 			Integer expectedPop = view.getExpectedPopField().getValue();
 			String lectureType = view.getTypeField().getText();
 			String days = "";
@@ -96,32 +100,37 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 			}
 			Integer timeStart = (view.getStartHoursField().getValue()*100) + view.getStartMinutesField().getValue();
 			Integer timeEnd = (view.getEndHoursField().getValue()*100) + view.getEndMinutesField().getValue();
-			
+
 			sendAddSection (expectedPop, lectureType, days, timeStart, timeEnd);
 		}
-		
+
 	}
-	
+
 	private void sendAddSection (Integer expectedPop, String lectureType, String days, Integer timeStart, Integer timeEnd) {
 		AddSectionAction asa = new AddSectionAction(expectedPop, lectureType, days, timeStart, timeEnd);
 		AddSectionEvent ase = new AddSectionEvent(asa);
 		eventBus.fireEvent(ase);
 	}
-	
+
 	public void deleteSection() {
-		String courseNum = view.getCourseNumberField().getValue();
-		Integer instanceNum = view.getInstanceNumberField().getValue();
-		Integer sectionNum = view.getSectionNumberField().getValue();
-		
-		DeleteSectionAction dsa = new DeleteSectionAction(courseNum, instanceNum, sectionNum);
-		DeleteSectionEvent dse = new DeleteSectionEvent(dsa);
-		eventBus.fireEvent(dse);
+		if (!deleteClickInProgress) {
+			deleteClickInProgress = false;
+			view.getSaveButton().setEnabled(false);
+			
+			String courseNum = view.getCourseNumberField().getValue();
+			Integer instanceNum = view.getInstanceNumberField().getValue();
+			Integer sectionNum = view.getSectionNumberField().getValue();
+
+			DeleteSectionAction dsa = new DeleteSectionAction(courseNum, instanceNum, sectionNum);
+			DeleteSectionEvent dse = new DeleteSectionEvent(dsa);
+			eventBus.fireEvent(dse);
+		}
 	}
-	
+
 	public void goToInstanceEdit() {
 		//String courseNum = view.getCourseNumberField().getValue();
 		Integer instanceNum = view.getInstanceNumberField().getValue();
-		
+
 		GoToEditInstanceAction eia = new GoToEditInstanceAction(instanceNum);
 		GoToEditInstanceEvent eie = new GoToEditInstanceEvent(eia);
 		eventBus.fireEvent(eie);
