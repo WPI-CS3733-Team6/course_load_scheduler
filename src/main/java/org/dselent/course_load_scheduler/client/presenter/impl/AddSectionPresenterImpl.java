@@ -128,11 +128,29 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 	}
 
 	public void goToInstanceEdit() {
+		
+		//How to implement this method???
+		//server side or client side 
+		if(!saveClickInProgress) {
+			saveClickInProgress = false;
+			view.getSaveButton().setEnabled(false);
+			
 		//String courseNum = view.getCourseNumberField().getValue();
 		Integer instanceNum = view.getInstanceNumberField().getValue();
 
 		GoToEditInstanceAction eia = new GoToEditInstanceAction(instanceNum);
 		GoToEditInstanceEvent eie = new GoToEditInstanceEvent(eia);
 		eventBus.fireEvent(eie);
+		}
+	}
+	
+	public void backButton() {
+		if(!backClickInProgress){
+			backClickInProgress = false;
+			view.getBackButton().setEnabled(false);
+			
+			
+			
+		}
 	}
 }

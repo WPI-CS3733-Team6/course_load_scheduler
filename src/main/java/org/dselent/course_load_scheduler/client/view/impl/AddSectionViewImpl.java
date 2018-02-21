@@ -170,7 +170,10 @@ public class AddSectionViewImpl extends BaseViewImpl<AddSectionPresenter> implem
 	@UiHandler("saveButton")
 	void onSaveButtonClicked(ClickEvent evt)
 	{
+		//Either add a section 
 		presenter.addSection();
+		//OR got edit 
+		presenter.goToInstanceEdit();
 	}
 	
 	@UiHandler("deleteButton")
@@ -182,7 +185,7 @@ public class AddSectionViewImpl extends BaseViewImpl<AddSectionPresenter> implem
 	@UiHandler("backButton")
 	void onBackClicked(ClickEvent evt)
 	{
-		presenter.goToInstanceEdit();
+		presenter.backButton();
 	}
 	
 	//Setters
