@@ -149,7 +149,8 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 			backClickInProgress = false;
 			view.getBackButton().setEnabled(false);
 			
-			
+			//Ask professor how to create back button
+			//InstanceViewImpl
 			
 		}
 	}

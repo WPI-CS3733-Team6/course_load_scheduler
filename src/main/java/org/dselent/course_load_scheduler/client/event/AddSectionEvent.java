@@ -20,18 +20,12 @@ public class AddSectionEvent extends GwtEvent<AddSectionEventHandler>{
 		return action;
 	}
 
-	/*
-	 * 
-	 */
 	@Override
 	public Type<AddSectionEventHandler> getAssociatedType()
 	{
 		return TYPE;
 	}
 
-	/*
-	 * 
-	 */
 	@Override
 	protected void dispatch(AddSectionEventHandler handler)
 	{
