@@ -106,8 +106,9 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 	
 	private void sendReport(String type, String name, String email, String desc) {
 		//write in actions and event handling gubbins
+		HasWidgets container = parentPresenter.getView().getViewRootPanel();
 		SubmitReportAction sra = new SubmitReportAction(name, email, type, desc);
-		SubmitReportEvent sre = new SubmitReportEvent(sra);
+		SubmitReportEvent sre = new SubmitReportEvent(sra, container);
 		eventBus.fireEvent(sre);
 	}
 	

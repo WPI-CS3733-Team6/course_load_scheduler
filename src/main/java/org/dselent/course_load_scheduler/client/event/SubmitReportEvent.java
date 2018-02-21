@@ -4,14 +4,16 @@ import org.dselent.course_load_scheduler.client.action.SubmitReportAction;
 import org.dselent.course_load_scheduler.client.event_handler.SubmitReportEventHandler;
 
 import com.google.gwt.event.shared.GwtEvent;
+import com.google.gwt.user.client.ui.HasWidgets;
 
-public class SubmitReportEvent extends GwtEvent<SubmitReportEventHandler> {
+public class SubmitReportEvent extends DisplayEvent<SubmitReportAction, SubmitReportEventHandler> {
 	
 	public static Type<SubmitReportEventHandler> TYPE = new Type<SubmitReportEventHandler>();
 	
 	private SubmitReportAction action;
 	
-	public SubmitReportEvent(SubmitReportAction action) {
+	public SubmitReportEvent(SubmitReportAction action, HasWidgets container) {
+		super(action, container);
 		this.action = action;
 	}
 
