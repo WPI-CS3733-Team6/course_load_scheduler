@@ -13,6 +13,8 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.event.dom.client.ClickEvent;
 
 public class AddCourseViewImpl extends BaseViewImpl<AddCoursePresenter> implements AddCourseView {
 
@@ -106,5 +108,23 @@ public class AddCourseViewImpl extends BaseViewImpl<AddCoursePresenter> implemen
 		return rootPanel;
 	}
 
+	
+	@UiHandler("saveCourseButton")
+	void onSaveCourseButtonClick(ClickEvent event) {
+		presenter.saveChanges();
+	}
+	
+	@UiHandler("deleteCourseButton")
+	void onDeleteCourseButtonClick(ClickEvent event) {
+		presenter.deleteCourse();
+	}
+	
+	@UiHandler("createInstanceButton")
+	void onCreateInstanceButtonClick(ClickEvent event) {
+	}
+	
+	@UiHandler("editInstanceButton")
+	void onEditInstanceButtonClick(ClickEvent event) {
+	}
 	
 }
