@@ -16,7 +16,6 @@ import org.dselent.course_load_scheduler.client.event.DeleteInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditSectionEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidInstanceEvent;
-import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.exceptions.EmptyStringException;
 import org.dselent.course_load_scheduler.client.presenter.AddInstancePresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
@@ -46,14 +45,29 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 	{
 		bind();
 	}
-
+	
 	@Override
 	public void bind()
 	{
 		HandlerRegistration registration;
 		
-		registration = eventBus.addHandler(InvalidLoginEvent.TYPE, this);
-		eventBusRegistration.put(InvalidLoginEvent.TYPE, registration);
+		registration = eventBus.addHandler(AddInstanceEvent.TYPE, this);
+		eventBusRegistration.put(AddInstanceEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(CreateSectionEvent.TYPE, this);
+		eventBusRegistration.put(CreateSectionEvent.TYPE, registration);
+
+		registration = eventBus.addHandler(DeleteInstanceEvent.TYPE, this);
+		eventBusRegistration.put(DeleteInstanceEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(GoToEditCourseEvent.TYPE, this);
+		eventBusRegistration.put(GoToEditCourseEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(GoToEditSectionEvent.TYPE, this);
+		eventBusRegistration.put(GoToEditSectionEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(InvalidInstanceEvent.TYPE, this);
+		eventBusRegistration.put(InvalidInstanceEvent.TYPE, registration);
 	}
 		
 	@Override
