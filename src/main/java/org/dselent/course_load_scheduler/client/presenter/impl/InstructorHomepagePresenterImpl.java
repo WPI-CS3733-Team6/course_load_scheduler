@@ -12,10 +12,8 @@ import org.dselent.course_load_scheduler.client.event.GoToAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCartEvent;
 import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
-import org.dselent.course_load_scheduler.client.presenter.BasePresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.presenter.InstructorHomepagePresenter;
-import org.dselent.course_load_scheduler.client.view.BaseView;
 import org.dselent.course_load_scheduler.client.view.InstructorHomepageView;
 
 import com.google.gwt.user.client.ui.HasWidgets;
@@ -129,17 +127,6 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 		}
 	}
 	
-	public void createRequest() {
-		if(!clickInProgress) {
-			
-			clickInProgress = true;
-			view.getCreateRequestButton().setEnabled(false);
-			parentPresenter.showLoadScreen();
-			
-			//event and checking
-			
-		}
-	}
 	/*
 	public void generateSchedule() {
 		if(!clickInProgress) {

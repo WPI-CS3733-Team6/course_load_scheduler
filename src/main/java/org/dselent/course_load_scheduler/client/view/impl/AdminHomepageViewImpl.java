@@ -15,6 +15,8 @@ import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.SplitLayoutPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.event.dom.client.ClickEvent;
 
 public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> implements AdminHomepageView {
 
@@ -108,4 +110,7 @@ public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> 
 	
 	
 	//currentClassesButton, searchClassesButton, accountInfoButton, courseRegistrationCart, generatedCompleteDepartmentSchedule, addUser, editUser, addCourse, modifyCourse
+	@UiHandler("addUser")
+	void onAddUserClick(ClickEvent event) {
+	}
 }
