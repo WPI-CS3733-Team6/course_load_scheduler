@@ -6,7 +6,7 @@ import org.dselent.course_load_scheduler.client.event_handler.AddCourseEventHand
 import com.google.gwt.event.shared.GwtEvent;
 
 public class AddCourseEvent extends GwtEvent<AddCourseEventHandler>{
-public static Type<AddCourseEventHandler> TYPE = new Type<AddCourseEventHandler>();
+	public static Type<AddCourseEventHandler> TYPE = new Type<AddCourseEventHandler>();
 	
 	private AddCourseAction action;
 	
@@ -20,18 +20,12 @@ public static Type<AddCourseEventHandler> TYPE = new Type<AddCourseEventHandler>
 		return action;
 	}
 	
-	/*
-	 * 
-	 */
 	@Override
 	public Type<AddCourseEventHandler> getAssociatedType()
 	{
 		return TYPE;
 	}
-
-	/*
-	 * 
-	 */
+	
 	@Override
 	protected void dispatch(AddCourseEventHandler handler)
 	{
