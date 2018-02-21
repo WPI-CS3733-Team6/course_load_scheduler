@@ -1,6 +1,6 @@
 package org.dselent.course_load_scheduler.client.action;
 
-public class AdminCourseSearchAction {
+public class AdminCourseSearchAction extends Action {
 	private String subject;
 	private String term;
 	

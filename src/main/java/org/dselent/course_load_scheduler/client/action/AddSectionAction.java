@@ -1,6 +1,6 @@
 package org.dselent.course_load_scheduler.client.action;
 
-public class AddSectionAction {
+public class AddSectionAction extends Action {
 
 	private Integer expectedPop;
 	private String lectureType;

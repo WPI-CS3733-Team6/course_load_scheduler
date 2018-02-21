@@ -1,6 +1,6 @@
 package org.dselent.course_load_scheduler.client.action;
 
-public class DeleteCourseAction {
+public class DeleteCourseAction extends Action {
 
 	private Integer courseId;
 	

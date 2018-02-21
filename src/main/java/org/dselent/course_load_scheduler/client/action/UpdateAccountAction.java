@@ -1,6 +1,6 @@
 package org.dselent.course_load_scheduler.client.action;
 
-public class UpdateAccountAction {
+public class UpdateAccountAction extends Action {
 	
 	private String newPassword;
 	private String newEmail;

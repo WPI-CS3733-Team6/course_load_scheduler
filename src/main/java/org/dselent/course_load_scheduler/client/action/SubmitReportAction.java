@@ -3,7 +3,7 @@ package org.dselent.course_load_scheduler.client.action;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SubmitReportAction {
+public class SubmitReportAction extends Action {
 	
 	private String name;
 	private String email;

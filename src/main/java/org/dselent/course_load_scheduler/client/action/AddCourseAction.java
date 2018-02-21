@@ -1,6 +1,6 @@
 package org.dselent.course_load_scheduler.client.action;
 
-public class AddCourseAction {
+public class AddCourseAction extends Action {
 	
 	private String number;
 	private String name;

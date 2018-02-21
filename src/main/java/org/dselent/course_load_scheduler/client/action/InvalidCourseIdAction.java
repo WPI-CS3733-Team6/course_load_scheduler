@@ -1,6 +1,6 @@
 package org.dselent.course_load_scheduler.client.action;
 
-public class InvalidCourseIdAction {
+public class InvalidCourseIdAction extends Action {
 	
 	private String reason;
 	

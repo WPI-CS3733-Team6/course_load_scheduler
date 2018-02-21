@@ -1,6 +1,6 @@
 package org.dselent.course_load_scheduler.client.action;
 
-public class AdminAdvancedCourseSearchAction {
+public class AdminAdvancedCourseSearchAction extends Action {
 	private Integer department;
 	private Integer term;
 	private Integer level;
