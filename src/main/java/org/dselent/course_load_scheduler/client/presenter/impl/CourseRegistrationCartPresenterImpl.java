@@ -1,6 +1,8 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
+import org.dselent.course_load_scheduler.client.action.CourseCartRemoveCourseAction;
 import org.dselent.course_load_scheduler.client.action.CourseRegistrationCartAction;
+import org.dselent.course_load_scheduler.client.event.CourseCartRemoveCourseEvent;
 import org.dselent.course_load_scheduler.client.event.CourseRegistrationCartEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.CourseRegistrationCartPresenter;
@@ -88,10 +90,11 @@ public class CourseRegistrationCartPresenterImpl extends BasePresenterImpl imple
 			
 			view.getRemoveCourse().setEnabled(false);
 			
-			//view.getFlexTableFor()
-			
 			//remove course.  should I take any arguments?
-			
+			HasWidgets container = parentPresenter.getView().getViewRootPanel();
+			CourseCartRemoveCourseAction cra = new CourseCartRemoveCourseAction();
+			CourseCartRemoveCourseEvent cre = new CourseCartRemoveCourseEvent(cra, container);
+			eventBus.fireEvent(cre);
 			
 		}
 	}
