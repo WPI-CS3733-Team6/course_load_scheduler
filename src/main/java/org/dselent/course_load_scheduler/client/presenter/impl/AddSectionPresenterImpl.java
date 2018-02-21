@@ -1,12 +1,17 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.dselent.course_load_scheduler.client.action.AddSectionAction;
 import org.dselent.course_load_scheduler.client.action.DeleteSectionAction;
 import org.dselent.course_load_scheduler.client.action.GoToEditInstanceAction;
+import org.dselent.course_load_scheduler.client.errorstring.InvalidEmptyStrings;
 import org.dselent.course_load_scheduler.client.event.AddSectionEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteSectionEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
+import org.dselent.course_load_scheduler.client.exceptions.EmptyParameterException;
 import org.dselent.course_load_scheduler.client.presenter.AddSectionPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.AddSectionView;
@@ -83,6 +88,48 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 			Integer expectedPop = view.getExpectedPopField().getValue();
 			String lectureType = view.getTypeField().getText();
 			String days = "";
+			Integer timeStart = (view.getStartHoursField().getValue()*100) + view.getStartMinutesField().getValue();
+			Integer timeEnd = (view.getEndHoursField().getValue()*100) + view.getEndMinutesField().getValue();
+
+			//Check if null
+			List<String> invalidReasonList = new ArrayList<>();
+			boolean emptyParam = false;
+
+			try {
+				validateExpectedPop(expectedPop);
+			} catch(EmptyParameterException e){
+				invalidReasonList.add(InvalidEmptyStrings.NULL_EXPECTED_POPULATION);
+				emptyParam = true;
+			}
+
+			try {
+				validateLectureType(lectureType);
+			} catch(EmptyParameterException e){
+				invalidReasonList.add(InvalidEmptyStrings.NULL_TYPE);
+				emptyParam = true;
+			}
+			try {
+				validateDays(days);
+			} catch(EmptyParameterException e){
+				invalidReasonList.add(InvalidEmptyStrings.NULL_DAYS);
+				emptyParam = true;
+			}
+
+			try {
+				validateTimeStart(timeStart);
+			} catch(EmptyParameterException e){
+				invalidReasonList.add(InvalidEmptyStrings.NULL_TIME_START);
+				emptyParam = true;
+			}
+
+			try {
+				validateTimeEnd(timeEnd);
+			} catch(EmptyParameterException e){
+				invalidReasonList.add(InvalidEmptyStrings.NULL_TIME_END);
+				emptyParam = true;
+			}
+
+
 			if (view.getMondayCheck().getValue()) {
 				days = days + "m";
 			}
@@ -98,10 +145,11 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 			if (view.getFridayCheck().getValue()) {
 				days = days + "f";
 			}
-			Integer timeStart = (view.getStartHoursField().getValue()*100) + view.getStartMinutesField().getValue();
-			Integer timeEnd = (view.getEndHoursField().getValue()*100) + view.getEndMinutesField().getValue();
 
-			sendAddSection (expectedPop, lectureType, days, timeStart, timeEnd);
+			if(!emptyParam) {
+				sendAddSection (expectedPop, lectureType, days, timeStart, timeEnd);
+			}
+
 		}
 
 	}
@@ -112,11 +160,51 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 		eventBus.fireEvent(ase);
 	}
 
+	private void validateExpectedPop(Integer ep) throws EmptyParameterException
+	{
+		checkEmptyIntegerParameters(ep);
+	}
+
+	private void validateLectureType(String lt) throws EmptyParameterException
+	{
+		checkEmptyStringParameters(lt);
+	}
+
+	private void validateDays(String d) throws EmptyParameterException
+	{
+		checkEmptyStringParameters(d);
+	}
+
+	private void validateTimeStart(Integer ts) throws EmptyParameterException
+	{
+		checkEmptyIntegerParameters(ts);
+	}
+
+	private void validateTimeEnd(Integer te) throws EmptyParameterException
+	{
+		checkEmptyIntegerParameters(te);
+	}
+
+	private void checkEmptyIntegerParameters(Integer s) throws EmptyParameterException
+	{
+		if(s == null) {
+			throw new EmptyParameterException();
+		}
+	}
+
+	private void checkEmptyStringParameters(String s) throws EmptyParameterException
+	{
+		if(s == null || s.equals("")) {
+			throw new EmptyParameterException();
+		}
+	}
+
+
 	public void deleteSection() {
 		if (!deleteClickInProgress) {
 			deleteClickInProgress = false;
 			view.getSaveButton().setEnabled(false);
-			
+
 			String courseNum = view.getCourseNumberField().getValue();
 			Integer instanceNum = view.getInstanceNumberField().getValue();
 			Integer sectionNum = view.getSectionNumberField().getValue();
@@ -128,31 +216,31 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 	}
 
 	public void goToInstanceEdit() {
-		
+
 		//How to implement this method???
 		//server side or client side 
 		if(!saveClickInProgress) {
 			saveClickInProgress = false;
 			view.getSaveButton().setEnabled(false);
-			
-		//String courseNum = view.getCourseNumberField().getValue();
-		Integer instanceNum = view.getInstanceNumberField().getValue();
-		
-		HasWidgets container = parentPresenter.getView().getViewRootPanel();
-		GoToEditInstanceAction eia = new GoToEditInstanceAction(instanceNum);
-		GoToEditInstanceEvent eie = new GoToEditInstanceEvent(eia, container);
-		eventBus.fireEvent(eie);
+
+			//String courseNum = view.getCourseNumberField().getValue();
+			Integer instanceNum = view.getInstanceNumberField().getValue();
+
+			HasWidgets container = parentPresenter.getView().getViewRootPanel();
+			GoToEditInstanceAction eia = new GoToEditInstanceAction(instanceNum);
+			GoToEditInstanceEvent eie = new GoToEditInstanceEvent(eia, container);
+			eventBus.fireEvent(eie);
 		}
 	}
-	
+
 	public void backButton() {
 		if(!backClickInProgress){
 			backClickInProgress = false;
 			view.getBackButton().setEnabled(false);
-			
+
 			//Ask professor how to create back button
 			//InstanceViewImpl
-			
+
 		}
 	}
 }
