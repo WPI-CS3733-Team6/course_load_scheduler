@@ -9,14 +9,14 @@ public class DeleteInstanceAction extends Action {
 		this.instanceNum = instanceNum;
 	}
 
-	public String getCourseNum() {
+	public String getCourseNum(){
 		return courseNum;
 	}
 
-	public Integer getInstanceNum() {
+	public Integer getInstanceNum(){
 		return instanceNum;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "DeleteInstanceAction [courseNum=" + courseNum + ", instanceNum=" + instanceNum + "]";
