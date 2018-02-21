@@ -1,6 +1,7 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import org.dselent.course_load_scheduler.client.action.UpdateAccountAction;
+import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
 import org.dselent.course_load_scheduler.client.presenter.AccountInfoPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
@@ -37,8 +38,8 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 	{
 		HandlerRegistration registration;
 		
-		registration = eventBus.addHandler(UpdateAccountEvent.TYPE, this);
-		eventBusRegistration.put(UpdateAccountEvent.TYPE, registration);
+		registration = eventBus.addHandler(InvalidLoginEvent.TYPE, this);
+		eventBusRegistration.put(InvalidLoginEvent.TYPE, registration);
 	}
 		
 	@Override
@@ -73,24 +74,55 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 			accountInfoClickInProgress = true;
 			view.getSubmitChangesButton().setEnabled(false);
 			
-			if(isPasswordValid(view.getNewPassword().toString(), view.getRepeatNewPassword().toString()));{
-				updateInfo(view.getNewPassword().toString(), view.getPhoneNumber().toString(), view.getPreferedEmail().toString());
+			String currentPassword = view.getCurrPassword().getValue();
+			String newPassword = view.getNewPassword().getValue();
+			String repeatPassword= view.getRepeatNewPassword().getValue();
+			String preferedEmail = view.getPreferedEmail().getValue();
+			Integer phoneNumber = view.getPhoneNumber().getValue();
+			boolean isPasswordValid;
+			boolean repeatIsCorrect;
+			boolean validEmail;
+			
+			//Check if fields either pass requirements or are empty
+			if (newPassword.compareTo("") == 0 && repeatPassword.compareTo("") == 0 ) {
+				isPasswordValid = true;
+				repeatIsCorrect = true;
 			}
+			
+			if (preferedEmail.compareTo("") == 0)
+				validEmail = true;
+			
+			isPasswordValid = isPasswordValid(newPassword);
+			repeatIsCorrect = isRepeatCorrect(view.getNewPassword().getValue(), view.getRepeatNewPassword().getValue());
+			validEmail = view.getPreferedEmail().getValue().endsWith("@wpi.edu");	//email ends with "@wpi.edu"
+			
+			if(isPasswordValid && repeatIsCorrect && validEmail) {
+				updateInfo(currentPassword, newPassword, preferedEmail, phoneNumber);
+			}
+			else {
+				//TODO throw expection
+				}
 		}
 	}
 	
 	//Passing these in, some can be null, if so, service layer will find out
-	public void updateInfo (String newPassword, String newEmail, String newPhoneNum) {
-		UpdateAccountAction uaa = new UpdateAccountAction(newPassword, newEmail, newPhoneNum);
+	public void updateInfo (String currentPassword, String newPassword, String newEmail, Integer newPhoneNum) {
+		UpdateAccountAction uaa = new UpdateAccountAction(currentPassword, newPassword, newEmail, newPhoneNum);
 		UpdateAccountEvent uae = new UpdateAccountEvent(uaa);
 		eventBus.fireEvent(uae);
 	}
 	
-	public boolean isPasswordValid(String newPassword, String repeatPassword){
+	private boolean isRepeatCorrect(String newPassword, String repeatPassword){
 		if (newPassword.equals(repeatPassword))
 			return true;
 		else
 			return false;
 	}
 
+	private boolean isPasswordValid(String newPassword) {
+		if (newPassword.length() > 4)
+			return true;
+		else
+			return false;
+	}
 }
