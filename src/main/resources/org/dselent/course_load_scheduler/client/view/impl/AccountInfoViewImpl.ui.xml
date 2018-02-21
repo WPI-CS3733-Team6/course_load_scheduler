@@ -26,8 +26,11 @@
 			<g:layer>
 				<g:TextBox text="Account Information" width="100%" alignment="CENTER" textAlignment="ALIGN_CENTER" ui:field="AccountInfoPgTitle" height="5%"/>
 			</g:layer>
-			<g:layer left="1.5pct" width="100.0pct" top="13.5pct" height="100.0pct">
-				<g:FlexTable width="97%" borderWidth="2" height="85%" ui:field="AccountInfoFlexTable" cellPadding="5" cellSpacing="5"/>
+			<g:layer left="1.5pct" width="97.0pct" top="13.5pct" height="70.0pct">
+				<g:FlexTable width="100%" borderWidth="2" height="100%" ui:field="AccountInfoFlexTable" cellPadding="5" cellSpacing="5"/>
+			</g:layer>
+			<g:layer left="35%" width="30%" top="85%" height="12%">
+				<g:Button width="100" height="100" ui:field="submitChangesButton" text="Submit Changes"/>
 			</g:layer>
 		</g:LayoutPanel>
 	</g:HTMLPanel>
