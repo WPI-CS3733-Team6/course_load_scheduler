@@ -8,7 +8,6 @@ import org.dselent.course_load_scheduler.client.presenter.AdminAddEditUserPresen
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.AdminAddEditUserView;
 
-import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.inject.Inject;
 

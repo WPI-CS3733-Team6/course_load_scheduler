@@ -30,6 +30,7 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 	private IndexPresenter parentPresenter;
 	private AddInstanceView view;
 	private boolean addInstanceClickInProgress;
+	private HasWidgets container = parentPresenter.getView().getViewRootPanel();
 	
 	@Inject
 	public AddInstancePresenterImpl(IndexPresenter parentPresenter, AddInstanceView view)
@@ -125,11 +126,11 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 			
 			if(validNumber) {
 				AddInstanceAction aia = new AddInstanceAction(number, instanceNum, term);
-				//AddInstanceEvent aie = new AddInstanceEvent(aia); //TODO: Very help please confused
-				//eventBus.fireEvent(aie);
+				AddInstanceEvent aie = new AddInstanceEvent(aia, container);
+				eventBus.fireEvent(aie);
 			} else {
 				InvalidInstanceAction iia = new InvalidInstanceAction(invalidReasonList);
-				InvalidInstanceEvent iie = new InvalidInstanceEvent(iia);
+				InvalidInstanceEvent iie = new InvalidInstanceEvent(iia, container);
 				eventBus.fireEvent(iie);
 			}
 			
@@ -155,7 +156,7 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 		Integer instanceNum = view.getInstanceNumberField().getValue();
 		
 		DeleteInstanceAction dia = new DeleteInstanceAction(courseNum, instanceNum);
-		DeleteInstanceEvent die = new DeleteInstanceEvent(dia);
+		DeleteInstanceEvent die = new DeleteInstanceEvent(dia, container);
 		eventBus.fireEvent(die);
 	}
 
@@ -165,7 +166,7 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 		Integer instanceNum = view.getInstanceNumberField().getValue();
 		
 		AddSectionAction dia = new AddSectionAction(courseNum, instanceNum);
-		AddSectionEvent die = new AddSectionEvent(dia);
+		AddSectionEvent die = new AddSectionEvent(dia, container);
 		eventBus.fireEvent(die);
 	}
 
@@ -176,7 +177,7 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 		Integer sectionNum = view.getSectionDropList().getSelectedIndex();
 		
 		GoToEditSectionAction dia = new GoToEditSectionAction(courseNum, instanceNum, sectionNum);
-		GoToEditSectionEvent die = new GoToEditSectionEvent(dia);
+		GoToEditSectionEvent die = new GoToEditSectionEvent(dia, container);
 		eventBus.fireEvent(die);
 	}
 

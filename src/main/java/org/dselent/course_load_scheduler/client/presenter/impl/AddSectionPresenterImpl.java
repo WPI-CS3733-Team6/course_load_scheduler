@@ -27,7 +27,7 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 	private boolean saveClickInProgress;
 	private boolean backClickInProgress;
 	private boolean deleteClickInProgress;
-
+	private HasWidgets container = parentPresenter.getView().getViewRootPanel();
 	@Inject
 	public AddSectionPresenterImpl(IndexPresenter parentPresenter, AddSectionView view)
 	{
@@ -156,7 +156,7 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 
 	private void sendAddSection (Integer expectedPop, String lectureType, String days, Integer timeStart, Integer timeEnd) {
 		AddSectionAction asa = new AddSectionAction(expectedPop, lectureType, days, timeStart, timeEnd);
-		AddSectionEvent ase = new AddSectionEvent(asa);
+		AddSectionEvent ase = new AddSectionEvent(asa, container);
 		eventBus.fireEvent(ase);
 	}
 

@@ -30,6 +30,7 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 
 	private IndexPresenter parentPresenter;
 	private AddCourseView view;
+	private HasWidgets container = parentPresenter.getView().getViewRootPanel();
 	
 	@Inject
 	public AddCoursePresenterImpl(IndexPresenter parentPresenter, AddCourseView view)
@@ -176,8 +177,8 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 		String courseNumber = view.getCourseNumberField().getValue();
 		
 		AddInstanceAction cia = new AddInstanceAction(courseNumber);
-		//AddInstanceEvent cie = new AddInstanceEvent(cia); // TODO: Very help please confused
-		//eventBus.fireEvent(cie);
+		AddInstanceEvent cie = new AddInstanceEvent(cia, container); // TODO: Very help please confused
+		eventBus.fireEvent(cie);
 	}
 	
 	public void editInstance() {

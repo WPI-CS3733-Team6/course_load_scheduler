@@ -25,6 +25,7 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 	private IndexPresenter parentPresenter;
 	private AdminHomepageView view;
 	private boolean clickInProgress;
+	private HasWidgets container = parentPresenter.getView().getViewRootPanel();
 	
 	@Inject
 	public AdminHomepagePresenterImpl(IndexPresenter parentPresenter, AdminHomepageView view)
@@ -175,7 +176,7 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 			parentPresenter.showLoadScreen();
 			
 			GoToCurrentCoursesAction gcca = new GoToCurrentCoursesAction();
-			GoToCurrentCoursesEvent gcce = new GoToCurrentCoursesEvent(gcca);
+			GoToCurrentCoursesEvent gcce = new GoToCurrentCoursesEvent(gcca, container);
 			eventBus.fireEvent(gcce);
 			
 		}
