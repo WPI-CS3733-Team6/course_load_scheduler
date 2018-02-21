@@ -8,18 +8,20 @@ import org.dselent.course_load_scheduler.client.action.InvalidReportAction;
 import org.dselent.course_load_scheduler.client.event_handler.InvalidReportEventHandler;
 
 import com.google.gwt.event.shared.GwtEvent;
+import com.google.gwt.user.client.ui.HasWidgets;
 
 /**
  * @author bobbyshome
  *
  */
-public class InvalidReportEvent extends GwtEvent<InvalidReportEventHandler> {
+public class InvalidReportEvent extends DisplayEvent<InvalidReportAction, InvalidReportEventHandler> {
 	
 	public static Type<InvalidReportEventHandler> TYPE = new Type<InvalidReportEventHandler>();
 	
 	private InvalidReportAction action;
 	
-	public InvalidReportEvent(InvalidReportAction action) {
+	public InvalidReportEvent(InvalidReportAction action, HasWidgets container) {
+		super(action, container);
 		this.action = action;
 	}
 	
