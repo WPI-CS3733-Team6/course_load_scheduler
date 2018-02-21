@@ -1,7 +1,6 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import java.util.ArrayList;
-import java.util.List;
 import org.dselent.course_load_scheduler.client.action.InvalidLoginAction;
 import org.dselent.course_load_scheduler.client.action.SendLoginAction;
 import org.dselent.course_load_scheduler.client.errorstring.InvalidLoginStrings;
@@ -89,7 +88,7 @@ public class LoginPresenterImpl extends BasePresenterImpl implements LoginPresen
 			boolean validUserName = true;
 			boolean validPassword = true;
 
-			List<String> invalidReasonList = new ArrayList<>();
+			ArrayList<String> invalidReasonList = new ArrayList<>();
 			
 			try
 			{

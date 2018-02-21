@@ -5,10 +5,31 @@ import java.util.List;
 
 public class InvalidCourseAction {
 
-	private List<String> reasonList;
+	private ArrayList<String> reasonList;
 	
-	public InvalidCourseAction() {
-		reasonList = new ArrayList<>();
+	public InvalidCourseAction(ArrayList<String> reasonList)
+	{
+		this.reasonList = reasonList;
+	}
+	
+	public boolean addReasons(List<String> reasonList)
+	{
+		return reasonList.addAll(reasonList);
+	}
+	
+	public void addReason(String reason)
+	{
+		reasonList.add(reason);
+	}
+	
+	public String getReason(int index)
+	{
+		return reasonList.get(index);
+	}
+	
+	public int getNumberOfReasons()
+	{
+		return reasonList.size();
 	}
 	
 	@Override

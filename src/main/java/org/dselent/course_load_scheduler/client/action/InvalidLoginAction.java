@@ -14,24 +14,12 @@ public class InvalidLoginAction extends Action
 {
 	private List<String> reasonList;
 	
-	public InvalidLoginAction()
-	{
-		reasonList = new ArrayList<>();
-	}
-	
-	public InvalidLoginAction(List<String> reasonList)
+	public InvalidLoginAction(ArrayList<String> reasonList)
 	{
 		this.reasonList = reasonList;
 	}
-
-
-	public InvalidLoginAction(String reason)
-	{
-		reasonList = new ArrayList<>();
-		reasonList.add(reason);
-	}
 	
-	public boolean addReasons(List<String> reasonList)
+	public boolean addReasons(ArrayList<String> reasonList)
 	{
 		return reasonList.addAll(reasonList);
 	}

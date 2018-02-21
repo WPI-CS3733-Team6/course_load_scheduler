@@ -1,5 +1,7 @@
 package org.dselent.course_load_scheduler.client.callback;
 
+import java.util.ArrayList;
+
 import org.dselent.course_load_scheduler.client.action.InvalidLoginAction;
 import org.dselent.course_load_scheduler.client.action.ReceiveLoginAction;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
@@ -46,7 +48,10 @@ public class SendLoginCallback extends DisplayCallback<JSONValue>
 			sb.append("\n");
 		}
 		
-		InvalidLoginAction ila = new InvalidLoginAction(sb.toString());
+		ArrayList<String> reasonList = new ArrayList<String>();
+		reasonList.add(sb.toString());
+				
+		InvalidLoginAction ila = new InvalidLoginAction(reasonList);
 		InvalidLoginEvent ile = new InvalidLoginEvent(ila);
 		eventBus.fireEvent(ile);
 	}
