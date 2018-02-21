@@ -137,9 +137,10 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 			
 		//String courseNum = view.getCourseNumberField().getValue();
 		Integer instanceNum = view.getInstanceNumberField().getValue();
-
+		
+		HasWidgets container = parentPresenter.getView().getViewRootPanel();
 		GoToEditInstanceAction eia = new GoToEditInstanceAction(instanceNum);
-		GoToEditInstanceEvent eie = new GoToEditInstanceEvent(eia);
+		GoToEditInstanceEvent eie = new GoToEditInstanceEvent(eia, container);
 		eventBus.fireEvent(eie);
 		}
 	}

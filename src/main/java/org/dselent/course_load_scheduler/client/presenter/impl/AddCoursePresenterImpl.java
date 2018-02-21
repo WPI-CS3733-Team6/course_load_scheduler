@@ -159,9 +159,9 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 	
 	public void deleteCourse() {
 		Integer courseId = view.getCourseIdField().getValue();
-		
+		ArrayList<String> reasonList = new ArrayList<String>();
 		if (courseId == 0) {
-			InvalidCourseIdAction icia = new InvalidCourseIdAction();
+			InvalidCourseIdAction icia = new InvalidCourseIdAction(reasonList);
 			InvalidCourseIdEvent icie = new InvalidCourseIdEvent(icia);
 			eventBus.fireEvent(icie);
 		} else {
@@ -179,9 +179,10 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 	}
 	
 	public void editInstance() {
+		HasWidgets container = parentPresenter.getView().getViewRootPanel();
 		Integer instance = view.getInstanceList().getSelectedIndex();
 		GoToEditInstanceAction eia = new GoToEditInstanceAction(instance);
-		GoToEditInstanceEvent eie = new GoToEditInstanceEvent(eia);
+		GoToEditInstanceEvent eie = new GoToEditInstanceEvent(eia, container);
 		eventBus.fireEvent(eie);
 	}
 	
