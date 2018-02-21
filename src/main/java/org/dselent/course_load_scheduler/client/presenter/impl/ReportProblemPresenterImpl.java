@@ -11,7 +11,6 @@ import org.dselent.course_load_scheduler.client.errorstring.InvalidReportStrings
 import org.dselent.course_load_scheduler.client.event.InvalidReportEvent;
 import org.dselent.course_load_scheduler.client.event.SubmitReportEvent;
 import org.dselent.course_load_scheduler.client.exceptions.EmptyStringException;
-import org.dselent.course_load_scheduler.client.model.Model;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.presenter.ReportProblemPresenter;
 import org.dselent.course_load_scheduler.client.view.ReportProblemView;
@@ -53,13 +52,13 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 	public ReportProblemView getView() {
 		return view;
 	}
-	
+	/* not sure why this is here, commenting for now, possibly forever
 	@Override
 	public Model getModel()
 	{
 		return null;
 	}
-	
+	*/
 	public void submitReport() {
 		if(!submitClickInProgress) {
 			submitClickInProgress = true;
