@@ -3,11 +3,9 @@
  */
 package org.dselent.course_load_scheduler.client.event;
 
-import org.dselent.course_load_scheduler.client.action.InvalidLoginAction;
 import org.dselent.course_load_scheduler.client.action.InvalidReportAction;
 import org.dselent.course_load_scheduler.client.event_handler.InvalidReportEventHandler;
 
-import com.google.gwt.event.shared.GwtEvent;
 import com.google.gwt.user.client.ui.HasWidgets;
 
 /**

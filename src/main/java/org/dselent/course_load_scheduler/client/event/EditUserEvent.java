@@ -4,7 +4,6 @@ import org.dselent.course_load_scheduler.client.action.EditUserAction;
 import org.dselent.course_load_scheduler.client.event_handler.EditUserEventHandler;
 
 import com.google.gwt.event.shared.GwtEvent;
-import com.google.gwt.event.shared.GwtEvent.Type;
 
 public class EditUserEvent extends GwtEvent<EditUserEventHandler>{
 	

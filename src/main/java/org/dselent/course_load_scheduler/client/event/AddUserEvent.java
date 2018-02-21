@@ -4,7 +4,6 @@ import org.dselent.course_load_scheduler.client.action.AddUserAction;
 import org.dselent.course_load_scheduler.client.event_handler.AddUserEventHandler;
 
 import com.google.gwt.event.shared.GwtEvent;
-import com.google.gwt.event.shared.GwtEvent.Type;
 
 public class AddUserEvent extends GwtEvent<AddUserEventHandler>{
 public static Type<AddUserEventHandler> TYPE = new Type<AddUserEventHandler>();

@@ -16,6 +16,4 @@ public class DeleteCourseAction extends Action {
 	public String toString() {
 		return "DeleteCourseAction [courseId=" + courseId + "]";
 	}
-	
-	
 }
