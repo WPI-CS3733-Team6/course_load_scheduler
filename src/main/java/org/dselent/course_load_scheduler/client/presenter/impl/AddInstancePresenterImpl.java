@@ -112,10 +112,12 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 			
 			List<String> invalidReasonList = new ArrayList<>();
 			
-			try {
+			try 
+			{
 				validateCourseNum(number);
 			}
-			catch(EmptyStringException e) {
+			catch(EmptyStringException e) 
+			{
 				//add error
 				invalidReasonList.add(InvalidInstanceStrings.NULL_NUMBER);
 				validNumber = false;
@@ -123,8 +125,8 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 			
 			if(validNumber) {
 				AddInstanceAction aia = new AddInstanceAction(number, instanceNum, term);
-				AddInstanceEvent aie = new AddInstanceEvent(aia);
-				eventBus.fireEvent(aie);
+				//AddInstanceEvent aie = new AddInstanceEvent(aia); //TODO: Very help please confused
+				//eventBus.fireEvent(aie);
 			} else {
 				InvalidInstanceAction iia = new InvalidInstanceAction(invalidReasonList);
 				InvalidInstanceEvent iie = new InvalidInstanceEvent(iia);

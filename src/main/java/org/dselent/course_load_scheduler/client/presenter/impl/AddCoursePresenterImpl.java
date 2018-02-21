@@ -176,8 +176,8 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 		String courseNumber = view.getCourseNumberField().getValue();
 		
 		AddInstanceAction cia = new AddInstanceAction(courseNumber);
-		AddInstanceEvent cie = new AddInstanceEvent(cia);
-		eventBus.fireEvent(cie);
+		//AddInstanceEvent cie = new AddInstanceEvent(cia); // TODO: Very help please confused
+		//eventBus.fireEvent(cie);
 	}
 	
 	public void editInstance() {
