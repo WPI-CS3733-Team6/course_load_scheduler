@@ -40,14 +40,32 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 	{
 		bind();
 	}
-
+	//AddCourseEvent, CreateInstanceEvent, DeleteCourseEvent, EditCourseEvent, GoToEditInstanceEvent, InvalidCourseEvent, InvalidCourseIdEvent
 	@Override
 	public void bind()
 	{
 		HandlerRegistration registration;
 		
+		registration = eventBus.addHandler(AddCourseEvent.TYPE, this);
+		eventBusRegistration.put(AddCourseEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(CreateInstanceEvent.TYPE, this);
+		eventBusRegistration.put(CreateInstanceEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(DeleteCourseEvent.TYPE, this);
+		eventBusRegistration.put(DeleteCourseEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(EditCourseEvent.TYPE, this);
+		eventBusRegistration.put(EditCourseEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(GoToEditInstanceEvent.TYPE, this);
+		eventBusRegistration.put(GoToEditInstanceEvent.TYPE, registration);
+		
 		registration = eventBus.addHandler(InvalidCourseEvent.TYPE, this);
 		eventBusRegistration.put(InvalidCourseEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(InvalidCourseIdEvent.TYPE, this);
+		eventBusRegistration.put(InvalidCourseIdEvent.TYPE, registration);
 	}
 		
 	@Override
