@@ -4,9 +4,11 @@ import org.dselent.course_load_scheduler.client.presenter.DetailedCourseInformat
 import org.dselent.course_load_scheduler.client.view.DetailedCourseInformationView;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.LayoutPanel;
@@ -114,5 +116,15 @@ public class DetailedCourseInformationViewImpl extends BaseViewImpl<DetailedCour
 	@Override
 	public HasWidgets getViewRootPanel() {
 		return rootPanel;
+	}
+	
+	@UiHandler("submitToCartButton")
+	void onSubmitToCartButtonClicked(ClickEvent evt) {
+		presenter.submitToCart();
+	}
+	
+	@UiHandler("returnToSearchButton")
+	void onReturnToSearchButtonClicked(ClickEvent evt) {
+		presenter.returnToSearch();
 	}
 }

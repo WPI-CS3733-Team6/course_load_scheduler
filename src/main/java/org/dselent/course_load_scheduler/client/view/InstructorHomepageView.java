@@ -1,6 +1,5 @@
 package org.dselent.course_load_scheduler.client.view;
 
-import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.presenter.InstructorHomepagePresenter;
 
 import com.google.gwt.user.client.ui.Button;
@@ -29,7 +28,6 @@ public interface InstructorHomepageView extends BaseView<InstructorHomepagePrese
 	public Button getClassSearchButton();
 	public Button getAccountInfoButton();
 	public Button getCourseCartButton();
-	public Button getCreateRequestButton();
 	public Button getGenerateScheduleButton();
 	public TextBox getRegisteredHeaderBox();
 	public TextBox getPendingHeaderBox();
