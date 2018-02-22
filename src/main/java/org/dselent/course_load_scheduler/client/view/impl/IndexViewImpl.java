@@ -121,10 +121,6 @@ public class IndexViewImpl extends BaseViewImpl<IndexPresenter> implements Index
 		return viewCurrentClasses;
 	}
 
-	public void setViewCurrentClasses(Button viewCurrentClasses) {
-		this.viewCurrentClasses = viewCurrentClasses;
-	}
-
 	public Button getHome() {
 		return home;
 	}
@@ -139,19 +135,25 @@ public class IndexViewImpl extends BaseViewImpl<IndexPresenter> implements Index
 	@UiHandler("home")
 	void onHomeButtonClicked(ClickEvent evt)
 	{
-		//presenter.goHome();
+		presenter.goHome();
 	}
 	
 	@UiHandler("logout")
 	void onLogoutButtonClicked(ClickEvent evt)
 	{
-		//presenter.logout();
+		presenter.logout();
 	}
 	
 	@UiHandler("reportAProblem")
 	void onReportAProblemButtonClicked(ClickEvent evt)
 	{
-		//presenter.reportAProblem();
+		presenter.reportAProblem();
+	}
+	
+	@UiHandler("viewCurrentClasses")
+	void onViewCurrentClassesButtonClicked(ClickEvent evt)
+	{
+		presenter.currentClasses();
 	}
 	
 // Part of the template code from Doug:

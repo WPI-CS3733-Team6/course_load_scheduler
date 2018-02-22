@@ -71,7 +71,7 @@ public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> impl
 	void onCreateSectionButtonClick(ClickEvent event) {
 	}
 	@UiHandler("saveButton")
-	void onSaveButtonClicked() {
+	void onSaveButtonClicked(ClickEvent event) {
 		presenter.saveInstance();
 	}
 	@UiHandler("backButton")

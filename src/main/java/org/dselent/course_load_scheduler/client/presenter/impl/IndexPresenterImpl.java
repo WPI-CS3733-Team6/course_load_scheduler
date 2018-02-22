@@ -83,4 +83,30 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 		view.getGlassLoadingPanel().getElement().getStyle().setVisibility(Style.Visibility.HIDDEN);
 	}
 	
+	@Override
+	public void goHome() {
+		if(!homeClickInProgress) 
+		{
+			homeClickInProgress = true;
+			view.getHome().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			
+		}
+	}
+	
+	@Override
+	public void logout() {
+		
+	}
+	
+	@Override
+	public void reportAProblem() {
+		
+	}
+	
+	@Override
+	public void currentClasses() {
+		
+	}
 }

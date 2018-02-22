@@ -23,6 +23,7 @@ import org.dselent.course_load_scheduler.client.view.AddCourseView;
 import org.dselent.course_load_scheduler.client.view.AddInstanceView;
 import org.dselent.course_load_scheduler.client.view.AddSectionView;
 import org.dselent.course_load_scheduler.client.view.IndexView;
+import org.dselent.course_load_scheduler.client.view.impl.TestPanels;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
@@ -44,14 +45,17 @@ public class CourseLoadScheduler implements EntryPoint
 		final Injector injector = Injector.INSTANCE;
 		
 		/*
-		 * Uncomment the panel you want to have displayed on the indexd panel
+		 * Uncomment the panel you want to have displayed on the index panel
 		 */
 		
 		//Setup Index panel
-		IndexPresenterImpl indexPresenter = injector.getIndexPresenter(); // on-demand injection
-		indexPresenter.init();
-		IndexView indexView = indexPresenter.getView();	
-		indexPresenter.go(root);
+//		IndexPresenterImpl indexPresenter = injector.getIndexPresenter(); // on-demand injection
+//		indexPresenter.init();
+//		IndexView indexView = indexPresenter.getView();	
+//		indexPresenter.go(root);
+		
+		TestPanels testPanel = new TestPanels();
+		root.add(testPanel);
 		
 		/* LOGIN
 		LoginPresenterImpl loginPresenter = injector.getLoginPresenter();
