@@ -34,8 +34,13 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 	{
 		bind();
 	}
-
 	
+	@Override
+	public void bind()
+	{
+		//come back after the rest and ask about this-Josue
+	}
+
 	@Override
 	public void go(HasWidgets container)
 	{
@@ -48,6 +53,19 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 	{
 		return view;
 	}
+	
+	@Override
+	public IndexPresenter getParentPresenter()
+	{
+		return parentPresenter;
+	}
+
+	@Override
+	public void setParentPresenter(IndexPresenter parentPresenter)
+	{
+		this.parentPresenter = parentPresenter;
+	}
+	
 	
 	@Override
 	public void showLoadScreen()
@@ -64,4 +82,5 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 		view.getLoadingImage().getElement().getStyle().setVisibility(Style.Visibility.HIDDEN);
 		view.getGlassLoadingPanel().getElement().getStyle().setVisibility(Style.Visibility.HIDDEN);
 	}
+	
 }

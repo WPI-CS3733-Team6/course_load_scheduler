@@ -89,7 +89,7 @@
 			<g:HTMLPanel height="40px" ui:field="bottonPanel">
 				<g:LayoutPanel width="100%" height="100%" ui:field="lowerPanel" addStyleNames="{style.panel-grey}" >
 					<g:layer top="0.0pct" bottom="0.0pct" right="0.0pct" left="40.0pct">
-						<g:Button width="30%" height="50%%">Report A Problem</g:Button>
+						<g:Button width="30%" height="50%%" ui:field="reportAProblem">Report A Problem</g:Button>
 					</g:layer>
 				</g:LayoutPanel>
 			</g:HTMLPanel>

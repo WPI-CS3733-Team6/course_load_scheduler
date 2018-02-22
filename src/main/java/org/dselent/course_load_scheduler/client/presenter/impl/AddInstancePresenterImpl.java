@@ -30,7 +30,7 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 	private IndexPresenter parentPresenter;
 	private AddInstanceView view;
 	private boolean addInstanceClickInProgress;
-	private HasWidgets container = parentPresenter.getView().getCenterPanel();
+	private HasWidgets container = parentPresenter.getView().getMiddlePanel();
 	
 	@Inject
 	public AddInstancePresenterImpl(IndexPresenter parentPresenter, AddInstanceView view)

@@ -23,7 +23,7 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 	private IndexPresenter parentPresenter;
 	private AdminHomepageView view;
 	private boolean clickInProgress;
-	private HasWidgets container = parentPresenter.getView().getCenterPanel();
+	private HasWidgets container = parentPresenter.getView().getMiddlePanel();
 	
 	@Inject
 	public AdminHomepagePresenterImpl(IndexPresenter parentPresenter, AdminHomepageView view)
