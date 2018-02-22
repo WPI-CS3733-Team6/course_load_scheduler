@@ -7,5 +7,6 @@ public interface InstructorHomepagePresenter extends BasePresenter {
 	public void classSearch();
 	public void accountInfo();
 	public void courseCart();
+	public void facultyCourseMap();
 	//public void generateSchedule();
 }

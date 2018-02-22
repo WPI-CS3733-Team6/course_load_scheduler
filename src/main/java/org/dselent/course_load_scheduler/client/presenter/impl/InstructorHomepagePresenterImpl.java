@@ -8,10 +8,12 @@ import org.dselent.course_load_scheduler.client.action.GoToAccoutInfoAction;
 import org.dselent.course_load_scheduler.client.action.GoToCartAction;
 import org.dselent.course_load_scheduler.client.action.GoToClassSearchAction;
 import org.dselent.course_load_scheduler.client.action.GoToCurrentCoursesAction;
+import org.dselent.course_load_scheduler.client.action.GoToFacultyCourseMapAction;
 import org.dselent.course_load_scheduler.client.event.GoToAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCartEvent;
 import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
+import org.dselent.course_load_scheduler.client.event.GoToFacultyCourseMapEvent;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.presenter.InstructorHomepagePresenter;
 import org.dselent.course_load_scheduler.client.view.InstructorHomepageView;
@@ -128,17 +130,18 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 		}
 	}
 	
-	/*
-	public void generateSchedule() {
+	public void facultyCourseMap() {
 		if(!clickInProgress) {
 			
 			clickInProgress = true;
 			view.getGenerateScheduleButton().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
-			//event and checking
+			HasWidgets container = parentPresenter.getView().getViewRootPanel();
+			GoToFacultyCourseMapAction gfcma = new GoToFacultyCourseMapAction();
+			GoToFacultyCourseMapEvent gfcme = new GoToFacultyCourseMapEvent(gfcma, container);
+			eventBus.fireEvent(gfcme);
 			
 		}
 	}
-	*/
 }
