@@ -12,81 +12,82 @@ public class User extends Model
 	private String firstName;
 	private String lastName;
 	private String email;
+	private Long phoneNum;
+	private String secondaryEmail;
+	private Integer userRole;
 	private Integer userStateId;
 	private Date createdAt;
 	private Date updatedAt;
-
-	// methods
-		
 	
-	public Integer getId()
-	{
+	
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Integer id)
-	{
+	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getUserName()
-	{
+	public String getUserName() {
 		return userName;
 	}
-	public void setUserName(String userName)
-	{
+	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public String getFirstName()
-	{
+	public String getFirstName() {
 		return firstName;
 	}
-	public void setFirstName(String firstName)
-	{
+	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	public String getLastName()
-	{
+	public String getLastName() {
 		return lastName;
 	}
-	public void setLastName(String lastName)
-	{
+	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getEmail()
-	{
+	public String getEmail() {
 		return email;
 	}
-	public void setEmail(String email)
-	{
+	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Integer getUserStateId()
-	{
+	public Long getPhoneNum() {
+		return phoneNum;
+	}
+	public void setPhoneNum(Long phoneNum) {
+		this.phoneNum = phoneNum;
+	}
+	public String getSecondaryEmail() {
+		return secondaryEmail;
+	}
+	public void setSecondaryEmail(String secondaryEmail) {
+		this.secondaryEmail = secondaryEmail;
+	}
+	public Integer getUserRole() {
+		return userRole;
+	}
+	public void setUserRole(Integer userRole) {
+		this.userRole = userRole;
+	}
+	public Integer getUserStateId() {
 		return userStateId;
 	}
-	public void setUserStateId(Integer userStateId)
-	{
+	public void setUserStateId(Integer userStateId) {
 		this.userStateId = userStateId;
 	}
-	public Date getCreatedAt()
-	{
+	public Date getCreatedAt() {
 		return createdAt;
 	}
-	public void setCreatedAt(Date createdAt)
-	{
-		this.createdAt = createdAt;	
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
 	}
-	public Date getUpdatedAt()
-	{
+	public Date getUpdatedAt() {
 		return updatedAt;
 	}
-	public void setUpdatedAt(Date updatedAt)
-	{
+	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-
 	@Override
-	public int hashCode()
-	{
+	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((createdAt == null) ? 0 : createdAt.hashCode());
@@ -94,142 +95,88 @@ public class User extends Model
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+		result = prime * result + ((phoneNum == null) ? 0 : phoneNum.hashCode());
+		result = prime * result + ((secondaryEmail == null) ? 0 : secondaryEmail.hashCode());
 		result = prime * result + ((updatedAt == null) ? 0 : updatedAt.hashCode());
 		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
+		result = prime * result + ((userRole == null) ? 0 : userRole.hashCode());
 		result = prime * result + ((userStateId == null) ? 0 : userStateId.hashCode());
 		return result;
 	}
-
 	@Override
-	public boolean equals(Object obj)
-	{
+	public boolean equals(Object obj) {
 		if (this == obj)
-		{
 			return true;
-		}
 		if (obj == null)
-		{
 			return false;
-		}
-		if (!(obj instanceof User))
-		{
+		if (getClass() != obj.getClass())
 			return false;
-		}
 		User other = (User) obj;
-		if (createdAt == null)
-		{
+		if (createdAt == null) {
 			if (other.createdAt != null)
-			{
 				return false;
-			}
-		}
-		else if (!createdAt.equals(other.createdAt))
-		{
+		} else if (!createdAt.equals(other.createdAt))
 			return false;
-		}
-		if (email == null)
-		{
+		if (email == null) {
 			if (other.email != null)
-			{
 				return false;
-			}
-		}
-		else if (!email.equals(other.email))
-		{
+		} else if (!email.equals(other.email))
 			return false;
-		}
-		if (firstName == null)
-		{
+		if (firstName == null) {
 			if (other.firstName != null)
-			{
 				return false;
-			}
-		}
-		else if (!firstName.equals(other.firstName))
-		{
+		} else if (!firstName.equals(other.firstName))
 			return false;
-		}
-		if (id == null)
-		{
+		if (id == null) {
 			if (other.id != null)
-			{
 				return false;
-			}
-		}
-		else if (!id.equals(other.id))
-		{
+		} else if (!id.equals(other.id))
 			return false;
-		}
-		if (lastName == null)
-		{
+		if (lastName == null) {
 			if (other.lastName != null)
-			{
 				return false;
-			}
-		}
-		else if (!lastName.equals(other.lastName))
-		{
+		} else if (!lastName.equals(other.lastName))
 			return false;
-		}
-		if (updatedAt == null)
-		{
+		if (phoneNum == null) {
+			if (other.phoneNum != null)
+				return false;
+		} else if (!phoneNum.equals(other.phoneNum))
+			return false;
+		if (secondaryEmail == null) {
+			if (other.secondaryEmail != null)
+				return false;
+		} else if (!secondaryEmail.equals(other.secondaryEmail))
+			return false;
+		if (updatedAt == null) {
 			if (other.updatedAt != null)
-			{
 				return false;
-			}
-		}
-		else if (!updatedAt.equals(other.updatedAt))
-		{
+		} else if (!updatedAt.equals(other.updatedAt))
 			return false;
-		}
-		if (userName == null)
-		{
+		if (userName == null) {
 			if (other.userName != null)
-			{
 				return false;
-			}
-		}
-		else if (!userName.equals(other.userName))
-		{
+		} else if (!userName.equals(other.userName))
 			return false;
-		}
-		if (userStateId == null)
-		{
+		if (userRole == null) {
+			if (other.userRole != null)
+				return false;
+		} else if (!userRole.equals(other.userRole))
+			return false;
+		if (userStateId == null) {
 			if (other.userStateId != null)
-			{
 				return false;
-			}
-		}
-		else if (!userStateId.equals(other.userStateId))
-		{
+		} else if (!userStateId.equals(other.userStateId))
 			return false;
-		}
 		return true;
 	}
-	
-
 	@Override
-	public String toString()
-	{
-		StringBuilder builder = new StringBuilder();
-		builder.append("Users [id=");
-		builder.append(id);
-		builder.append(", userName=");
-		builder.append(userName);
-		builder.append(", firstName=");
-		builder.append(firstName);
-		builder.append(", lastName=");
-		builder.append(lastName);
-		builder.append(", email=");
-		builder.append(email);
-		builder.append(", userStateId=");
-		builder.append(userStateId);
-		builder.append(", createdAt=");
-		builder.append(createdAt);
-		builder.append(", updatedAt=");
-		builder.append(updatedAt);
-		builder.append("]");
-		return builder.toString();
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", email=" + email + ", phoneNum=" + phoneNum + ", secondaryEmail=" + secondaryEmail + ", userRole="
+				+ userRole + ", userStateId=" + userStateId + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt
+				+ "]";
 	}
+	
+	
 	
 }
