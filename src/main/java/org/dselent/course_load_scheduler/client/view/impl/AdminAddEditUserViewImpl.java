@@ -13,6 +13,8 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.event.dom.client.ClickEvent;
 
 public class AdminAddEditUserViewImpl extends BaseViewImpl<AdminAddEditUserPresenter> implements AdminAddEditUserView {
 
@@ -78,4 +80,7 @@ public class AdminAddEditUserViewImpl extends BaseViewImpl<AdminAddEditUserPrese
 		return rootPanel;
 	}
 
+	@UiHandler("submitButton")
+	void onSubmitButtonClick(ClickEvent event) {
+	}
 }
