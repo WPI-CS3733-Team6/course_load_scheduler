@@ -2,8 +2,8 @@ package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import javax.inject.Inject;
 
-import org.dselent.course_load_scheduler.client.action.FacultyCourseMapAction;
-import org.dselent.course_load_scheduler.client.event.FacultyCourseMapEvent;
+import org.dselent.course_load_scheduler.client.action.GetFacultyAction;
+import org.dselent.course_load_scheduler.client.event.GetFacultyEvent;
 import org.dselent.course_load_scheduler.client.presenter.FacultyCourseMapPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.FacultyCourseMapView;
@@ -48,8 +48,8 @@ public class FacultyCourseMapPresenterImpl extends BasePresenterImpl implements 
 	//TODO We will probably scrap this when we get to the service bit
 	@Override
 	public void getFaculty() {
-		FacultyCourseMapAction fcma = new FacultyCourseMapAction();
-		FacultyCourseMapEvent fcme = new FacultyCourseMapEvent(fcma);
+		GetFacultyAction fcma = new GetFacultyAction();
+		GetFacultyEvent fcme = new GetFacultyEvent(fcma);
 		eventBus.fireEvent(fcme);
 	}
 

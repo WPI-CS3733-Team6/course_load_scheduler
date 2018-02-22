@@ -1,8 +1,8 @@
 package org.dselent.course_load_scheduler.client.action;
 
-public class FacultyCourseMapAction extends Action {
+public class GetFacultyAction extends Action {
 
-	public FacultyCourseMapAction() {
+	public GetFacultyAction() {
 		
 	}
 	

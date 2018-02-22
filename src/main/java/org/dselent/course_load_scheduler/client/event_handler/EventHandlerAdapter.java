@@ -10,7 +10,7 @@ import org.dselent.course_load_scheduler.client.event.DeleteInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteSectionEvent;
 import org.dselent.course_load_scheduler.client.event.EditCourseEvent;
 import org.dselent.course_load_scheduler.client.event.EditUserEvent;
-import org.dselent.course_load_scheduler.client.event.FacultyCourseMapEvent;
+import org.dselent.course_load_scheduler.client.event.GetFacultyEvent;
 import org.dselent.course_load_scheduler.client.event.GoToAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.GoToAddCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GoToAddEditUserEvent;
@@ -48,7 +48,7 @@ import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
 public abstract class EventHandlerAdapter
 implements InvalidLoginEventHandler, SendLoginEventHandler, InvalidCourseEventHandler, ReceiveLoginEventHandler, AddCourseEventHandler, AddInstanceEventHandler, AddSectionEventHandler,
 AddUserEventHandler, CourseRegistrationCartEventHandler, DeleteCourseEventHandler, DeleteInstanceEventHandler, DeleteSectionEventHandler, 
-EditCourseEventHandler, EditUserEventHandler, FacultyCourseMapEventHandler, GoToAccountInfoEventHandler, GoToAddCourseEventHandler, GoToAddEditUserEventHandler, GoToCartEventHandler, 
+EditCourseEventHandler, EditUserEventHandler, GetFacultyEventHandler, GoToAccountInfoEventHandler, GoToAddCourseEventHandler, GoToAddEditUserEventHandler, GoToCartEventHandler, 
 GoToClassSearchEventHandler, GoToCurrentCoursesEventHandler, GoToEditCourseEventHandler, GoToEditInstanceEventHandler, GoToEditSectionEventHandler, InvalidCourseIdEventHandler, 
 InvalidInstanceEventHandler, InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SubmitReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, 
 SubmitCourseToCartEventHandler, GoToFacultyCourseMapEventHandler
@@ -102,7 +102,7 @@ SubmitCourseToCartEventHandler, GoToFacultyCourseMapEventHandler
 	public void onGoToAccountInfo(GoToAccountInfoEvent evt) {}
 	
 	@Override
-	public void onGetFaculty(FacultyCourseMapEvent evt) {}
+	public void onGetFaculty(GetFacultyEvent evt) {}
 	
 	@Override
 	public void onEditUser(EditUserEvent evt) {}
