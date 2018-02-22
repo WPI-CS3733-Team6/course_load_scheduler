@@ -28,8 +28,7 @@ public class InstructorHomepageViewImpl extends BaseViewImpl<InstructorHomepageP
 	@UiField Button classSearchButton;
 	@UiField Button accountInfoButton;
 	@UiField Button courseCartButton;
-	@UiField Button createRequestButton;
-	@UiField Button generateScheduleButton;
+	@UiField Button facultyCourseMapButton;
 	@UiField HorizontalPanel headerPanel;
 	@UiField SplitLayoutPanel courseInfoPanel;
 	@UiField LayoutPanel bodyPanel;
@@ -185,17 +184,10 @@ public class InstructorHomepageViewImpl extends BaseViewImpl<InstructorHomepageP
 	}
 
 	/**
-	 * @return the createRequestButton
-	 */
-	public Button getCreateRequestButton() {
-		return createRequestButton;
-	}
-
-	/**
 	 * @return the generateScheduleButton
 	 */
 	public Button getGenerateScheduleButton() {
-		return generateScheduleButton;
+		return facultyCourseMapButton;
 	}
 
 	/**
