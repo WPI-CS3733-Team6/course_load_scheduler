@@ -29,8 +29,8 @@
 	
 	<g:HTMLPanel width="430" height="300" ui:field="rootPanel">
 		<g:LayoutPanel width="100%" height="100%" addStyleNames="{style.panel-grey}" ui:field="layoutPanel">
-			<g:layer left="2.0pct" top="3.0pct" right="2.0pct" bottom="82.7pct">
-				<g:HorizontalPanel width="100%" height="20%%"
+			<g:layer left="2.0pct" top="3.0pct" right="2.0pct" bottom="80.0pct">
+				<g:HorizontalPanel width="100%" height="100%"
 					horizontalAlignment="ALIGN_CENTER" ui:field="selectPanel">
 					<g:Button ui:field="currentClassButton" text="Current Classes" width="100%"
 						height="100%%" />
@@ -39,7 +39,7 @@
 					<g:Button width="100%" height="100%%" ui:field="courseCartButton">Course Registration Cart</g:Button>
 				</g:HorizontalPanel>
 			</g:layer>
-			<g:layer left="2.0pct" width="49.5pct" top="15.0pct" bottom="75.0pct">
+			<g:layer left="2.0pct" width="49.5pct" top="20.0pct" bottom="72.0pct">
 				<g:Button text="Faculty Course Map"
 					width="100%" addStyleNames="{style.button-blue}" height="100%" ui:field="facultyCourseMapButton" />
 			</g:layer>
