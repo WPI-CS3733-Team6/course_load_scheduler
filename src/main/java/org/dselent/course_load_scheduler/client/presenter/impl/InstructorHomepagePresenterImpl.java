@@ -4,7 +4,7 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
 
-import org.dselent.course_load_scheduler.client.action.GoToAccoutInfoAction;
+import org.dselent.course_load_scheduler.client.action.GoToAccountInfoAction;
 import org.dselent.course_load_scheduler.client.action.GoToCartAction;
 import org.dselent.course_load_scheduler.client.action.GoToClassSearchAction;
 import org.dselent.course_load_scheduler.client.action.GoToCurrentCoursesAction;
@@ -95,8 +95,9 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 			view.getClassSearchButton().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
+			HasWidgets container = parentPresenter.getView().getViewRootPanel();
 			GoToClassSearchAction gcsa = new GoToClassSearchAction();
-			GoToClassSearchEvent gcse = new GoToClassSearchEvent(gcsa);
+			GoToClassSearchEvent gcse = new GoToClassSearchEvent(gcsa, container);
 			eventBus.fireEvent(gcse);
 			
 		}
@@ -109,8 +110,9 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 			view.getAccountInfoButton().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
-			GoToAccoutInfoAction gaa = new GoToAccoutInfoAction();
-			GoToAccountInfoEvent gae = new GoToAccountInfoEvent(gaa);
+			HasWidgets container = parentPresenter.getView().getViewRootPanel();
+			GoToAccountInfoAction gaa = new GoToAccountInfoAction();
+			GoToAccountInfoEvent gae = new GoToAccountInfoEvent(gaa, container);
 			eventBus.fireEvent(gae);
 			
 		}
@@ -123,8 +125,9 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 			view.getCourseCartButton().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
+			HasWidgets container = parentPresenter.getView().getViewRootPanel();
 			GoToCartAction gca = new GoToCartAction();
-			GoToCartEvent gce = new GoToCartEvent(gca);
+			GoToCartEvent gce = new GoToCartEvent(gca, container);
 			eventBus.fireEvent(gce);
 			
 		}
