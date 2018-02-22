@@ -21,7 +21,6 @@ public class GoToCurrentCoursesEvent extends DisplayEvent<GoToCurrentCoursesActi
 
 	@Override
 	public Type<GoToCurrentCoursesEventHandler> getAssociatedType() {
-		// TODO Auto-generated method stub
 		return TYPE;
 	}
 

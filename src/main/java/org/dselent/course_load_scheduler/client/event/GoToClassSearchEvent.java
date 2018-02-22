@@ -3,16 +3,16 @@ package org.dselent.course_load_scheduler.client.event;
 import org.dselent.course_load_scheduler.client.action.GoToClassSearchAction;
 import org.dselent.course_load_scheduler.client.event_handler.GoToClassSearchEventHandler;
 
-import com.google.gwt.event.shared.GwtEvent;
+import com.google.gwt.user.client.ui.HasWidgets;
 
-public class GoToClassSearchEvent extends GwtEvent<GoToClassSearchEventHandler> {
+public class GoToClassSearchEvent extends DisplayEvent<GoToClassSearchAction, GoToClassSearchEventHandler> {
 	
 	public static Type<GoToClassSearchEventHandler> TYPE =  new Type<GoToClassSearchEventHandler>();
 	
 	private GoToClassSearchAction action;
 
-	public GoToClassSearchEvent(GoToClassSearchAction action) {
-		this.action = action;
+	public GoToClassSearchEvent(GoToClassSearchAction action, HasWidgets container) {
+		super(action, container);
 	}
 
 	public GoToClassSearchAction getAction() {
@@ -21,7 +21,6 @@ public class GoToClassSearchEvent extends GwtEvent<GoToClassSearchEventHandler> 
 
 	@Override
 	public Type<GoToClassSearchEventHandler> getAssociatedType() {
-		// TODO Auto-generated method stub
 		return TYPE;
 	}
 

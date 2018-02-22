@@ -1,6 +1,6 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
-import org.dselent.course_load_scheduler.client.action.GoToAccoutInfoAction;
+import org.dselent.course_load_scheduler.client.action.GoToAccountInfoAction;
 import org.dselent.course_load_scheduler.client.action.GoToAddCourseAction;
 import org.dselent.course_load_scheduler.client.action.GoToAddEditUserAction;
 import org.dselent.course_load_scheduler.client.action.GoToCartAction;
@@ -12,12 +12,10 @@ import org.dselent.course_load_scheduler.client.event.GoToAddEditUserEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCartEvent;
 import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
-import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.AdminHomepagePresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.AdminHomepageView;
 
-import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.inject.Inject;
 
@@ -25,7 +23,7 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 	private IndexPresenter parentPresenter;
 	private AdminHomepageView view;
 	private boolean clickInProgress;
-	private HasWidgets container = parentPresenter.getView().getViewRootPanel();
+	private HasWidgets container = parentPresenter.getView().getCenterPanel();
 	
 	@Inject
 	public AdminHomepagePresenterImpl(IndexPresenter parentPresenter, AdminHomepageView view)
@@ -38,16 +36,7 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 	@Override
 	public void init()
 	{
-		bind();
-	}
-
-	@Override
-	public void bind()
-	{
-		HandlerRegistration registration;
 		
-		registration = eventBus.addHandler(InvalidLoginEvent.TYPE, this);
-		eventBusRegistration.put(InvalidLoginEvent.TYPE, registration);
 	}
 		
 	@Override
@@ -83,10 +72,10 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 			view.getAddCourse().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
-			//event and checking
+			//TODO course ID
 			
 			GoToAddCourseAction gaca = new GoToAddCourseAction();
-			GoToAddCourseEvent gace = new GoToAddCourseEvent(gaca);
+			GoToAddCourseEvent gace = new GoToAddCourseEvent(gaca, container);
 			eventBus.fireEvent(gace);
 			
 		}
@@ -100,10 +89,10 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 			view.getAddUser().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
-			//event and checking
+			//TODO User ID?
 			
 			GoToAddEditUserAction gaeua = new GoToAddEditUserAction();
-			GoToAddEditUserEvent gaeue = new GoToAddEditUserEvent(gaeua);
+			GoToAddEditUserEvent gaeue = new GoToAddEditUserEvent(gaeua, container);
 			eventBus.fireEvent(gaeue);
 			
 		}
@@ -117,8 +106,10 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 			view.getAccountInfoButton().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
-			GoToAccoutInfoAction gaa = new GoToAccoutInfoAction();
-			GoToAccountInfoEvent gae = new GoToAccountInfoEvent(gaa);
+			//TODO User ID?
+			
+			GoToAccountInfoAction gaa = new GoToAccountInfoAction();
+			GoToAccountInfoEvent gae = new GoToAccountInfoEvent(gaa, container);
 			eventBus.fireEvent(gae);
 			
 		}
@@ -132,10 +123,10 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 			view.getEditUser().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
-			//event and checking
+			//TODO User ID?
 			
 			GoToAddEditUserAction gaeua = new GoToAddEditUserAction();
-			GoToAddEditUserEvent gaeue = new GoToAddEditUserEvent(gaeua);
+			GoToAddEditUserEvent gaeue = new GoToAddEditUserEvent(gaeua, container);
 			eventBus.fireEvent(gaeue);
 			
 		}
@@ -149,24 +140,15 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 			view.getModifyCourse().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
-			//event and checking
-			
+			//TODO how to get course num
+			/*
+			GoToEditCourseAction gaeca = new GoToEditCourseAction( XXXX );
+			GoToEditCourseEvent gaece = new GoToEditCourseEvent(gaeca);
+			eventBus.fireEvent(gaece);
+			*/
 		}
 	}
-/*
-	@Override
-	public void goToGeneratedCompleteDepartmentSchedule() {
-		if(!clickInProgress) {
-			
-			clickInProgress = true;
-			view.getGeneratedCompleteDepartmentSchedule().setEnabled(false);
-			parentPresenter.showLoadScreen();
-			
-			//event and checking
-			
-		}
-	}
-*/
+	
 	@Override
 	public void goToCurrentClasses() {
 		if(!clickInProgress) {
@@ -191,7 +173,7 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 			parentPresenter.showLoadScreen();
 			
 			GoToClassSearchAction gcsa = new GoToClassSearchAction();
-			GoToClassSearchEvent gcse = new GoToClassSearchEvent(gcsa);
+			GoToClassSearchEvent gcse = new GoToClassSearchEvent(gcsa, container);
 			eventBus.fireEvent(gcse);
 			
 		}
@@ -206,7 +188,7 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 			parentPresenter.showLoadScreen();
 			
 			GoToCartAction gca = new GoToCartAction();
-			GoToCartEvent gce = new GoToCartEvent(gca);
+			GoToCartEvent gce = new GoToCartEvent(gca, container);
 			eventBus.fireEvent(gce);
 			
 		}

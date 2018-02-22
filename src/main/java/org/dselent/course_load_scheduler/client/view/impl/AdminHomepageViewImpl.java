@@ -9,11 +9,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HasWidgets;
-import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.ListBox;
-import com.google.gwt.user.client.ui.SplitLayoutPanel;
-import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -21,30 +17,20 @@ import com.google.gwt.event.dom.client.ClickEvent;
 public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> implements AdminHomepageView {
 
 	private static AdminHomepageViewImplUiBinder uiBinder = GWT.create(AdminHomepageViewImplUiBinder.class);
-	@UiField LayoutPanel layoutPanel;
 	@UiField HTMLPanel rootPanel;
-	@UiField LayoutPanel viewAsAdmin;
-	@UiField ListBox department;
-	@UiField TextBox departmentName;
-	@UiField ListBox courses;
-	@UiField Button addUser;
-	@UiField Button editUser;
-	@UiField Button addCourse;
-	@UiField Button modifyCourse;
-	@UiField TextBox courseText;
-	@UiField LayoutPanel viewAsInstructor;
-	@UiField Button createRequest;
+	@UiField ListBox departmentList;
+	@UiField ListBox coursesList;
+	@UiField Button addUserButton;
+	@UiField Button editUserButton;
+	@UiField Button addCourseButton;
+	@UiField Button modifyCourseButton;
 	@UiField Button generatedCompleteDepartmentSchedule;
-	@UiField LayoutPanel courseSummariesPanel;
-	@UiField SplitLayoutPanel table;
-	@UiField HorizontalPanel north;
-	@UiField ListBox west;
-	@UiField ListBox center;
-	@UiField HorizontalPanel horizontalPanel;
+	@UiField ListBox registeredCoursesList;
+	@UiField ListBox pendingCoursesList;
 	@UiField Button currentClassesButton;
 	@UiField Button searchClassesButton;
 	@UiField Button accountInfoButton;
-	@UiField Button courseRegistrationCart;
+	@UiField Button courseRegistrationCartButton;
 
 	interface AdminHomepageViewImplUiBinder extends UiBinder<Widget, AdminHomepageViewImpl> {
 	}
@@ -62,19 +48,19 @@ public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> 
 	}
 
 	public Button getAddUser() {
-		return addUser;
+		return addUserButton;
 	}
 
 	public Button getEditUser() {
-		return editUser;
+		return editUserButton;
 	}
 
 	public Button getAddCourse() {
-		return addCourse;
+		return addCourseButton;
 	}
 
 	public Button getModifyCourse() {
-		return modifyCourse;
+		return modifyCourseButton;
 	}
 
 	public Button getGeneratedCompleteDepartmentSchedule() {
@@ -90,7 +76,7 @@ public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> 
 	}
 
 	public Button getCourseRegistrationCart() {
-		return courseRegistrationCart;
+		return courseRegistrationCartButton;
 	}
 
 	@Override
@@ -108,9 +94,49 @@ public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> 
 		return rootPanel;
 	}
 	
-	
-	//currentClassesButton, searchClassesButton, accountInfoButton, courseRegistrationCart, generatedCompleteDepartmentSchedule, addUser, editUser, addCourse, modifyCourse
-	@UiHandler("addUser")
-	void onAddUserClick(ClickEvent event) {
+	@UiHandler("addUserButton")
+	void onAddUserButtonClick(ClickEvent event) {
+		presenter.goToAddUser();
 	}
+	
+	@UiHandler("editUserButton")
+	void onEditUserButtonClick(ClickEvent event) {
+		presenter.goToEditUser();
+	}
+	
+	@UiHandler("addCourseButton")
+	void onAddCourseButtonClick(ClickEvent event) {
+		presenter.goToAddCourse();
+	}
+	
+	@UiHandler("modifyCourseButton")
+	void onModifyCourseButtonClick(ClickEvent event) {
+		presenter.goToModifyCourse();
+	}
+	
+	@UiHandler("generatedCompleteDepartmentSchedule")
+	void onGeneratedCompleteDepartmentScheduleClick(ClickEvent event) {
+		
+	}
+	
+	@UiHandler("currentClassesButton")
+	void onCurrentClassesButtonClick(ClickEvent event) {
+		presenter.goToCurrentClasses();
+	}
+	
+	@UiHandler("searchClassesButton")
+	void onSearchClassesButtonClick(ClickEvent event) {
+		presenter.goToSearchClasses();
+	}
+
+	@UiHandler("accountInfoButton")
+	void onAccountInfoButtonClick(ClickEvent event) {
+		presenter.goToAcctInfo();
+	}
+	
+	@UiHandler("courseRegistrationCartButton")
+	void onCourseRegistrationCartButtonClick(ClickEvent event) {
+		presenter.goToCart();
+	}
+	
 }
