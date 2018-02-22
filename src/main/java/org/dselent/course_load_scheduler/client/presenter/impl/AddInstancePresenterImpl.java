@@ -30,7 +30,7 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 	private IndexPresenter parentPresenter;
 	private AddInstanceView view;
 	private boolean addInstanceClickInProgress;
-	private HasWidgets container = parentPresenter.getView().getViewRootPanel();
+	private HasWidgets container = parentPresenter.getView().getCenterPanel();
 	
 	@Inject
 	public AddInstancePresenterImpl(IndexPresenter parentPresenter, AddInstanceView view)
@@ -126,7 +126,7 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 			
 			if(validNumber) {
 				AddInstanceAction aia = new AddInstanceAction(number, instanceNum, term);
-				AddInstanceEvent aie = new AddInstanceEvent(aia, parentPresenter.getView().getCenterPanel()); //TODO: Very help please confused
+				AddInstanceEvent aie = new AddInstanceEvent(aia, container); //TODO: Very help please confused
 				eventBus.fireEvent(aie);
 			} else {
 				InvalidInstanceAction iia = new InvalidInstanceAction(invalidReasonList);

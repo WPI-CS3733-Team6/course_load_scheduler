@@ -10,14 +10,31 @@ import com.google.gwt.user.client.ui.HasWidgets;
 
 public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresenter
 {
+	private IndexPresenter parentPresenter; // or should it be "loginPresenter "?????????
 	private IndexView view;
+	private boolean viewCurrentClassesClickInProgress;
+	private boolean homeClickInProgress;
+	private boolean logoutClickInProgress;
+	private boolean reportAProblemClickInProgress;
 
 	@Inject
 	public IndexPresenterImpl(IndexView view)
 	{
 		this.view = view;
+		this.parentPresenter = parentPresenter;
 		view.setPresenter(this);
+		viewCurrentClassesClickInProgress = false;
+		homeClickInProgress = false;
+		logoutClickInProgress = false;
+		reportAProblemClickInProgress = false;
 	}
+	
+	@Override
+	public void init()
+	{
+		bind();
+	}
+
 	
 	@Override
 	public void go(HasWidgets container)
