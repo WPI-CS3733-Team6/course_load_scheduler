@@ -45,6 +45,7 @@ public class FacultyCourseMapPresenterImpl extends BasePresenterImpl implements 
 		this.view = view;
 	}
 
+	//TODO We will probably scrap this when we get to the service bit
 	@Override
 	public void getFaculty() {
 		FacultyCourseMapAction fcma = new FacultyCourseMapAction();
