@@ -20,6 +20,7 @@ import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditSectionEvent;
+import org.dselent.course_load_scheduler.client.event.InvalidAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidCourseEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidCourseIdEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidInstanceEvent;
@@ -47,7 +48,7 @@ implements InvalidLoginEventHandler, SendLoginEventHandler, InvalidCourseEventHa
 AddUserEventHandler, CourseRegistrationCartEventHandler, DeleteCourseEventHandler, DeleteInstanceEventHandler, DeleteSectionEventHandler, 
 EditCourseEventHandler, EditUserEventHandler, FacultyCourseMapEventHandler, GoToAccountInfoEventHandler, GoToAddCourseEventHandler, GoToAddEditUserEventHandler, GoToCartEventHandler, 
 GoToClassSearchEventHandler, GoToCurrentCoursesEventHandler, GoToEditCourseEventHandler, GoToEditInstanceEventHandler, GoToEditSectionEventHandler, InvalidCourseIdEventHandler, 
-InvalidInstanceEventHandler, InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SubmitReportEventHandler, UpdateAccountEventHandler
+InvalidInstanceEventHandler, InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SubmitReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler
 {
 	@Override
 	public void onUpdateAccount(UpdateAccountEvent evt) {}
@@ -141,4 +142,7 @@ InvalidInstanceEventHandler, InvalidReportEventHandler, SaveInstanceEventHandler
 	
 	@Override
 	public void onDeleteSection(DeleteSectionEvent evt) {}
+	
+	@Override
+	public void onInvalidAccountInfo(InvalidAccountInfoEvent evt) {}
 }

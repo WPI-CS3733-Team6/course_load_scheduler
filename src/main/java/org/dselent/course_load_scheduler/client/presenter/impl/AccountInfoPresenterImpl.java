@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import org.dselent.course_load_scheduler.client.action.InvalidAccountInfoAction;
 import org.dselent.course_load_scheduler.client.action.UpdateAccountAction;
 import org.dselent.course_load_scheduler.client.event.InvalidAccountInfoEvent;
-import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
 import org.dselent.course_load_scheduler.client.presenter.AccountInfoPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
@@ -42,8 +41,8 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 	{
 		HandlerRegistration registration;
 		
-		registration = eventBus.addHandler(InvalidLoginEvent.TYPE, this);
-		eventBusRegistration.put(InvalidLoginEvent.TYPE, registration);
+		registration = eventBus.addHandler(InvalidAccountInfoEvent.TYPE, this);
+		eventBusRegistration.put(InvalidAccountInfoEvent.TYPE, registration);
 	}
 		
 	@Override
