@@ -20,6 +20,7 @@ import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditSectionEvent;
+import org.dselent.course_load_scheduler.client.event.GoToFacultyCourseMapEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidCourseEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidCourseIdEvent;
@@ -49,7 +50,8 @@ implements InvalidLoginEventHandler, SendLoginEventHandler, InvalidCourseEventHa
 AddUserEventHandler, CourseRegistrationCartEventHandler, DeleteCourseEventHandler, DeleteInstanceEventHandler, DeleteSectionEventHandler, 
 EditCourseEventHandler, EditUserEventHandler, FacultyCourseMapEventHandler, GoToAccountInfoEventHandler, GoToAddCourseEventHandler, GoToAddEditUserEventHandler, GoToCartEventHandler, 
 GoToClassSearchEventHandler, GoToCurrentCoursesEventHandler, GoToEditCourseEventHandler, GoToEditInstanceEventHandler, GoToEditSectionEventHandler, InvalidCourseIdEventHandler, 
-InvalidInstanceEventHandler, InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SubmitReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, SubmitCourseToCartEventHandler
+InvalidInstanceEventHandler, InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SubmitReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, 
+SubmitCourseToCartEventHandler, GoToFacultyCourseMapEventHandler
 {
 	@Override
 	public void onUpdateAccount(UpdateAccountEvent evt) {}
@@ -149,5 +151,8 @@ InvalidInstanceEventHandler, InvalidReportEventHandler, SaveInstanceEventHandler
 	
 	@Override
 	public void onSubmitCourseToCart(SubmitCourseToCartEvent evt) {}
+	
+	@Override
+	public void onGoToFacultyCourseMap(GoToFacultyCourseMapEvent evt) {}
 	
 }
