@@ -4,4 +4,5 @@ public interface CourseRegistrationCartPresenter extends BasePresenter{
 	IndexPresenter getParentPresenter();
 	void setParentPresenter(IndexPresenter parentPresenter);
 	void submitCart();
+	void removeCourse();
 }

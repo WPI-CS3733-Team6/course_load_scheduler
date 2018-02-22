@@ -86,7 +86,7 @@ public class CourseRegistrationCartViewImpl extends BaseViewImpl<CourseRegistrat
 	
 	@UiHandler("removeCourse")
 	void onRemoveCourseButtonClicked(ClickEvent evt) {
-		//presenter call
+		presenter.removeCourse();
 	}
 
 }
