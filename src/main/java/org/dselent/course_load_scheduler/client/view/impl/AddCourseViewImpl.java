@@ -121,10 +121,12 @@ public class AddCourseViewImpl extends BaseViewImpl<AddCoursePresenter> implemen
 	
 	@UiHandler("createInstanceButton")
 	void onCreateInstanceButtonClick(ClickEvent event) {
+		presenter.createInstance();
 	}
 	
 	@UiHandler("editInstanceButton")
 	void onEditInstanceButtonClick(ClickEvent event) {
+		presenter.editInstance();
 	}
 	
 }

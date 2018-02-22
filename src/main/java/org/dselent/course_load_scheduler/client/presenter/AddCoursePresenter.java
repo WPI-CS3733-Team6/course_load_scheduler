@@ -6,4 +6,5 @@ public interface AddCoursePresenter extends BasePresenter{
 	void saveChanges();
 	void deleteCourse();
 	void createInstance();
+	void editInstance();
 }
