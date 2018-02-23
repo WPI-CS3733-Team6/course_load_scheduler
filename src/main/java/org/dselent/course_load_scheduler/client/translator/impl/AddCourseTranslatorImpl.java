@@ -26,8 +26,10 @@ public class AddCourseTranslatorImpl implements ActionTranslator<AddCourseAction
 
 	@Override
 	public ReceiveAddCourseAction translateToAction(JSONObject json) {
-		// TODO Auto-generated method stub
-		return null;
+
+		ReceiveAddCourseAction action = new ReceiveAddCourseAction();
+		
+		return action;
 	}
 
 }
