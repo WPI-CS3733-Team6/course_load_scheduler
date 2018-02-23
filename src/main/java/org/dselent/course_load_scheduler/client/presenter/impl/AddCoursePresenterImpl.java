@@ -54,17 +54,8 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 		registration = eventBus.addHandler(AddCourseEvent.TYPE, this);
 		eventBusRegistration.put(AddCourseEvent.TYPE, registration);
 		
-		registration = eventBus.addHandler(AddInstanceEvent.TYPE, this);
-		eventBusRegistration.put(AddInstanceEvent.TYPE, registration);
-		
-		registration = eventBus.addHandler(DeleteCourseEvent.TYPE, this);
-		eventBusRegistration.put(DeleteCourseEvent.TYPE, registration);
-		
 		registration = eventBus.addHandler(EditCourseEvent.TYPE, this);
 		eventBusRegistration.put(EditCourseEvent.TYPE, registration);
-		
-		registration = eventBus.addHandler(GoToEditInstanceEvent.TYPE, this);
-		eventBusRegistration.put(GoToEditInstanceEvent.TYPE, registration);
 		
 		registration = eventBus.addHandler(InvalidCourseEvent.TYPE, this);
 		eventBusRegistration.put(InvalidCourseEvent.TYPE, registration);
@@ -106,7 +97,7 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 		Integer level = view.getLevelList().getSelectedIndex();
 		String department = view.getDepartmentField().getValue();
 		String description = view.getCourseDescField().getValue();
-		Integer courseId = view.getCourseIdField().getValue();
+		Integer courseId = parentPresenter.getGlobalData().getCourseId();
 		
 		Boolean validNumber = true;
 		Boolean validName = true;

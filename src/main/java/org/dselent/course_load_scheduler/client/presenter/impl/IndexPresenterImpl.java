@@ -17,7 +17,7 @@ import com.google.gwt.user.client.ui.HasWidgets;
 
 public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresenter
 {
-	private IndexPresenter parentPresenter; // or should it be "loginPresenter "?????????
+	private IndexPresenter parentPresenter;
 	private IndexView view;
 	private boolean viewCurrentClassesClickInProgress;
 	private boolean homeClickInProgress;
@@ -70,6 +70,11 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 	}
 
 	@Override
+	public GlobalData getGlobalData() {
+		return globalData;
+	}
+	
+	@Override
 	public void setParentPresenter(IndexPresenter parentPresenter)
 	{
 		this.parentPresenter = parentPresenter;
@@ -101,9 +106,14 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 			parentPresenter.showLoadScreen();
 			
 			HasWidgets container = parentPresenter.getView().getMiddlePanel();
+			boolean isAdmin = parentPresenter.getGlobalData().getIsAdmin();
 			
-			//How are we going to solve the admin and instrcutor homepage thing
-			//GoToHomeAction hia = new GotoHomeAction();
+			if(isAdmin) {
+				//GoToAdminHomepage
+			}
+			else {
+				//GoToHomepage
+			}
 		}
 	}
 	

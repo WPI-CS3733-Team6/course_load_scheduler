@@ -1,20 +1,15 @@
 package org.dselent.course_load_scheduler.client.model;
 
 public class GlobalData {
-	private Integer userId;
+	private boolean isAdmin;
 	private Integer courseId;
 	private String courseNum;
 	private Integer InstanceId;
 	private Integer InstanceNum;
 	private Integer SectionId;
 	private Integer SectionNum;
+	private User userInfo;
 	
-	public Integer getUserId() {
-		return userId;
-	}
-	public void setUserId(Integer userId) {
-		this.userId = userId;
-	}
 	public Integer getCourseId() {
 		return courseId;
 	}
@@ -51,6 +46,18 @@ public class GlobalData {
 	public void setSectionNum(Integer sectionNum) {
 		SectionNum = sectionNum;
 	}
+	public boolean getIsAdmin() {
+		return isAdmin;
+	}
+	public void setIsAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
+	public User getUserInfo() {
+		return userInfo;
+	}
+	public void setUserInfo(User userInfo) {
+		this.userInfo = userInfo;
+	}
 	
 	@Override
 	public int hashCode() {
@@ -62,7 +69,8 @@ public class GlobalData {
 		result = prime * result + ((SectionNum == null) ? 0 : SectionNum.hashCode());
 		result = prime * result + ((courseId == null) ? 0 : courseId.hashCode());
 		result = prime * result + ((courseNum == null) ? 0 : courseNum.hashCode());
-		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
+		result = prime * result + (isAdmin ? 1231 : 1237);
+		result = prime * result + ((userInfo == null) ? 0 : userInfo.hashCode());
 		return result;
 	}
 	
@@ -105,18 +113,21 @@ public class GlobalData {
 				return false;
 		} else if (!courseNum.equals(other.courseNum))
 			return false;
-		if (userId == null) {
-			if (other.userId != null)
+		if (isAdmin != other.isAdmin)
+			return false;
+		if (userInfo == null) {
+			if (other.userInfo != null)
 				return false;
-		} else if (!userId.equals(other.userId))
+		} else if (!userInfo.equals(other.userInfo))
 			return false;
 		return true;
 	}
 	
 	@Override
 	public String toString() {
-		return "GlobalData [userId=" + userId + ", courseId=" + courseId + ", courseNum=" + courseNum + ", InstanceId="
-				+ InstanceId + ", InstanceNum=" + InstanceNum + ", SectionId=" + SectionId + ", SectionNum="
-				+ SectionNum + "]";
+		return "GlobalData [isAdmin=" + isAdmin + ", courseId=" + courseId + ", courseNum=" + courseNum
+				+ ", InstanceId=" + InstanceId + ", InstanceNum=" + InstanceNum + ", SectionId=" + SectionId
+				+ ", SectionNum=" + SectionNum + ", userInfo=" + userInfo + "]";
 	}
+	
 }
