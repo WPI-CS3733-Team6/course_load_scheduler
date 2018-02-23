@@ -72,7 +72,7 @@ public class AccountInfoViewImpl extends BaseViewImpl<AccountInfoPresenter> impl
 	    // Create the text fields (This table is a 10x10)
 	    t.setText(0, 0, "Your username is:");
 	    t.setText(1, 0, "Your WPI email is:");
-	    t.setText(2, 0, "Your minimum eaching requirment (course hours) is:");
+	    t.setText(2, 0, "Your minimum teaching requirement (course hours) is:");
 	    t.setText(6, 0, "Change password:");
 	    t.setText(8, 0, "Prefered email (optional):");
 	    t.setText(10, 0, "Phone number (optional):");

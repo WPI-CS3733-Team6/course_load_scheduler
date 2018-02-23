@@ -10,7 +10,7 @@ public interface DetailedCourseInformationView extends BaseView<DetailedCourseIn
 
 	//TextBoxes
 	public TextBox getCourseName();
-	public IntegerBox getCourseNumber();
+	public TextBox getCourseNumber();
 	public TextBox getLevel();
 	public IntegerBox getExpectedPopulation();
 	public TextBox getDescription();

@@ -27,7 +27,7 @@ public class DetailedCourseInformationViewImpl extends BaseViewImpl<DetailedCour
 	@UiField LayoutPanel LayoutPanel;
 	@UiField HTMLPanel rootPanel;
 	@UiField TextBox courseName;
-	@UiField IntegerBox courseNumber;
+	@UiField TextBox courseNumber;
 	@UiField TextBox level;
 	@UiField IntegerBox expectedPopulation;
 	@UiField TextBox meetingDays;
@@ -70,7 +70,7 @@ public class DetailedCourseInformationViewImpl extends BaseViewImpl<DetailedCour
 	/**
 	 * @return the courseNumber
 	 */
-	public IntegerBox getCourseNumber() {
+	public TextBox getCourseNumber() {
 		return courseNumber;
 	}
 	
