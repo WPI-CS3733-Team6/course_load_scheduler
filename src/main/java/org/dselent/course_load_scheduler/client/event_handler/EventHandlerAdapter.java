@@ -30,6 +30,7 @@ import org.dselent.course_load_scheduler.client.event.ReceiveAddCourseEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveLoginEvent;
 import org.dselent.course_load_scheduler.client.event.SaveInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.SaveSectionEvent;
+import org.dselent.course_load_scheduler.client.event.SearchCoursesEvent;
 import org.dselent.course_load_scheduler.client.event.SendLoginEvent;
 import org.dselent.course_load_scheduler.client.event.SubmitCourseToCartEvent;
 import org.dselent.course_load_scheduler.client.event.SubmitRegistrationCartEvent;
@@ -52,7 +53,7 @@ AddUserEventHandler, SubmitRegistrationCartEventHandler, DeleteCourseEventHandle
 EditCourseEventHandler, EditUserEventHandler, GetFacultyEventHandler, GoToAccountInfoEventHandler, GoToAddCourseEventHandler, GoToAddEditUserEventHandler, GoToCartEventHandler, 
 GoToClassSearchEventHandler, GoToCurrentCoursesEventHandler, GoToEditCourseEventHandler, GoToEditInstanceEventHandler, GoToEditSectionEventHandler, InvalidCourseIdEventHandler, 
 InvalidInstanceEventHandler, InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SubmitReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, 
-SubmitCourseToCartEventHandler, GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler
+SubmitCourseToCartEventHandler, GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler, AdminCourseSearchEventHandler
 {
 	@Override
 	public void onUpdateAccount(UpdateAccountEvent evt) {}
@@ -97,7 +98,7 @@ SubmitCourseToCartEventHandler, GoToFacultyCourseMapEventHandler, ReceiveAddCour
 	public void onGoToAddEditUser(GoToAddEditUserEvent evt) {}
 	
 	@Override
-	public void onGoToAddCourse(GoToAddCourseEvent evt) {}
+	public void search(SearchCoursesEvent evt) {}
 	
 	@Override
 	public void onGoToAccountInfo(GoToAccountInfoEvent evt) {}
@@ -158,4 +159,7 @@ SubmitCourseToCartEventHandler, GoToFacultyCourseMapEventHandler, ReceiveAddCour
 	
 	@Override
 	public void onReceiveAddCourse(ReceiveAddCourseEvent evt) {}
+	
+	@Override
+	public void onGoToAddCourse(GoToAddCourseEvent evt) {}
 }
