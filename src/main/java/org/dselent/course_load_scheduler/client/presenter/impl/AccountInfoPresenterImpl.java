@@ -123,8 +123,9 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 	
 	//Passing these in, some can be null, if so, service layer will find out
 	public void updateInfo (String currentPassword, String newPassword, String newEmail, Integer newPhoneNum) {
+		HasWidgets container = parentPresenter.getView().getMiddlePanel();
 		UpdateAccountAction uaa = new UpdateAccountAction(currentPassword, newPassword, newEmail, newPhoneNum);
-		UpdateAccountEvent uae = new UpdateAccountEvent(uaa);
+		UpdateAccountEvent uae = new UpdateAccountEvent(uaa, container);
 		eventBus.fireEvent(uae);
 	}
 	
