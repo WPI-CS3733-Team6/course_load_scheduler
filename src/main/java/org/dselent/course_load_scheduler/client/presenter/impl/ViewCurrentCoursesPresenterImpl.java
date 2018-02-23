@@ -1,5 +1,7 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
+import org.dselent.course_load_scheduler.client.action.GetCurrentCoursesAction;
+import org.dselent.course_load_scheduler.client.event.GetCurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.presenter.ViewCurrentCoursesPresenter;
@@ -63,5 +65,14 @@ public class ViewCurrentCoursesPresenterImpl extends BasePresenterImpl implement
 	public void setParentPresenter(IndexPresenter parentPresenter)
 	{
 		this.parentPresenter = parentPresenter;
+	}
+
+	@Override
+	public void showschedule() {
+		//HasWidgets container = parentPresenter.getView().getMiddlePanel();
+		GetCurrentCoursesAction cca = new GetCurrentCoursesAction();
+		GetCurrentCoursesEvent cce = new GetCurrentCoursesEvent(cca);
+		eventBus.fireEvent(cce);
+		
 	}
 }
