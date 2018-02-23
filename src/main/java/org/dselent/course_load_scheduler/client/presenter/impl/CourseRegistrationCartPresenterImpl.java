@@ -79,7 +79,7 @@ public class CourseRegistrationCartPresenterImpl extends BasePresenterImpl imple
 	
 	private void sendSubmitCart()
 	{
-		HasWidgets container = parentPresenter.getView().getViewRootPanel();
+		HasWidgets container = parentPresenter.getView().getMiddlePanel();
 		SubmitRegistrationCartAction crca = new SubmitRegistrationCartAction();
 		SubmitRegistrationCartEvent crce = new SubmitRegistrationCartEvent(crca, container);
 		eventBus.fireEvent(crce);
@@ -92,7 +92,7 @@ public class CourseRegistrationCartPresenterImpl extends BasePresenterImpl imple
 			view.getRemoveCourse().setEnabled(false);
 			
 			//remove course.  should I take any arguments?
-			HasWidgets container = parentPresenter.getView().getViewRootPanel();
+			HasWidgets container = parentPresenter.getView().getMiddlePanel();
 			CourseCartRemoveCourseAction cra = new CourseCartRemoveCourseAction();
 			CourseCartRemoveCourseEvent cre = new CourseCartRemoveCourseEvent(cra, container);
 			eventBus.fireEvent(cre);

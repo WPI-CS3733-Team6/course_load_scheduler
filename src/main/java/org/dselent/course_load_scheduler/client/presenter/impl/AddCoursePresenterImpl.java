@@ -30,7 +30,7 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 
 	private IndexPresenter parentPresenter;
 	private AddCourseView view;
-	private HasWidgets container = parentPresenter.getView().getViewRootPanel();
+	private HasWidgets container = parentPresenter.getView().getMiddlePanel();
 	
 	@Inject
 	public AddCoursePresenterImpl(IndexPresenter parentPresenter, AddCourseView view)

@@ -125,7 +125,7 @@ public class LoginPresenterImpl extends BasePresenterImpl implements LoginPresen
 	
 	private void sendLogin(String userName, String password)
 	{
-		HasWidgets container = parentPresenter.getView().getViewRootPanel();
+		HasWidgets container = parentPresenter.getView().getMiddlePanel();
 		SendLoginAction sla = new SendLoginAction(userName, password);
 		SendLoginEvent sle = new SendLoginEvent(sla, container);
 		eventBus.fireEvent(sle);

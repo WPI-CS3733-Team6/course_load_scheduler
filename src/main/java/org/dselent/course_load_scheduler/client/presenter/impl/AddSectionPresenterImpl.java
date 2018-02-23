@@ -27,7 +27,7 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 	private boolean saveClickInProgress;
 	private boolean backClickInProgress;
 	private boolean deleteClickInProgress;
-	private HasWidgets container = parentPresenter.getView().getViewRootPanel();
+	private HasWidgets container = parentPresenter.getView().getMiddlePanel();
 	@Inject
 	public AddSectionPresenterImpl(IndexPresenter parentPresenter, AddSectionView view)
 	{

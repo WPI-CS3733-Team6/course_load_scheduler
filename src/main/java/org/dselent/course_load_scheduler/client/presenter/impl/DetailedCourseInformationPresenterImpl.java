@@ -88,7 +88,7 @@ public class DetailedCourseInformationPresenterImpl extends BasePresenterImpl im
 			
 			String courseName = view.getCourseName().getText();
 			
-			HasWidgets container = parentPresenter.getView().getViewRootPanel();
+			HasWidgets container = parentPresenter.getView().getMiddlePanel();
 			SubmitCourseToCartAction sca = new SubmitCourseToCartAction(courseName);
 			SubmitCourseToCartEvent sce = new SubmitCourseToCartEvent(sca, container);
 			eventBus.fireEvent(sce);
@@ -101,7 +101,7 @@ public class DetailedCourseInformationPresenterImpl extends BasePresenterImpl im
 			submitClickInProgress = true;
 			view.getReturnToSearchButton().setEnabled(false);
 			
-			HasWidgets container = parentPresenter.getView().getViewRootPanel();
+			HasWidgets container = parentPresenter.getView().getMiddlePanel();
 			GoToClassSearchAction gca = new GoToClassSearchAction();
 			GoToClassSearchEvent gce = new GoToClassSearchEvent(gca, container);
 			eventBus.fireEvent(gce);

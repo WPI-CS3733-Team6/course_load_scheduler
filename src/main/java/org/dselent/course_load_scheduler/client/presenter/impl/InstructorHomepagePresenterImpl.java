@@ -30,7 +30,7 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 	private IndexPresenter parentPresenter;
 	private InstructorHomepageView view;
 	private boolean clickInProgress;
-	private HasWidgets container = parentPresenter.getView().getViewRootPanel();
+	private HasWidgets container = parentPresenter.getView().getMiddlePanel();
 
 	/**
 	 * 
