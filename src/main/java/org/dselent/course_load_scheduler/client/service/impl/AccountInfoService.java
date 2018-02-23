@@ -3,6 +3,8 @@ package org.dselent.course_load_scheduler.client.service.impl;
 import org.dselent.course_load_scheduler.client.action.UpdateAccountAction;
 import org.dselent.course_load_scheduler.client.callback.UpdateAccountCallback;
 import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
+import org.dselent.course_load_scheduler.client.network.NetworkRequest;
+import org.dselent.course_load_scheduler.client.network.NetworkRequestStrings;
 import org.dselent.course_load_scheduler.client.translator.impl.AccountInfoActionTranslatorImpl;
 
 import com.google.gwt.event.shared.HandlerRegistration;
@@ -38,6 +40,11 @@ public class AccountInfoService extends BaseServiceImpl
 		UpdateAccountCallback accountCallback = new UpdateAccountCallback(eventBus, evt.getContainer());
 		
 		// TODO write network request here
+		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.USER_INFO_UPDATE, accountCallback, json);
+		request.send();
+		
+		//WARNING: will return nothing but errors until the relevant actions match up properly with the server side services and responses
+		
 	}
 
 }
