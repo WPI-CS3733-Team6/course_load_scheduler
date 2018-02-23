@@ -2,10 +2,14 @@ package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import javax.inject.Inject;
 
+import org.dselent.course_load_scheduler.client.action.GoToAdminHomeAction;
 import org.dselent.course_load_scheduler.client.action.GoToCurrentCoursesAction;
+import org.dselent.course_load_scheduler.client.action.GoToInstructorHomeAction;
 import org.dselent.course_load_scheduler.client.action.GoToLogoutAction;
 import org.dselent.course_load_scheduler.client.action.GoToReportAProblemAction;
+import org.dselent.course_load_scheduler.client.event.GoToAdminHomeEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
+import org.dselent.course_load_scheduler.client.event.GoToInstructorHomeEvent;
 import org.dselent.course_load_scheduler.client.event.GoToLogoutEvent;
 import org.dselent.course_load_scheduler.client.event.GoToReportAProblemEvent;
 import org.dselent.course_load_scheduler.client.model.GlobalData;
@@ -29,7 +33,7 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 	public IndexPresenterImpl(IndexView view, GlobalData globalData)
 	{
 		this.view = view;
-		this.parentPresenter = parentPresenter;
+		//this.parentPresenter = parentPresenter;
 		view.setPresenter(this);
 		viewCurrentClassesClickInProgress = false;
 		homeClickInProgress = false;
@@ -98,7 +102,7 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 	}
 	
 	@Override
-	public void goHome() {
+	public void home() {
 		if(!homeClickInProgress) 
 		{
 			homeClickInProgress = true;
@@ -109,10 +113,14 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 			boolean isAdmin = parentPresenter.getGlobalData().getIsAdmin();
 			
 			if(isAdmin) {
-				//GoToAdminHomepage
+				GoToAdminHomeAction aha = new GoToAdminHomeAction();
+				GoToAdminHomeEvent ahe = new GoToAdminHomeEvent(aha, container);
+				eventBus.fireEvent(ahe);
 			}
 			else {
-				//GoToHomepage
+				GoToInstructorHomeAction iha = new GoToInstructorHomeAction();
+				GoToInstructorHomeEvent ihe = new GoToInstructorHomeEvent(iha, container);
+				eventBus.fireEvent(ihe);
 			}
 		}
 	}

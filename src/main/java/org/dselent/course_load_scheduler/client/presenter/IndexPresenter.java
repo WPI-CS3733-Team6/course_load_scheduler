@@ -9,7 +9,7 @@ public interface IndexPresenter extends BasePresenter
 	void setParentPresenter(IndexPresenter parentPresenter);
 	public void showLoadScreen();
 	public void hideLoadScreen();
-	public void goHome();
+	public void home();
 	public void logout();
 	public void reportAProblem();
 	public void currentClasses();

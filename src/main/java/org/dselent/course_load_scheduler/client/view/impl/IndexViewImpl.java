@@ -135,7 +135,7 @@ public class IndexViewImpl extends BaseViewImpl<IndexPresenter> implements Index
 	@UiHandler("home")
 	void onHomeButtonClicked(ClickEvent evt)
 	{
-		presenter.goHome();
+		presenter.home();
 	}
 	
 	@UiHandler("logout")
