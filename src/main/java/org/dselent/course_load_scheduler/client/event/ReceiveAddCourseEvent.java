@@ -6,14 +6,14 @@ import org.dselent.course_load_scheduler.client.event_handler.ReceiveAddCourseEv
 import com.google.gwt.user.client.ui.HasWidgets;
 
 public class ReceiveAddCourseEvent extends DisplayEvent<ReceiveAddCourseAction, ReceiveAddCourseEventHandler>{
-	
-public static Type<ReceiveAddCourseEventHandler> TYPE = new Type<ReceiveAddCourseEventHandler>();
-	
+
+	public static Type<ReceiveAddCourseEventHandler> TYPE = new Type<ReceiveAddCourseEventHandler>();
+
 	public ReceiveAddCourseEvent(ReceiveAddCourseAction action, HasWidgets container)
 	{
 		super(action, container);
 	}
-	
+
 	@Override
 	public Type<ReceiveAddCourseEventHandler> getAssociatedType()
 	{
