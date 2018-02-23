@@ -1,9 +1,12 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
+import org.dselent.course_load_scheduler.client.action.CourseSearchAction;
+import org.dselent.course_load_scheduler.client.event.CourseSearchEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.presenter.SearchClassesPresenter;
 import org.dselent.course_load_scheduler.client.view.SearchClassesView;
+
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.inject.Inject;
@@ -13,7 +16,7 @@ public class SearchClassesPresenterImpl extends BasePresenterImpl implements Sea
 {
 	private IndexPresenter parentPresenter;
 	private SearchClassesView view;
-	private boolean serachClickInProgress;
+	private Boolean searchClickInProgress;
 
 	@Inject
 	public SearchClassesPresenterImpl(IndexPresenter parentPresenter, SearchClassesView view)
@@ -21,7 +24,7 @@ public class SearchClassesPresenterImpl extends BasePresenterImpl implements Sea
 		this.view = view;
 		this.parentPresenter = parentPresenter;
 		view.setPresenter(this);
-		serachClickInProgress = false;
+		searchClickInProgress = false;
 	}
 	
 	@Override
@@ -63,5 +66,22 @@ public class SearchClassesPresenterImpl extends BasePresenterImpl implements Sea
 	public void setParentPresenter(IndexPresenter parentPresenter)
 	{
 		this.parentPresenter = parentPresenter;
+	}
+	
+	@Override
+	public void searchCourses() {
+		if(!searchClickInProgress) {
+			searchClickInProgress = true;
+			view.getSearchButton().setEnabled(false);
+			
+			String term = view.getSemesterField().getItemText(0);
+			String department = view.getSubjectField().getItemText(0);
+			String level = view.getLevelField().getItemText(0);
+			
+			HasWidgets container = parentPresenter.getView().getMiddlePanel();
+			CourseSearchAction csa = new CourseSearchAction(department, term, level);
+			CourseSearchEvent cse = new CourseSearchEvent(csa, container);
+			eventBus.fireEvent(cse);
+		}
 	}
 }

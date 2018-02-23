@@ -1,25 +1,25 @@
 package org.dselent.course_load_scheduler.client.action;
 
 public class CourseSearchAction extends Action {
-	private Integer subject;
-	private Integer term;
-	private Integer level;
+	private String subject;
+	private String term;
+	private String level;
 	
-	public CourseSearchAction(Integer department, Integer term, Integer level, String name) {
+	public CourseSearchAction(String department, String term, String level) {
 		this.subject = department;
 		this.term = term;
 		this.level = level;
 	}
 
-	public Integer getDepartment() {
+	public String getDepartment() {
 		return subject;
 	}
 
-	public Integer getTerm() {
+	public String getTerm() {
 		return term;
 	}
 
-	public Integer getLevel() {
+	public String getLevel() {
 		return level;
 	}
 
