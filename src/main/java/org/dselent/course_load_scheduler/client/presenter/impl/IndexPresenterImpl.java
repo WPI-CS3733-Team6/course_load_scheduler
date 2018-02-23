@@ -2,6 +2,12 @@ package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import javax.inject.Inject;
 
+import org.dselent.course_load_scheduler.client.action.GoToCurrentCoursesAction;
+import org.dselent.course_load_scheduler.client.action.GoToLogoutAction;
+import org.dselent.course_load_scheduler.client.action.GoToReportAProblemAction;
+import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
+import org.dselent.course_load_scheduler.client.event.GoToLogoutEvent;
+import org.dselent.course_load_scheduler.client.event.GoToReportAProblemEvent;
 import org.dselent.course_load_scheduler.client.model.GlobalData;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.IndexView;
@@ -96,6 +102,8 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 			
 			HasWidgets container = parentPresenter.getView().getMiddlePanel();
 			
+			//How are we going to solve the admin and instrcutor homepage thing
+			//GoToHomeAction hia = new GotoHomeAction();
 		}
 	}
 	
@@ -109,7 +117,9 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 			parentPresenter.showLoadScreen();
 			
 			HasWidgets container = parentPresenter.getView().getMiddlePanel();
-			
+			GoToLogoutAction rap = new GoToLogoutAction();
+			GoToLogoutEvent rae = new GoToLogoutEvent(rap,container);
+			eventBus.fireEvent(rae);
 		}
 		
 	}
@@ -124,7 +134,9 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 			parentPresenter.showLoadScreen();
 			
 			HasWidgets container = parentPresenter.getView().getMiddlePanel();
-			
+			GoToReportAProblemAction rap = new GoToReportAProblemAction();
+			GoToReportAProblemEvent rae = new GoToReportAProblemEvent(rap,container);
+			eventBus.fireEvent(rae);
 		}
 		
 	}
@@ -139,6 +151,9 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 			parentPresenter.showLoadScreen();
 			
 			HasWidgets container = parentPresenter.getView().getMiddlePanel();
+			GoToCurrentCoursesAction cca = new GoToCurrentCoursesAction();
+			GoToCurrentCoursesEvent cce = new GoToCurrentCoursesEvent(cca, container);
+			eventBus.fireEvent(cce);
 			
 		}
 		
