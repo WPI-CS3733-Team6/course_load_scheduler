@@ -5,7 +5,6 @@ import java.sql.Timestamp;
 public class CourseSection extends Model {
 	
 	// attributes
-	
 	private Integer id;
 	private Integer instanceId;
 	private Integer expectedPop;

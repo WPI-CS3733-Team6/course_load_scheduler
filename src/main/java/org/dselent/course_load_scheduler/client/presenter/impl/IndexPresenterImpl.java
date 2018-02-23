@@ -2,6 +2,7 @@ package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import javax.inject.Inject;
 
+import org.dselent.course_load_scheduler.client.model.GlobalData;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.IndexView;
 import com.google.gwt.dom.client.Style;
@@ -16,9 +17,10 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 	private boolean homeClickInProgress;
 	private boolean logoutClickInProgress;
 	private boolean reportAProblemClickInProgress;
+	private GlobalData globalData;
 
 	@Inject
-	public IndexPresenterImpl(IndexView view)
+	public IndexPresenterImpl(IndexView view, GlobalData globalData)
 	{
 		this.view = view;
 		this.parentPresenter = parentPresenter;
@@ -27,6 +29,7 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 		homeClickInProgress = false;
 		logoutClickInProgress = false;
 		reportAProblemClickInProgress = false;
+		this.globalData = globalData;	//TODO make sure I got this right
 	}
 	
 	@Override

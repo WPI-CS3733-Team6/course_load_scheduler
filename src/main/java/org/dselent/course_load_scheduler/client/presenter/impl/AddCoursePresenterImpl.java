@@ -139,7 +139,7 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 		}
 		
 		if (validNumber && validName && validType) {
-			HasWidgets container = parentPresenter.getView().getViewRootPanel();
+			HasWidgets container = parentPresenter.getView().getMiddlePanel();
 			EditCourseAction eca = new EditCourseAction(name, number, type, level, department, description, courseId);
 			EditCourseEvent ece = new EditCourseEvent(eca, container);
 			eventBus.fireEvent(ece);
@@ -182,7 +182,7 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 	}
 	
 	public void editInstance() {
-		HasWidgets container = parentPresenter.getView().getViewRootPanel();
+		HasWidgets container = parentPresenter.getView().getMiddlePanel();
 		Integer instance = view.getInstanceList().getSelectedIndex();
 		GoToEditInstanceAction eia = new GoToEditInstanceAction(instance);
 		GoToEditInstanceEvent eie = new GoToEditInstanceEvent(eia, container);

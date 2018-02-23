@@ -1,5 +1,6 @@
 package org.dselent.course_load_scheduler.client.gin;
 
+import org.dselent.course_load_scheduler.client.model.GlobalData;
 import org.dselent.course_load_scheduler.client.presenter.impl.AccountInfoPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.AddCoursePresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.AddInstancePresenterImpl;
@@ -88,4 +89,6 @@ public interface Injector extends Ginjector
     // services
     public UserServiceImpl getUserService();
    
+   //model
+   public GlobalData getGlobalModel();
 }

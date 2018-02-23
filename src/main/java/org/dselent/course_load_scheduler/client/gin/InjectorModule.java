@@ -1,5 +1,6 @@
 package org.dselent.course_load_scheduler.client.gin;
 
+import org.dselent.course_load_scheduler.client.model.GlobalData;
 import org.dselent.course_load_scheduler.client.presenter.AccountInfoPresenter;
 import org.dselent.course_load_scheduler.client.presenter.AddCoursePresenter;
 import org.dselent.course_load_scheduler.client.presenter.AddInstancePresenter;
@@ -124,6 +125,8 @@ public class InjectorModule extends AbstractGinModule
 		// services
 		bind(UserService.class).to(UserServiceImpl.class).in(Singleton.class);
 
+		//model
+		bind(GlobalData.class).in(Singleton.class);
 	}
 
 	/*
