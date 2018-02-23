@@ -51,7 +51,7 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 	@Override
 	public void bind()
 	{
-		//come back after the rest and ask about this-Josue
+		//TODO on successfull login event come back after the rest and ask about this-Josue
 	}
 
 	@Override
