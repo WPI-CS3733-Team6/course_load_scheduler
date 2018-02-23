@@ -14,6 +14,8 @@ import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.event.dom.client.ClickEvent;
 
 public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> implements SearchClassesView {
 
@@ -141,4 +143,7 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 	
 	
 	
+	@UiHandler("searchButton")
+	void onSearchButtonClick(ClickEvent event) {
+	}
 }
