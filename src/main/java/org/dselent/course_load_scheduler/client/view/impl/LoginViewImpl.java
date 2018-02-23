@@ -15,6 +15,7 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.user.client.ui.HTMLPanel;
 
 
 public class LoginViewImpl extends BaseViewImpl<LoginPresenter> implements LoginView
@@ -45,7 +46,8 @@ public class LoginViewImpl extends BaseViewImpl<LoginPresenter> implements Login
 	Button loginButton;
 	
 	@UiField
-	VerticalPanel loginPanel;
+	HTMLPanel loginPanelHTML;
+	@UiField VerticalPanel loginPanel;
 	
 	public LoginViewImpl()
 	{
@@ -103,7 +105,7 @@ public class LoginViewImpl extends BaseViewImpl<LoginPresenter> implements Login
 	@Override
 	public HasWidgets getViewRootPanel()
 	{
-		return loginPanel;
+		return loginPanelHTML;
 	}
 	
 	@UiHandler("loginButton")

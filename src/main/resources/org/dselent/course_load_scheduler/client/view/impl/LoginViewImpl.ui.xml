@@ -172,11 +172,10 @@
 	
 </ui:style>
 
-<g:VerticalPanel ui:field="loginPanel" addStyleNames="{style.login-panel} {style.center}" horizontalAlignment="center">
-
-	<g:Label ui:field="viewLabel" addStyleNames="{style.view-label}">Couse Load Scheduling System</g:Label>
-	 
-	<g:VerticalPanel horizontalAlignment="center" addStyleNames="{style.login-form}">
+<g:HTMLPanel ui:field="loginPanelHTML" addStyleNames="{style.login-panel} {style.center}" width="100%" height="100%">
+	<g:VerticalPanel width="100%" height="100%" horizontalAlignment="ALIGN_CENTER" ui:field="loginPanel">
+		<g:Label ui:field="viewLabel" addStyleNames="{style.view-label}" width="100%" height="auto" text="Course Load Scheduling System">Couse Load Scheduling System</g:Label>
+		<g:VerticalPanel horizontalAlignment="center" addStyleNames="{style.login-form}" width="100%" height="80%">
 		<!-- Grid panel -->
 		<!-- http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/Grid.html -->
 		<g:Grid>
@@ -203,11 +202,12 @@
 			</g:row>
 		</g:Grid>
 			
-		<g:Label ui:field="warningLabel" addStyleNames="{style.warning-label}">Warning! Your password will appear as plain text and is not encrypted.</g:Label>
+		<g:Label ui:field="warningLabel" addStyleNames="{style.warning-label}" width="100%">Warning! Your password will appear as plain text and is not encrypted.</g:Label>
 		<g:Button ui:field="loginButton" addStyleNames="{style.login-button}">Login</g:Button>
 				
 	</g:VerticalPanel>
+	</g:VerticalPanel>
 	
-</g:VerticalPanel>
+</g:HTMLPanel>
 
 </ui:UiBinder>

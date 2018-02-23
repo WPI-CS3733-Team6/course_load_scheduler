@@ -17,6 +17,7 @@ public class AdminAddEditUserPresenterImpl extends BasePresenterImpl implements 
 	private AdminAddEditUserView view;
 	private boolean addUserClickInProgress;
 	private boolean editUserClickInProgress;
+	private HasWidgets container = parentPresenter.getView().getMiddlePanel();
 
 	@Inject
 	public AdminAddEditUserPresenterImpl(IndexPresenter parentPresenter, AdminAddEditUserView view)
@@ -87,7 +88,7 @@ public class AdminAddEditUserPresenterImpl extends BasePresenterImpl implements 
 	public void sendAddUserAction(String firstName, String lastName, String email, Double requirments, Boolean administrator)
 	{
 		AddUserAction aua = new AddUserAction(firstName, lastName, email, requirments, administrator);
-		AddUserEvent aue = new AddUserEvent(aua);
+		AddUserEvent aue = new AddUserEvent(aua, container);
 		eventBus.fireEvent(aue);	
 	}
 
@@ -109,7 +110,7 @@ public class AdminAddEditUserPresenterImpl extends BasePresenterImpl implements 
 	public void sendEditUserAction(String lastName, String email, Double requirments, Boolean administrator)
 	{
 		EditUserAction eua = new EditUserAction(lastName, email, requirments, administrator);
-		EditUserEvent eue = new EditUserEvent(eua);
+		EditUserEvent eue = new EditUserEvent(eua, container);
 		eventBus.fireEvent(eue);	
 	}
 
