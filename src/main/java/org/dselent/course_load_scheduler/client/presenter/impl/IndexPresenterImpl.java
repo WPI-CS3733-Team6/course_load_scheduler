@@ -94,6 +94,7 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 			view.getHome().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
+			HasWidgets container = parentPresenter.getView().getMiddlePanel();
 			
 		}
 	}
@@ -101,15 +102,45 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 	@Override
 	public void logout() {
 		
+		if(!logoutClickInProgress) 
+		{
+			logoutClickInProgress = true;
+			view.getHome().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			HasWidgets container = parentPresenter.getView().getMiddlePanel();
+			
+		}
+		
 	}
 	
 	@Override
 	public void reportAProblem() {
 		
+		if(!reportAProblemClickInProgress) 
+		{
+			reportAProblemClickInProgress = true;
+			view.getHome().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			HasWidgets container = parentPresenter.getView().getMiddlePanel();
+			
+		}
+		
 	}
 	
 	@Override
 	public void currentClasses() {
+		
+		if(!viewCurrentClassesClickInProgress) 
+		{
+			viewCurrentClassesClickInProgress = true;
+			view.getHome().setEnabled(false);
+			parentPresenter.showLoadScreen();
+			
+			HasWidgets container = parentPresenter.getView().getMiddlePanel();
+			
+		}
 		
 	}
 }
