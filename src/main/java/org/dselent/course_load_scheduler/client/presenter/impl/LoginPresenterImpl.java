@@ -42,7 +42,6 @@ public class LoginPresenterImpl extends BasePresenterImpl implements LoginPresen
 		HandlerRegistration registration;
 		
 		registration = eventBus.addHandler(InvalidLoginEvent.TYPE, this);
-		registration = eventBus.addHandler(SendLoginEvent.TYPE, this); // Added this, but we are not sure of it is correct
 		eventBusRegistration.put(InvalidLoginEvent.TYPE, registration);
 		
 		//do we need to add registration for the 
