@@ -5,15 +5,10 @@ import org.dselent.course_load_scheduler.client.action.SubmitCourseToCartAction;
 import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 //import org.dselent.course_load_scheduler.client.action.DetailedCourseInformationAction;
 //import org.dselent.course_load_scheduler.client.event.DetailedCourseInformationEvent;
-import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.event.SubmitCourseToCartEvent;
-import org.dselent.course_load_scheduler.client.presenter.BasePresenter;
-import org.dselent.course_load_scheduler.client.presenter.CourseRegistrationCartPresenter;
 import org.dselent.course_load_scheduler.client.presenter.DetailedCourseInformationPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
-import org.dselent.course_load_scheduler.client.view.BaseView;
 import org.dselent.course_load_scheduler.client.view.DetailedCourseInformationView;
-import org.dselent.course_load_scheduler.client.view.LoginView;
 
 //add exceptions
 //
