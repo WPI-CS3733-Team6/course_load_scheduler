@@ -185,7 +185,7 @@ public class AddSectionViewImpl extends BaseViewImpl<AddSectionPresenter> implem
 	@UiHandler("backButton")
 	void onBackClicked(ClickEvent evt)
 	{
-		presenter.backButton();
+		presenter.goToInstanceEdit();
 	}
 	
 	//Setters

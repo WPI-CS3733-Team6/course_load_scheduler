@@ -6,5 +6,4 @@ public interface AddSectionPresenter extends BasePresenter{
 	void addSection();
 	void deleteSection();
 	void goToInstanceEdit();
-	void backButton();
 }

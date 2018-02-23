@@ -214,33 +214,23 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 			eventBus.fireEvent(dse);
 		}
 	}
-
+	
+	
+	//Bascially the Back Button
 	public void goToInstanceEdit() {
 
 		//How to implement this method???
 		//server side or client side 
-		if(!saveClickInProgress) {
+		if(!backClickInProgress) {
 			saveClickInProgress = false;
 			view.getSaveButton().setEnabled(false);
 
-			//String courseNum = view.getCourseNumberField().getValue();
 			Integer instanceNum = view.getInstanceNumberField().getValue();
 
 			HasWidgets container = parentPresenter.getView().getViewRootPanel();
 			GoToEditInstanceAction eia = new GoToEditInstanceAction(instanceNum);
 			GoToEditInstanceEvent eie = new GoToEditInstanceEvent(eia, container);
 			eventBus.fireEvent(eie);
-		}
-	}
-
-	public void backButton() {
-		if(!backClickInProgress){
-			backClickInProgress = false;
-			view.getBackButton().setEnabled(false);
-
-			//Ask professor how to create back button
-			//InstanceViewImpl
-
 		}
 	}
 }
