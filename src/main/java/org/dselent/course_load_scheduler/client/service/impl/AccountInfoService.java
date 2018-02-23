@@ -1,9 +1,9 @@
 package org.dselent.course_load_scheduler.client.service.impl;
 
-import org.dselent.course_load_scheduler.client.action.UpdateAccountAction;
+import org.dselent.course_load_scheduler.client.action.SendUpdateAccountInfoAction;
 import org.dselent.course_load_scheduler.client.callback.UpdateAccountCallback;
 import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
-import org.dselent.course_load_scheduler.client.translator.impl.AccountInfoActionTranslatorImpl;
+import org.dselent.course_load_scheduler.client.translator.impl.UpdateAccountInfoActionTranslatorImpl;
 
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.json.client.JSONObject;
@@ -32,8 +32,8 @@ public class AccountInfoService extends BaseServiceImpl
 	
 	@Override
 	public void onUpdateAccount(UpdateAccountEvent evt) {
-		UpdateAccountAction action = evt.getAction();
-		AccountInfoActionTranslatorImpl accountInfoActionTranslator = new AccountInfoActionTranslatorImpl();
+		SendUpdateAccountInfoAction action = evt.getAction();
+		UpdateAccountInfoActionTranslatorImpl accountInfoActionTranslator = new UpdateAccountInfoActionTranslatorImpl();
 		JSONObject json = accountInfoActionTranslator.translateToJson(action);
 		UpdateAccountCallback accountCallback = new UpdateAccountCallback(eventBus, evt.getContainer());
 		

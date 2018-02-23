@@ -1,6 +1,6 @@
 package org.dselent.course_load_scheduler.client.send.jsonkeys;
 
-public enum UpdateAccountKeys {
+public enum SendUpdateAccountKeys {
 	OLD_PASSWORD,
 	NEW_PASSWORD,
 	NEW_EMAIL,

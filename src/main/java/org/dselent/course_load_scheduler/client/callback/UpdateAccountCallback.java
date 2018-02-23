@@ -3,10 +3,10 @@ package org.dselent.course_load_scheduler.client.callback;
 import java.util.ArrayList;
 
 import org.dselent.course_load_scheduler.client.action.InvalidAccountInfoAction;
-import org.dselent.course_load_scheduler.client.action.ReceiveAccountInfoAction;
+import org.dselent.course_load_scheduler.client.action.ReceiveUpdateAccountInfoAction;
 import org.dselent.course_load_scheduler.client.event.InvalidAccountInfoEvent;
-import org.dselent.course_load_scheduler.client.event.ReceiveAccountInfoEvent;
-import org.dselent.course_load_scheduler.client.translator.impl.AccountInfoActionTranslatorImpl;
+import org.dselent.course_load_scheduler.client.event.ReceiveUpdateAccountInfoEvent;
+import org.dselent.course_load_scheduler.client.translator.impl.UpdateAccountInfoActionTranslatorImpl;
 import org.dselent.course_load_scheduler.client.utils.JSONHelper;
 
 import com.google.gwt.event.shared.SimpleEventBus;
@@ -46,10 +46,10 @@ public class UpdateAccountCallback extends DisplayCallback<JSONValue> {
 	@Override
 	public void onSuccess(JSONValue result) {
 		JSONObject json = JSONHelper.getObjectValue(result);
-		AccountInfoActionTranslatorImpl accountInfoActionTranslator = new AccountInfoActionTranslatorImpl();
-		ReceiveAccountInfoAction action = accountInfoActionTranslator.translateToAction(json);
+		UpdateAccountInfoActionTranslatorImpl accountInfoActionTranslator = new UpdateAccountInfoActionTranslatorImpl();
+		ReceiveUpdateAccountInfoAction action = accountInfoActionTranslator.translateToAction(json);
 		
-		ReceiveAccountInfoEvent event = new ReceiveAccountInfoEvent(action, getContainer());
+		ReceiveUpdateAccountInfoEvent event = new ReceiveUpdateAccountInfoEvent(action, getContainer());
 		eventBus.fireEvent(event);
 	}
 

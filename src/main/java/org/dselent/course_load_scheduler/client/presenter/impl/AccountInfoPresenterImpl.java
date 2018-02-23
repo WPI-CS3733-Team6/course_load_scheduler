@@ -3,7 +3,8 @@ package org.dselent.course_load_scheduler.client.presenter.impl;
 import java.util.ArrayList;
 
 import org.dselent.course_load_scheduler.client.action.InvalidAccountInfoAction;
-import org.dselent.course_load_scheduler.client.action.UpdateAccountAction;
+import org.dselent.course_load_scheduler.client.action.SendUpdateAccountInfoAction;
+import org.dselent.course_load_scheduler.client.event.GoToAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
 import org.dselent.course_load_scheduler.client.presenter.AccountInfoPresenter;
@@ -18,7 +19,6 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 	
 	private IndexPresenter parentPresenter;
 	private AccountInfoView view;
-	//don't know what clickInProgress means, but it's here because it's in LoginPresenterImpl
 	private boolean accountInfoClickInProgress;
 	
 	@Inject
@@ -42,7 +42,9 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 		HandlerRegistration registration;
 		
 		registration = eventBus.addHandler(InvalidAccountInfoEvent.TYPE, this);
+		registration = eventBus.addHandler(GoToAccountInfoEvent.TYPE, this);
 		eventBusRegistration.put(InvalidAccountInfoEvent.TYPE, registration);
+		eventBusRegistration.put(GoToAccountInfoEvent.TYPE, registration);
 	}
 		
 	@Override
@@ -124,7 +126,7 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 	//Passing these in, some can be null, if so, service layer will find out
 	public void updateInfo (String currentPassword, String newPassword, String newEmail, Integer newPhoneNum) {
 		HasWidgets container = parentPresenter.getView().getMiddlePanel();
-		UpdateAccountAction uaa = new UpdateAccountAction(currentPassword, newPassword, newEmail, newPhoneNum);
+		SendUpdateAccountInfoAction uaa = new SendUpdateAccountInfoAction(currentPassword, newPassword, newEmail, newPhoneNum);
 		UpdateAccountEvent uae = new UpdateAccountEvent(uaa, container);
 		eventBus.fireEvent(uae);
 	}

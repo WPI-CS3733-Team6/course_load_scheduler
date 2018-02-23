@@ -1,26 +1,24 @@
 package org.dselent.course_load_scheduler.client.action;
 
-import org.dselent.course_load_scheduler.client.model.User;
+import org.dselent.course_load_scheduler.client.model.ViewAccountInformation;
 
-public class ReceiveAccountInfoAction extends Action {
-	
-	private User model;
+public class ReceiveAccountInfoAction extends Action{
 
-	public ReceiveAccountInfoAction(User model) {
-		this.model = model;
+	private ViewAccountInformation model;
+
+	public ReceiveAccountInfoAction(ViewAccountInformation Model) {
+		this.model = Model;
+	}
+
+	/**
+	 * @return the model
+	 */
+	public ViewAccountInformation getModel() {
+		return model;
 	}
 
 	@Override
 	public String toString() {
 		return "ReceiveAccountInfoAction [model=" + model + "]";
 	}
-
-	public User getModel() {
-		return model;
-	}
-
-	public void setModel(User model) {
-		this.model = model;
-	}
-
 }

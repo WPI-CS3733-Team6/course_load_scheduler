@@ -5,10 +5,10 @@ import org.dselent.course_load_scheduler.client.event_handler.ReceiveAccountInfo
 
 import com.google.gwt.user.client.ui.HasWidgets;
 
-public class ReceiveAccountInfoEvent extends DisplayEvent<ReceiveAccountInfoAction, ReceiveAccountInfoEventHandler> {
-	
-	public static Type<ReceiveAccountInfoEventHandler> TYPE = new Type<ReceiveAccountInfoEventHandler>();
+public class ReceiveAccountInfoEvent extends DisplayEvent<ReceiveAccountInfoAction, ReceiveAccountInfoEventHandler>{
 
+	public static Type<ReceiveAccountInfoEventHandler> TYPE = new Type<ReceiveAccountInfoEventHandler>();
+	
 	public ReceiveAccountInfoEvent(ReceiveAccountInfoAction action, HasWidgets container) {
 		super(action, container);
 	}
@@ -21,7 +21,7 @@ public class ReceiveAccountInfoEvent extends DisplayEvent<ReceiveAccountInfoActi
 
 	@Override
 	protected void dispatch(ReceiveAccountInfoEventHandler handler) {
-		handler.onReceiveAccountInfo(this);
+		handler.onReceiveAccountInfo(this);		
 	}
 
 }
