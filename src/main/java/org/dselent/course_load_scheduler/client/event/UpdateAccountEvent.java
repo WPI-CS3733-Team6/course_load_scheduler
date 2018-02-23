@@ -4,8 +4,9 @@ import org.dselent.course_load_scheduler.client.action.UpdateAccountAction;
 import org.dselent.course_load_scheduler.client.event_handler.UpdateAccountEventHandler;
 
 import com.google.gwt.event.shared.GwtEvent;
+import com.google.gwt.user.client.ui.HasWidgets;
 
-public class UpdateAccountEvent extends GwtEvent<UpdateAccountEventHandler>{
+public class UpdateAccountEvent extends DisplayEvent<UpdateAccountAction, UpdateAccountEventHandler>{
 
 	public static Type<UpdateAccountEventHandler> TYPE = new Type<UpdateAccountEventHandler>();
 
@@ -23,9 +24,9 @@ public class UpdateAccountEvent extends GwtEvent<UpdateAccountEventHandler>{
 
 	private UpdateAccountAction action;
 
-	public UpdateAccountEvent(UpdateAccountAction action)
+	public UpdateAccountEvent(UpdateAccountAction action, HasWidgets container)
 	{
-		this.action = action;
+		super(action, container);
 	}
 
 	public UpdateAccountAction getAction()
