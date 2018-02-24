@@ -6,21 +6,18 @@ package org.dselent.course_load_scheduler.client.event;
 import org.dselent.course_load_scheduler.client.action.InvalidReportAction;
 import org.dselent.course_load_scheduler.client.event_handler.InvalidReportEventHandler;
 
-import com.google.gwt.user.client.ui.HasWidgets;
-
 /**
  * @author bobbyshome
  *
  */
-public class InvalidReportEvent extends DisplayEvent<InvalidReportAction, InvalidReportEventHandler> {
+public class InvalidReportEvent extends BaseEvent<InvalidReportAction, InvalidReportEventHandler> {
 	
 	public static Type<InvalidReportEventHandler> TYPE = new Type<InvalidReportEventHandler>();
 	
 	private InvalidReportAction action;
 	
-	public InvalidReportEvent(InvalidReportAction action, HasWidgets container) {
-		super(action, container);
-		this.action = action;
+	public InvalidReportEvent(InvalidReportAction action) {
+		super(action);
 	}
 	
 	public InvalidReportAction getAction()

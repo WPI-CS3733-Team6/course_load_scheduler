@@ -110,9 +110,8 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 				sendReport(typeList, nameBox, emailBox, description);
 				submitClickInProgress = false;
 			} else {
-				HasWidgets container = parentPresenter.getView().getMiddlePanel();
 				InvalidReportAction ira = new InvalidReportAction(invalidReasonList);
-				InvalidReportEvent ire = new InvalidReportEvent(ira, container);
+				InvalidReportEvent ire = new InvalidReportEvent(ira);
 				eventBus.fireEvent(ire);
 				submitClickInProgress = false;
 			}
