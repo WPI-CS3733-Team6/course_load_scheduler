@@ -143,8 +143,9 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 		}
 		
 		if (courseId == 0 && (validNumber && validName && validType)) {
+			HasWidgets container = parentPresenter.getView().getMiddlePanel();
 			AddCourseAction aca = new AddCourseAction(name, number, type, level, department, description);
-			AddCourseEvent ace = new AddCourseEvent(aca);
+			AddCourseEvent ace = new AddCourseEvent(aca, container);
 			eventBus.fireEvent(ace);
 		}
 	}

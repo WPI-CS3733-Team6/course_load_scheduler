@@ -1,14 +1,18 @@
 package org.dselent.course_load_scheduler.client.service.impl;
 
+import org.dselent.course_load_scheduler.client.action.AddCourseAction;
 import org.dselent.course_load_scheduler.client.action.CourseSearchAction;
 import org.dselent.course_load_scheduler.client.action.EditCourseAction;
+import org.dselent.course_load_scheduler.client.callback.AddCourseCallback;
 import org.dselent.course_load_scheduler.client.callback.CourseSearchCallback;
 import org.dselent.course_load_scheduler.client.callback.EditCourseCallback;
+import org.dselent.course_load_scheduler.client.event.AddCourseEvent;
 import org.dselent.course_load_scheduler.client.event.CourseSearchEvent;
 import org.dselent.course_load_scheduler.client.event.EditCourseEvent;
 import org.dselent.course_load_scheduler.client.network.NetworkRequest;
 import org.dselent.course_load_scheduler.client.network.NetworkRequestStrings;
 import org.dselent.course_load_scheduler.client.service.CourseService;
+import org.dselent.course_load_scheduler.client.translator.impl.AddCourseTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.CourseSearchTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.EditCourseActionTranslatorImpl;
 
@@ -50,12 +54,21 @@ public class CourseServiceImpl extends BaseServiceImpl implements CourseService{
 	
 	public void onEditCourse(EditCourseEvent evt) {
 		EditCourseAction action = evt.getAction();
-		EditCourseActionTranslatorImpl courseSearchTranslator = new EditCourseActionTranslatorImpl();
-		JSONObject json = courseSearchTranslator.translateToJson(action);
-		EditCourseCallback courseSearchCallback = new EditCourseCallback(eventBus, evt.getContainer());
+		EditCourseActionTranslatorImpl editCourseTranslator = new EditCourseActionTranslatorImpl();
+		JSONObject json = editCourseTranslator.translateToJson(action);
+		EditCourseCallback editCourseCallback = new EditCourseCallback(eventBus, evt.getContainer());
 		
-		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.LOGIN, courseSearchCallback, json);
+		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.LOGIN, editCourseCallback, json);
 		request.send();
 	}
 
+	public void onAddCourse(AddCourseEvent evt) {
+		AddCourseAction action = evt.getAction();
+		AddCourseTranslatorImpl addCourseTranslator = new AddCourseTranslatorImpl();
+		JSONObject json = addCourseTranslator.translateToJson(action);
+		AddCourseCallback addCourseCallback = new AddCourseCallback(eventBus, evt.getContainer());
+		
+		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.LOGIN, addCourseCallback, json);
+		request.send();
+	}
 }
