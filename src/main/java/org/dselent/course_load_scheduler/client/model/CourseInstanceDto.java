@@ -9,6 +9,13 @@ public class CourseInstanceDto extends Model {
 	private ArrayList<String> term;
 	private ArrayList<Integer> numSections;
 	
+	public CourseInstanceDto (ArrayList<Integer> id, ArrayList<Integer> courseId, ArrayList<String> term, ArrayList<Integer> numSections) {
+		this.id = id;
+		this.courseId = courseId;
+		this.term = term;
+		this.numSections = numSections;
+	}
+	
 	@Override
 	public String toString() {
 		return "CourseInstanceDto [id=" + id + ", courseId=" + courseId + ", term=" + term + ", numSections="
