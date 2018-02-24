@@ -165,5 +165,7 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 	@UiHandler("searchButton")
 	void onSearchButtonClick(ClickEvent event) {
 		presenter.searchCourses();
+		
+		// TODO needs a service to grab information from the server (service file) from the 
 	}
 }
