@@ -10,7 +10,7 @@
 			
 			<d:AccountInfoViewImpl />
 		</g:tab>
-		<g:tab>
+		<!-- <g:tab>
 			<g:header>SimplePanel2</g:header>
 			<d:AddCourseViewImpl />
 		</g:tab>
@@ -41,7 +41,7 @@
 		<g:tab>
 			<g:header>TabLayout Panel</g:header>
 			<d:AccountInfoViewImpl />
-		</g:tab>
+		</g:tab> -->
 	</g:TabLayoutPanel>
 	
 </ui:UiBinder> 

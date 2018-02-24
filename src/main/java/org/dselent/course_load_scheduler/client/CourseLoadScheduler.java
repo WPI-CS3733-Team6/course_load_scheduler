@@ -23,6 +23,11 @@ import org.dselent.course_load_scheduler.client.view.AddCourseView;
 import org.dselent.course_load_scheduler.client.view.AddInstanceView;
 import org.dselent.course_load_scheduler.client.view.AddSectionView;
 import org.dselent.course_load_scheduler.client.view.IndexView;
+import org.dselent.course_load_scheduler.client.view.examples.SimplePanelExample;
+import org.dselent.course_load_scheduler.client.view.examples.TabLayoutPanelExample;
+import org.dselent.course_load_scheduler.client.view.impl.AccountInfoViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.AddCourseViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.SearchClassesViewImpl;
 import org.dselent.course_load_scheduler.client.view.impl.TestPanels;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -43,134 +48,148 @@ public class CourseLoadScheduler implements EntryPoint
 
 		// Get the injector, which injected objects can be retrieved from
 		final Injector injector = Injector.INSTANCE;
-		
+
 		/*
 		 * Uncomment the panel you want to have displayed on the index panel
 		 */
-		
+
 		//Setup Index panel
-//		IndexPresenterImpl indexPresenter = injector.getIndexPresenter(); // on-demand injection
-//		indexPresenter.init();
-//		IndexView indexView = indexPresenter.getView();	
-//		indexPresenter.go(root);
+		//		IndexPresenterImpl indexPresenter = injector.getIndexPresenter(); // on-demand injection
+		//		indexPresenter.init();
+		//		IndexView indexView = indexPresenter.getView();	
+		//		indexPresenter.go(root);
+
+		//Dosen't work anymore
+//		TestPanels testPanel = new TestPanels();
+//		root.add(testPanel);
 		
-		TestPanels testPanel = new TestPanels();
-		root.add(testPanel);
+		//Don't touch
+//		SearchClassesViewImpl d = new SearchClassesViewImpl();
+//		root.add(d);
+
+	
+//--------------------------------Testing Field-------------------------------------------------
+
+		//Dosen't work come back
+		AccountInfoViewImpl d = new AccountInfoViewImpl();
 		
-		/* LOGIN
-		LoginPresenterImpl loginPresenter = injector.getLoginPresenter();
-		loginPresenter.init();
-		LoginPresenter.go(indexView.getCenterPanel());
-		*/
-		
+		//AddCourseViewImpl d = new AddCourseViewImpl();
+		root.add(d);
+
+//----------------------------------------------------------------------------------------
+		//		LoginPresenterImpl loginPresenter = injector.getLoginPresenter();
+		//		loginPresenter.init();
+		//		loginPresenter.go(indexView.getMiddlePanel());
+
+
 		/* ADD COURSE
 		AddCoursePresenterImpl addCoursePresenter = injector.getAddCoursePresenter(); 
 		addCoursePresenter.init();
 		addCoursePresenter.go(indexView.getCenterPanel());
-		*/
-		
+		 */
+
 		/* ADD INSTANCE
 		AddInstancePresenterImpl addInstancePresenter = injector.getAddInstancePresenter(); 
 		addInstancePresenter.init();
 		addInstancePresenter.go(indexView.getCenterPanel());
-		*/
-		
+		 */
+
 		/* ADD SECTION
 		AddSectionPresenterImpl addSectionPresenter = injector.getAddSectionPresenter(); 
 		addSectionPresenter.init();
 		addSectionPresenter.go(indexView.getCenterPanel());
-		*/
-		
+		 */
+
 		/*ADD EDIT USER
 		AdminAddEditUserPresenterImpl adminAddEditUserPresenter = injector.getAdminAddEditUserPresenter();
 		adminAddEditUserPresenter.init();
 		adminAddEditUserPresenter.go(indexView.getCenterPanel());
-		*/
-		
+		 */
+
 		/* HOMEPAGE
 		AdminHomepagePresenterImpl adminHomepagePresenter = injector.getAdminHomepagePresenter();
 		adminHomepagePresenter.init();
 		adminHomepagePresenter.go(indexView.getCenterPanel());
-		*/
-		
+		 */
+
 		/* BASE
 		BasePresenterImpl basePresenter = injector.getBasePresenter();
 		basePresenter.init();
 		basePresenter.go(indexView.getCenterPanel());
-		*/
-		
+		 */
+
 		/* REGISTRATION CART
 		CourseRegistrationCartPresenterImpl courseRegistrationCartPresenter = injector.getCourseRegistrationCartPresenter();
 		courseRegistrationCartPresenter.init();
 		courseRegistrationCartPresenter.go(indexView.getCenterPanel());
-		*/
-		
+		 */
+
 		/* COURSE INFROMATION
 		DetailedCourseInformationPresenterImpl detailedCourseInformationPresenter = injector.getDetailedCourseInformationPresenter();
 		detailedCourseInformationPresenter.init();
 		detailedCourseInformationPresenter.go(indexView.getCenterPanel());
-		*/
-		
+		 */
+
 		/* FACULTY 
 		FacultyCourseMapPresenterImpl facultyCourseMapPresenter = injector.getFacultyCourseMapPresenter();
 		facultyCourseMapPresenter.init();
 		facultyCourseMapPresenter.go(indexView.getCenterPanel());
-		*/
-		
+		 */
+
 		/* INSTRUCTOR HOM"E"PAGE
 		InstructorHompagePresenterImpl instructorHompagePresenter = injector.getInstructorHompagePresenter();
 		instructorHompagePresenter.init();
 		instructorHompagePresenter.go(indexView.getCenterPanel());
-		*/
-		
+		 */
+
 		/* REPORT PROBLEM
 		ReportProblemPresenterImpl reportProblemPresenter = injector.getReportProblemPresenter();
 		reportProblemPresenter.init();
 		reportProblemPresenter.go(indexView.getCenterPanel());
-		*/
-		
+		 */
+
 		/* VIEW CURRENT COURSES
 		ViewCurrentCoursesPresenterImpl viewCurrentCoursesPresenter = injector.getViewCurrentCoursesPresenter();
 		viewCurrentCoursesPresenter.init();
 		viewCurrentCoursesPresenter.go(indexView.getCenterPanel());
-		*/
-		
+		 */
+
 		/* SEARCH CLASSES
 		SearchClassesPresenterPresenterImpl searchClassesPresenterPresenter = injector.getSearchClassesPresenterPresenter();
 		searchClassesPresenterPresenter.init();
 		searchClassesPresenterPresenter.go(indexView.getCenterPanel());
-		*/
-		
-		
+		 */
+
+
 		//----------------------------------------------------------------------------------------
 		//---------------------------PROFESSORS EXAMPLES------------------------------------------
 		//SimplePanelExample simplePanelExample = new SimplePanelExample();
 		//root.add(simplePanelExample);
-		
+
 		//SimplePanelExample2 simplePanelExample2 = new SimplePanelExample2();
 		//root.add(simplePanelExample2);
-		
+
 		//HTMLPanelExample htmlPanelExample = new HTMLPanelExample();
 		//root.add(htmlPanelExample);
-		
+
 		//FlowPanelExample flowPanelExample = new FlowPanelExample();
 		//root.add(flowPanelExample);
-		
+
 		//VerticalPanelExample verticalPanelExample = new VerticalPanelExample();
 		//root.add(verticalPanelExample);
-		
+
 		//HorizontalPanelExample horizontalPanelExample = new HorizontalPanelExample();
 		//root.add(horizontalPanelExample);
-		
+
 		//DockLayoutPanelExample dockLayoutPanelExample = new DockLayoutPanelExample();
 		//root.add(dockLayoutPanelExample);
-		
+
 		//GridExample gridExample = new GridExample();
 		//root.add(gridExample);
 
-		//TabLayoutPanelExample tabLayoutPanelExample = new TabLayoutPanelExample();
-		//root.add(tabLayoutPanelExample);
-		
+		//		TabLayoutPanelExample tabLayoutPanelExample = new TabLayoutPanelExample();
+		//		root.add(tabLayoutPanelExample);
+
 		//ExamplesPanel examplesPanel = new ExamplesPanel();
 		//root.add(examplesPanel);
 		//-------------------------------END OF EXAMPLES--------------------------------------------

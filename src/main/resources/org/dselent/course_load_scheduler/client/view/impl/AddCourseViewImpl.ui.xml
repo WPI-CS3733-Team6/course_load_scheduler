@@ -3,7 +3,7 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
 	<ui:style>
 	.tableHeader{
-		background:#494949;
+		background:#DCDCDC;
 		color:#ffffff;
 		font-weight:bold;
 	}
@@ -93,11 +93,11 @@
 				<g:DockLayoutPanel unit="PCT" width="100%" height="100%" styleName="{style.layoutPanel}">
 					<g:east size="45">
 						<g:LayoutPanel width="100%" height="100%" styleName="{style.layoutPanel}" ui:field="instancePanel">
-							<g:layer left="5%" width="50%" top="5%" height="90%">
+							<g:layer left="5%" top="5%" bottom="5.3pct" right="45.0pct">
 								<g:ListBox visibleItemCount="8" styleName="dialogVPanel" ui:field="instanceList">
 								</g:ListBox>
 							</g:layer>
-							<g:layer width="33%" height="28.0pct" bottom="55.0pct" right="10.0pct">
+							<g:layer bottom="55.0pct" right="5.0pct" left="56.0pct" top="16.7pct">
 								<g:Button text="Create Instance" styleName="{style.greenButton}" ui:field="createInstanceButton"/>
 							</g:layer>
 							<g:layer width="33%" height="28.0pct" right="10.0pct" bottom="18.0pct">
@@ -108,12 +108,12 @@
 					</g:east>
 					<g:center>
 						<g:LayoutPanel ui:field="descriptionPanel" width="100%" height="100%" styleName="{style.layoutPanel}">
-							<g:layer left="0%" width="100%" top="0%" height="15%">
-								<g:TextBox text="Course Description" alignment="CENTER" styleName="{style.tableHeader}" ui:field="courseDescHeader" readOnly="true"/>
+							<g:layer left="2.0pct" top="0.0pct" right="2.0pct" bottom="88.0pct">
+								<g:TextBox text="Course Description" alignment="CENTER" styleName="{style.tableHeader}" ui:field="courseDescHeader" readOnly="true" width="100%" height="100%"/>
 							</g:layer>
 							
-							<g:layer left="0%" width="100%" height="85%" top="15%">
-								<g:TextArea ui:field="courseDescField"/>
+							<g:layer left="1.0pct" width="98.0pct" height="83.0pct" top="15%">
+								<g:TextArea ui:field="courseDescField" width="100%" height="100%"/>
 							</g:layer>
 							
 						</g:LayoutPanel>
