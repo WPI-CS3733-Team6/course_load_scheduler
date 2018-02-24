@@ -6,6 +6,7 @@ import org.dselent.course_load_scheduler.client.action.SendUpdateAccountInfoActi
 import org.dselent.course_load_scheduler.client.callback.AccountInfoCallback;
 import org.dselent.course_load_scheduler.client.callback.SendLoginCallback;
 import org.dselent.course_load_scheduler.client.callback.UpdateAccountCallback;
+import org.dselent.course_load_scheduler.client.event.AddUserEvent;
 import org.dselent.course_load_scheduler.client.event.GetFacultyEvent;
 import org.dselent.course_load_scheduler.client.event.SendAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.SendLoginEvent;
@@ -89,5 +90,18 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService
 	
 	public void onGetFaculty(GetFacultyEvent evt) {
 		
+	}
+	
+	public void onAddUser(AddUserEvent evt) {
+		/*
+		AddUserAction action = evt.getAction();
+		AddUserActionTranslatorImpl addUserActionTranslatorImpl = new AddUserActionTranslatorImpl();
+		JSONObject json = addUserActionTranslatorImpl.translateToJson(action);
+		AddUserCallback addUserCallback = new AddUserCallback(eventBus, evt.getContainer());
+
+		// TODO write network request here
+		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.ADD_USER, addUserCallback, json);
+		request.send();
+		*/
 	}
 }

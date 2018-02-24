@@ -8,7 +8,7 @@ import org.dselent.course_load_scheduler.client.utils.JSONHelper;
 
 import com.google.gwt.json.client.JSONObject;
 
-public class AddUserTranslatorImpl implements ActionTranslator<AddUserAction, ReceiveAddUserAction>{
+public class AddUserActionTranslatorImpl implements ActionTranslator<AddUserAction, ReceiveAddUserAction>{
 
 	@Override
 	public JSONObject translateToJson(AddUserAction action) {
