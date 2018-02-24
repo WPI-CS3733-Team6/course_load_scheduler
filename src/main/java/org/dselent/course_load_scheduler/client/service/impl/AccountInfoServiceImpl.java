@@ -10,10 +10,10 @@ import org.dselent.course_load_scheduler.client.translator.impl.UpdateAccountInf
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.json.client.JSONObject;
 
-public class AccountInfoService extends BaseServiceImpl
+public class AccountInfoServiceImpl extends BaseServiceImpl
 		implements org.dselent.course_load_scheduler.client.service.AccountInfoService {
 
-	public AccountInfoService() {
+	public AccountInfoServiceImpl() {
 		// TODO Auto-generated constructor stub
 	}
 	

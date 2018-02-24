@@ -21,7 +21,7 @@ import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.inject.Inject;
 
 /**
- * @author bobbyshome
+ * @author bobbyshome 
  *
  */
 public class InstructorHomepagePresenterImpl extends BasePresenterImpl implements InstructorHomepagePresenter {

@@ -14,4 +14,8 @@ public interface AccountInfoView extends BaseView<AccountInfoPresenter>{
 	PasswordTextBox getRepeatNewPassword();
 	TextBox getPreferedEmail();
 	IntegerBox getPhoneNumber();
+	void setUserName(String userName);
+	void setEmail(String email);
+	void setRequirement(Integer requirement);
+	
 }

@@ -31,7 +31,10 @@ public class AccountInfoViewImpl extends BaseViewImpl<AccountInfoPresenter> impl
 	private PasswordTextBox repeatNewPassword;
 	private TextBox preferedEmail;
 	private IntegerBox phoneNumber;
-	
+	private String userName;
+	private String email;
+	private Integer requirement;
+
 	public Button getSubmitChangesButton() {
 		return submitChangesButton;
 	}
@@ -71,8 +74,11 @@ public class AccountInfoViewImpl extends BaseViewImpl<AccountInfoPresenter> impl
 
 	    // Create the text fields (This table is a 10x10)
 	    t.setText(0, 0, "Your username is:");
+	    t.setText(0, 1, userName);
 	    t.setText(1, 0, "Your WPI email is:");
+	    t.setText(1, 1, email);
 	    t.setText(2, 0, "Your minimum teaching requirement (course hours) is:");
+	    t.setText(2, 1, requirement.toString());
 	    t.setText(6, 0, "Change password:");
 	    t.setText(8, 0, "Prefered email (optional):");
 	    t.setText(10, 0, "Phone number (optional):");
@@ -108,6 +114,20 @@ public class AccountInfoViewImpl extends BaseViewImpl<AccountInfoPresenter> impl
 	{
 		this.presenter = presenter;
 	}
+
+	@Override
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	@Override
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	@Override
+	public void setRequirement(Integer requirement) {
+		this.requirement = requirement;
+	}
+	
 	
 	
 }

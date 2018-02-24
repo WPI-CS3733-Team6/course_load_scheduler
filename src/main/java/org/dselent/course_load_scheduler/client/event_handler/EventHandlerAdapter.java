@@ -30,6 +30,7 @@ import org.dselent.course_load_scheduler.client.event.InvalidCourseIdEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidReportEvent;
+import org.dselent.course_load_scheduler.client.event.ReceiveAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveAddCourseEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveLoginEvent;
 import org.dselent.course_load_scheduler.client.event.SaveInstanceEvent;
@@ -56,8 +57,12 @@ AddUserEventHandler, SubmitRegistrationCartEventHandler, DeleteCourseEventHandle
 EditUserEventHandler, GetFacultyEventHandler, GoToAccountInfoEventHandler, GoToAddCourseEventHandler, GoToAddEditUserEventHandler, GoToCartEventHandler, GoToClassSearchEventHandler,
 GoToCurrentCoursesEventHandler, GoToEditCourseEventHandler, GoToEditInstanceEventHandler, GoToEditSectionEventHandler, InvalidCourseIdEventHandler, InvalidInstanceEventHandler, 
 InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SubmitReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, SubmitCourseToCartEventHandler, 
-GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler, GoToInstructorHomeEventHandler, GoToAdminHomeEventHandler, GoToLogoutEventHandler, GoToReportAProblemEventHandler
+GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler, GoToInstructorHomeEventHandler, GoToAdminHomeEventHandler, GoToLogoutEventHandler, GoToReportAProblemEventHandler,
+ReceiveAccountInfoEventHandler
 {
+	@Override
+	public void onReceiveAccountInfo(ReceiveAccountInfoEvent evt) {}
+	
 	@Override
 	public void onGoToReportAProblem(GoToReportAProblemEvent evt) {}
 	

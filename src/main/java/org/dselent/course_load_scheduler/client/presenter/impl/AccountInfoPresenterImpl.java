@@ -6,6 +6,7 @@ import org.dselent.course_load_scheduler.client.action.InvalidAccountInfoAction;
 import org.dselent.course_load_scheduler.client.action.SendUpdateAccountInfoAction;
 import org.dselent.course_load_scheduler.client.event.GoToAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidAccountInfoEvent;
+import org.dselent.course_load_scheduler.client.event.ReceiveAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
 import org.dselent.course_load_scheduler.client.presenter.AccountInfoPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
@@ -43,6 +44,8 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 		
 		registration = eventBus.addHandler(InvalidAccountInfoEvent.TYPE, this);
 		registration = eventBus.addHandler(GoToAccountInfoEvent.TYPE, this);
+		registration = eventBus.addHandler(ReceiveAccountInfoEvent.TYPE, this);
+		eventBusRegistration.put(ReceiveAccountInfoEvent.TYPE, registration);
 		eventBusRegistration.put(InvalidAccountInfoEvent.TYPE, registration);
 		eventBusRegistration.put(GoToAccountInfoEvent.TYPE, registration);
 	}
@@ -144,4 +147,10 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 		else
 			return false;
 	}
+	
+	public void onReceiveAccountInfo(ReceiveAccountInfoEvent evt) {
+		view.setUserName(evt.getAction().getModel().getUserName());
+		view.setEmail(evt.getAction().getModel().getEmail());
+		view.setRequirement(evt.getAction().getModel().getReqCourses());
+		}
 }
