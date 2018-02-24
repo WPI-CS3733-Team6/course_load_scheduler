@@ -39,37 +39,9 @@
 					<g:Button width="100%" height="100%%" ui:field="courseCartButton">Course Registration Cart</g:Button>
 				</g:HorizontalPanel>
 			</g:layer>
-			<g:layer left="2.0pct" width="49.5pct" top="20.0pct" bottom="72.0pct">
+			<g:layer left="25.0pct" top="20.0pct" bottom="72.0pct" right="25.0pct">
 				<g:Button text="Faculty Course Map"
 					width="100%" addStyleNames="{style.button-blue}" height="100%" ui:field="facultyCourseMapButton" />
-			</g:layer>
-			<g:layer top="29.3pct" height="67.3pct" left="2.0pct" right="2.0pct">
-				<g:LayoutPanel width="100%" height="100%"
-					addStyleNames="{style.panel-grey}" ui:field="bodyPanel">
-					<g:layer left="4.5pct" right="3.5pct" top="11.8pct" bottom="2.2pct">
-						<g:SplitLayoutPanel width="100%" height="100%" ui:field="courseInfoPanel">
-							<g:north size="26.0">
-								<g:HorizontalPanel horizontalAlignment="ALIGN_CENTER"
-									verticalAlignment="ALIGN_MIDDLE" width="100%" height="100%" ui:field="headerPanel">
-									<g:TextBox width="100%" height="100%" text="Registered Courses"
-										addStyleNames="{style.panel-greydark}" ui:field="registeredHeaderBox" />
-									<g:TextBox width="100%" height="100%" text="Pending Courses"
-										addStyleNames="{style.panel-greydark}" ui:field="pendingHeaderBox" />
-								</g:HorizontalPanel>
-							</g:north>
-							<g:west size="260.0">
-								<g:ListBox visibleItemCount="5" width="100%" height="100%" ui:field="registeredCourseListBox" />
-							</g:west>
-							<g:center>
-								<g:ListBox visibleItemCount="5" ui:field="pendingCourseListBox" />
-							</g:center>
-						</g:SplitLayoutPanel>
-					</g:layer>
-					<g:layer left="35.0pct" right="35.0pct">
-						<g:TextBox height="6%" width="100%" text="Course Summaries"
-							textAlignment="ALIGN_CENTER" addStyleNames="{style.panel-grey}" ui:field="titleBox"/>
-					</g:layer>
-				</g:LayoutPanel>
 			</g:layer>
 		</g:LayoutPanel>
 	</g:HTMLPanel>
