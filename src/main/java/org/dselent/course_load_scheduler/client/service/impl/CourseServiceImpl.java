@@ -108,11 +108,11 @@ public class CourseServiceImpl extends BaseServiceImpl implements CourseService{
 	
 	public void onAddToCart(AddToCartEvent evt) {
 		AddToCartAction action = evt.getAction();
-		AddToCartActionTranslatorImpl currentCoursesTranslator = new AddToCartActionTranslatorImpl();
-		JSONObject json = currentCoursesTranslator.translateToJson(action);
-		AddToCartCallback currentCoursesCallback = new AddToCartCallback(eventBus, evt.getContainer());
+		AddToCartActionTranslatorImpl addToCartTranslator = new AddToCartActionTranslatorImpl();
+		JSONObject json = addToCartTranslator.translateToJson(action);
+		AddToCartCallback addToCartCallback = new AddToCartCallback(eventBus, evt.getContainer());
 		
-		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.CURRENT_COURSES, currentCoursesCallback, json);
+		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.ADD_TO_CART, addToCartCallback, json);
 		request.send();
 	}
 }

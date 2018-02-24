@@ -38,7 +38,6 @@ import org.dselent.course_load_scheduler.client.event.ReceiveAddUserEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveCourseCartRemoveCourseEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveCourseSearchEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveLoginEvent;
-import org.dselent.course_load_scheduler.client.event.ReceiveSubmitCourseToCartEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveSubmitRegistrationCartEvent;
 import org.dselent.course_load_scheduler.client.event.SaveInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.SaveSectionEvent;
@@ -68,7 +67,7 @@ GoToCurrentCoursesEventHandler, GoToEditCourseEventHandler, GoToEditInstanceEven
 InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SendReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, AddToCartEventHandler, 
 GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler, GoToInstructorHomeEventHandler, GoToAdminHomeEventHandler, GoToLogoutEventHandler, GoToReportAProblemEventHandler,
 ReceiveAccountInfoEventHandler, SendAccountInfoEventHandler, GoToDetailedCourseInformationEventHandler, CourseSearchEventHandler, ReceiveCourseSearchEventHandler, ReceiveAddUserEventHandler, ReceiveSubmitRegistrationCartEventHandler,
-SendCourseCartRemoveCourseEventHandler, ReceiveCourseCartRemoveCourseEventHandler, ReceiveSubmitCourseToCartEventHandler
+SendCourseCartRemoveCourseEventHandler, ReceiveCourseCartRemoveCourseEventHandler
 {
 	@Override
 	public void onReceiveAddUser(ReceiveAddUserEvent evt) {}
@@ -213,8 +212,4 @@ SendCourseCartRemoveCourseEventHandler, ReceiveCourseCartRemoveCourseEventHandle
 	
 	@Override
 	public void onReceiveCourseCartRemoveCourseEventHandler(ReceiveCourseCartRemoveCourseEvent evt) {}
-	
-	@Override
-	public void onReceiveSubmitCourseToCart(ReceiveSubmitCourseToCartEvent evt) {}
-	
 }
