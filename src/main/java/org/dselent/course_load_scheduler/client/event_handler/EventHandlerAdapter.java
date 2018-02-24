@@ -20,6 +20,7 @@ import org.dselent.course_load_scheduler.client.event.GoToEditCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditSectionEvent;
 import org.dselent.course_load_scheduler.client.event.GoToFacultyCourseMapEvent;
+import org.dselent.course_load_scheduler.client.event.GoToInstructorHomeEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidCourseEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidCourseIdEvent;
@@ -52,8 +53,11 @@ AddUserEventHandler, SubmitRegistrationCartEventHandler, DeleteCourseEventHandle
 EditCourseEventHandler, EditUserEventHandler, GetFacultyEventHandler, GoToAccountInfoEventHandler, GoToAddCourseEventHandler, GoToAddEditUserEventHandler, GoToCartEventHandler, 
 GoToClassSearchEventHandler, GoToCurrentCoursesEventHandler, GoToEditCourseEventHandler, GoToEditInstanceEventHandler, GoToEditSectionEventHandler, InvalidCourseIdEventHandler, 
 InvalidInstanceEventHandler, InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SubmitReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, 
-SubmitCourseToCartEventHandler, GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler
+SubmitCourseToCartEventHandler, GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler, GoToInstructorHomeEventHandler
 {
+	@Override
+	public void onGoToInstructorHome(GoToInstructorHomeEvent evt) {}
+	
 	@Override
 	public void onUpdateAccount(UpdateAccountEvent evt) {}
 	

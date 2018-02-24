@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
 
@@ -14,10 +11,12 @@ import org.dselent.course_load_scheduler.client.event.GoToCartEvent;
 import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.event.GoToFacultyCourseMapEvent;
+import org.dselent.course_load_scheduler.client.event.GoToInstructorHomeEvent;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.presenter.InstructorHomepagePresenter;
 import org.dselent.course_load_scheduler.client.view.InstructorHomepageView;
 
+import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.inject.Inject;
 
@@ -43,6 +42,21 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 		clickInProgress = false;
 	}
 
+	@Override
+	public void init()
+	{
+		bind();
+	}
+	
+	@Override
+	public void bind()
+	{
+		HandlerRegistration registration;
+		
+		registration = eventBus.addHandler(GoToInstructorHomeEvent.TYPE, this);
+		eventBusRegistration.put(GoToInstructorHomeEvent.TYPE, registration);
+	}
+	
 	/* (non-Javadoc)
 	 * @see org.dselent.course_load_scheduler.client.presenter.BasePresenter#go(com.google.gwt.user.client.ui.HasWidgets)
 	 */
