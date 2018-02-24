@@ -13,6 +13,7 @@ import org.dselent.course_load_scheduler.client.event.GetFacultyEvent;
 import org.dselent.course_load_scheduler.client.event.GoToAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.GoToAddCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GoToAddEditUserEvent;
+import org.dselent.course_load_scheduler.client.event.GoToAdminHomeEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCartEvent;
 import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
@@ -21,6 +22,8 @@ import org.dselent.course_load_scheduler.client.event.GoToEditInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditSectionEvent;
 import org.dselent.course_load_scheduler.client.event.GoToFacultyCourseMapEvent;
 import org.dselent.course_load_scheduler.client.event.GoToInstructorHomeEvent;
+import org.dselent.course_load_scheduler.client.event.GoToLogoutEvent;
+import org.dselent.course_load_scheduler.client.event.GoToReportAProblemEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidCourseEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidCourseIdEvent;
@@ -45,16 +48,25 @@ import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
  * overriding with an empty method
  * 
  * @author dselent
- * 
+ *    adminhome, logout, reportprob
  */
 public abstract class EventHandlerAdapter
 implements InvalidLoginEventHandler, SendLoginEventHandler, InvalidCourseEventHandler, ReceiveLoginEventHandler, AddCourseEventHandler, AddInstanceEventHandler, AddSectionEventHandler,
-AddUserEventHandler, SubmitRegistrationCartEventHandler, DeleteCourseEventHandler, DeleteInstanceEventHandler, DeleteSectionEventHandler, 
-EditCourseEventHandler, EditUserEventHandler, GetFacultyEventHandler, GoToAccountInfoEventHandler, GoToAddCourseEventHandler, GoToAddEditUserEventHandler, GoToCartEventHandler, 
-GoToClassSearchEventHandler, GoToCurrentCoursesEventHandler, GoToEditCourseEventHandler, GoToEditInstanceEventHandler, GoToEditSectionEventHandler, InvalidCourseIdEventHandler, 
-InvalidInstanceEventHandler, InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SubmitReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, 
-SubmitCourseToCartEventHandler, GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler, GoToInstructorHomeEventHandler
+AddUserEventHandler, SubmitRegistrationCartEventHandler, DeleteCourseEventHandler, DeleteInstanceEventHandler, DeleteSectionEventHandler, EditCourseEventHandler, 
+EditUserEventHandler, GetFacultyEventHandler, GoToAccountInfoEventHandler, GoToAddCourseEventHandler, GoToAddEditUserEventHandler, GoToCartEventHandler, GoToClassSearchEventHandler,
+GoToCurrentCoursesEventHandler, GoToEditCourseEventHandler, GoToEditInstanceEventHandler, GoToEditSectionEventHandler, InvalidCourseIdEventHandler, InvalidInstanceEventHandler, 
+InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SubmitReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, SubmitCourseToCartEventHandler, 
+GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler, GoToInstructorHomeEventHandler, GoToAdminHomeEventHandler, GoToLogoutEventHandler, GoToReportAProblemEventHandler
 {
+	@Override
+	public void onGoToReportAProblem(GoToReportAProblemEvent evt) {}
+	
+	@Override
+	public void onGoToLogout(GoToLogoutEvent evt) {}
+	
+	@Override
+	public void onGoToAdminHome(GoToAdminHomeEvent evt) {}
+	
 	@Override
 	public void onGoToInstructorHome(GoToInstructorHomeEvent evt) {}
 	
