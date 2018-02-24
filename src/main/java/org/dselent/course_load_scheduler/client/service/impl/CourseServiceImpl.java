@@ -2,14 +2,17 @@ package org.dselent.course_load_scheduler.client.service.impl;
 
 import org.dselent.course_load_scheduler.client.action.AddCourseAction;
 import org.dselent.course_load_scheduler.client.action.CourseSearchAction;
+import org.dselent.course_load_scheduler.client.action.CurrentCoursesAction;
 import org.dselent.course_load_scheduler.client.action.DeleteCourseAction;
 import org.dselent.course_load_scheduler.client.action.EditCourseAction;
 import org.dselent.course_load_scheduler.client.callback.AddCourseCallback;
 import org.dselent.course_load_scheduler.client.callback.CourseSearchCallback;
+import org.dselent.course_load_scheduler.client.callback.CurrentCoursesCallback;
 import org.dselent.course_load_scheduler.client.callback.DeleteCourseCallback;
 import org.dselent.course_load_scheduler.client.callback.EditCourseCallback;
 import org.dselent.course_load_scheduler.client.event.AddCourseEvent;
 import org.dselent.course_load_scheduler.client.event.CourseSearchEvent;
+import org.dselent.course_load_scheduler.client.event.CurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteCourseEvent;
 import org.dselent.course_load_scheduler.client.event.EditCourseEvent;
 import org.dselent.course_load_scheduler.client.network.NetworkRequest;
@@ -17,6 +20,7 @@ import org.dselent.course_load_scheduler.client.network.NetworkRequestStrings;
 import org.dselent.course_load_scheduler.client.service.CourseService;
 import org.dselent.course_load_scheduler.client.translator.impl.AddCourseTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.CourseSearchTranslatorImpl;
+import org.dselent.course_load_scheduler.client.translator.impl.CurrentCoursesActionTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.DeleteCourseActionTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.EditCourseActionTranslatorImpl;
 
@@ -85,6 +89,16 @@ public class CourseServiceImpl extends BaseServiceImpl implements CourseService{
 		DeleteCourseCallback deleteCourseCallback = new DeleteCourseCallback(eventBus, evt.getContainer());
 		
 		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.LOGIN, deleteCourseCallback, json);
+		request.send();
+	}
+	
+	public void onCurrentCourses(CurrentCoursesEvent evt) {
+		CurrentCoursesAction action = evt.getAction();
+		CurrentCoursesActionTranslatorImpl currentCoursesTranslator = new CurrentCoursesActionTranslatorImpl();
+		JSONObject json = currentCoursesTranslator.translateToJson(action);
+		CurrentCoursesCallback currentCoursesCallback = new CurrentCoursesCallback(eventBus, evt.getContainer());
+		
+		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.LOGIN, currentCoursesCallback, json);
 		request.send();
 	}
 }
