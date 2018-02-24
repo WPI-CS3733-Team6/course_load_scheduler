@@ -158,8 +158,9 @@ public class AddCoursePresenterImpl extends BasePresenterImpl implements AddCour
 			InvalidCourseIdEvent icie = new InvalidCourseIdEvent(icia);
 			eventBus.fireEvent(icie);
 		} else {
+			HasWidgets container = parentPresenter.getView().getMiddlePanel();
 			DeleteCourseAction dca = new DeleteCourseAction(courseId);
-			DeleteCourseEvent dce = new DeleteCourseEvent(dca);
+			DeleteCourseEvent dce = new DeleteCourseEvent(dca, container);
 			eventBus.fireEvent(dce);
 		}
 
