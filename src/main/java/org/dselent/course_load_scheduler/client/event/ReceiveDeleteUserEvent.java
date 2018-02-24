@@ -22,6 +22,6 @@ public class ReceiveDeleteUserEvent extends DisplayEvent<ReceiveDeleteUserAction
 	@Override
 	protected void dispatch(ReceiveDeleteUserEventHandler handler)
 	{
-		handler.onReceiveDeleteCourse(this);
+		handler.onReceiveDeleteUser(this);
 	}
 }

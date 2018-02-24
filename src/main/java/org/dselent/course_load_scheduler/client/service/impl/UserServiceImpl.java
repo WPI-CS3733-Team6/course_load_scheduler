@@ -1,16 +1,19 @@
 package org.dselent.course_load_scheduler.client.service.impl;
 
 import org.dselent.course_load_scheduler.client.action.AddUserAction;
+import org.dselent.course_load_scheduler.client.action.DeleteUserAction;
 import org.dselent.course_load_scheduler.client.action.EditUserAction;
 import org.dselent.course_load_scheduler.client.action.SendAccountInfoAction;
 import org.dselent.course_load_scheduler.client.action.SendLoginAction;
 import org.dselent.course_load_scheduler.client.action.SendUpdateAccountInfoAction;
 import org.dselent.course_load_scheduler.client.callback.AccountInfoCallback;
 import org.dselent.course_load_scheduler.client.callback.AddUserCallback;
+import org.dselent.course_load_scheduler.client.callback.DeleteUserCallback;
 import org.dselent.course_load_scheduler.client.callback.EditUserCallback;
 import org.dselent.course_load_scheduler.client.callback.SendLoginCallback;
 import org.dselent.course_load_scheduler.client.callback.UpdateAccountCallback;
 import org.dselent.course_load_scheduler.client.event.AddUserEvent;
+import org.dselent.course_load_scheduler.client.event.DeleteUserEvent;
 import org.dselent.course_load_scheduler.client.event.EditUserEvent;
 import org.dselent.course_load_scheduler.client.event.GetFacultyEvent;
 import org.dselent.course_load_scheduler.client.event.SendAccountInfoEvent;
@@ -21,6 +24,7 @@ import org.dselent.course_load_scheduler.client.network.NetworkRequestStrings;
 import org.dselent.course_load_scheduler.client.service.UserService;
 import org.dselent.course_load_scheduler.client.translator.impl.AccountInfoTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.AddUserActionTranslatorImpl;
+import org.dselent.course_load_scheduler.client.translator.impl.DeleteUserActionTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.EditUserActionTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.LoginActionTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.UpdateAccountInfoActionTranslatorImpl;
@@ -118,6 +122,17 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService
 
 		// TODO write network request here
 		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.EDIT_USER, editUserCallback, json);
+		request.send();
+	}
+	
+	public void onDeleteUser(DeleteUserEvent evt) {
+		DeleteUserAction action = evt.getAction();
+		DeleteUserActionTranslatorImpl deleteUserActionTranslatorImpl = new DeleteUserActionTranslatorImpl();
+		JSONObject json = deleteUserActionTranslatorImpl.translateToJson(action);
+		DeleteUserCallback deleteUserCallback = new DeleteUserCallback(eventBus, evt.getContainer());
+
+		
+		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.ADD_USER, deleteUserCallback, json);
 		request.send();
 	}
 }
