@@ -11,7 +11,7 @@ public class CourseSearchAction extends Action {
 		this.level = level;
 	}
 
-	public String getDepartment() {
+	public String getSubject() {
 		return subject;
 	}
 
