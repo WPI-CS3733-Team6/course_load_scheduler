@@ -5,6 +5,7 @@ import org.dselent.course_load_scheduler.client.event.AddToCartEvent;
 import org.dselent.course_load_scheduler.client.event.CourseSearchEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteCourseEvent;
 import org.dselent.course_load_scheduler.client.event.EditCourseEvent;
+import org.dselent.course_load_scheduler.client.event.SendSubmitRegistrationCartEvent;
 
 public interface CourseService extends BaseService{
 	void onCourseSearch(CourseSearchEvent evt);
@@ -16,4 +17,6 @@ public interface CourseService extends BaseService{
 	void onDeleteCourse(DeleteCourseEvent evt);
 	
 	void onAddToCart(AddToCartEvent evt);
+	
+	void onSubmitCart(SendSubmitRegistrationCartEvent evt);
 }
