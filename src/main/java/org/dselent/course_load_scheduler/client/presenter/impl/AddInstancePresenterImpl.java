@@ -106,7 +106,7 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 			parentPresenter.showLoadScreen();
 			
 			String number = view.getCourseNumberField().getText();
-			Integer instanceNum = view.getInstanceNumberField().getValue();
+			Integer instanceNum = Integer.parseInt(view.getInstanceNumberField().getValue());
 			Integer term = view.getTermList().getSelectedIndex();
 			
 			boolean validNumber = true;
@@ -153,7 +153,7 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 	@Override
 	public void deleteInstance() {
 		String courseNum = view.getCourseNumberField().getValue();
-		Integer instanceNum = view.getInstanceNumberField().getValue();
+		Integer instanceNum = Integer.parseInt(view.getInstanceNumberField().getValue());
 		
 		DeleteInstanceAction dia = new DeleteInstanceAction(courseNum, instanceNum);
 		DeleteInstanceEvent die = new DeleteInstanceEvent(dia, container);
@@ -163,8 +163,7 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 	@Override
 	public void goToAddSection() {
 		String courseNum = view.getCourseNumberField().getValue();
-		Integer instanceNum = view.getInstanceNumberField().getValue();
-		
+		Integer instanceNum = Integer.parseInt(view.getInstanceNumberField().getValue());		
 		AddSectionAction dia = new AddSectionAction(courseNum, instanceNum);
 		AddSectionEvent die = new AddSectionEvent(dia, container);
 		eventBus.fireEvent(die);
@@ -173,7 +172,7 @@ public class AddInstancePresenterImpl extends BasePresenterImpl implements AddIn
 	@Override
 	public void goToEditSection() {
 		String courseNum = view.getCourseNumberField().getValue();
-		Integer instanceNum = view.getInstanceNumberField().getValue();
+		Integer instanceNum = Integer.parseInt(view.getInstanceNumberField().getValue());
 		Integer sectionNum = view.getSectionDropList().getSelectedIndex();
 		
 		GoToEditSectionAction dia = new GoToEditSectionAction(courseNum, instanceNum, sectionNum);

@@ -4,6 +4,8 @@ import org.dselent.course_load_scheduler.client.presenter.AddInstancePresenter;
 import org.dselent.course_load_scheduler.client.view.AddInstanceView;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ChangeEvent;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -11,13 +13,10 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HasWidgets;
-import com.google.gwt.user.client.ui.IntegerBox;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ChangeEvent;
 
 public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> implements AddInstanceView {
 
@@ -37,7 +36,7 @@ public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> impl
 	@UiField TextBox instanceNumberHeader;
 	@UiField TextBox termHeader;
 	@UiField TextBox courseNumberField;
-	@UiField IntegerBox instanceNumberField;
+	@UiField TextBox instanceNumberField;
 	@UiField ListBox termList;
 
 	@UiField FlexTable sectionInfoList;
@@ -87,6 +86,54 @@ public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> impl
 	public HTMLPanel getRootPanel() {
 		return rootPanel;
 	}
+	public static void setUiBinder(AddInstanceUiBinder uiBinder) {
+		AddInstanceViewImpl.uiBinder = uiBinder;
+	}
+	public void setRootPanel(HTMLPanel rootPanel) {
+		this.rootPanel = rootPanel;
+	}
+	public void setCourseNumberHeader(TextBox courseNumberHeader) {
+		this.courseNumberHeader = courseNumberHeader;
+	}
+	public void setInstanceNumberHeader(TextBox instanceNumberHeader) {
+		this.instanceNumberHeader = instanceNumberHeader;
+	}
+	public void setTermHeader(TextBox termHeader) {
+		this.termHeader = termHeader;
+	}
+	public void setCourseNumberField(TextBox courseNumberField) {
+		this.courseNumberField = courseNumberField;
+	}
+	public void setInstanceNumberField(TextBox instanceNumberField) {
+		this.instanceNumberField = instanceNumberField;
+	}
+	public void setTermList(ListBox termList) {
+		this.termList = termList;
+	}
+	public void setSectionInfoList(FlexTable sectionInfoList) {
+		this.sectionInfoList = sectionInfoList;
+	}
+	public void setSectionDropList(ListBox sectionDropList) {
+		this.sectionDropList = sectionDropList;
+	}
+	public void setBackButton(Button backButton) {
+		this.backButton = backButton;
+	}
+	public void setSaveButton(Button saveButton) {
+		this.saveButton = saveButton;
+	}
+	public void setDeleteButton(Button deleteButton) {
+		this.deleteButton = deleteButton;
+	}
+	public void setSectionInfoPanel(LayoutPanel sectionInfoPanel) {
+		this.sectionInfoPanel = sectionInfoPanel;
+	}
+	public void setSaveDeletePanel(LayoutPanel saveDeletePanel) {
+		this.saveDeletePanel = saveDeletePanel;
+	}
+	public void setInstanceInfoPanel(LayoutPanel instanceInfoPanel) {
+		this.instanceInfoPanel = instanceInfoPanel;
+	}
 	public TextBox getCourseNumberHeader() {
 		return courseNumberHeader;
 	}
@@ -120,7 +167,7 @@ public class AddInstanceViewImpl extends BaseViewImpl<AddInstancePresenter> impl
 	public TextBox getCourseNumberField() {
 		return courseNumberField;
 	}
-	public IntegerBox getInstanceNumberField() {
+	public TextBox getInstanceNumberField() {
 		return instanceNumberField;
 	}
 	public ListBox getTermList() {
