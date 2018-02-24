@@ -23,8 +23,7 @@
 	</ui:style>
 	<g:HTMLPanel ui:field="rootPanel" width="100%" height="100%">
 		<g:LayoutPanel width="100%" height="100%" ui:field="AccountInfoBaseLayoutPanel" styleName="{style.layoutPanel}">
-			<g:layer>
-				<g:TextBox text="Account Information" width="100%" alignment="CENTER" textAlignment="ALIGN_CENTER" ui:field="AccountInfoPgTitle" height="5%"/>
+			<g:layer left="0.0pct" right="0.0pct" top="0.0pct" bottom="90.0pct">
 				<g:TextBox text="Account Information" width="100%" alignment="CENTER" textAlignment="ALIGN_CENTER" ui:field="AccountInfoPgTitle" height="100%" readOnly="true"/>
 			</g:layer>
 						<g:layer left="5.0pct" top="10.0pct" right="5.0pct" bottom="20.0pct">
