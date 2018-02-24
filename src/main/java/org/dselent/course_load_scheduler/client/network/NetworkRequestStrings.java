@@ -5,10 +5,15 @@ public final class NetworkRequestStrings
 	public static final String SERVER_LOCATION = "http://localhost:8080/";
 	public static final String BASE_REQUEST = "course_load_scheduler/";
 	public static final String EDIT_USER = "user/edit";
-	public static String LOGIN = "login";
-	public static String ACCOUNT = "user/account";
-	public static String USER_INFO_UPDATE = "user/info/update";
-	public static String ADD_USER = "user/add";
+	public static final String COURSE_SEARCH = "course/search";
+	public static final String LOGIN = "login";
+	public static final String ACCOUNT = "user/account";
+	public static final String USER_INFO_UPDATE = "user/info/update";
+	public static final String ADD_USER = "user/add";
+	public static final String EDIT_COURSE = "course/edit";
+	public static final String ADD_COURSE = "course/add";
+	public static final String DELETE_COURSE = "course/delete";
+	public static final String CURRENT_COURSES = "course/current"; //TODO, figure out what to do with this one in particular
 	
 	private NetworkRequestStrings() {};
 }

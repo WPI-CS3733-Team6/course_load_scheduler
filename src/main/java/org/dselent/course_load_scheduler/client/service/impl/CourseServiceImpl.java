@@ -56,7 +56,7 @@ public class CourseServiceImpl extends BaseServiceImpl implements CourseService{
 		JSONObject json = courseSearchTranslator.translateToJson(action);
 		CourseSearchCallback courseSearchCallback = new CourseSearchCallback(eventBus, evt.getContainer());
 		
-		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.LOGIN, courseSearchCallback, json);
+		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.COURSE_SEARCH, courseSearchCallback, json);
 		request.send();
 	}
 	
@@ -67,7 +67,7 @@ public class CourseServiceImpl extends BaseServiceImpl implements CourseService{
 		JSONObject json = editCourseTranslator.translateToJson(action);
 		EditCourseCallback editCourseCallback = new EditCourseCallback(eventBus, evt.getContainer());
 		
-		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.LOGIN, editCourseCallback, json);
+		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.EDIT_COURSE, editCourseCallback, json);
 		request.send();
 	}
 	
@@ -78,7 +78,7 @@ public class CourseServiceImpl extends BaseServiceImpl implements CourseService{
 		JSONObject json = addCourseTranslator.translateToJson(action);
 		AddCourseCallback addCourseCallback = new AddCourseCallback(eventBus, evt.getContainer());
 		
-		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.LOGIN, addCourseCallback, json);
+		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.ADD_COURSE, addCourseCallback, json);
 		request.send();
 	}
 	
@@ -88,7 +88,7 @@ public class CourseServiceImpl extends BaseServiceImpl implements CourseService{
 		JSONObject json = deleteCourseTranslator.translateToJson(action);
 		DeleteCourseCallback deleteCourseCallback = new DeleteCourseCallback(eventBus, evt.getContainer());
 		
-		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.LOGIN, deleteCourseCallback, json);
+		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.DELETE_COURSE, deleteCourseCallback, json);
 		request.send();
 	}
 	
@@ -98,7 +98,7 @@ public class CourseServiceImpl extends BaseServiceImpl implements CourseService{
 		JSONObject json = currentCoursesTranslator.translateToJson(action);
 		CurrentCoursesCallback currentCoursesCallback = new CurrentCoursesCallback(eventBus, evt.getContainer());
 		
-		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.LOGIN, currentCoursesCallback, json);
+		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.CURRENT_COURSES, currentCoursesCallback, json);
 		request.send();
 	}
 }
