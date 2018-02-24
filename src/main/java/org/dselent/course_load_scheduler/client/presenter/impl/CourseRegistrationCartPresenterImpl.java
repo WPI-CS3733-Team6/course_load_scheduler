@@ -1,8 +1,8 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
-import org.dselent.course_load_scheduler.client.action.CourseCartRemoveCourseAction;
+import org.dselent.course_load_scheduler.client.action.SendCourseCartRemoveCourseAction;
 import org.dselent.course_load_scheduler.client.action.SendSubmitRegistrationCartAction;
-import org.dselent.course_load_scheduler.client.event.CourseCartRemoveCourseEvent;
+import org.dselent.course_load_scheduler.client.event.SendCourseCartRemoveCourseEvent;
 import org.dselent.course_load_scheduler.client.event.SendSubmitRegistrationCartEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.CourseRegistrationCartPresenter;
@@ -93,8 +93,8 @@ public class CourseRegistrationCartPresenterImpl extends BasePresenterImpl imple
 			
 			//remove course.  should I take any arguments?
 			HasWidgets container = parentPresenter.getView().getMiddlePanel();
-			CourseCartRemoveCourseAction cra = new CourseCartRemoveCourseAction();
-			CourseCartRemoveCourseEvent cre = new CourseCartRemoveCourseEvent(cra, container);
+			SendCourseCartRemoveCourseAction cra = new SendCourseCartRemoveCourseAction();
+			SendCourseCartRemoveCourseEvent cre = new SendCourseCartRemoveCourseEvent(cra, container);
 			eventBus.fireEvent(cre);
 			
 		}

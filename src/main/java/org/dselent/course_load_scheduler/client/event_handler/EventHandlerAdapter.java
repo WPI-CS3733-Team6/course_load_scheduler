@@ -41,6 +41,7 @@ import org.dselent.course_load_scheduler.client.event.ReceiveSubmitRegistrationC
 import org.dselent.course_load_scheduler.client.event.SaveInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.SaveSectionEvent;
 import org.dselent.course_load_scheduler.client.event.SendAccountInfoEvent;
+import org.dselent.course_load_scheduler.client.event.SendCourseCartRemoveCourseEvent;
 import org.dselent.course_load_scheduler.client.event.SendLoginEvent;
 import org.dselent.course_load_scheduler.client.event.SubmitCourseToCartEvent;
 import org.dselent.course_load_scheduler.client.event.SendReportEvent;
@@ -64,7 +65,8 @@ EditUserEventHandler, GetFacultyEventHandler, GoToAccountInfoEventHandler, GoToA
 GoToCurrentCoursesEventHandler, GoToEditCourseEventHandler, GoToEditInstanceEventHandler, GoToEditSectionEventHandler, InvalidCourseIdEventHandler, InvalidInstanceEventHandler, 
 InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SendReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, SubmitCourseToCartEventHandler, 
 GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler, GoToInstructorHomeEventHandler, GoToAdminHomeEventHandler, GoToLogoutEventHandler, GoToReportAProblemEventHandler,
-ReceiveAccountInfoEventHandler, SendAccountInfoEventHandler, GoToDetailedCourseInformationEventHandler, CourseSearchEventHandler, ReceiveCourseSearchEventHandler, ReceiveAddUserEventHandler, ReceiveSubmitRegistrationCartEventHandler
+ReceiveAccountInfoEventHandler, SendAccountInfoEventHandler, GoToDetailedCourseInformationEventHandler, CourseSearchEventHandler, ReceiveCourseSearchEventHandler, ReceiveAddUserEventHandler, ReceiveSubmitRegistrationCartEventHandler,
+SendCourseCartRemoveCourseEventHandler
 {
 	@Override
 	public void onReceiveAddUser(ReceiveAddUserEvent evt) {}
@@ -203,5 +205,8 @@ ReceiveAccountInfoEventHandler, SendAccountInfoEventHandler, GoToDetailedCourseI
 	
 	@Override
 	public void onReceiveSubmitRegistrationCart(ReceiveSubmitRegistrationCartEvent evt) {}
+	
+	@Override
+	public void onCartRemoveCourse(SendCourseCartRemoveCourseEvent evt) {}
 	
 }
