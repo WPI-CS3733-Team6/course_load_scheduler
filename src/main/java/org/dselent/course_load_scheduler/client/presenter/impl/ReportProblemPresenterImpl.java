@@ -6,11 +6,10 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.dselent.course_load_scheduler.client.action.InvalidReportAction;
-import org.dselent.course_load_scheduler.client.action.SubmitReportAction;
+import org.dselent.course_load_scheduler.client.action.SendReportAction;
 import org.dselent.course_load_scheduler.client.errorstring.InvalidReportStrings;
-import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidReportEvent;
-import org.dselent.course_load_scheduler.client.event.SubmitReportEvent;
+import org.dselent.course_load_scheduler.client.event.SendReportEvent;
 import org.dselent.course_load_scheduler.client.exceptions.EmptyStringException;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.presenter.ReportProblemPresenter;
@@ -42,8 +41,8 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 	public void bind() {
 		HandlerRegistration registration;
 		
-		registration = eventBus.addHandler(SubmitReportEvent.TYPE, this);
-		eventBusRegistration.put(SubmitReportEvent.TYPE, registration);
+		registration = eventBus.addHandler(SendReportEvent.TYPE, this);
+		eventBusRegistration.put(SendReportEvent.TYPE, registration);
 	}
 	
 	@Override
@@ -123,8 +122,8 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 	private void sendReport(String type, String name, String email, String desc) {
 		//write in actions and event handling gubbins
 		HasWidgets container = parentPresenter.getView().getMiddlePanel();
-		SubmitReportAction sra = new SubmitReportAction(name, email, type, desc);
-		SubmitReportEvent sre = new SubmitReportEvent(sra, container);
+		SendReportAction sra = new SendReportAction(name, email, type, desc);
+		SendReportEvent sre = new SendReportEvent(sra, container);
 		eventBus.fireEvent(sre);
 	}
 	

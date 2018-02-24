@@ -43,7 +43,7 @@ import org.dselent.course_load_scheduler.client.event.SendAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.SendLoginEvent;
 import org.dselent.course_load_scheduler.client.event.SubmitCourseToCartEvent;
 import org.dselent.course_load_scheduler.client.event.SubmitRegistrationCartEvent;
-import org.dselent.course_load_scheduler.client.event.SubmitReportEvent;
+import org.dselent.course_load_scheduler.client.event.SendReportEvent;
 import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
 
 /**
@@ -61,7 +61,7 @@ implements InvalidLoginEventHandler, SendLoginEventHandler, InvalidCourseEventHa
 AddUserEventHandler, SubmitRegistrationCartEventHandler, DeleteCourseEventHandler, DeleteInstanceEventHandler, DeleteSectionEventHandler, EditCourseEventHandler, 
 EditUserEventHandler, GetFacultyEventHandler, GoToAccountInfoEventHandler, GoToAddCourseEventHandler, GoToAddEditUserEventHandler, GoToCartEventHandler, GoToClassSearchEventHandler,
 GoToCurrentCoursesEventHandler, GoToEditCourseEventHandler, GoToEditInstanceEventHandler, GoToEditSectionEventHandler, InvalidCourseIdEventHandler, InvalidInstanceEventHandler, 
-InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SubmitReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, SubmitCourseToCartEventHandler, 
+InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SendReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, SubmitCourseToCartEventHandler, 
 GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler, GoToInstructorHomeEventHandler, GoToAdminHomeEventHandler, GoToLogoutEventHandler, GoToReportAProblemEventHandler,
 ReceiveAccountInfoEventHandler, SendAccountInfoEventHandler, GoToDetailedCourseInformationEventHandler, CourseSearchEventHandler, ReceiveCourseSearchEventHandler, ReceiveAddUserEventHandler
 {
@@ -96,7 +96,7 @@ ReceiveAccountInfoEventHandler, SendAccountInfoEventHandler, GoToDetailedCourseI
 	public void onUpdateAccount(UpdateAccountEvent evt) {}
 	
 	@Override
-	public void onSubmitReport(SubmitReportEvent evt) {}
+	public void onSendReport(SendReportEvent evt) {}
 	
 	@Override
 	public void onSaveSection(SaveSectionEvent evt) {}

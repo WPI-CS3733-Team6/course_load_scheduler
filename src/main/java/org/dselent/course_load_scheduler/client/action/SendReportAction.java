@@ -1,13 +1,13 @@
 package org.dselent.course_load_scheduler.client.action;
 
-public class SubmitReportAction extends Action {
+public class SendReportAction extends Action {
 	
 	private String name;
 	private String email;
 	private String type;
 	private String description;
 	
-	public SubmitReportAction(String name, String email, String type, String description) {
+	public SendReportAction(String name, String email, String type, String description) {
 		this.name = name;
 		this.email = email;
 		this.type = type;
