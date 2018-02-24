@@ -12,6 +12,7 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -35,6 +36,31 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 
 	public SearchClassesViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
+
+		String [] terms = {"Terms A & B", "Terms C & D", "Terms E1 & E2", "Term A", "Term B", "Term C", "Term D", "Term E1", "Term E2"};
+		String [] subjects = {"Biology", "Computer Science", "Electrical Engineering", "Physics", "Physical Education"};
+		String [] levels = {"Undergraduate", "Graduate"};
+		for (int i = 0; i < terms.length; i++) {
+			semester.setItemText(i, terms[i]);
+		}
+		for (int i = 0; i < subjects.length; i++) {
+			subject.setItemText(i, subjects[i]);
+		}
+		for (int i = 0; i < levels.length; i++) {
+			level.setItemText(i, levels[i]);
+		}
+		
+		RootPanel.get().add(semester);
+		RootPanel.get().add(subject);
+		RootPanel.get().add(level);
+		
+		for (int i = 0; i < gridCourses.getRowCount(); i++) {
+			for (int j=0; j < 5; j++){
+				String text = "";
+				gridCourses.setText(i, j, text);
+				
+			}
+		}
 	}
 
 	@Override
@@ -49,7 +75,6 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 
 	@Override
 	public HasWidgets getViewRootPanel() {
-		// TODO Auto-generated method stub
 		return rootPanel;
 	}
 
@@ -137,9 +162,8 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 		return bottomPanel;
 	}
 	
-	
-	
 	@UiHandler("searchButton")
 	void onSearchButtonClick(ClickEvent event) {
+		presenter.searchCourses();
 	}
 }
