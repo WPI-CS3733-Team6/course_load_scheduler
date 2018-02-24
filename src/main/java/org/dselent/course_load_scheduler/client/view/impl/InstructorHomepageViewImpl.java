@@ -52,13 +52,11 @@ public class InstructorHomepageViewImpl extends BaseViewImpl<InstructorHomepageP
 
 	@Override
 	public Widget getWidgetContainer() {
-		// TODO Auto-generated method stub
 		return this;
 	}
 
 	@Override
 	public HasWidgets getViewRootPanel() {
-		// TODO Auto-generated method stub
 		return rootPanel;
 	}
 	

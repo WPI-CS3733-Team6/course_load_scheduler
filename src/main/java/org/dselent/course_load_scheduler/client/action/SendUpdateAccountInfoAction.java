@@ -2,6 +2,8 @@ package org.dselent.course_load_scheduler.client.action;
 
 public class SendUpdateAccountInfoAction extends Action {
 	
+	// TODO need to add confirmed new password, or get rid of it server side
+	
 	private String oldPassword;
 	private String newPassword;
 	private String newEmail;

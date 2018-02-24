@@ -63,6 +63,7 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 	/**
 	 * @return the parentPresenter
 	 */
+	@Override
 	public IndexPresenter getParentPresenter() {
 		return parentPresenter;
 	}
@@ -70,10 +71,12 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 	/**
 	 * @param parentPresenter the parentPresenter to set
 	 */
+	@Override
 	public void setParentPresenter(IndexPresenter parentPresenter) {
 		this.parentPresenter = parentPresenter;
 	}
 	
+	@Override
 	public void currentClasses() {
 		if(!clickInProgress) {
 			
@@ -88,6 +91,7 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 		}
 	}
 	
+	@Override
 	public void classSearch() {
 		if(!clickInProgress) {
 			
@@ -103,6 +107,7 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 		}
 	}
 	
+	@Override
 	public void accountInfo() {
 		if(!clickInProgress) {
 			
@@ -118,6 +123,7 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 		}
 	}
 	
+	@Override
 	public void courseCart() {
 		if(!clickInProgress) {
 			
@@ -133,6 +139,7 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 		}
 	}
 	
+	@Override
 	public void facultyCourseMap() {
 		if(!clickInProgress) {
 			
