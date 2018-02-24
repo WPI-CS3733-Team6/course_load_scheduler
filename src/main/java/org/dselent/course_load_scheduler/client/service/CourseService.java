@@ -1,6 +1,7 @@
 package org.dselent.course_load_scheduler.client.service;
 
 import org.dselent.course_load_scheduler.client.event.AddCourseEvent;
+import org.dselent.course_load_scheduler.client.event.AddToCartEvent;
 import org.dselent.course_load_scheduler.client.event.CourseSearchEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteCourseEvent;
 import org.dselent.course_load_scheduler.client.event.EditCourseEvent;
@@ -13,4 +14,6 @@ public interface CourseService extends BaseService{
 	void onAddCourse(AddCourseEvent evt);
 	
 	void onDeleteCourse(DeleteCourseEvent evt);
+	
+	void onAddToCart(AddToCartEvent evt);
 }

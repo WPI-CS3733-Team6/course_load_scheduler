@@ -45,7 +45,7 @@ import org.dselent.course_load_scheduler.client.event.SaveSectionEvent;
 import org.dselent.course_load_scheduler.client.event.SendAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.SendCourseCartRemoveCourseEvent;
 import org.dselent.course_load_scheduler.client.event.SendLoginEvent;
-import org.dselent.course_load_scheduler.client.event.SendSubmitCourseToCartEvent;
+import org.dselent.course_load_scheduler.client.event.AddToCartEvent;
 import org.dselent.course_load_scheduler.client.event.SendReportEvent;
 import org.dselent.course_load_scheduler.client.event.SendSubmitRegistrationCartEvent;
 import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
@@ -65,7 +65,7 @@ implements InvalidLoginEventHandler, SendLoginEventHandler, InvalidCourseEventHa
 AddUserEventHandler, SendSubmitRegistrationCartEventHandler, DeleteCourseEventHandler, DeleteInstanceEventHandler, DeleteSectionEventHandler, EditCourseEventHandler, 
 EditUserEventHandler, GetFacultyEventHandler, GoToAccountInfoEventHandler, GoToAddCourseEventHandler, GoToAddEditUserEventHandler, GoToCartEventHandler, GoToClassSearchEventHandler,
 GoToCurrentCoursesEventHandler, GoToEditCourseEventHandler, GoToEditInstanceEventHandler, GoToEditSectionEventHandler, InvalidCourseIdEventHandler, InvalidInstanceEventHandler, 
-InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SendReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, SendSubmitCourseToCartEventHandler, 
+InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SendReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, AddToCartEventHandler, 
 GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler, GoToInstructorHomeEventHandler, GoToAdminHomeEventHandler, GoToLogoutEventHandler, GoToReportAProblemEventHandler,
 ReceiveAccountInfoEventHandler, SendAccountInfoEventHandler, GoToDetailedCourseInformationEventHandler, CourseSearchEventHandler, ReceiveCourseSearchEventHandler, ReceiveAddUserEventHandler, ReceiveSubmitRegistrationCartEventHandler,
 SendCourseCartRemoveCourseEventHandler, ReceiveCourseCartRemoveCourseEventHandler, ReceiveSubmitCourseToCartEventHandler
@@ -194,7 +194,7 @@ SendCourseCartRemoveCourseEventHandler, ReceiveCourseCartRemoveCourseEventHandle
 	public void onInvalidAccountInfo(InvalidAccountInfoEvent evt) {}
 	
 	@Override
-	public void onSendSubmitCourseToCart(SendSubmitCourseToCartEvent evt) {}
+	public void onSendSubmitCourseToCart(AddToCartEvent evt) {}
 	
 	@Override
 	public void onGoToFacultyCourseMap(GoToFacultyCourseMapEvent evt) {}
