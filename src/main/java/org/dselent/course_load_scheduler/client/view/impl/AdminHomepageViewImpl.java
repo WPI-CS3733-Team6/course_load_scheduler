@@ -13,6 +13,7 @@ import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.user.client.ui.TextBox;
 
 public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> implements AdminHomepageView {
 
@@ -31,6 +32,7 @@ public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> 
 	@UiField Button searchClassesButton;
 	@UiField Button accountInfoButton;
 	@UiField Button courseRegistrationCartButton;
+	@UiField TextBox inboxLabel;
 
 	interface AdminHomepageViewImplUiBinder extends UiBinder<Widget, AdminHomepageViewImpl> {
 	}
