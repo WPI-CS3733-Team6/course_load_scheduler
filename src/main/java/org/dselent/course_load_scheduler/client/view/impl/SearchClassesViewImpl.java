@@ -119,25 +119,21 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 
 	@Override
 	public ListBox getSemesterField() {
-		// TODO Auto-generated method stub
 		return semester;
 	}
 
 	@Override
 	public ListBox getSubjectField() {
-		// TODO Auto-generated method stub
 		return subject;
 	}
 
 	@Override
 	public ListBox getLevelField() {
-		// TODO Auto-generated method stub
 		return level;
 	}
 
 	@Override
 	public LayoutPanel getLayoutPanel() {
-		// TODO Auto-generated method stub
 		return bottomPanel;
 	}
 	
