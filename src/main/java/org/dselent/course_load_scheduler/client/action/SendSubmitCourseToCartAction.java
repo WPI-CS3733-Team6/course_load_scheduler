@@ -1,10 +1,10 @@
 package org.dselent.course_load_scheduler.client.action;
 
-public class SubmitCourseToCartAction extends Action {
+public class SendSubmitCourseToCartAction extends Action {
 	
 	private String courseName;
 
-	public SubmitCourseToCartAction(String courseName) {
+	public SendSubmitCourseToCartAction(String courseName) {
 		this.courseName = courseName;
 	}
 

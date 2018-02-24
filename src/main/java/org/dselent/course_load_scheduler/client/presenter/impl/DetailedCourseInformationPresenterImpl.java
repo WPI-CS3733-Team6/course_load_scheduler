@@ -1,11 +1,11 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import org.dselent.course_load_scheduler.client.action.GoToClassSearchAction;
-import org.dselent.course_load_scheduler.client.action.SubmitCourseToCartAction;
+import org.dselent.course_load_scheduler.client.action.SendSubmitCourseToCartAction;
 import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 //import org.dselent.course_load_scheduler.client.action.DetailedCourseInformationAction;
 //import org.dselent.course_load_scheduler.client.event.DetailedCourseInformationEvent;
-import org.dselent.course_load_scheduler.client.event.SubmitCourseToCartEvent;
+import org.dselent.course_load_scheduler.client.event.SendSubmitCourseToCartEvent;
 import org.dselent.course_load_scheduler.client.presenter.DetailedCourseInformationPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.DetailedCourseInformationView;
@@ -81,8 +81,8 @@ public class DetailedCourseInformationPresenterImpl extends BasePresenterImpl im
 			String courseName = view.getCourseName().getText();
 			
 			HasWidgets container = parentPresenter.getView().getMiddlePanel();
-			SubmitCourseToCartAction sca = new SubmitCourseToCartAction(courseName);
-			SubmitCourseToCartEvent sce = new SubmitCourseToCartEvent(sca, container);
+			SendSubmitCourseToCartAction sca = new SendSubmitCourseToCartAction(courseName);
+			SendSubmitCourseToCartEvent sce = new SendSubmitCourseToCartEvent(sca, container);
 			eventBus.fireEvent(sce);
 		}
 	}
