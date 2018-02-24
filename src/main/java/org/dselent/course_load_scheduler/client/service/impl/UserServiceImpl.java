@@ -1,9 +1,11 @@
 package org.dselent.course_load_scheduler.client.service.impl;
 
+import org.dselent.course_load_scheduler.client.action.AddUserAction;
 import org.dselent.course_load_scheduler.client.action.SendAccountInfoAction;
 import org.dselent.course_load_scheduler.client.action.SendLoginAction;
 import org.dselent.course_load_scheduler.client.action.SendUpdateAccountInfoAction;
 import org.dselent.course_load_scheduler.client.callback.AccountInfoCallback;
+import org.dselent.course_load_scheduler.client.callback.AddUserCallback;
 import org.dselent.course_load_scheduler.client.callback.SendLoginCallback;
 import org.dselent.course_load_scheduler.client.callback.UpdateAccountCallback;
 import org.dselent.course_load_scheduler.client.event.AddUserEvent;
@@ -15,6 +17,7 @@ import org.dselent.course_load_scheduler.client.network.NetworkRequest;
 import org.dselent.course_load_scheduler.client.network.NetworkRequestStrings;
 import org.dselent.course_load_scheduler.client.service.UserService;
 import org.dselent.course_load_scheduler.client.translator.impl.AccountInfoTranslatorImpl;
+import org.dselent.course_load_scheduler.client.translator.impl.AddUserActionTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.LoginActionTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.UpdateAccountInfoActionTranslatorImpl;
 
@@ -93,7 +96,6 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService
 	}
 	
 	public void onAddUser(AddUserEvent evt) {
-		/*
 		AddUserAction action = evt.getAction();
 		AddUserActionTranslatorImpl addUserActionTranslatorImpl = new AddUserActionTranslatorImpl();
 		JSONObject json = addUserActionTranslatorImpl.translateToJson(action);
@@ -102,6 +104,5 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService
 		// TODO write network request here
 		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.ADD_USER, addUserCallback, json);
 		request.send();
-		*/
 	}
 }
