@@ -1,9 +1,9 @@
 package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import org.dselent.course_load_scheduler.client.action.CourseCartRemoveCourseAction;
-import org.dselent.course_load_scheduler.client.action.SubmitRegistrationCartAction;
+import org.dselent.course_load_scheduler.client.action.SendSubmitRegistrationCartAction;
 import org.dselent.course_load_scheduler.client.event.CourseCartRemoveCourseEvent;
-import org.dselent.course_load_scheduler.client.event.SubmitRegistrationCartEvent;
+import org.dselent.course_load_scheduler.client.event.SendSubmitRegistrationCartEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.CourseRegistrationCartPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
@@ -80,8 +80,8 @@ public class CourseRegistrationCartPresenterImpl extends BasePresenterImpl imple
 	private void sendSubmitCart()
 	{
 		HasWidgets container = parentPresenter.getView().getMiddlePanel();
-		SubmitRegistrationCartAction crca = new SubmitRegistrationCartAction();
-		SubmitRegistrationCartEvent crce = new SubmitRegistrationCartEvent(crca, container);
+		SendSubmitRegistrationCartAction crca = new SendSubmitRegistrationCartAction();
+		SendSubmitRegistrationCartEvent crce = new SendSubmitRegistrationCartEvent(crca, container);
 		eventBus.fireEvent(crce);
 	}
 	

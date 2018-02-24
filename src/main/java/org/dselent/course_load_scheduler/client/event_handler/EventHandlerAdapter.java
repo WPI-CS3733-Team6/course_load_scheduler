@@ -37,13 +37,14 @@ import org.dselent.course_load_scheduler.client.event.ReceiveAddCourseEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveAddUserEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveCourseSearchEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveLoginEvent;
+import org.dselent.course_load_scheduler.client.event.ReceiveSubmitRegistrationCartEvent;
 import org.dselent.course_load_scheduler.client.event.SaveInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.SaveSectionEvent;
 import org.dselent.course_load_scheduler.client.event.SendAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.SendLoginEvent;
 import org.dselent.course_load_scheduler.client.event.SubmitCourseToCartEvent;
-import org.dselent.course_load_scheduler.client.event.SubmitRegistrationCartEvent;
 import org.dselent.course_load_scheduler.client.event.SendReportEvent;
+import org.dselent.course_load_scheduler.client.event.SendSubmitRegistrationCartEvent;
 import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
 
 /**
@@ -58,12 +59,12 @@ import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
  */
 public abstract class EventHandlerAdapter
 implements InvalidLoginEventHandler, SendLoginEventHandler, InvalidCourseEventHandler, ReceiveLoginEventHandler, AddCourseEventHandler, AddInstanceEventHandler, AddSectionEventHandler,
-AddUserEventHandler, SubmitRegistrationCartEventHandler, DeleteCourseEventHandler, DeleteInstanceEventHandler, DeleteSectionEventHandler, EditCourseEventHandler, 
+AddUserEventHandler, SendSubmitRegistrationCartEventHandler, DeleteCourseEventHandler, DeleteInstanceEventHandler, DeleteSectionEventHandler, EditCourseEventHandler, 
 EditUserEventHandler, GetFacultyEventHandler, GoToAccountInfoEventHandler, GoToAddCourseEventHandler, GoToAddEditUserEventHandler, GoToCartEventHandler, GoToClassSearchEventHandler,
 GoToCurrentCoursesEventHandler, GoToEditCourseEventHandler, GoToEditInstanceEventHandler, GoToEditSectionEventHandler, InvalidCourseIdEventHandler, InvalidInstanceEventHandler, 
 InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SendReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, SubmitCourseToCartEventHandler, 
 GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler, GoToInstructorHomeEventHandler, GoToAdminHomeEventHandler, GoToLogoutEventHandler, GoToReportAProblemEventHandler,
-ReceiveAccountInfoEventHandler, SendAccountInfoEventHandler, GoToDetailedCourseInformationEventHandler, CourseSearchEventHandler, ReceiveCourseSearchEventHandler, ReceiveAddUserEventHandler
+ReceiveAccountInfoEventHandler, SendAccountInfoEventHandler, GoToDetailedCourseInformationEventHandler, CourseSearchEventHandler, ReceiveCourseSearchEventHandler, ReceiveAddUserEventHandler, ReceiveSubmitRegistrationCartEventHandler
 {
 	@Override
 	public void onReceiveAddUser(ReceiveAddUserEvent evt) {}
@@ -174,7 +175,7 @@ ReceiveAccountInfoEventHandler, SendAccountInfoEventHandler, GoToDetailedCourseI
 	public void onAddUser(AddUserEvent evt) {}
 	
 	@Override
-	public void onSubmitCart(SubmitRegistrationCartEvent evt) {}
+	public void onSubmitCart(SendSubmitRegistrationCartEvent evt) {}
 	
 	@Override
 	public void onDeleteCourse(DeleteCourseEvent evt) {}
@@ -199,5 +200,8 @@ ReceiveAccountInfoEventHandler, SendAccountInfoEventHandler, GoToDetailedCourseI
 	
 	@Override
 	public void onGoToDetailedCourseInformation(GoToDetailedCourseInformationEvent evt) {}
+	
+	@Override
+	public void onReceiveSubmitRegistrationCart(ReceiveSubmitRegistrationCartEvent evt) {}
 	
 }
