@@ -6,15 +6,16 @@ import org.dselent.course_load_scheduler.client.action.SendUpdateAccountInfoActi
 import org.dselent.course_load_scheduler.client.callback.AccountInfoCallback;
 import org.dselent.course_load_scheduler.client.callback.SendLoginCallback;
 import org.dselent.course_load_scheduler.client.callback.UpdateAccountCallback;
+import org.dselent.course_load_scheduler.client.event.GetFacultyEvent;
 import org.dselent.course_load_scheduler.client.event.SendAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.SendLoginEvent;
 import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
 import org.dselent.course_load_scheduler.client.network.NetworkRequest;
 import org.dselent.course_load_scheduler.client.network.NetworkRequestStrings;
 import org.dselent.course_load_scheduler.client.service.UserService;
+import org.dselent.course_load_scheduler.client.translator.impl.AccountInfoTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.LoginActionTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.UpdateAccountInfoActionTranslatorImpl;
-import org.dselent.course_load_scheduler.client.translator.impl.AccountInfoTranslatorImpl;
 
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.json.client.JSONObject;
@@ -39,6 +40,12 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService
 		
 		registration = eventBus.addHandler(SendLoginEvent.TYPE, this);
 		eventBusRegistration.put(SendLoginEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(SendAccountInfoEvent.TYPE, this);
+		eventBusRegistration.put(SendAccountInfoEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(UpdateAccountEvent.TYPE, this);
+		eventBusRegistration.put(UpdateAccountEvent.TYPE, registration);
 	}
 	
 	@Override
@@ -78,5 +85,9 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService
 
 		//WARNING: will return nothing but errors until the relevant actions match up properly with the server side services and responses
 
+	}
+	
+	public void onGetFaculty(GetFacultyEvent evt) {
+		
 	}
 }
