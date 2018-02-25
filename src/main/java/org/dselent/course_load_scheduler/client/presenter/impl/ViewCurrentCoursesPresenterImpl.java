@@ -69,9 +69,9 @@ public class ViewCurrentCoursesPresenterImpl extends BasePresenterImpl implement
 
 	@Override
 	public void showschedule() {
-		//HasWidgets container = parentPresenter.getView().getMiddlePanel();
+		HasWidgets container = parentPresenter.getView().getMiddlePanel();
 		GetCurrentCoursesAction cca = new GetCurrentCoursesAction();
-		GetCurrentCoursesEvent cce = new GetCurrentCoursesEvent(cca);
+		GetCurrentCoursesEvent cce = new GetCurrentCoursesEvent(cca, container);
 		eventBus.fireEvent(cce);
 		
 	}

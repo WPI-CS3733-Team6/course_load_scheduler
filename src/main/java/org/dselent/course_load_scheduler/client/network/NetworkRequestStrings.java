@@ -16,6 +16,7 @@ public final class NetworkRequestStrings
 	public static final String CURRENT_COURSES = "course/current"; //TODO, figure out what to do with this one in particular
 	public static final String REPORT_PROBLEM = "home/report";
 	public static final String ADD_TO_CART = "course/addToCart";
+	public static final String COURSE_DETAILS = "course/details";
 	
 	private NetworkRequestStrings() {};
 }
