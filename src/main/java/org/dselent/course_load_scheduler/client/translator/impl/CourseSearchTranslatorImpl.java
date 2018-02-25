@@ -31,31 +31,40 @@ public class CourseSearchTranslatorImpl implements ActionTranslator<CourseSearch
 	@Override
 	public ReceiveCourseSearchAction translateToAction(JSONObject json)
 	{			
-		JSONValue jsonObject = json.get("success");
-		JSONObject courseObject = jsonObject.isArray().get(0).isObject();
+		JSONValue jsonIdObject = json.get("id");
+		JSONObject idObject = jsonIdObject.isArray().get(0).isObject();
 		
-		JSONArray idList = JSONHelper.getArrayValue(courseObject, JSONHelper.convertKeyName(ReceiveCourseSearchKeys.ID));
+		JSONArray idList = JSONHelper.getArrayValue(idObject, JSONHelper.convertKeyName(ReceiveCourseSearchKeys.ID));
 		ArrayList<Integer> ids = new ArrayList<Integer>();
 		for (int x = 0; x<idList.size(); x++) {
 			Integer value = JSONHelper.getIntValue(idList.get(x).isObject(), JSONHelper.convertKeyName(ReceiveCourseSearchKeys.ID));
 			ids.add(value);
 		}
 		
-		JSONArray courseIdList = JSONHelper.getArrayValue(courseObject, JSONHelper.convertKeyName(ReceiveCourseSearchKeys.COURSE_ID));
+		JSONValue jsonCourseIdObject = json.get("courseId");
+		JSONObject courseIdObject = jsonCourseIdObject.isArray().get(0).isObject();
+		
+		JSONArray courseIdList = JSONHelper.getArrayValue(courseIdObject, JSONHelper.convertKeyName(ReceiveCourseSearchKeys.COURSE_ID));
 		ArrayList<Integer> courseIds = new ArrayList<Integer>();
 		for (int x = 0; x<courseIdList.size(); x++) {
 			Integer value = JSONHelper.getIntValue(courseIdList.get(x).isObject(), JSONHelper.convertKeyName(ReceiveCourseSearchKeys.COURSE_ID));
 			courseIds.add(value);
 		}
 		
-		JSONArray termList = JSONHelper.getArrayValue(courseObject, JSONHelper.convertKeyName(ReceiveCourseSearchKeys.TERM));
+		JSONValue jsonTermObject = json.get("term");
+		JSONObject termObject = jsonTermObject.isArray().get(0).isObject();
+		
+		JSONArray termList = JSONHelper.getArrayValue(termObject, JSONHelper.convertKeyName(ReceiveCourseSearchKeys.TERM));
 		ArrayList<String> terms = new ArrayList<String>();
 		for (int x = 0; x<courseIdList.size(); x++) {
 			String value = JSONHelper.getStringValue(termList.get(x).isObject(), JSONHelper.convertKeyName(ReceiveCourseSearchKeys.TERM));
 			terms.add(value);
 		}
 		
-		JSONArray numSectionList = JSONHelper.getArrayValue(courseObject, JSONHelper.convertKeyName(ReceiveCourseSearchKeys.SECTION_NUM));
+		JSONValue jsonSectionObject = json.get("sectionNum");
+		JSONObject sectionObject = jsonSectionObject.isArray().get(0).isObject();
+		
+		JSONArray numSectionList = JSONHelper.getArrayValue(sectionObject, JSONHelper.convertKeyName(ReceiveCourseSearchKeys.SECTION_NUM));
 		ArrayList<Integer> sectionNums = new ArrayList<Integer>();
 		for (int x = 0; x<courseIdList.size(); x++) {
 			Integer value = JSONHelper.getIntValue(numSectionList.get(x).isObject(), JSONHelper.convertKeyName(ReceiveCourseSearchKeys.SECTION_NUM));

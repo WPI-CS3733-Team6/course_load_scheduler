@@ -25,12 +25,7 @@ public class GetCourseDetailsActionTranslatorImpl implements ActionTranslator<Ge
 	
 	@Override
 	public ReceiveCourseDetailsAction translateToAction(JSONObject json)
-	{		
-		// null values will not have their keys sent back from the sever
-		// this will throw an exception here
-		// you may choose to handle the exception as you wish
-		
-		// sent timestamps as epoch seconds (long)
+	{
 		
 		JSONValue jsonObject = json.get("success");
 		JSONObject userObject = jsonObject.isArray().get(0).isObject();
@@ -41,12 +36,9 @@ public class GetCourseDetailsActionTranslatorImpl implements ActionTranslator<Ge
 		Integer expectedPop = JSONHelper.getIntValue(userObject, JSONHelper.convertKeyName(ReceiveCourseDetailsKeys.EXPECTED_POP));
 		String days = JSONHelper.getStringValue(userObject, JSONHelper.convertKeyName(ReceiveCourseDetailsKeys.DAYS));
 		
-		// TODO look into time conversion more
-		// put into JSONHelper?
-		
 		DetailedCourseInformation course = new DetailedCourseInformation(courseName, courseNum, level, expectedPop, days);
 		
-		// possibly use builder pattern if it is a lot of data
+		
 		ReceiveCourseDetailsAction action = new ReceiveCourseDetailsAction(course);	
 	
 		return action;
