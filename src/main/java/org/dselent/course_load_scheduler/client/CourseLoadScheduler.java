@@ -27,8 +27,20 @@ import org.dselent.course_load_scheduler.client.view.examples.SimplePanelExample
 import org.dselent.course_load_scheduler.client.view.examples.TabLayoutPanelExample;
 import org.dselent.course_load_scheduler.client.view.impl.AccountInfoViewImpl;
 import org.dselent.course_load_scheduler.client.view.impl.AddCourseViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.AddInstanceViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.AddSectionViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.AdminAddEditUserViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.AdminHomepageViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.CourseRegistrationCartViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.DetailedCourseInformationViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.FacultyCourseMapViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.IndexViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.InstructorHomepageViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.LoginViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.ReportProblemViewImpl;
 import org.dselent.course_load_scheduler.client.view.impl.SearchClassesViewImpl;
 import org.dselent.course_load_scheduler.client.view.impl.TestPanels;
+import org.dselent.course_load_scheduler.client.view.impl.ViewCurrentCoursesViewImpl;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
@@ -54,10 +66,10 @@ public class CourseLoadScheduler implements EntryPoint
 		 */
 
 		//Setup Index panel
-		//		IndexPresenterImpl indexPresenter = injector.getIndexPresenter(); // on-demand injection
-		//		indexPresenter.init();
-		//		IndexView indexView = indexPresenter.getView();	
-		//		indexPresenter.go(root);
+				IndexPresenterImpl indexPresenter = injector.getIndexPresenter(); // on-demand injection
+				indexPresenter.init();
+				IndexView indexView = indexPresenter.getView();	
+				indexPresenter.go(root);
 
 		//Dosen't work anymore
 //		TestPanels testPanel = new TestPanels();
@@ -70,11 +82,22 @@ public class CourseLoadScheduler implements EntryPoint
 	
 //--------------------------------Testing Field-------------------------------------------------
 
-		//Dosen't work come back
-		AccountInfoViewImpl d = new AccountInfoViewImpl();
-		
+		//AccountInfoViewImpl d = new AccountInfoViewImpl();		
 		//AddCourseViewImpl d = new AddCourseViewImpl();
-		root.add(d);
+		//AddInstanceViewImpl d = new AddInstanceViewImpl();
+		//AddSectionViewImpl d = new AddSectionViewImpl();
+		//AdminAddEditUserViewImpl d = new AdminAddEditUserViewImpl();
+		//CourseRegistrationCartViewImpl d = new CourseRegistrationCartViewImpl();
+		//DetailedCourseInformationViewImpl d = new DetailedCourseInformationViewImpl();
+		//FacultyCourseMapViewImpl d = new FacultyCourseMapViewImpl();
+		//IndexViewImpl d = new IndexViewImpl();//make this work!!!!!!!!!
+		//InstructorHomepageViewImpl d = new InstructorHomepageViewImpl();
+		//AdminHomepageViewImpl d = new AdminHomepageViewImpl();
+		//LoginViewImpl d = new LoginViewImpl();
+		//ReportProblemViewImpl d = new ReportProblemViewImpl();
+		//SearchClassesViewImpl d = new SearchClassesViewImpl();
+		//ViewCurrentCoursesViewImpl d = new ViewCurrentCoursesViewImpl();
+		//root.add(d);
 
 //----------------------------------------------------------------------------------------
 		//		LoginPresenterImpl loginPresenter = injector.getLoginPresenter();
@@ -85,79 +108,79 @@ public class CourseLoadScheduler implements EntryPoint
 		/* ADD COURSE
 		AddCoursePresenterImpl addCoursePresenter = injector.getAddCoursePresenter(); 
 		addCoursePresenter.init();
-		addCoursePresenter.go(indexView.getCenterPanel());
+		addCoursePresenter.go(indexView.getMiddlePanel());
 		 */
 
 		/* ADD INSTANCE
 		AddInstancePresenterImpl addInstancePresenter = injector.getAddInstancePresenter(); 
 		addInstancePresenter.init();
-		addInstancePresenter.go(indexView.getCenterPanel());
+		addInstancePresenter.go(indexView.getMiddlePanel());
 		 */
 
 		/* ADD SECTION
 		AddSectionPresenterImpl addSectionPresenter = injector.getAddSectionPresenter(); 
 		addSectionPresenter.init();
-		addSectionPresenter.go(indexView.getCenterPanel());
+		addSectionPresenter.go(indexView.getMiddlePanel());
 		 */
 
 		/*ADD EDIT USER
 		AdminAddEditUserPresenterImpl adminAddEditUserPresenter = injector.getAdminAddEditUserPresenter();
 		adminAddEditUserPresenter.init();
-		adminAddEditUserPresenter.go(indexView.getCenterPanel());
+		adminAddEditUserPresenter.go(indexView.getMiddlePanel());
 		 */
 
 		/* HOMEPAGE
 		AdminHomepagePresenterImpl adminHomepagePresenter = injector.getAdminHomepagePresenter();
 		adminHomepagePresenter.init();
-		adminHomepagePresenter.go(indexView.getCenterPanel());
+		adminHomepagePresenter.go(indexView.getMiddlePanel());
 		 */
 
 		/* BASE
 		BasePresenterImpl basePresenter = injector.getBasePresenter();
 		basePresenter.init();
-		basePresenter.go(indexView.getCenterPanel());
+		basePresenter.go(indexView.getMiddlePanel());
 		 */
 
 		/* REGISTRATION CART
 		CourseRegistrationCartPresenterImpl courseRegistrationCartPresenter = injector.getCourseRegistrationCartPresenter();
 		courseRegistrationCartPresenter.init();
-		courseRegistrationCartPresenter.go(indexView.getCenterPanel());
+		courseRegistrationCartPresenter.go(indexView.getMiddlePanel());
 		 */
 
 		/* COURSE INFROMATION
 		DetailedCourseInformationPresenterImpl detailedCourseInformationPresenter = injector.getDetailedCourseInformationPresenter();
 		detailedCourseInformationPresenter.init();
-		detailedCourseInformationPresenter.go(indexView.getCenterPanel());
+		detailedCourseInformationPresenter.go(indexView.getMiddlePanel());
 		 */
 
 		/* FACULTY 
 		FacultyCourseMapPresenterImpl facultyCourseMapPresenter = injector.getFacultyCourseMapPresenter();
 		facultyCourseMapPresenter.init();
-		facultyCourseMapPresenter.go(indexView.getCenterPanel());
+		facultyCourseMapPresenter.go(indexView.getMiddlePanel());
 		 */
 
-		/* INSTRUCTOR HOM"E"PAGE
-		InstructorHompagePresenterImpl instructorHompagePresenter = injector.getInstructorHompagePresenter();
+		/* INSTRUCTOR HOM"E"PAGE		 */
+		InstructorHomepagePresenterImpl instructorHompagePresenter = injector.getInstructorHomepagePresenter();
 		instructorHompagePresenter.init();
-		instructorHompagePresenter.go(indexView.getCenterPanel());
-		 */
+		instructorHompagePresenter.go(indexView.getMiddlePanel());
+
 
 		/* REPORT PROBLEM
 		ReportProblemPresenterImpl reportProblemPresenter = injector.getReportProblemPresenter();
 		reportProblemPresenter.init();
-		reportProblemPresenter.go(indexView.getCenterPanel());
+		reportProblemPresenter.go(indexView.getMiddlePanel());
 		 */
 
 		/* VIEW CURRENT COURSES
 		ViewCurrentCoursesPresenterImpl viewCurrentCoursesPresenter = injector.getViewCurrentCoursesPresenter();
 		viewCurrentCoursesPresenter.init();
-		viewCurrentCoursesPresenter.go(indexView.getCenterPanel());
+		viewCurrentCoursesPresenter.go(indexView.getMiddlePanel());
 		 */
 
 		/* SEARCH CLASSES
 		SearchClassesPresenterPresenterImpl searchClassesPresenterPresenter = injector.getSearchClassesPresenterPresenter();
 		searchClassesPresenterPresenter.init();
-		searchClassesPresenterPresenter.go(indexView.getCenterPanel());
+		searchClassesPresenterPresenter.go(indexView.getMiddlePanel());
 		 */
 
 
