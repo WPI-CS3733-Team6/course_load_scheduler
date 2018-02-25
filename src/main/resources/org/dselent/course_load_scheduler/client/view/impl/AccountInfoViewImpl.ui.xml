@@ -22,16 +22,14 @@
 
 	</ui:style>
 	<g:HTMLPanel ui:field="rootPanel" width="100%" height="100%">
-		<g:LayoutPanel width="100%" height="100%" ui:field="AccountInfoBaseLayoutPanel" styleName="{style.layoutPanel}">
-			<g:layer left="0.0pct" right="0.0pct" top="0.0pct" bottom="90.0pct">
-				<g:TextBox text="Account Information" width="100%" alignment="CENTER" textAlignment="ALIGN_CENTER" ui:field="AccountInfoPgTitle" height="100%" readOnly="true"/>
-			</g:layer>
-						<g:layer left="5.0pct" top="10.0pct" right="5.0pct" bottom="20.0pct">
-				<g:FlexTable width="100%" borderWidth="2" height="100%" ui:field="AccountInfoFlexTable" cellPadding="5" cellSpacing="5"/>
-			</g:layer>
-			<g:layer left="35%" top="85%" bottom="5.0pct" right="35.0pct">
-				<g:Button width="100%" height="100%" ui:field="submitChangesButton" text="Submit Changes"/>
+		<g:TextBox text="Account Information" width="100%" alignment="CENTER" textAlignment="ALIGN_CENTER" ui:field="AccountInfoPgTitle" height="10%" readOnly="true"/>
+		<g:LayoutPanel width="100%" height="80%" ui:field="AccountInfoBaseLayoutPanel">
+			<g:layer>
+				<g:HTMLPanel width="100%" height="100%" ui:field="FlexPanel">
+			<g:FlexTable width="100%" borderWidth="2" height="100%" ui:field="AccountInfoFlexTable" cellPadding="5" cellSpacing="5"/>
+		</g:HTMLPanel>
 			</g:layer>
 		</g:LayoutPanel>
+		<g:Button width="100%" height="10%" ui:field="submitChangesButton" text="Submit Changes"/>
 	</g:HTMLPanel>
 </ui:UiBinder> 
