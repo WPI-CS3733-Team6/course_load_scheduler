@@ -4,16 +4,16 @@ import org.dselent.course_load_scheduler.client.presenter.AdminHomepagePresenter
 import org.dselent.course_load_scheduler.client.view.AdminHomepageView;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.Widget;
-import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.user.client.ui.TextBox;
 
 public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> implements AdminHomepageView {
 
@@ -32,13 +32,19 @@ public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> 
 	@UiField Button searchClassesButton;
 	@UiField Button accountInfoButton;
 	@UiField Button courseRegistrationCartButton;
-	@UiField TextBox inboxLabel;
+	@UiField Label inboxLabel;
+	@UiField Button approveButton;
+	@UiField Button denyButton;
 
 	interface AdminHomepageViewImplUiBinder extends UiBinder<Widget, AdminHomepageViewImpl> {
 	}
 
 	public AdminHomepageViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
+	}
+	
+	public static AdminHomepageViewImplUiBinder getUiBinder() {
+		return uiBinder;
 	}
 
 	public Button getAccountInfoButton() {
@@ -49,6 +55,24 @@ public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> 
 		this.accountInfoButton = accountInfoButton;
 	}
 
+	public HTMLPanel rootPanel() {
+		return rootPanel;
+	}
+	public ListBox departmentList() {
+		return departmentList;
+	}
+	public ListBox coursesList() {
+		return coursesList;
+	}
+	public ListBox registeredCoursesList() {
+		return registeredCoursesList;
+	}
+	public ListBox pendingCoursesList() {
+		return pendingCoursesList;
+	}
+	public Label inboxLabel() {
+		return inboxLabel;
+	}
 	public Button getAddUser() {
 		return addUserButton;
 	}
@@ -140,5 +164,4 @@ public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> 
 	void onCourseRegistrationCartButtonClick(ClickEvent event) {
 		presenter.goToCart();
 	}
-	
 }

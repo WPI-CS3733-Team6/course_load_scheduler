@@ -63,88 +63,89 @@
 
 
 
-	<g:HTMLPanel ui:field="rootPanel" width="450"
-		height="300">
-
-		<g:LayoutPanel width="100%" height="100%" ui:field="layoutPanel">
-			<g:layer top="0.0pct" bottom="0.0pct" left="0.0pct" right="0.0pct">
-				<g:DecoratedTabPanel width="100%" height="100%"
-					ui:field="tabPanel" styleName="serverResponseLabelError">
+	<g:HTMLPanel ui:field="rootPanel" width="100%"
+		height="100%">
+		<g:TabPanel width="100%" height="100%"
+					ui:field="tabPanel" styleName="serverResponseLabelError" animationEnabled="true">
 					<g:Tab text="View as Administrator">
-						<g:LayoutPanel width="100%" height="250px"
-							addStyleNames="{style.back-tab}" ui:field="viewAsAdmin">
-							<g:layer left="2.0pct" width="40.0pct" top="3.0pct"
-								height="12.0pct">
-								<g:TextBox text="Department:"
-									alignment="CENTER" width="100%" height="100%" addStyleNames="{style.grey-back}" ui:field="departmentName" readOnly="true" styleName="h1" />
+						<g:LayoutPanel
+							addStyleNames="{style.back-tab}" ui:field="viewAsAdmin" height="100vh" width="100%">
+							<g:layer left="0.0pct" top="5.0pct" bottom="90.0pct" right="50.0pct">
+								<g:Label text="Department:" width="100%" height="100%" addStyleNames="{style.grey-back}" ui:field="departmentName" styleName="serverResponseLabelError" horizontalAlignment="ALIGN_CENTER" />
 							</g:layer>
-							<g:layer left="0.0pct" width="47.0pct" top="22.2pct"
-								height="62.5pct">
-								<g:ListBox visibleItemCount="5" ui:field="departmentList" />
+							<g:layer left="0.0pct" top="10.0pct" bottom="15.0pct" right="50.0pct">
+								<g:ListBox visibleItemCount="5" ui:field="departmentList" width="100%" height="100%" />
 							</g:layer>
-							<g:layer left="50.0pct" width="47.0pct" top="22.5pct" height="63.2pct">
-								<g:ListBox visibleItemCount="5" ui:field="coursesList" />
+							<g:layer left="50.0pct" top="10.0pct" right="0.0pct" bottom="15.0pct">
+								<g:ListBox visibleItemCount="5" ui:field="coursesList" width="100%" height="100%" />
 							</g:layer>
-							<g:layer left="15.0pct" width="15.0pct" top="88.0pct" height="8.0pct">
+							<g:layer left="2.0pct" top="90.0pct" bottom="4.0pct" right="88.0pct">
 								<g:Button addStyleNames="{style.button-green}" ui:field="addUserButton" width="100%" height="100%">Add User</g:Button>
 							</g:layer>
-							<g:layer left="32.0pct" width="15.0pct" top="88.0pct" height="8.0pct">
-								<g:Button addStyleNames="{style.button-yellowish}" ui:field="editUserButton">Edit User</g:Button>
+							<g:layer left="14.0pct" top="90.0pct" right="76.0pct" bottom="4.0pct">
+								<g:Button addStyleNames="{style.button-yellowish}" ui:field="editUserButton" width="100%" height="100%">Edit User</g:Button>
 							</g:layer>
-							<g:layer left="65.0pct" width="15.0pct" top="88.0pct" height="8.0pct">
-								<g:Button addStyleNames="{style.button-green}" ui:field="addCourseButton">Add Course</g:Button>
+							<g:layer left="60.0pct" right="30.0pct" top="90.0pct" bottom="4.0pct">
+								<g:Button width="100%" height="100%" ui:field="approveButton">Approve</g:Button>
 							</g:layer>
-							<g:layer left="82.0pct" width="15.0pct" top="88.0pct" height="8.0pct">
-								<g:Button addStyleNames="{style.button-yellowish}" ui:field="modifyCourseButton">Modify Course</g:Button>
+							<g:layer left="26.0pct" top="90.0pct" right="64.0pct" bottom="4.0pct">
+								<g:Button addStyleNames="{style.button-green}" ui:field="addCourseButton" width="100%" height="100%">Add Course</g:Button>
 							</g:layer>
-							<g:layer left="52.0pct" width="40.0pct" top="3.0pct" height="12.0pct">
-								<g:TextBox text="Inbox"
-									alignment="CENTER" width="100%" height="100%" addStyleNames="{style.grey-back}" ui:field="inboxLabel" readOnly="true" styleName="h1" />
+							<g:layer left="38.0pct" top="90.0pct" right="52.0pct" bottom="4.0pct">
+								<g:Button addStyleNames="{style.button-yellowish}" ui:field="modifyCourseButton" width="100%" height="100%">Modify Course</g:Button>
+							</g:layer>
+							<g:layer left="50.0pct" top="5.0pct" right="0.0pct" bottom="90.0pct">
+								<g:Label text="Inbox:" width="100%" height="100%" addStyleNames="{style.grey-back}" ui:field="inboxLabel" styleName="h1" horizontalAlignment="ALIGN_CENTER" />
+							</g:layer>
+							<g:layer left="80.0pct" top="90.0pct" bottom="4.0pct" right="10.0pct">
+								<g:Button height="100%" width="100%" ui:field="denyButton">Deny</g:Button>
 							</g:layer>
 						</g:LayoutPanel>
 					</g:Tab>
 					<g:Tab text="View As Instructor">
-						<g:LayoutPanel width="100%" height="250px"
-									addStyleNames="{style.panel-grey}" ui:field="viewAsInstructor">
-									<g:layer left="25.0pct" width="50pct" top="22.5pct"
-										height="10.0pct">
+						<g:LayoutPanel
+									addStyleNames="{style.panel-grey}" ui:field="viewAsInstructor" width="100%" height="100vh">
+									<g:layer left="20.0pct" top="10.0pct" right="20.0pct" bottom="80.0pct">
 										<g:Button text="Generate Complete Department Schedule"
 											width="100%" ui:field="generatedCompleteDepartmentSchedule" height="100%" addStyleNames="{style.button-blue}"/>
 									</g:layer>
-									<g:layer top="35.0pct" height="62.0pct" left="0.0pct"
-										right="0.0pct">
+									<g:layer top="20.0pct" left="0.0pct"
+										right="0.0pct" bottom="0.0pct">
 										<g:LayoutPanel width="100%" height="100%"
 											addStyleNames="{style.panel-grey}" ui:field="courseSummariesPanel">
-											<g:layer left="4.5pct" right="3.5pct" top="10.0pct"
-												bottom="2.2pct">
-												<g:SplitLayoutPanel width="100%" height="100%" ui:field="table">
-													<g:north size="26.0">
-														<g:HorizontalPanel horizontalAlignment="ALIGN_CENTER"
+											<g:layer>
+												<g:HorizontalPanel horizontalAlignment="ALIGN_CENTER"
 															verticalAlignment="ALIGN_MIDDLE" width="100%" height="100%" ui:field="north">
-															<g:Cell verticalAlignment="ALIGN_MIDDLE">
-																<g:TextBox width="100%" height="100%"
-																text="Registered Courses" addStyleNames="{style.panel-greydark}" readOnly="true" styleName="h1" direction="LTR" visibleLength="0" textAlignment="ALIGN_CENTER" />
-															</g:Cell>
-															<g:Cell horizontalAlignment="ALIGN_RIGHT">
-																<g:TextBox width="65%" height="100%"
-																text="Pending Courses" addStyleNames="{style.panel-greydark}" readOnly="true" styleName="h1" textAlignment="ALIGN_CENTER" />
-															</g:Cell>
-														</g:HorizontalPanel>
-													</g:north>
-													<g:west size="262.0">
-														<g:ListBox visibleItemCount="5" width="80%"
+													<g:Cell width="50%" height="100%">
+														<g:VerticalPanel width="100%" height="100%">
+														<g:Cell horizontalAlignment="ALIGN_CENTER" width="100%" height="5%">
+															<g:Label width="100%" height="100%"
+																text="Registered Courses" addStyleNames="{style.panel-greydark}" styleName="h1" horizontalAlignment="ALIGN_CENTER" />
+														</g:Cell>
+														<g:Cell height="95%" width="100%">
+															<g:ListBox visibleItemCount="5" width="100%"
 															height="100%" ui:field="registeredCoursesList" />
-													</g:west>
-													<g:center>
-														<g:ListBox visibleItemCount="6" ui:field="pendingCoursesList" width="100%" height="100%" />
-													</g:center>
-												</g:SplitLayoutPanel>
+														</g:Cell>
+															</g:VerticalPanel>
+													</g:Cell>
+													<g:Cell height="100%" width="50%">
+														<g:VerticalPanel width="100%" height="100%">
+																<g:Cell width="100%" height="5%">
+																	<g:Label width="100%" height="100%"
+																text="Pending Courses" addStyleNames="{style.panel-greydark}" styleName="h1" horizontalAlignment="ALIGN_CENTER" />
+																</g:Cell>
+																<g:Cell height="95%" width="100%">
+																	<g:ListBox visibleItemCount="6" ui:field="pendingCoursesList" width="100%" height="100%" />
+																</g:Cell>
+															</g:VerticalPanel>
+													</g:Cell>
+														</g:HorizontalPanel>
 											</g:layer>
 										</g:LayoutPanel>
 									</g:layer>
-									<g:layer left="2.0pct" top="0.0pct" height="50.0pct"
-										right="2.0pct">
-										<g:HorizontalPanel width="100%" height="40%"
+									<g:layer left="0.0pct" top="0.0pct"
+										right="0.0pct" bottom="90.0pct">
+										<g:HorizontalPanel width="100%" height="100%"
 											horizontalAlignment="ALIGN_CENTER" ui:field="horizontalPanel" borderWidth="0" verticalAlignment="ALIGN_MIDDLE">
 											<g:Cell height="">
 												<g:Button ui:field="currentClassesButton" text="Current Classes"
@@ -159,10 +160,7 @@
 									</g:layer>
 								</g:LayoutPanel>
 					</g:Tab>
-				</g:DecoratedTabPanel>
-			</g:layer>
-		</g:LayoutPanel>
-
+				</g:TabPanel>
 	</g:HTMLPanel>
 
 

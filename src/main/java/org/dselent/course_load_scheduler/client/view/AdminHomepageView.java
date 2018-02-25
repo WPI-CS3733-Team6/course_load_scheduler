@@ -3,8 +3,10 @@ package org.dselent.course_load_scheduler.client.view;
 import org.dselent.course_load_scheduler.client.presenter.AdminHomepagePresenter;
 
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.HTMLPanel;
 
 public interface AdminHomepageView extends BaseView<AdminHomepagePresenter>{
+	
 	public Button getAccountInfoButton();
 	public Button getAddUser();
 	public Button getEditUser();
