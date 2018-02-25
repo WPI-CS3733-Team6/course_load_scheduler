@@ -85,17 +85,17 @@
 											height="100%" ui:field="identification" horizontalAlignment="ALIGN_LEFT"
 											direction="RTL" addStyleNames="{style.whiteBack}" />
 									</g:layer>
-									<g:layer left="78.0pct" top="10.0pct" bottom="12.0pct"
-										right="3.0pct">
+									<g:layer left="80.0pct" top="15.0pct" bottom="15.0pct"
+										right="5.0pct">
 										<g:Button ui:field="logoutButton" addStyleNames="{style.button-red}"
 											width="100%" height="100%">Logout</g:Button>
 									</g:layer>
-									<g:layer left="60.0pct" top="10.0pct" bottom="12.0pct"
+									<g:layer left="60.0pct" top="15.0pct" bottom="15.0pct"
 										right="24.0pct">
 										<g:Button ui:field="homeButton" addStyleNames="{style.button-bluelight}"
 											width="100%" height="100%">Home</g:Button>
 									</g:layer>
-									<g:layer left="42.0pct" top="10.0pct" bottom="12.0pct"
+									<g:layer left="42.0pct" top="15.0pct" bottom="15.0pct"
 										right="40.0pct">
 										<g:Button ui:field="viewCurrentClassesButton" text="View Current Classes"
 											addStyleNames="{style.button-bluelight}" width="100%" height="100%" />
@@ -108,8 +108,8 @@
 				<g:LayoutPanel width="100%" height="75%" ui:field="middlePanel" />
 				<g:LayoutPanel width="100%" height="10%" ui:field="bottomPanel"
 					addStyleNames="{style.panel-grey}">
-					<g:layer top="3.0pct" bottom="10.0pct" right="33.0pct"
-						left="33.0pct">
+					<g:layer top="0.0pct" bottom="0.0pct" right="40.0pct"
+						left="40.0pct">
 						<g:Button width="100%" height="100%" ui:field="reportAProblemButton"
 							addStyleNames="{style.whiteButton}">Report A Problem</g:Button>
 					</g:layer>
