@@ -13,10 +13,12 @@ import org.dselent.course_load_scheduler.client.event.GoToCartEvent;
 import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveInboxInfoEvent;
+import org.dselent.course_load_scheduler.client.event.SendLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.AdminHomepagePresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.AdminHomepageView;
 
+import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.inject.Inject;
 
@@ -37,7 +39,15 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 	@Override
 	public void init()
 	{
+		bind();
+	}
+	
+	@Override
+	public void bind() {
+		HandlerRegistration registration;
 		
+		registration = eventBus.addHandler(SendLoginEvent.TYPE, this);
+		eventBusRegistration.put(SendLoginEvent.TYPE, registration);
 	}
 		
 	@Override

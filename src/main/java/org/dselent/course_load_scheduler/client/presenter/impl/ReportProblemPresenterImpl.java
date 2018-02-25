@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.dselent.course_load_scheduler.client.action.InvalidReportAction;
 import org.dselent.course_load_scheduler.client.action.SendReportAction;
 import org.dselent.course_load_scheduler.client.errorstring.InvalidReportStrings;
+import org.dselent.course_load_scheduler.client.event.GoToReportAProblemEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidReportEvent;
 import org.dselent.course_load_scheduler.client.event.SendReportEvent;
 import org.dselent.course_load_scheduler.client.exceptions.EmptyStringException;
@@ -42,7 +43,7 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 		HandlerRegistration registration;
 		
 		registration = eventBus.addHandler(SendReportEvent.TYPE, this);
-		eventBusRegistration.put(SendReportEvent.TYPE, registration);
+		eventBusRegistration.put(GoToReportAProblemEvent.TYPE, registration);
 	}
 	
 	@Override
