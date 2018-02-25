@@ -21,6 +21,8 @@ import com.google.gwt.event.dom.client.ClickEvent;
 public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> implements SearchClassesView {
 
 	private static SearchClassesViewImplUiBinder uiBinder = GWT.create(SearchClassesViewImplUiBinder.class);
+	@UiField HTMLPanel rootPanel;
+	@UiField LayoutPanel topPanel;
 	@UiField ListBox semester;
 	@UiField ListBox subject;
 	@UiField Button searchButton;
@@ -28,8 +30,7 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 	@UiField Grid gridCourses;
 	@UiField ScrollPanel scrollPanel;
 	@UiField LayoutPanel bottomPanel;
-	@UiField HTMLPanel rootPanel;
-	@UiField LayoutPanel topPanel;
+	
 
 	interface SearchClassesViewImplUiBinder extends UiBinder<Widget, SearchClassesViewImpl> {
 	}
@@ -37,6 +38,7 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 	public SearchClassesViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 
+/*		This breaks the code and makes it not show up in the Google Chrome window		
 		String [] terms = {"Terms A & B", "Terms C & D", "Terms E1 & E2", "Term A", "Term B", "Term C", "Term D", "Term E1", "Term E2"};
 		String [] subjects = {"Biology", "Computer Science", "Electrical Engineering", "Physics", "Physical Education"};
 		String [] levels = {"Undergraduate", "Graduate"};
@@ -60,8 +62,8 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 				gridCourses.setText(i, j, text);
 				
 			}
-		}
-	}
+		}*/
+	} 
 
 	@Override
 	public void setPresenter(SearchClassesPresenter presenter) {

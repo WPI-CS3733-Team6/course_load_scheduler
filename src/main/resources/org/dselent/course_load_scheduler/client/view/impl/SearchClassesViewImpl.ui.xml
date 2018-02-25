@@ -9,33 +9,50 @@
 		font-family: Helvetica;
 		background: DodgerBlue;
 		}
+
+.button-blue {
+		color: white;
+		font-size: 12px;
+		font-family: Times
+		New Roman;
+		background: #0558b2;
+		}
+
+.panel-grey {
+		background: #DCDCDC;
+		}
+
+.panel-greydark {
+		background: #989b9b;
+		}
+
 	</ui:style>
 	<g:HTMLPanel width="100%" height="100%" ui:field="rootPanel">
-		<g:LayoutPanel width="100%" height="20%" ui:field="topPanel">
-			<g:layer left="5.0pct" width="15.0pct" top="40.0pct" height="25.0pct">
+		<g:LayoutPanel width="100%" height="20%" ui:field="topPanel" styleName="{style.panel-grey}">
+			<g:layer left="5.0pct" top="45.0pct" bottom="30.0pct" right="80.0pct" styleName="{style.panel-grey}">
 				<g:ListBox ui:field="semester" name="semester" width="100%" height="100%"/>
 			</g:layer>
-			<g:layer left="25.0pct" width="20.0pct" top="40.0pct" height="25.0pct">
+			<g:layer left="25.0pct" top="45.0pct" bottom="30.0pct" right="55.0pct">
 				<g:ListBox name="semester" ui:field="subject" width="100%" height="100%"/>
 			</g:layer>
-			<g:layer left="50.0pct" width="20.0pct" top="40.0pct" height="25.0pct">
+			<g:layer left="50.0pct" top="45.0pct" bottom="30.0pct" right="30.0pct">
 				<g:ListBox name="semester" ui:field="level" width="100%" height="100%"/>
 			</g:layer>
-			<g:layer left="80.0pct" width="10.0pct" top="40.0pct" height="25.0pct">
-				<g:Button ui:field="searchButton" width="100%" height="100%">Search</g:Button>
+			<g:layer left="80.0pct" top="30.0pct" right="4.0pct" bottom="30.0pct">
+				<g:Button ui:field="searchButton" width="100%" height="100%" styleName="{style.button-blue}">Search</g:Button>
 			</g:layer>
-			<g:layer left="5.0pct" width="15.0pct" top="20.0pct" height="15.0pct">
+			<g:layer left="5.0pct" top="20.0pct" bottom="60.0pct" right="80.0pct">
 				<g:Label text="Semester" horizontalAlignment="ALIGN_CENTER" width="100%" height="100%"/>
 			</g:layer>
-			<g:layer left="25.0pct" width="20.0pct" top="20.0pct" height="15.0pct">
+			<g:layer left="25.0pct" top="20.0pct" bottom="60.0pct" right="55.0pct">
 				<g:Label text="Subject" horizontalAlignment="ALIGN_CENTER" height="100%" width="100%"/>
 			</g:layer>
-			<g:layer left="50.0pct" width="20.0pct" top="20.0pct" height="15.0pct">
+			<g:layer left="50.0pct" top="20.0pct" bottom="60.0pct" right="30.0pct">
 				<g:Label horizontalAlignment="ALIGN_CENTER" text="Level" width="100%" height="100%"/>
 			</g:layer>
 		</g:LayoutPanel>
-		<g:LayoutPanel width="100%" height="80%" ui:field="bottomPanel">
-			<g:layer left="5.0pct" width="90.0pct" top="20.0pct" height="75.0pct">
+		<g:LayoutPanel width="100%" height="80%" ui:field="bottomPanel" styleName="{style.panel-grey}">
+			<g:layer left="4.0pct" top="12.0pct" bottom="4.0pct" right="4.0pct">
 				<g:ScrollPanel height="100%" width="100%" ui:field="scrollPanel">
 					<g:Grid height="100%" width="100%" ui:field="gridCourses">
 					<g:row>
@@ -799,19 +816,19 @@
 				</g:Grid>
 				</g:ScrollPanel>
 			</g:layer>
-			<g:layer left="5.0pct" width="18.0pct" top="15.0pct" height="5.0pct">
+			<g:layer left="5.0pct" top="5.0pct" bottom="90.0pct" right="80.0pct">
 				<g:Label text="Course Name" horizontalAlignment="ALIGN_CENTER" width="100%" height="100%"/>
 			</g:layer>
-			<g:layer left="23.0pct" width="18.0pct" top="15.0pct" height="5.0pct">
+			<g:layer left="22.0pct" top="5.0pct" bottom="90.0pct" right="60.0pct">
 				<g:Label horizontalAlignment="ALIGN_CENTER" text="Registration Status" height="100%" width="100%"/>
 			</g:layer>
-			<g:layer left="41.0pct" width="18.0pct" top="15.0pct" height="5.0pct">
+			<g:layer left="41.0pct" top="5.0pct" bottom="90.0pct" right="42.0pct">
 				<g:Label horizontalAlignment="ALIGN_CENTER" text="Course Number" width="100%" height="100%"/>
 			</g:layer>
-			<g:layer left="59.0pct" width="18.0pct" top="15.0pct" height="5.0pct">
+			<g:layer left="59.0pct" top="5.0pct" bottom="90.0pct" right="24.0pct">
 				<g:Label horizontalAlignment="ALIGN_CENTER" text="Schedule (Days)" width="100%" height="100%"/>
 			</g:layer>
-			<g:layer left="77.0pct" width="18.0pct" top="15.0pct" height="5.0pct">
+			<g:layer left="76.0pct" top="5.0pct" bottom="90.0pct" right="5.0pct">
 				<g:Label horizontalAlignment="ALIGN_CENTER" text="Expected Population" height="100%" width="100%"/>
 			</g:layer>
 		</g:LayoutPanel>
