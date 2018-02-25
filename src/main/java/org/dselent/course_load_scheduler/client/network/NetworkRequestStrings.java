@@ -17,6 +17,7 @@ public final class NetworkRequestStrings
 	public static final String REPORT_PROBLEM = "home/report";
 	public static final String ADD_TO_CART = "course/addToCart";
 	public static final String COURSE_DETAILS = "course/details";
+	public static final String REMOVE_FROM_CART = "cart/remove";
 	
 	private NetworkRequestStrings() {};
 }

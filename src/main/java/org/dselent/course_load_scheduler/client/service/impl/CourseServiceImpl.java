@@ -7,6 +7,7 @@ import org.dselent.course_load_scheduler.client.action.CurrentCoursesAction;
 import org.dselent.course_load_scheduler.client.action.DeleteCourseAction;
 import org.dselent.course_load_scheduler.client.action.EditCourseAction;
 import org.dselent.course_load_scheduler.client.action.GetCourseDetailsAction;
+import org.dselent.course_load_scheduler.client.action.RemoveCourseFromCartAction;
 import org.dselent.course_load_scheduler.client.action.SendSubmitRegistrationCartAction;
 import org.dselent.course_load_scheduler.client.callback.AddCourseCallback;
 import org.dselent.course_load_scheduler.client.callback.AddToCartCallback;
@@ -15,6 +16,7 @@ import org.dselent.course_load_scheduler.client.callback.CurrentCoursesCallback;
 import org.dselent.course_load_scheduler.client.callback.DeleteCourseCallback;
 import org.dselent.course_load_scheduler.client.callback.EditCourseCallback;
 import org.dselent.course_load_scheduler.client.callback.GetCourseDetailsCallback;
+import org.dselent.course_load_scheduler.client.callback.RemoveFromCartCallback;
 import org.dselent.course_load_scheduler.client.callback.SubmitRegistrationCartCallback;
 import org.dselent.course_load_scheduler.client.event.AddCourseEvent;
 import org.dselent.course_load_scheduler.client.event.AddToCartEvent;
@@ -23,6 +25,7 @@ import org.dselent.course_load_scheduler.client.event.CurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteCourseEvent;
 import org.dselent.course_load_scheduler.client.event.EditCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GetCourseDetailsEvent;
+import org.dselent.course_load_scheduler.client.event.RemoveCourseFromCartEvent;
 import org.dselent.course_load_scheduler.client.event.SendSubmitRegistrationCartEvent;
 import org.dselent.course_load_scheduler.client.network.NetworkRequest;
 import org.dselent.course_load_scheduler.client.network.NetworkRequestStrings;
@@ -34,6 +37,7 @@ import org.dselent.course_load_scheduler.client.translator.impl.CurrentCoursesAc
 import org.dselent.course_load_scheduler.client.translator.impl.DeleteCourseActionTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.EditCourseActionTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.GetCourseDetailsActionTranslatorImpl;
+import org.dselent.course_load_scheduler.client.translator.impl.RemoveCourseFromCartActionTranslatorImpl;
 import org.dselent.course_load_scheduler.client.translator.impl.SendSubmitRegistrationCartActionTranslatorImpl;
 
 import com.google.gwt.event.shared.HandlerRegistration;
@@ -141,6 +145,17 @@ public class CourseServiceImpl extends BaseServiceImpl implements CourseService{
 		GetCourseDetailsCallback courseDetailsCallback = new GetCourseDetailsCallback(eventBus, evt.getContainer());
 		
 		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.COURSE_DETAILS, courseDetailsCallback, json);
+		request.send();
+	}
+
+	@Override
+	public void onRemoveCourseFromCart(RemoveCourseFromCartEvent evt) {
+		RemoveCourseFromCartAction action = evt.getAction();
+		RemoveCourseFromCartActionTranslatorImpl removeCourseTranslator = new RemoveCourseFromCartActionTranslatorImpl();
+		JSONObject json = removeCourseTranslator.translateToJson(action);
+		RemoveFromCartCallback removeCourseCallback = new RemoveFromCartCallback(eventBus, evt.getContainer());
+		
+		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.REMOVE_FROM_CART, removeCourseCallback, json);
 		request.send();
 	}
 }
