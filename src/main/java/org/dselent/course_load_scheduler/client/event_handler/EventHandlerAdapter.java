@@ -3,13 +3,16 @@ package org.dselent.course_load_scheduler.client.event_handler;
 import org.dselent.course_load_scheduler.client.event.AddCourseEvent;
 import org.dselent.course_load_scheduler.client.event.AddInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.AddSectionEvent;
+import org.dselent.course_load_scheduler.client.event.AddToCartEvent;
 import org.dselent.course_load_scheduler.client.event.AddUserEvent;
 import org.dselent.course_load_scheduler.client.event.CourseSearchEvent;
+import org.dselent.course_load_scheduler.client.event.CurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteCourseEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteSectionEvent;
 import org.dselent.course_load_scheduler.client.event.EditCourseEvent;
 import org.dselent.course_load_scheduler.client.event.EditUserEvent;
+import org.dselent.course_load_scheduler.client.event.GetCourseDetailsEvent;
 import org.dselent.course_load_scheduler.client.event.GetFacultyEvent;
 import org.dselent.course_load_scheduler.client.event.GoToAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.GoToAddCourseEvent;
@@ -39,12 +42,12 @@ import org.dselent.course_load_scheduler.client.event.ReceiveCourseCartRemoveCou
 import org.dselent.course_load_scheduler.client.event.ReceiveCourseSearchEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveLoginEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveSubmitRegistrationCartEvent;
+import org.dselent.course_load_scheduler.client.event.RemoveCourseFromCartEvent;
 import org.dselent.course_load_scheduler.client.event.SaveInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.SaveSectionEvent;
 import org.dselent.course_load_scheduler.client.event.SendAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.SendCourseCartRemoveCourseEvent;
 import org.dselent.course_load_scheduler.client.event.SendLoginEvent;
-import org.dselent.course_load_scheduler.client.event.AddToCartEvent;
 import org.dselent.course_load_scheduler.client.event.SendReportEvent;
 import org.dselent.course_load_scheduler.client.event.SendSubmitRegistrationCartEvent;
 import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
@@ -67,8 +70,17 @@ GoToCurrentCoursesEventHandler, GoToEditCourseEventHandler, GoToEditInstanceEven
 InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, SendReportEventHandler, UpdateAccountEventHandler, InvalidAccountInfoEventHandler, AddToCartEventHandler, 
 GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler, GoToInstructorHomeEventHandler, GoToAdminHomeEventHandler, GoToLogoutEventHandler, GoToReportAProblemEventHandler,
 ReceiveAccountInfoEventHandler, SendAccountInfoEventHandler, GoToDetailedCourseInformationEventHandler, CourseSearchEventHandler, ReceiveCourseSearchEventHandler, ReceiveAddUserEventHandler, ReceiveSubmitRegistrationCartEventHandler,
-SendCourseCartRemoveCourseEventHandler, ReceiveCourseCartRemoveCourseEventHandler
+SendCourseCartRemoveCourseEventHandler, ReceiveCourseCartRemoveCourseEventHandler, CurrentCoursesEventHandler, GetCourseDetailsEventHandler, RemoveCourseFromCartEventHandler
 {
+	@Override
+	public void onRemoveCourseFromCart(RemoveCourseFromCartEvent evt) {}
+	
+	@Override
+	public void onGetCourseDetails(GetCourseDetailsEvent evt) {}
+	
+	@Override
+	public void onCurrentCourses(CurrentCoursesEvent evt) {}
+	
 	@Override
 	public void onReceiveAddUser(ReceiveAddUserEvent evt) {}
 	

@@ -63,6 +63,30 @@ public class CourseServiceImpl extends BaseServiceImpl implements CourseService{
 		
 		registration = eventBus.addHandler(CourseSearchEvent.TYPE, this);
 		eventBusRegistration.put(CourseSearchEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(EditCourseEvent.TYPE, this);
+		eventBusRegistration.put(EditCourseEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(AddCourseEvent.TYPE, this);
+		eventBusRegistration.put(AddCourseEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(DeleteCourseEvent.TYPE, this);
+		eventBusRegistration.put(DeleteCourseEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(CurrentCoursesEvent.TYPE, this);
+		eventBusRegistration.put(CurrentCoursesEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(AddToCartEvent.TYPE, this);
+		eventBusRegistration.put(AddToCartEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(SendSubmitRegistrationCartEvent.TYPE, this);
+		eventBusRegistration.put(SendSubmitRegistrationCartEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(GetCourseDetailsEvent.TYPE, this);
+		eventBusRegistration.put(GetCourseDetailsEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(RemoveCourseFromCartEvent.TYPE, this);
+		eventBusRegistration.put(RemoveCourseFromCartEvent.TYPE, registration);
 	}
 
 	@Override
