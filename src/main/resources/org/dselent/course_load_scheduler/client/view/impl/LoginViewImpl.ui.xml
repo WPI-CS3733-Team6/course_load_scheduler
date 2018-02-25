@@ -91,13 +91,12 @@
 <!--  .center style borrowed from https://stackoverflow.com/questions/18167237/htmlpanel-centering-with-uibinder-and-gwt -->
 <!-- ^above comment slightly old -->
 <ui:style>
-     
+
 	.center
 	{
 		position: absolute;
 		width:500px;
 		height:250px;
-		margin-left:250px;
 	}
 	
     .login-panel
@@ -107,103 +106,91 @@
 	
 	.view-label
 	{
-		font-family:Times New Roman;
-		font-size:32px;
-	}
-	
-	.login-form
-	{
-		border-style:solid;
-		border-width:2px;
-		border-color:black;
-		margin-top:20px;
-		margin-left:50px;
-		margin-right:50px;
+		font-family: Arial;
+		font-size: 40px;
 	}
 	
 	.login-label
 	{
-		font-family:Times New Roman;
+		font-family: Arial;
 		font-style:normal;
 		font-size:14px;
 		font-weight:bold;
 		font-stretch:normal;
 		font-variant:normal;
 		color:rgb(0, 0, 0);
-		float:right;
-		margin-left:0px;
-		margin-right:8px;
-		margin-top:0px;
-		margin-bottom:0px;
-		padding-left:0px;
-		padding-right:0px;
-		padding-top:0px;
-		padding-bottom:0px;
 	}
 	 
 	.login-text
 	{
-		font-family:Times New Roman;
-		font-size:14px;
+		font-family: Arial;
+		font-size: 14px;
 		font-weight: normal;
-		float:right;
+		border-radius: 50px;
+		padding-right: 25px;
+		padding-left: 25px;
 	 }
 	 
 	.warning-label
 	{
-		font-family:Times New Roman;
-		font-size:18px;
+		font-family: Georgia;
+		font-size: 18px;
 		font-weight: bold;
 		color: rgb(255, 0, 0);
-		margin-top:4px;
-		padding-left:50px;
-		padding-right:50px;
 	}
 	
 	.login-button
 	{
-		font-family:Times New Roman;
+		font-family: Arial;
 		font-size:14px;
-		float:right;
-		margin-top:10px;
-		margin-right:20px;
-		margin-bottom:4px;
+		font-weight: bold;
+		border-radius: 20px;
+		color: White;
+		background: DodgerBlue;
+		box-shadow: 10px 10px;
 	}
 	
 </ui:style>
 
-<g:HTMLPanel ui:field="loginPanelHTML" addStyleNames="{style.login-panel} {style.center}" width="100%" height="100%">
+<g:HTMLPanel ui:field="loginPanelHTML" width="100%" height="100%">
 	<g:VerticalPanel width="100%" height="100%" horizontalAlignment="ALIGN_CENTER" ui:field="loginPanel">
-		<g:Label ui:field="viewLabel" addStyleNames="{style.view-label}" width="100%" height="auto" text="Course Load Scheduling System">Couse Load Scheduling System</g:Label>
-		<g:VerticalPanel horizontalAlignment="center" addStyleNames="{style.login-form}" width="100%" height="80%">
-		<!-- Grid panel -->
-		<!-- http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/Grid.html -->
-		<g:Grid>
+		<g:Cell verticalAlignment="ALIGN_MIDDLE">
+			<g:Label ui:field="viewLabel" addStyleNames="{style.view-label}" width="100%" height="auto" text="Course Load Scheduling System" horizontalAlignment="ALIGN_CENTER">Couse Load Scheduling System</g:Label>
+		</g:Cell>
+		<g:VerticalPanel horizontalAlignment="center" width="100%" height="80%">
+			<g:Cell verticalAlignment="ALIGN_MIDDLE">
+				<g:Grid width="100%" height="100%">
 			<g:row>
 				<!-- cell only works for html -->
 				<!-- customcell works for widgets -->
 				<g:customCell>
-					<g:Label ui:field="nameLabel" addStyleNames="{style.login-label}">User Name:</g:Label>
+					<g:Label ui:field="nameLabel" addStyleNames="{style.login-label}" width="100%" height="100%" horizontalAlignment="ALIGN_RIGHT">User Name:</g:Label>
 				</g:customCell>
 						
 				<g:customCell>
-					<g:TextBox ui:field="nameTextBox" addStyleNames="{style.login-text}"/>
+					<g:TextBox ui:field="nameTextBox" addStyleNames="{style.login-text}" height="100%" width="60%"/>
 				</g:customCell>
 			</g:row>
 					
 			<g:row>
 				<g:customCell>
-					<g:Label ui:field="passwordLabel" addStyleNames="{style.login-label}">Password:</g:Label>
+					<g:Label ui:field="passwordLabel" addStyleNames="{style.login-label}" height="100%" width="100%" horizontalAlignment="ALIGN_RIGHT">Password:</g:Label>
 				</g:customCell>
 						
 				<g:customCell>
-					<g:TextBox ui:field="passwordTextBox" addStyleNames="{style.login-text}"/>
+					<g:TextBox ui:field="passwordTextBox" addStyleNames="{style.login-text}" width="60%" height="100%"/>
 				</g:customCell>
 			</g:row>
 		</g:Grid>
-			
-		<g:Label ui:field="warningLabel" addStyleNames="{style.warning-label}" width="100%">Warning! Your password will appear as plain text and is not encrypted.</g:Label>
-		<g:Button ui:field="loginButton" addStyleNames="{style.login-button}">Login</g:Button>
+			</g:Cell>
+		<!-- Grid panel -->
+		<!-- http://www.gwtproject.org/javadoc/latest/com/google/gwt/user/client/ui/Grid.html -->
+		<g:Cell horizontalAlignment="ALIGN_CENTER" width="100%" height="25%">
+			<g:Label ui:field="warningLabel" addStyleNames="{style.warning-label}" width="100%" height="100%" horizontalAlignment="ALIGN_CENTER">Warning! Your password will appear as plain text and is not encrypted.</g:Label>
+		</g:Cell>
+		<g:Cell horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE" width="100%" height="100%">
+			<g:Button ui:field="loginButton" addStyleNames="{style.login-button}" width="15%" height="30px">LOGIN</g:Button>
+		</g:Cell>
 				
 	</g:VerticalPanel>
 	</g:VerticalPanel>
