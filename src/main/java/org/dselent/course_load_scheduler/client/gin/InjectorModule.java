@@ -94,7 +94,6 @@ public class InjectorModule extends AbstractGinModule
 		bind(SimpleEventBus.class).in(Singleton.class);
 
 		// services
-		bind(BaseService.class).to(BaseServiceImpl.class).in(Singleton.class);
 		bind(CourseService.class).to(CourseServiceImpl.class).in(Singleton.class);
 		bind(HomeService.class).to(HomeServiceImpl.class).in(Singleton.class);
 		bind(UserService.class).to(UserServiceImpl.class).in(Singleton.class);

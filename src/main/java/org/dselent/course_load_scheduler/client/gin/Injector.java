@@ -7,9 +7,9 @@ import org.dselent.course_load_scheduler.client.presenter.impl.AddInstancePresen
 import org.dselent.course_load_scheduler.client.presenter.impl.AddSectionPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.AdminAddEditUserPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.AdminHomepagePresenterImpl;
-import org.dselent.course_load_scheduler.client.presenter.impl.BasePresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.CourseRegistrationCartPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.DetailedCourseInformationPresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.ExamplePresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.FacultyCourseMapPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.IndexPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.InstructorHomepagePresenterImpl;
@@ -17,14 +17,12 @@ import org.dselent.course_load_scheduler.client.presenter.impl.LoginPresenterImp
 import org.dselent.course_load_scheduler.client.presenter.impl.ReportProblemPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.SearchClassesPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.ViewCurrentCoursesPresenterImpl;
-import org.dselent.course_load_scheduler.client.view.impl.IndexViewImpl;
-import org.dselent.course_load_scheduler.client.view.impl.LoginViewImpl;
-import org.dselent.course_load_scheduler.client.view.impl.ExampleViewImpl;
-import org.dselent.course_load_scheduler.client.service.impl.BaseServiceImpl;
 import org.dselent.course_load_scheduler.client.service.impl.CourseServiceImpl;
 import org.dselent.course_load_scheduler.client.service.impl.HomeServiceImpl;
 import org.dselent.course_load_scheduler.client.service.impl.UserServiceImpl;
-import org.dselent.course_load_scheduler.client.presenter.impl.ExamplePresenterImpl;
+import org.dselent.course_load_scheduler.client.view.impl.ExampleViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.IndexViewImpl;
+import org.dselent.course_load_scheduler.client.view.impl.LoginViewImpl;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.SimpleEventBus;
@@ -52,7 +50,6 @@ public interface Injector extends Ginjector
     public SimpleEventBus getEventBus();
     
     // services
-    public BaseServiceImpl getBaseServiceImpl();
     public CourseServiceImpl getCourseServiceImpl();
     public HomeServiceImpl getHomeServiceImpl();
     public UserServiceImpl getUserServiceImpl();
@@ -66,7 +63,6 @@ public interface Injector extends Ginjector
     public AddSectionPresenterImpl getAddSectionPresenter();
     public AdminAddEditUserPresenterImpl getAdminAddEditUserPresenter();
     public AdminHomepagePresenterImpl getAdminHomepagePresenter();
-    public BasePresenterImpl getBasePresenter();
     public CourseRegistrationCartPresenterImpl getCourseRegistrationCartPresenter();
     public DetailedCourseInformationPresenterImpl getDetailedCourseInformationPresenter();
     public FacultyCourseMapPresenterImpl getFacultyCourseMapPresenter();
@@ -85,7 +81,6 @@ public interface Injector extends Ginjector
     public AddSectionPresenterImpl getAddSectionInfoView();
     public AdminAddEditUserPresenterImpl getAdminAddEditUserInfoView();
     public AdminHomepagePresenterImpl getAdminHomepageInfoView();
-    public BasePresenterImpl getBaseInfoView();
     public CourseRegistrationCartPresenterImpl getCourseRegistrationCartView();
     public DetailedCourseInformationPresenterImpl getDetailedCourseInformationView();
     public FacultyCourseMapPresenterImpl getFacultyCourseMapView();

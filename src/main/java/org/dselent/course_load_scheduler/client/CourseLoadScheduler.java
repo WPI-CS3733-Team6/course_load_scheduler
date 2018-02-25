@@ -66,8 +66,8 @@ public class CourseLoadScheduler implements EntryPoint
 		// Get the injector, which injected objects can be retrieved from
 		final Injector injector = Injector.INSTANCE;
 
-		BaseServiceImpl baseServiceImpl = injector.getBaseServiceImpl();
-		baseServiceImpl.init();
+		//BaseServiceImpl baseServiceImpl = injector.getBaseServiceImpl();
+		//baseServiceImpl.init();
 		CourseServiceImpl courseServiceImpl = injector.getCourseServiceImpl();
 		courseServiceImpl.init();
 		HomeServiceImpl homeServiceImpl = injector.getHomeServiceImpl();
@@ -144,11 +144,6 @@ public class CourseLoadScheduler implements EntryPoint
 		adminHomepagePresenter.init();
 		//adminHomepagePresenter.go(indexView.getMiddlePanel());
 
-		/* BASE*/
-		BasePresenterImpl basePresenter = injector.getBasePresenter();
-		basePresenter.init();
-		//basePresenter.go(indexView.getMiddlePanel());
-
 		/* REGISTRATION CART*/
 		CourseRegistrationCartPresenterImpl courseRegistrationCartPresenter = injector.getCourseRegistrationCartPresenter();
 		courseRegistrationCartPresenter.init();
@@ -172,7 +167,7 @@ public class CourseLoadScheduler implements EntryPoint
 		/* INSTRUCTOR HOM"E"PAGE	*/	 
 		InstructorHomepagePresenterImpl instructorHompagePresenter = injector.getInstructorHomepagePresenter();
 		instructorHompagePresenter.init();
-		//instructorHompagePresenter.go(indexView.getMiddlePanel());
+		instructorHompagePresenter.go(indexView.getMiddlePanel());
 
 		/*LOGIN*/
 		LoginPresenterImpl loginPresenter = injector.getLoginPresenter();
