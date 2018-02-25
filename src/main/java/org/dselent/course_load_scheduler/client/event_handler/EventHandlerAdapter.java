@@ -48,8 +48,10 @@ import org.dselent.course_load_scheduler.client.event.SaveInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.SaveSectionEvent;
 import org.dselent.course_load_scheduler.client.event.SendAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.SendCourseCartRemoveCourseEvent;
+import org.dselent.course_load_scheduler.client.event.SendDeleteMessageEvent;
 import org.dselent.course_load_scheduler.client.event.SendLoginEvent;
 import org.dselent.course_load_scheduler.client.event.SendReportEvent;
+import org.dselent.course_load_scheduler.client.event.SendRespondMessageEvent;
 import org.dselent.course_load_scheduler.client.event.SendSubmitRegistrationCartEvent;
 import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
 
@@ -72,8 +74,14 @@ InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, Se
 GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler, GoToInstructorHomeEventHandler, GoToAdminHomeEventHandler, GoToLogoutEventHandler, GoToReportAProblemEventHandler,
 ReceiveAccountInfoEventHandler, SendAccountInfoEventHandler, GoToDetailedCourseInformationEventHandler, CourseSearchEventHandler, ReceiveCourseSearchEventHandler, ReceiveAddUserEventHandler, ReceiveSubmitRegistrationCartEventHandler,
 SendCourseCartRemoveCourseEventHandler, ReceiveCourseCartRemoveCourseEventHandler, CurrentCoursesEventHandler, GetCourseDetailsEventHandler, RemoveCourseFromCartEventHandler,
-DeleteUserEventHandler
+DeleteUserEventHandler, SendDeleteMessageEventHandler, SendRespondMessageEventHandler
 {
+	@Override
+	public void onSendRespondMessage(SendRespondMessageEvent evt) {}
+	
+	@Override
+	public void onSendDeleteMessage(SendDeleteMessageEvent evt) {}
+	
 	@Override
 	public void onDeleteUser(DeleteUserEvent evt) {}
 	
