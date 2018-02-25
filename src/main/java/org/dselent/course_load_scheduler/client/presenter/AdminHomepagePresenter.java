@@ -1,5 +1,7 @@
 package org.dselent.course_load_scheduler.client.presenter;
 
+import org.dselent.course_load_scheduler.client.event.ReceiveInboxInfoEvent;
+
 public interface AdminHomepagePresenter extends BasePresenter
 {
 	IndexPresenter getParentPresenter();
@@ -12,4 +14,5 @@ public interface AdminHomepagePresenter extends BasePresenter
 	void goToCurrentClasses();
 	void goToSearchClasses();
 	void goToCart();
+	void onReceiveInboxInfo(ReceiveInboxInfoEvent evt);
 }

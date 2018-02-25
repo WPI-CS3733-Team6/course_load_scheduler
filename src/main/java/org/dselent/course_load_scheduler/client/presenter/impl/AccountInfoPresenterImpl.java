@@ -3,10 +3,12 @@ package org.dselent.course_load_scheduler.client.presenter.impl;
 import java.util.ArrayList;
 
 import org.dselent.course_load_scheduler.client.action.InvalidAccountInfoAction;
+import org.dselent.course_load_scheduler.client.action.SendAccountInfoAction;
 import org.dselent.course_load_scheduler.client.action.SendUpdateAccountInfoAction;
 import org.dselent.course_load_scheduler.client.event.GoToAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveAccountInfoEvent;
+import org.dselent.course_load_scheduler.client.event.SendAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.UpdateAccountEvent;
 import org.dselent.course_load_scheduler.client.presenter.AccountInfoPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
@@ -29,6 +31,11 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 		this.parentPresenter = parentPresenter;
 		view.setPresenter(this);
 		accountInfoClickInProgress = false;
+		Integer userId = parentPresenter.getGlobalData().getUserInfo().getId();
+		HasWidgets container = parentPresenter.getView().getMiddlePanel();
+		SendAccountInfoAction saia = new SendAccountInfoAction(userId);
+		SendAccountInfoEvent saie = new SendAccountInfoEvent(saia, container);
+		eventBus.fireEvent(saie);
 	}
 	
 	@Override

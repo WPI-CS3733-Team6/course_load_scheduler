@@ -3,7 +3,10 @@ package org.dselent.course_load_scheduler.client.action;
 public class SendAccountInfoAction extends Action{
 	
 	private Integer userId;
-
+	
+	public SendAccountInfoAction(Integer userId) {
+		this.userId = userId;
+	}
 	/**
 	 * @return the userId
 	 */

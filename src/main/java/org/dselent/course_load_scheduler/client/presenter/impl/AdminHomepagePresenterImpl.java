@@ -12,6 +12,7 @@ import org.dselent.course_load_scheduler.client.event.GoToAddEditUserEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCartEvent;
 import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
+import org.dselent.course_load_scheduler.client.event.ReceiveInboxInfoEvent;
 import org.dselent.course_load_scheduler.client.presenter.AdminHomepagePresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.AdminHomepageView;
@@ -192,5 +193,9 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 			eventBus.fireEvent(gce);
 			
 		}
+	}
+	@Override
+	public void onReceiveInboxInfo(ReceiveInboxInfoEvent evt) {
+		//evt.getAction().getInbox()
 	}
 }
