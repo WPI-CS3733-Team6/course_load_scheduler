@@ -23,6 +23,7 @@ import org.dselent.course_load_scheduler.client.presenter.impl.AddInstancePresen
 import org.dselent.course_load_scheduler.client.presenter.impl.AddSectionPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.AdminAddEditUserPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.AdminHomepagePresenterImpl;
+import org.dselent.course_load_scheduler.client.presenter.impl.BasePresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.CourseRegistrationCartPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.DetailedCourseInformationPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.ExamplePresenterImpl;
@@ -33,7 +34,13 @@ import org.dselent.course_load_scheduler.client.presenter.impl.LoginPresenterImp
 import org.dselent.course_load_scheduler.client.presenter.impl.ReportProblemPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.SearchClassesPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.ViewCurrentCoursesPresenterImpl;
+import org.dselent.course_load_scheduler.client.service.BaseService;
+import org.dselent.course_load_scheduler.client.service.CourseService;
+import org.dselent.course_load_scheduler.client.service.HomeService;
 import org.dselent.course_load_scheduler.client.service.UserService;
+import org.dselent.course_load_scheduler.client.service.impl.BaseServiceImpl;
+import org.dselent.course_load_scheduler.client.service.impl.CourseServiceImpl;
+import org.dselent.course_load_scheduler.client.service.impl.HomeServiceImpl;
 import org.dselent.course_load_scheduler.client.service.impl.UserServiceImpl;
 import org.dselent.course_load_scheduler.client.view.AccountInfoView;
 import org.dselent.course_load_scheduler.client.view.AddCourseView;
@@ -86,6 +93,12 @@ public class InjectorModule extends AbstractGinModule
 		// event bus
 		bind(SimpleEventBus.class).in(Singleton.class);
 
+		// services
+		bind(BaseService.class).to(BaseServiceImpl.class).in(Singleton.class);
+		bind(CourseService.class).to(CourseServiceImpl.class).in(Singleton.class);
+		bind(HomeService.class).to(HomeServiceImpl.class).in(Singleton.class);
+		bind(UserService.class).to(UserServiceImpl.class).in(Singleton.class);
+		
 		// presenters
 		bind(IndexPresenter.class).to(IndexPresenterImpl.class).in(Singleton.class);
 		bind(LoginPresenter.class).to(LoginPresenterImpl.class).in(Singleton.class);
@@ -121,9 +134,6 @@ public class InjectorModule extends AbstractGinModule
 		bind(SearchClassesView.class).to(SearchClassesViewImpl.class).in(Singleton.class);
 		bind(ViewCurrentCoursesView.class).to(ViewCurrentCoursesViewImpl.class).in(Singleton.class);
 		bind(ExampleView.class).to(ExampleViewImpl.class).in(Singleton.class);
-		
-		// services
-		bind(UserService.class).to(UserServiceImpl.class).in(Singleton.class);
 
 		//model
 		bind(GlobalData.class).in(Singleton.class);

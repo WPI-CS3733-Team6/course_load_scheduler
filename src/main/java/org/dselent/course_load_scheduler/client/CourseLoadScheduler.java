@@ -17,6 +17,10 @@ import org.dselent.course_load_scheduler.client.presenter.impl.InstructorHomepag
 import org.dselent.course_load_scheduler.client.presenter.impl.LoginPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.ReportProblemPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.ViewCurrentCoursesPresenterImpl;
+import org.dselent.course_load_scheduler.client.service.impl.BaseServiceImpl;
+import org.dselent.course_load_scheduler.client.service.impl.CourseServiceImpl;
+import org.dselent.course_load_scheduler.client.service.impl.HomeServiceImpl;
+import org.dselent.course_load_scheduler.client.service.impl.UserServiceImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.ExamplePresenterImpl;
 import org.dselent.course_load_scheduler.client.view.AccountInfoView;
 import org.dselent.course_load_scheduler.client.view.AddCourseView;
@@ -61,6 +65,15 @@ public class CourseLoadScheduler implements EntryPoint
 		// Get the injector, which injected objects can be retrieved from
 		final Injector injector = Injector.INSTANCE;
 
+		BaseServiceImpl baseServiceImpl = injector.getBaseServiceImpl();
+		baseServiceImpl.init();
+		CourseServiceImpl courseServiceImpl = injector.getCourseServiceImpl();
+		courseServiceImpl.init();
+		HomeServiceImpl homeServiceImpl = injector.getHomeServiceImpl();
+		homeServiceImpl.init();
+		UserServiceImpl userServiceImpl = injector.getUserServiceImpl();
+		userServiceImpl.init();
+		
 		/*
 		 * Uncomment the panel you want to have displayed on the index panel
 		 */

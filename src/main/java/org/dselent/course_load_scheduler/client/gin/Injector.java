@@ -20,6 +20,9 @@ import org.dselent.course_load_scheduler.client.presenter.impl.ViewCurrentCourse
 import org.dselent.course_load_scheduler.client.view.impl.IndexViewImpl;
 import org.dselent.course_load_scheduler.client.view.impl.LoginViewImpl;
 import org.dselent.course_load_scheduler.client.view.impl.ExampleViewImpl;
+import org.dselent.course_load_scheduler.client.service.impl.BaseServiceImpl;
+import org.dselent.course_load_scheduler.client.service.impl.CourseServiceImpl;
+import org.dselent.course_load_scheduler.client.service.impl.HomeServiceImpl;
 import org.dselent.course_load_scheduler.client.service.impl.UserServiceImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.ExamplePresenterImpl;
 
@@ -47,6 +50,12 @@ public interface Injector extends Ginjector
  
     // event bus
     public SimpleEventBus getEventBus();
+    
+    // services
+    public BaseServiceImpl getBaseServiceImpl();
+    public CourseServiceImpl getCourseServiceImpl();
+    public HomeServiceImpl getHomeServiceImpl();
+    public UserServiceImpl getUserServiceImpl();
     
     // presenters
     public IndexPresenterImpl getIndexPresenter();
