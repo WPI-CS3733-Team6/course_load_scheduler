@@ -12,10 +12,13 @@ import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.event.GoToInstructorHomeEvent;
 import org.dselent.course_load_scheduler.client.event.GoToLogoutEvent;
 import org.dselent.course_load_scheduler.client.event.GoToReportAProblemEvent;
+import org.dselent.course_load_scheduler.client.event.SendLoginEvent;
 import org.dselent.course_load_scheduler.client.model.GlobalData;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.IndexView;
+
 import com.google.gwt.dom.client.Style;
+import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.HasWidgets;
 
 
@@ -41,17 +44,20 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 		reportAProblemClickInProgress = false;
 		this.globalData = globalData;	//TODO make sure I got this right
 	}
-	
+
 	@Override
 	public void init()
 	{
 		bind();
 	}
-	
+
 	@Override
 	public void bind()
 	{
-		//TODO on successfull login event come back after the rest and ask about this-Josue
+		HandlerRegistration registration;
+
+		registration = eventBus.addHandler(SendLoginEvent.TYPE, this);
+		eventBusRegistration.put(SendLoginEvent.TYPE, registration);
 	}
 
 	@Override
@@ -66,7 +72,7 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 	{
 		return view;
 	}
-	
+
 	@Override
 	public IndexPresenter getParentPresenter()
 	{
@@ -77,14 +83,14 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 	public GlobalData getGlobalData() {
 		return globalData;
 	}
-	
+
 	@Override
 	public void setParentPresenter(IndexPresenter parentPresenter)
 	{
 		this.parentPresenter = parentPresenter;
 	}
-	
-	
+
+
 	@Override
 	public void showLoadScreen()
 	{
@@ -93,25 +99,25 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 		view.getLoadingImage().getElement().getStyle().setVisibility(Style.Visibility.VISIBLE);
 		view.getGlassLoadingPanel().getElement().getStyle().setVisibility(Style.Visibility.VISIBLE);
 	}
-	
+
 	@Override
 	public void hideLoadScreen()
 	{
 		view.getLoadingImage().getElement().getStyle().setVisibility(Style.Visibility.HIDDEN);
 		view.getGlassLoadingPanel().getElement().getStyle().setVisibility(Style.Visibility.HIDDEN);
 	}
-	
+
 	@Override
 	public void home() {
 		if(!homeClickInProgress) 
 		{
 			homeClickInProgress = true;
-			view.getHome().setEnabled(false);
+			view.getHomeButton().setEnabled(false);
 			parentPresenter.showLoadScreen();
-			
+
 			HasWidgets container = parentPresenter.getView().getMiddlePanel();
 			boolean isAdmin = parentPresenter.getGlobalData().getIsAdmin();
-			
+
 			if(isAdmin) {
 				GoToAdminHomeAction aha = new GoToAdminHomeAction();
 				GoToAdminHomeEvent ahe = new GoToAdminHomeEvent(aha, container);
@@ -124,56 +130,56 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 			}
 		}
 	}
-	
+
 	@Override
 	public void logout() {
-		
+
 		if(!logoutClickInProgress) 
 		{
 			logoutClickInProgress = true;
-			view.getHome().setEnabled(false);
+			view.getLogoutButton().setEnabled(false);
 			parentPresenter.showLoadScreen();
-			
+
 			HasWidgets container = parentPresenter.getView().getMiddlePanel();
 			GoToLogoutAction rap = new GoToLogoutAction();
 			GoToLogoutEvent rae = new GoToLogoutEvent(rap,container);
 			eventBus.fireEvent(rae);
 		}
-		
+
 	}
-	
+
 	@Override
 	public void reportAProblem() {
-		
+
 		if(!reportAProblemClickInProgress) 
 		{
 			reportAProblemClickInProgress = true;
-			view.getHome().setEnabled(false);
+			view.getReportAProblemButton().setEnabled(false);
 			parentPresenter.showLoadScreen();
-			
+
 			HasWidgets container = parentPresenter.getView().getMiddlePanel();
 			GoToReportAProblemAction rap = new GoToReportAProblemAction();
 			GoToReportAProblemEvent rae = new GoToReportAProblemEvent(rap,container);
 			eventBus.fireEvent(rae);
 		}
-		
+
 	}
-	
+
 	@Override
 	public void currentClasses() {
-		
+
 		if(!viewCurrentClassesClickInProgress) 
 		{
 			viewCurrentClassesClickInProgress = true;
-			view.getHome().setEnabled(false);
+			view.getViewCurrentClassesButton().setEnabled(false);
 			parentPresenter.showLoadScreen();
-			
+
 			HasWidgets container = parentPresenter.getView().getMiddlePanel();
 			GoToCurrentCoursesAction cca = new GoToCurrentCoursesAction();
 			GoToCurrentCoursesEvent cce = new GoToCurrentCoursesEvent(cca, container);
 			eventBus.fireEvent(cce);
-			
+
 		}
-		
+
 	}
 }

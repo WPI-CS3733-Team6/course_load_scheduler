@@ -8,65 +8,60 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.user.client.ui.AbsolutePanel;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Image;
-import com.google.gwt.user.client.ui.PopupPanel;
-import com.google.gwt.user.client.ui.Widget;
-import com.google.gwt.user.client.ui.LayoutPanel;
-import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.LayoutPanel;
+import com.google.gwt.user.client.ui.PopupPanel;
+import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.Widget;
 
 public class IndexViewImpl extends BaseViewImpl<IndexPresenter> implements IndexView
 {
 	private static IndexViewImplUiBinder uiBinder = GWT.create(IndexViewImplUiBinder.class);
-
-	interface IndexViewImplUiBinder extends UiBinder<Widget, IndexViewImpl> {}
 	
-	@UiField HTMLPanel topPanel;
-	@UiField LayoutPanel layoutPanel;
+	@UiField VerticalPanel rootPanelvtee;
+	@UiField HTMLPanel rootPanel;
 	@UiField AbsolutePanel absolutePanel;
 	@UiField LayoutPanel innerlayoutPanel;
 	@UiField Label identification;
-	@UiField LayoutPanel lowerPanel;
-	@UiField HTMLPanel bottonPanel;
-	@UiField HTMLPanel middlePanel;
-	@UiField Button viewCurrentClasses;
-	@UiField Button home;
-	@UiField Button logout;
-	@UiField Button reportAProblem;
-
+	@UiField Button logoutButton;
+	@UiField Button homeButton;
+	@UiField Button viewCurrentClassesButton;
+	@UiField LayoutPanel middlePanel;
+	@UiField LayoutPanel bottomPanel;
+	@UiField Button reportAProblemButton;
+	@UiField LayoutPanel topPanel;
 	
-	public IndexViewImpl()
-	{
-		initWidget(uiBinder.createAndBindUi(this));
-	}
+	interface IndexViewImplUiBinder extends UiBinder<Widget, IndexViewImpl> {}
 
-	@Override
-	public HTMLPanel getTopPanel()
-	{
-		return topPanel;
+	public IndexViewImpl() {
+		initWidget(uiBinder.createAndBindUi(this));		
 	}
-
+	
 	@Override
-	public void setTopPanel(HTMLPanel topPanel)
-	{
-		this.topPanel = topPanel;
-	}
-
-	@Override
-	public void setPresenter(IndexPresenter presenter)
-	{
+	public void setPresenter(IndexPresenter presenter) {
 		this.presenter = presenter;
-	}
-	
-	public LayoutPanel getLayoutPanel() {
-		return layoutPanel;
+		
 	}
 
-	public void setLayoutPanel(LayoutPanel layoutPanel) {
-		this.layoutPanel = layoutPanel;
+	public VerticalPanel getRootPanelvtee() {
+		return rootPanelvtee;
+	}
+
+	public void setRootPanelvtee(VerticalPanel rootPanelvtee) {
+		this.rootPanelvtee = rootPanelvtee;
+	}
+
+	public HTMLPanel getRootPanel() {
+		return rootPanel;
+	}
+
+	public void setRootPanel(HTMLPanel rootPanel) {
+		this.rootPanel = rootPanel;
 	}
 
 	public AbsolutePanel getAbsolutePanel() {
@@ -93,71 +88,86 @@ public class IndexViewImpl extends BaseViewImpl<IndexPresenter> implements Index
 		this.identification = identification;
 	}
 
-	public LayoutPanel getLowerPanel() {
-		return lowerPanel;
+	public Button getLogoutButton() {
+		return logoutButton;
 	}
 
-	public void setLowerPanel(LayoutPanel lowerPanel) {
-		this.lowerPanel = lowerPanel;
+	public void setLogoutButton(Button logout) {
+		this.logoutButton = logout;
 	}
 
-	public HTMLPanel getBottonPanel() {
-		return bottonPanel;
+	public Button getHomeButton() {
+		return homeButton;
 	}
 
-	public void setBottonPanel(HTMLPanel bottonPanel) {
-		this.bottonPanel = bottonPanel;
+	public void setHomeButton(Button home) {
+		this.homeButton = home;
 	}
 
-	public HTMLPanel getMiddlePanel() {
+	public Button getViewCurrentClassesButton() {
+		return viewCurrentClassesButton;
+	}
+
+	public void setViewCurrentClassesButton(Button viewCurrentClasses) {
+		this.viewCurrentClassesButton = viewCurrentClasses;
+	}
+
+	public LayoutPanel getTopPanel() {
+		return topPanel;
+	}
+
+	public void setTopPanel(LayoutPanel topPanel) {
+		this.topPanel = topPanel;
+	}
+
+	public LayoutPanel getMiddlePanel() {
 		return middlePanel;
 	}
 
-	public void setMiddlePanel(HTMLPanel middlePanel) {
+	public void setMiddlePanel(LayoutPanel middlePanel) {
 		this.middlePanel = middlePanel;
 	}
 
-	public Button getViewCurrentClasses() {
-		return viewCurrentClasses;
+	public LayoutPanel getBottomPanel() {
+		return bottomPanel;
 	}
 
-	public Button getHome() {
-		return home;
+	public void setBottomPanel(LayoutPanel bottomPanel) {
+		this.bottomPanel = bottomPanel;
 	}
 
-	public Button getLogout() {
-		return logout;
+	public Button getReportAProblemButton() {
+		return reportAProblemButton;
 	}
 
-	public Button getReportAProblem() {
-		return reportAProblem;
+	public void setReportAProblemButton(Button reportAProblem) {
+		this.reportAProblemButton = reportAProblem;
 	}
-	@UiHandler("home")
-	void onHomeButtonClicked(ClickEvent evt)
-	{
+	
+	@UiHandler("homeButton")
+	void onHomeButtonClicked(ClickEvent evt) {
 		presenter.home();
 	}
 	
-	@UiHandler("logout")
-	void onLogoutButtonClicked(ClickEvent evt)
-	{
+	@UiHandler("logoutButton")
+	void onClassSearchButtonClicked(ClickEvent evt) {
 		presenter.logout();
 	}
 	
-	@UiHandler("reportAProblem")
-	void onReportAProblemButtonClicked(ClickEvent evt)
-	{
+	@UiHandler("reportAProblemButton")
+	void onAccountInfoButtonClicked(ClickEvent evt) {
 		presenter.reportAProblem();
 	}
 	
-	@UiHandler("viewCurrentClasses")
-	void onViewCurrentClassesButtonClicked(ClickEvent evt)
-	{
+	@UiHandler("viewCurrentClassesButton")
+	void onCourseCartButtonClicked(ClickEvent evt) {
 		presenter.currentClasses();
 	}
 	
-// Part of the template code from Doug:
-// Not necessary for now, but keep it for reference
+	
+	// Part of the template code from Doug:
+	// Not necessary for now, but keep it for reference
+
 
 	@Override
 	public PopupPanel getGlassLoadingPanel()
@@ -182,7 +192,4 @@ public class IndexViewImpl extends BaseViewImpl<IndexPresenter> implements Index
 	{
 		return middlePanel;
 	}
-	
-	
-
 }

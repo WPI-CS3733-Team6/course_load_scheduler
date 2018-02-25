@@ -9,33 +9,40 @@ import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.PopupPanel;
+import com.google.gwt.user.client.ui.VerticalPanel;
 
 public interface IndexView extends BaseView<IndexPresenter>
 {
-	HTMLPanel getTopPanel();
-	void setTopPanel(HTMLPanel topPanel);
-	LayoutPanel getLayoutPanel();
-	void setLayoutPanel(LayoutPanel layoutPanel);
-	AbsolutePanel getAbsolutePanel();
-	void setAbsolutePanel(AbsolutePanel absolutePanel);
-	LayoutPanel getInnerlayoutPanel();
-	void setInnerlayoutPanel(LayoutPanel innerLayoutPanel);
-	Label getIdentification();
-	void setIdentification(Label identification);
-	LayoutPanel getLowerPanel();
-	void setLowerPanel(LayoutPanel lowerPanel);
-	HTMLPanel getBottonPanel();
-	void setBottonPanel(HTMLPanel bottomPanel); 
-	HTMLPanel getMiddlePanel();
-	void setMiddlePanel(HTMLPanel middlePanel);
+	public VerticalPanel getRootPanelvtee();
+	public void setRootPanelvtee(VerticalPanel rootPanelvtee);
+	public HTMLPanel getRootPanel();
+	public void setRootPanel(HTMLPanel rootPanel);
+	public AbsolutePanel getAbsolutePanel();
+	public void setAbsolutePanel(AbsolutePanel absolutePanel);
+	public LayoutPanel getInnerlayoutPanel();
+	public void setInnerlayoutPanel(LayoutPanel innerlayoutPanel);
+	public Label getIdentification();
+	public void setIdentification(Label identification);
+	public void setLogoutButton(Button logout);
+	public void setHomeButton(Button home);
+	public void setViewCurrentClassesButton(Button viewCurrentClasses);
+	public LayoutPanel getTopPanel();
+	public void setTopPanel(LayoutPanel topPanel);
+	public LayoutPanel getMiddlePanel();
+	public void setMiddlePanel(LayoutPanel middlePanel);
+	public LayoutPanel getBottomPanel();
+	public void setBottomPanel(LayoutPanel bottomPanel);
+	public void setReportAProblemButton(Button reportAProblem);
 	
-	Button getHome();
-	Button getLogout();
-	Button getReportAProblem();
+	
+	public Button getHomeButton();
+	public Button getLogoutButton();
+	public Button getReportAProblemButton();
+	public Button getViewCurrentClassesButton();
 	
 	
 	//for the loading image
-	PopupPanel getGlassLoadingPanel();
-	Image getLoadingImage();
+	public PopupPanel getGlassLoadingPanel();
+	public Image getLoadingImage();
 	
 }
