@@ -74,9 +74,9 @@ public class SearchClassesPresenterImpl extends BasePresenterImpl implements Sea
 			searchClickInProgress = true;
 			view.getSearchButton().setEnabled(false);
 			
-			String term = view.getSemesterField().getItemText(0);
-			String department = view.getSubjectField().getItemText(0);
-			String level = view.getLevelField().getItemText(0);
+			String term = view.getTerm().getItemText(0);
+			String department = view.getSubject().getItemText(0);
+			String level = view.getLevel().getItemText(0);
 			
 			HasWidgets container = parentPresenter.getView().getMiddlePanel();
 			CourseSearchAction csa = new CourseSearchAction(department, term, level);

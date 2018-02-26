@@ -1,3 +1,4 @@
+
 package org.dselent.course_load_scheduler.client.view.impl;
 
 import org.dselent.course_load_scheduler.client.presenter.SearchClassesPresenter;
@@ -23,7 +24,7 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 	private static SearchClassesViewImplUiBinder uiBinder = GWT.create(SearchClassesViewImplUiBinder.class);
 	@UiField HTMLPanel rootPanel;
 	@UiField LayoutPanel topPanel;
-	@UiField ListBox semester;
+	@UiField ListBox term;
 	@UiField ListBox subject;
 	@UiField Button searchButton;
 	@UiField ListBox level;
@@ -37,6 +38,24 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 
 	public SearchClassesViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
+		
+		term.addItem("A");
+		term.addItem("B");
+		term.addItem("C");
+		term.addItem("D");
+		term.addItem("E1");
+		term.addItem("E2");
+		
+		subject.addItem("Biology");
+		subject.addItem("Computer Science");
+		subject.addItem("Robotics");
+		subject.addItem("Electrical & Computer Engineering");
+		subject.addItem("Chemistry");
+		subject.addItem("Physics");
+		subject.addItem("Physical Education");
+		
+		level.addItem("Undergraduate");
+		level.addItem("Graduate");
 
 /*		This breaks the code and makes it not show up in the Google Chrome window		
 		String [] terms = {"Terms A & B", "Terms C & D", "Terms E1 & E2", "Term A", "Term B", "Term C", "Term D", "Term E1", "Term E2"};
@@ -80,12 +99,43 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 		return rootPanel;
 	}
 
-	public ListBox getSemester() {
-		return semester;
+
+	
+	@UiHandler("searchButton")
+	void onSearchButtonClick(ClickEvent event) {
+		presenter.searchCourses();
+		}
+
+	public static SearchClassesViewImplUiBinder getUiBinder() {
+		return uiBinder;
 	}
 
-	public void setSemester(ListBox semester) {
-		this.semester = semester;
+	public static void setUiBinder(SearchClassesViewImplUiBinder uiBinder) {
+		SearchClassesViewImpl.uiBinder = uiBinder;
+	}
+
+	public HTMLPanel getRootPanel() {
+		return rootPanel;
+	}
+
+	public void setRootPanel(HTMLPanel rootPanel) {
+		this.rootPanel = rootPanel;
+	}
+
+	public LayoutPanel getTopPanel() {
+		return topPanel;
+	}
+
+	public void setTopPanel(LayoutPanel topPanel) {
+		this.topPanel = topPanel;
+	}
+
+	public ListBox getTerm() {
+		return term;
+	}
+
+	public void setTerm(ListBox term) {
+		this.term = term;
 	}
 
 	public ListBox getSubject() {
@@ -94,6 +144,14 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 
 	public void setSubject(ListBox subject) {
 		this.subject = subject;
+	}
+
+	public Button getSearchButton() {
+		return searchButton;
+	}
+
+	public void setSearchButton(Button searchButton) {
+		this.searchButton = searchButton;
 	}
 
 	public ListBox getLevel() {
@@ -127,45 +185,5 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 	public void setBottomPanel(LayoutPanel bottomPanel) {
 		this.bottomPanel = bottomPanel;
 	}
-
-	public LayoutPanel getTopPanel() {
-		return topPanel;
-	}
-
-	public void setTopPanel(LayoutPanel topPanel) {
-		this.topPanel = topPanel;
-	}
-
-	public Button getSearchButton() {
-		return searchButton;
-	}
-
-	public HTMLPanel getRootPanel() {
-		return rootPanel;
-	}
-
-	@Override
-	public ListBox getSemesterField() {
-		return semester;
-	}
-
-	@Override
-	public ListBox getSubjectField() {
-		return subject;
-	}
-
-	@Override
-	public ListBox getLevelField() {
-		return level;
-	}
-
-	@Override
-	public LayoutPanel getLayoutPanel() {
-		return bottomPanel;
-	}
 	
-	@UiHandler("searchButton")
-	void onSearchButtonClick(ClickEvent event) {
-		presenter.searchCourses();
-	}
 }

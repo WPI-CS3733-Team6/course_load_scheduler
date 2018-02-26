@@ -47,9 +47,6 @@
 						bottom="8.8pct">
 						<g:Button addStyleNames="{style.button-green}" ui:field="submitButton" width="100%" height="100%">Submit</g:Button>
 					</g:layer>
-					<g:layer left="8.3pct" top="61.9pct" right="70.0pct" bottom="31.1pct">
-						<g:CheckBox height="100%" text="Instructor" width="100%"/>
-					</g:layer>
 				</g:LayoutPanel>
 			</g:layer>
 		</g:LayoutPanel>
