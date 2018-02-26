@@ -11,7 +11,6 @@ public class SendInboxInfoEvent extends DisplayEvent<SendInboxInfoAction, SendIn
 	
 	public SendInboxInfoEvent(SendInboxInfoAction action, HasWidgets container) {
 		super(action, container);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

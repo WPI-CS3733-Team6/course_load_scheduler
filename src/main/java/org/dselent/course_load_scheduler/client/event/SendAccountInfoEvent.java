@@ -11,7 +11,6 @@ public class SendAccountInfoEvent extends DisplayEvent<SendAccountInfoAction, Se
 	
 	public SendAccountInfoEvent(SendAccountInfoAction action, HasWidgets container) {
 		super(action, container);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
