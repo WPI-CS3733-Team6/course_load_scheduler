@@ -5,6 +5,7 @@ import org.dselent.course_load_scheduler.client.event.AddInstanceEvent;
 import org.dselent.course_load_scheduler.client.event.AddSectionEvent;
 import org.dselent.course_load_scheduler.client.event.AddToCartEvent;
 import org.dselent.course_load_scheduler.client.event.AddUserEvent;
+import org.dselent.course_load_scheduler.client.event.CheckUserEvent;
 import org.dselent.course_load_scheduler.client.event.CourseSearchEvent;
 import org.dselent.course_load_scheduler.client.event.CurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteCourseEvent;
@@ -74,8 +75,11 @@ InvalidReportEventHandler, SaveInstanceEventHandler, SaveSectionEventHandler, Se
 GoToFacultyCourseMapEventHandler, ReceiveAddCourseEventHandler, GoToInstructorHomeEventHandler, GoToAdminHomeEventHandler, GoToLogoutEventHandler, GoToReportAProblemEventHandler,
 ReceiveAccountInfoEventHandler, SendAccountInfoEventHandler, GoToDetailedCourseInformationEventHandler, CourseSearchEventHandler, ReceiveCourseSearchEventHandler, ReceiveAddUserEventHandler, ReceiveSubmitRegistrationCartEventHandler,
 SendCourseCartRemoveCourseEventHandler, ReceiveCourseCartRemoveCourseEventHandler, CurrentCoursesEventHandler, GetCourseDetailsEventHandler, RemoveCourseFromCartEventHandler,
-DeleteUserEventHandler, SendDeleteMessageEventHandler, SendRespondMessageEventHandler
+DeleteUserEventHandler, SendDeleteMessageEventHandler, SendRespondMessageEventHandler, CheckUserEventHandler
 {
+	@Override
+	public void onCheckUser(CheckUserEvent evt) {}
+	
 	@Override
 	public void onSendRespondMessage(SendRespondMessageEvent evt) {}
 	
