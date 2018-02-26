@@ -82,8 +82,8 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 			parentPresenter.showLoadScreen();
 			
 			String typeList = view.getTypeList().getItemText(view.getTypeList().getSelectedIndex());
-			String nameBox = view.getNameBox().getText();
-			String emailBox = view.getEmailBox().getText();
+//			String nameBox = view.getNameBox().getText();
+//			String emailBox = view.getEmailBox().getText();
 			String description = view.getDescriptionArea().getText();
 			
 			boolean validType = true;
@@ -108,7 +108,7 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 			}
 			
 			if(validType && validDescription) {
-				sendReport(typeList, nameBox, emailBox, description);
+				sendReport(typeList, /*nameBox, emailBox,*/ description);
 				submitClickInProgress = false;
 			} else {
 				InvalidReportAction ira = new InvalidReportAction(invalidReasonList);
@@ -119,10 +119,10 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 		}
 	}
 	
-	private void sendReport(String type, String name, String email, String desc) {
+	private void sendReport(String type,/* String name, String email,*/ String desc) {
 		//write in actions and event handling gubbins
 		HasWidgets container = parentPresenter.getView().getMiddlePanel();
-		SendReportAction sra = new SendReportAction(name, email, type, desc);
+		SendReportAction sra = new SendReportAction(/*name, email,*/ type, desc);
 		SendReportEvent sre = new SendReportEvent(sra, container);
 		eventBus.fireEvent(sre);
 	}
