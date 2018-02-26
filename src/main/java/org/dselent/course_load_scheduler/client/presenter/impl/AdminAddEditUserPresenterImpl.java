@@ -4,10 +4,12 @@ import org.dselent.course_load_scheduler.client.action.AddUserAction;
 import org.dselent.course_load_scheduler.client.action.EditUserAction;
 import org.dselent.course_load_scheduler.client.event.AddUserEvent;
 import org.dselent.course_load_scheduler.client.event.EditUserEvent;
+import org.dselent.course_load_scheduler.client.event.GoToAddEditUserEvent;
 import org.dselent.course_load_scheduler.client.presenter.AdminAddEditUserPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.AdminAddEditUserView;
 
+import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.inject.Inject;
 
@@ -38,11 +40,10 @@ public class AdminAddEditUserPresenterImpl extends BasePresenterImpl implements 
 	@Override
 	public void bind()
 	{
-		//This is copied and pasted from the LoginPresenterImpl don't know how to implement it in here
-//		HandlerRegistration registration;
-//
-//		registration = eventBus.addHandler(InvalidLoginEvent.TYPE, this);
-//		eventBusRegistration.put(InvalidLoginEvent.TYPE, registration);
+		HandlerRegistration registration;
+
+		registration = eventBus.addHandler(GoToAddEditUserEvent.TYPE, this);
+		eventBusRegistration.put(GoToAddEditUserEvent.TYPE, registration);
 	}
 
 	@Override

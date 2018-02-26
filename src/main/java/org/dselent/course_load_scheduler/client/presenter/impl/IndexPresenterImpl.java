@@ -24,7 +24,6 @@ import com.google.gwt.user.client.ui.HasWidgets;
 
 public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresenter
 {
-	private IndexPresenter parentPresenter;
 	private IndexView view;
 	private boolean viewCurrentClassesClickInProgress;
 	private boolean homeClickInProgress;
@@ -36,7 +35,6 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 	public IndexPresenterImpl(IndexView view, GlobalData globalData)
 	{
 		this.view = view;
-		this.parentPresenter = parentPresenter;
 		view.setPresenter(this);
 		viewCurrentClassesClickInProgress = false;
 		homeClickInProgress = false;
@@ -86,20 +84,8 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 	}
 
 	@Override
-	public IndexPresenter getParentPresenter()
-	{
-		return parentPresenter;
-	}
-
-	@Override
 	public GlobalData getGlobalData() {
 		return globalData;
-	}
-
-	@Override
-	public void setParentPresenter(IndexPresenter parentPresenter)
-	{
-		this.parentPresenter = parentPresenter;
 	}
 
 
@@ -125,10 +111,10 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 		{
 			homeClickInProgress = true;
 			view.getHomeButton().setEnabled(false);
-			parentPresenter.showLoadScreen();
+			//parentPresenter.showLoadScreen();
 
-			HasWidgets container = parentPresenter.getView().getMiddlePanel();
-			boolean isAdmin = parentPresenter.getGlobalData().getIsAdmin();
+			HasWidgets container = view.getMiddlePanel();
+			boolean isAdmin = this.getGlobalData().getIsAdmin();
 
 			if(isAdmin) {
 				GoToAdminHomeAction aha = new GoToAdminHomeAction();
@@ -150,9 +136,9 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 		{
 			logoutClickInProgress = true;
 			view.getLogoutButton().setEnabled(false);
-			parentPresenter.showLoadScreen();
+			//parentPresenter.showLoadScreen();
 
-			HasWidgets container = parentPresenter.getView().getMiddlePanel();
+			HasWidgets container = view.getMiddlePanel();
 			GoToLogoutAction rap = new GoToLogoutAction();
 			GoToLogoutEvent rae = new GoToLogoutEvent(rap,container);
 			eventBus.fireEvent(rae);
@@ -167,9 +153,9 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 		{
 			reportAProblemClickInProgress = true;
 			view.getReportAProblemButton().setEnabled(false);
-			parentPresenter.showLoadScreen();
+			//parentPresenter.showLoadScreen();
 
-			HasWidgets container = parentPresenter.getView().getMiddlePanel();
+			HasWidgets container = view.getMiddlePanel();
 			GoToReportAProblemAction rap = new GoToReportAProblemAction();
 			GoToReportAProblemEvent rae = new GoToReportAProblemEvent(rap,container);
 			eventBus.fireEvent(rae);
@@ -184,9 +170,8 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 		{
 			viewCurrentClassesClickInProgress = true;
 			view.getViewCurrentClassesButton().setEnabled(false);
-			parentPresenter.showLoadScreen();
 
-			HasWidgets container = parentPresenter.getView().getMiddlePanel();
+			HasWidgets container = view.getMiddlePanel();
 			GoToCurrentCoursesAction cca = new GoToCurrentCoursesAction();
 			GoToCurrentCoursesEvent cce = new GoToCurrentCoursesEvent(cca, container);
 			eventBus.fireEvent(cce);

@@ -99,7 +99,7 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 			
 			clickInProgress = true;
 			view.getCurrentClassButton().setEnabled(false);
-			parentPresenter.showLoadScreen();
+			//parentPresenter.showLoadScreen();
 			
 			GoToCurrentCoursesAction gcca = new GoToCurrentCoursesAction();
 			GoToCurrentCoursesEvent gcce = new GoToCurrentCoursesEvent(gcca, container);
@@ -114,7 +114,7 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 			
 			clickInProgress = true;
 			view.getClassSearchButton().setEnabled(false);
-			parentPresenter.showLoadScreen();
+			//parentPresenter.showLoadScreen();
 			
 			HasWidgets container = parentPresenter.getView().getViewRootPanel();
 			GoToClassSearchAction gcsa = new GoToClassSearchAction();
@@ -130,7 +130,7 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 			
 			clickInProgress = true;
 			view.getAccountInfoButton().setEnabled(false);
-			parentPresenter.showLoadScreen();
+			//parentPresenter.showLoadScreen();
 			
 			HasWidgets container = parentPresenter.getView().getViewRootPanel();
 			GoToAccountInfoAction gaa = new GoToAccountInfoAction();
@@ -146,7 +146,7 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 			
 			clickInProgress = true;
 			view.getCourseCartButton().setEnabled(false);
-			parentPresenter.showLoadScreen();
+			//parentPresenter.showLoadScreen();
 			
 			HasWidgets container = parentPresenter.getView().getViewRootPanel();
 			GoToCartAction gca = new GoToCartAction();
@@ -162,7 +162,7 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 			
 			clickInProgress = true;
 			view.getGenerateScheduleButton().setEnabled(false);
-			parentPresenter.showLoadScreen();
+			//parentPresenter.showLoadScreen();
 			
 			HasWidgets container = parentPresenter.getView().getViewRootPanel();
 			GoToFacultyCourseMapAction gfcma = new GoToFacultyCourseMapAction();
