@@ -9,11 +9,11 @@ import org.dselent.course_load_scheduler.client.action.GoToCurrentCoursesAction;
 import org.dselent.course_load_scheduler.client.event.GoToAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.GoToAddCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GoToAddEditUserEvent;
+import org.dselent.course_load_scheduler.client.event.GoToAdminHomeEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCartEvent;
 import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveInboxInfoEvent;
-import org.dselent.course_load_scheduler.client.event.SendLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.AdminHomepagePresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.AdminHomepageView;
@@ -46,8 +46,8 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 	public void bind() {
 		HandlerRegistration registration;
 		
-		registration = eventBus.addHandler(SendLoginEvent.TYPE, this);
-		eventBusRegistration.put(SendLoginEvent.TYPE, registration);
+		registration = eventBus.addHandler(GoToAdminHomeEvent.TYPE, this);
+		eventBusRegistration.put(GoToAdminHomeEvent.TYPE, registration);
 	}
 		
 	@Override
