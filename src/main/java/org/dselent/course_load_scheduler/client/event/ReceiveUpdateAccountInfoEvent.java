@@ -15,7 +15,6 @@ public class ReceiveUpdateAccountInfoEvent extends DisplayEvent<ReceiveUpdateAcc
 
 	@Override
 	public Type<ReceiveUpdateAccountInfoEventHandler> getAssociatedType() {
-		// TODO Auto-generated method stub
 		return TYPE;
 	}
 

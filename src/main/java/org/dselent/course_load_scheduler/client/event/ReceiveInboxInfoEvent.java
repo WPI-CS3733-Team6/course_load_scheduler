@@ -15,7 +15,6 @@ public class ReceiveInboxInfoEvent extends DisplayEvent<ReceiveInboxInfoAction, 
 
 	@Override
 	public Type<ReceiveInboxInfoEventHandler> getAssociatedType() {
-		// TODO Auto-generated method stub
 		return TYPE;
 	}
 

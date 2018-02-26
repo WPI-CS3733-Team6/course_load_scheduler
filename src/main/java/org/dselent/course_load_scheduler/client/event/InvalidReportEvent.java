@@ -27,7 +27,6 @@ public class InvalidReportEvent extends BaseEvent<InvalidReportAction, InvalidRe
 
 	@Override
 	public Type<InvalidReportEventHandler> getAssociatedType() {
-		// TODO Auto-generated method stub
 		return TYPE;
 	}
 
