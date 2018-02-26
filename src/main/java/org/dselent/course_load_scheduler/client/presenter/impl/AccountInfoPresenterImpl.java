@@ -29,7 +29,7 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 	{
 		this.view = view;
 		this.parentPresenter = parentPresenter;
-		//view.setPresenter(this);
+		view.setPresenter(this);
 		accountInfoClickInProgress = false;
 		Integer userId = parentPresenter.getGlobalData().getUserInfo().getId();
 		HasWidgets container = parentPresenter.getView().getMiddlePanel();

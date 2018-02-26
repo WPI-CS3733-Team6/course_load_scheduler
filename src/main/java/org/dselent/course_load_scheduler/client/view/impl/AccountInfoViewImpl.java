@@ -97,7 +97,6 @@ public class AccountInfoViewImpl extends BaseViewImpl<AccountInfoPresenter> impl
 	    AccountInfoFlexTable.setText(1, 0, "Your WPI email is:");
 	    AccountInfoFlexTable.setText(1, 1, email);
 	    AccountInfoFlexTable.setText(2, 0, "Your minimum teaching requirement (course hours) is:");
-//	    t.setText(2, 1, requirement.toString());
 	    AccountInfoFlexTable.setText(6, 0, "Change password:");
 	    AccountInfoFlexTable.setText(8, 0, "Prefered email (optional):");
 	    AccountInfoFlexTable.setText(10, 0, "Phone number (optional):");
@@ -109,11 +108,8 @@ public class AccountInfoViewImpl extends BaseViewImpl<AccountInfoPresenter> impl
 	    
 	    AccountInfoFlexTable.setWidget(8, 2, preferedEmail);
 	    AccountInfoFlexTable.setWidget(10, 2, phoneNumber);
-	    
-	    // ...and set it's column span so that it takes up the whole row.
-	    AccountInfoFlexTable.getFlexCellFormatter().setColSpan(1, 0, 3);
 
-	    RootPanel.get().add(AccountInfoFlexTable);
+	    //RootPanel.get().add(AccountInfoFlexTable);
 	    //AccountInfoBaseLayoutPanel.add(AccountInfoFlexTable);
 	}
 
@@ -215,8 +211,5 @@ public class AccountInfoViewImpl extends BaseViewImpl<AccountInfoPresenter> impl
 
 	public void setPhoneNumber(IntegerBox phoneNumber) {
 		this.phoneNumber = phoneNumber;
-	}
-	
-	
-	
+	}	
 }
