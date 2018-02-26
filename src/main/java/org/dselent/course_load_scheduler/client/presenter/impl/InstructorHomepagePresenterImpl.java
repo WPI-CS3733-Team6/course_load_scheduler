@@ -12,6 +12,7 @@ import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.event.GoToFacultyCourseMapEvent;
 import org.dselent.course_load_scheduler.client.event.GoToInstructorHomeEvent;
+import org.dselent.course_load_scheduler.client.event.ReceiveLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.presenter.InstructorHomepagePresenter;
 import org.dselent.course_load_scheduler.client.view.InstructorHomepageView;
@@ -54,6 +55,9 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 	public void bind()
 	{
 		HandlerRegistration registration;
+		
+		registration = eventBus.addHandler(ReceiveLoginEvent.TYPE, this);
+		eventBusRegistration.put(ReceiveLoginEvent.TYPE, registration);
 		
 		registration = eventBus.addHandler(GoToInstructorHomeEvent.TYPE, this);
 		eventBusRegistration.put(GoToInstructorHomeEvent.TYPE, registration);
@@ -170,5 +174,13 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 			eventBus.fireEvent(gfcme);
 			
 		}
+	}
+	
+	public void onLoginEvent(ReceiveLoginEvent evt) {
+		this.go(evt.getContainer());
+	}
+	
+	public void onGoToInstructorHomeEvent(GoToInstructorHomeEvent evt) {
+		this.go(evt.getContainer());
 	}
 }

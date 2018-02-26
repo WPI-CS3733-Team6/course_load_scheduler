@@ -106,7 +106,7 @@ public class CourseLoadScheduler implements EntryPoint
 //		/* HOMEPAGE*/
 //		AdminHomepagePresenterImpl adminHomepagePresenter = injector.getAdminHomepagePresenter();
 //		adminHomepagePresenter.init();
-//		adminHomepagePresenter.go(indexView.getMiddlePanel());
+//		//adminHomepagePresenter.go(indexView.getMiddlePanel());
 //
 //		/* REGISTRATION CART*/
 //		CourseRegistrationCartPresenterImpl courseRegistrationCartPresenter = injector.getCourseRegistrationCartPresenter();
@@ -126,22 +126,22 @@ public class CourseLoadScheduler implements EntryPoint
 //		/* INSTRUCTOR HOM"E"PAGE	*/	 // TODO: Doesn't Work
 		InstructorHomepagePresenterImpl instructorHompagePresenter = injector.getInstructorHomepagePresenter();
 		instructorHompagePresenter.init();
-		instructorHompagePresenter.go(indexView.getMiddlePanel());
-//
-//		/*LOGIN*/
-//		LoginPresenterImpl loginPresenter = injector.getLoginPresenter();
-//		loginPresenter.init();
-//		loginPresenter.go(indexView.getMiddlePanel());
-//
-//		/* REPORT PROBLEM*/
+		//instructorHompagePresenter.go(indexView.getMiddlePanel());
+
+		/*LOGIN*/
+		LoginPresenterImpl loginPresenter = injector.getLoginPresenter();
+		loginPresenter.init();
+		loginPresenter.go(indexView.getMiddlePanel());
+
+		/* REPORT PROBLEM*/
 		ReportProblemPresenterImpl reportProblemPresenter = injector.getReportProblemPresenter();
 		reportProblemPresenter.init();
 		//reportProblemPresenter.go(indexView.getMiddlePanel());
-//
-//		/* SEARCH CLASSES*/ // TODO: Fix the table
-//		SearchClassesPresenterImpl searchClassesPresenterPresenter = injector.getSearchClassesPresenter();
-//		searchClassesPresenterPresenter.init();
-//		searchClassesPresenterPresenter.go(indexView.getMiddlePanel());
+
+		/* SEARCH CLASSES*/
+		SearchClassesPresenterImpl searchClassesPresenterPresenter = injector.getSearchClassesPresenter();
+		searchClassesPresenterPresenter.init();
+		//searchClassesPresenterPresenter.go(indexView.getMiddlePanel());
 //
 //		/* VIEW CURRENT COURSES*/
 //		ViewCurrentCoursesPresenterImpl viewCurrentCoursesPresenter = injector.getViewCurrentCoursesPresenter();

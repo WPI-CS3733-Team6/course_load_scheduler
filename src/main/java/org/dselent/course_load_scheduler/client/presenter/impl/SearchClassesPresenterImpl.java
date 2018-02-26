@@ -2,6 +2,7 @@ package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import org.dselent.course_load_scheduler.client.action.CourseSearchAction;
 import org.dselent.course_load_scheduler.client.event.CourseSearchEvent;
+import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.presenter.SearchClassesPresenter;
@@ -38,8 +39,8 @@ public class SearchClassesPresenterImpl extends BasePresenterImpl implements Sea
 	{
 		HandlerRegistration registration;
 		
-		registration = eventBus.addHandler(InvalidLoginEvent.TYPE, this);
-		eventBusRegistration.put(InvalidLoginEvent.TYPE, registration);
+		registration = eventBus.addHandler(GoToClassSearchEvent.TYPE, this);
+		eventBusRegistration.put(GoToClassSearchEvent.TYPE, registration);
 
 	}
 		
@@ -83,5 +84,9 @@ public class SearchClassesPresenterImpl extends BasePresenterImpl implements Sea
 			CourseSearchEvent cse = new CourseSearchEvent(csa, container);
 			eventBus.fireEvent(cse);
 		}
+	}
+	
+	public void onGoToClassSearchEvent(GoToClassSearchEvent evt) {
+		this.go(evt.getContainer());
 	}
 }

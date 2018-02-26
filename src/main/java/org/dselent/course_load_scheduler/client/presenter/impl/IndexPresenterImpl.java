@@ -68,6 +68,10 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 
 		registration = eventBus.addHandler(SendLoginEvent.TYPE, this);
 		eventBusRegistration.put(SendLoginEvent.TYPE, registration);
+		registration = eventBus.addHandler(GoToAdminHomeEvent.TYPE, this);
+		eventBusRegistration.put(GoToAdminHomeEvent.TYPE, registration);
+		registration = eventBus.addHandler(GoToInstructorHomeEvent.TYPE, this);
+		eventBusRegistration.put(GoToInstructorHomeEvent.TYPE, registration);
 	}
 
 	@Override
@@ -127,6 +131,15 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 				eventBus.fireEvent(ihe);
 			}
 		}
+	}
+	
+	
+	public void onGoToAdminHomeEvent(GoToAdminHomeEvent evt) {
+		this.go(evt.getContainer());
+	}
+	
+	public void onGoToInstructorHomeEvent(GoToInstructorHomeEvent evt) {
+		this.go(evt.getContainer());
 	}
 
 	@Override
