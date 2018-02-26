@@ -100,7 +100,7 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService
 		JSONObject json = accountInfoActionTranslator.translateToJson(action);
 		UpdateAccountCallback accountCallback = new UpdateAccountCallback(eventBus, evt.getContainer());
 
-		// TODO write network request here
+		//network request here
 		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.USER_INFO_UPDATE, accountCallback, json);
 		request.send();
 
