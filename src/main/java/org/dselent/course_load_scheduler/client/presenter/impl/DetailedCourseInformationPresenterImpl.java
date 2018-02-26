@@ -3,6 +3,7 @@ package org.dselent.course_load_scheduler.client.presenter.impl;
 import org.dselent.course_load_scheduler.client.action.GoToClassSearchAction;
 import org.dselent.course_load_scheduler.client.action.AddToCartAction;
 import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
+import org.dselent.course_load_scheduler.client.event.GoToDetailedCourseInformationEvent;
 //import org.dselent.course_load_scheduler.client.action.DetailedCourseInformationAction;
 //import org.dselent.course_load_scheduler.client.event.DetailedCourseInformationEvent;
 import org.dselent.course_load_scheduler.client.event.AddToCartEvent;
@@ -10,6 +11,7 @@ import org.dselent.course_load_scheduler.client.presenter.DetailedCourseInformat
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.DetailedCourseInformationView;
 
+import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.inject.Inject;
 
@@ -34,18 +36,15 @@ public class DetailedCourseInformationPresenterImpl extends BasePresenterImpl im
 		bind();
 	}
 
-	//--------------------Need this method?--------------
 	@Override
 	public void bind()
 	{
-		/*
 		HandlerRegistration registration;
 		
-		registration = eventBus.addHandler(InvalidLoginEvent.TYPE, this);
-		eventBusRegistration.put(InvalidLoginEvent.TYPE, registration);
-		*/
+		registration = eventBus.addHandler(GoToDetailedCourseInformationEvent.TYPE, this);
+		eventBusRegistration.put(GoToDetailedCourseInformationEvent.TYPE, registration);
 	}
-	//----------------------------------------
+
 	
 	@Override
 	public void go(HasWidgets container)

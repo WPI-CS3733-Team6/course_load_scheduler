@@ -80,7 +80,7 @@ public class CourseLoadScheduler implements EntryPoint
 		indexPresenter.go(root);
 
 		/* ACCOUNT INFO*/
-		AccountInfoPresenterImpl accountInfoPresenter = injector.getAccountInfoPresenter();
+		//AccountInfoPresenterImpl accountInfoPresenter = injector.getAccountInfoPresenter();
 		//accountInfoPresenter.init();
 		
 //		/* ADD COURSE*/
@@ -124,9 +124,9 @@ public class CourseLoadScheduler implements EntryPoint
 //		//facultyCourseMapPresenter.go(indexView.getMiddlePanel());
 //
 //		/* INSTRUCTOR HOM"E"PAGE	*/	 // TODO: Doesn't Work
-//		InstructorHomepagePresenterImpl instructorHompagePresenter = injector.getInstructorHomepagePresenter();
-//		instructorHompagePresenter.init();
-//		instructorHompagePresenter.go(indexView.getMiddlePanel());
+		InstructorHomepagePresenterImpl instructorHompagePresenter = injector.getInstructorHomepagePresenter();
+		instructorHompagePresenter.init();
+		instructorHompagePresenter.go(indexView.getMiddlePanel());
 //
 //		/*LOGIN*/
 //		LoginPresenterImpl loginPresenter = injector.getLoginPresenter();
@@ -134,9 +134,9 @@ public class CourseLoadScheduler implements EntryPoint
 //		loginPresenter.go(indexView.getMiddlePanel());
 //
 //		/* REPORT PROBLEM*/
-//		ReportProblemPresenterImpl reportProblemPresenter = injector.getReportProblemPresenter();
-//		reportProblemPresenter.init();
-//		//reportProblemPresenter.go(indexView.getMiddlePanel());
+		ReportProblemPresenterImpl reportProblemPresenter = injector.getReportProblemPresenter();
+		reportProblemPresenter.init();
+		//reportProblemPresenter.go(indexView.getMiddlePanel());
 //
 //		/* SEARCH CLASSES*/ // TODO: Fix the table
 //		SearchClassesPresenterImpl searchClassesPresenterPresenter = injector.getSearchClassesPresenter();

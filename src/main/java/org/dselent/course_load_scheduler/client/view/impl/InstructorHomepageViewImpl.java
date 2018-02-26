@@ -134,6 +134,11 @@ public class InstructorHomepageViewImpl extends BaseViewImpl<InstructorHomepageP
 	void onCourseCartButtonClicked(ClickEvent evt) {
 		presenter.courseCart();
 	}
+	
+	@UiHandler("facultyCourseMapButton")
+	void onfacultyCourseMapButtonClicked(ClickEvent evt) {
+		presenter.facultyCourseMap();
+	}
 	/*
 	@UiHandler("generateScheduleButton")
 	void onGenerateScheduleButtonClicked(ClickEvent evt) {

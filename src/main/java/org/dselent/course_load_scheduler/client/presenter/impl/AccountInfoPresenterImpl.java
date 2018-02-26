@@ -159,5 +159,5 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 		view.setUserName(evt.getAction().getModel().getUserName());
 		view.setEmail(evt.getAction().getModel().getEmail());
 		view.setRequirement(evt.getAction().getModel().getReqCourses());
-		}
+	}
 }

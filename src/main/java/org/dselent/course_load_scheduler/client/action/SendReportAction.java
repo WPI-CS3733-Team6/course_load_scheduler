@@ -7,7 +7,7 @@ public class SendReportAction extends Action {
 	private String type;
 	private String description;
 	
-	public SendReportAction(/*String name, String email,*/ String type, String description) {
+	public SendReportAction(String type, String description) {
 //		this.name = name;
 //		this.email = email;
 		this.type = type;
