@@ -14,8 +14,8 @@ public class ReportProblemActionTranslatorImpl implements ActionTranslator<SendR
 	public JSONObject translateToJson(SendReportAction action) {
 		JSONObject jsonObject = new JSONObject();
 		
-		JSONHelper.putStringValue(jsonObject, JSONHelper.convertKeyName(ReportProblemKeys.EMAIL), action.getEmail());
-		JSONHelper.putStringValue(jsonObject, JSONHelper.convertKeyName(ReportProblemKeys.NAME), action.getName());
+//		JSONHelper.putStringValue(jsonObject, JSONHelper.convertKeyName(ReportProblemKeys.EMAIL), action.getEmail());
+//		JSONHelper.putStringValue(jsonObject, JSONHelper.convertKeyName(ReportProblemKeys.NAME), action.getName());
 		JSONHelper.putStringValue(jsonObject, JSONHelper.convertKeyName(ReportProblemKeys.TYPE), action.getType());
 		JSONHelper.putStringValue(jsonObject, JSONHelper.convertKeyName(ReportProblemKeys.DESCRIPTION), action.getDescription());
 		
