@@ -129,7 +129,7 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService
 		JSONObject json = editUserActionTranslatorImpl.translateToJson(action);
 		EditUserCallback editUserCallback = new EditUserCallback(eventBus, evt.getContainer());
 
-		// TODO write network request here
+		//network request here
 		NetworkRequest request = new NetworkRequest(NetworkRequestStrings.EDIT_USER, editUserCallback, json);
 		request.send();
 	}
