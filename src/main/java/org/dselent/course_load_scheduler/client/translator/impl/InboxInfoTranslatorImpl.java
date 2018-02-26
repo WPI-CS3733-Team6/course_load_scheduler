@@ -22,8 +22,6 @@ public class InboxInfoTranslatorImpl implements ActionTranslator<SendInboxInfoAc
 	{
 		JSONObject jsonObject = new JSONObject();
 		
-		JSONHelper.putIntValue(jsonObject, JSONHelper.convertKeyName(SendInboxInfoKeys.ID), action.getUserId());
-		
 		return jsonObject;
 	}
 	

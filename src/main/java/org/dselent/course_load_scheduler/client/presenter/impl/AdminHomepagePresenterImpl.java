@@ -6,6 +6,7 @@ import org.dselent.course_load_scheduler.client.action.GoToAddEditUserAction;
 import org.dselent.course_load_scheduler.client.action.GoToCartAction;
 import org.dselent.course_load_scheduler.client.action.GoToClassSearchAction;
 import org.dselent.course_load_scheduler.client.action.GoToCurrentCoursesAction;
+import org.dselent.course_load_scheduler.client.action.SendInboxInfoAction;
 import org.dselent.course_load_scheduler.client.event.GoToAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.GoToAddCourseEvent;
 import org.dselent.course_load_scheduler.client.event.GoToAddEditUserEvent;
@@ -14,12 +15,14 @@ import org.dselent.course_load_scheduler.client.event.GoToCartEvent;
 import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveInboxInfoEvent;
+import org.dselent.course_load_scheduler.client.event.SendInboxInfoEvent;
 import org.dselent.course_load_scheduler.client.presenter.AdminHomepagePresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.view.AdminHomepageView;
 
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.ListBox;
 import com.google.inject.Inject;
 
 public class AdminHomepagePresenterImpl extends BasePresenterImpl implements AdminHomepagePresenter{
@@ -34,6 +37,10 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 		this.view = view;
 		this.parentPresenter = parentPresenter;
 		view.setPresenter(this);
+		HasWidgets container = parentPresenter.getView().getMiddlePanel();
+		SendInboxInfoAction siia = new SendInboxInfoAction();
+		SendInboxInfoEvent siie = new SendInboxInfoEvent(siia, container);
+		eventBus.fireEvent(siie);
 	}
 	
 	@Override
@@ -48,6 +55,9 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 		
 		registration = eventBus.addHandler(GoToAdminHomeEvent.TYPE, this);
 		eventBusRegistration.put(GoToAdminHomeEvent.TYPE, registration);
+		
+		registration = eventBus.addHandler(ReceiveInboxInfoEvent.TYPE, this);
+		eventBusRegistration.put(ReceiveInboxInfoEvent.TYPE, registration);
 	}
 		
 	@Override
@@ -206,6 +216,9 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 	}
 	@Override
 	public void onReceiveInboxInfo(ReceiveInboxInfoEvent evt) {
-		//evt.getAction().getInbox()
+		ListBox listBox = this.view.getInboxList();
+		for (int x = 0; x<evt.getAction().getInbox().getSubjectLine().size(); x++) {
+			listBox.addItem(evt.getAction().getInbox().getSubjectLine().get(x));
+		}
 	}
 }

@@ -20,7 +20,7 @@ public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> 
 	private static AdminHomepageViewImplUiBinder uiBinder = GWT.create(AdminHomepageViewImplUiBinder.class);
 	@UiField HTMLPanel rootPanel;
 	@UiField ListBox departmentList;
-	@UiField ListBox coursesList;
+	@UiField ListBox inboxList;
 	@UiField Button addUserButton;
 	@UiField Button editUserButton;
 	@UiField Button addCourseButton;
@@ -61,8 +61,8 @@ public class AdminHomepageViewImpl extends BaseViewImpl<AdminHomepagePresenter> 
 	public ListBox departmentList() {
 		return departmentList;
 	}
-	public ListBox coursesList() {
-		return coursesList;
+	public ListBox getInboxList() {
+		return inboxList;
 	}
 	public ListBox registeredCoursesList() {
 		return registeredCoursesList;
