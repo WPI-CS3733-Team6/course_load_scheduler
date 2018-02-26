@@ -15,9 +15,10 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextArea;
+import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
-public class ReportProblemViewImpl extends BaseViewImpl<ReportProblemPresenter> implements ReportProblemView {
+public class ReportProblemViewImplBackUp extends BaseViewImpl<ReportProblemPresenter> implements ReportProblemView {
 
 	private static ReportProblemViewImplUiBinder uiBinder = GWT.create(ReportProblemViewImplUiBinder.class);
 	@UiField HTMLPanel rootPanel;
@@ -27,10 +28,10 @@ public class ReportProblemViewImpl extends BaseViewImpl<ReportProblemPresenter> 
 	@UiField TextArea descriptionArea;
 	@UiField Button submitButton;
 
-	interface ReportProblemViewImplUiBinder extends UiBinder<Widget, ReportProblemViewImpl> {
+	interface ReportProblemViewImplUiBinder extends UiBinder<Widget, ReportProblemViewImplBackUp> {
 	}
 
-	public ReportProblemViewImpl() {
+	public ReportProblemViewImplBackUp() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 
@@ -41,7 +42,23 @@ public class ReportProblemViewImpl extends BaseViewImpl<ReportProblemPresenter> 
 	public void setTypeList(ListBox typeList) {
 		this.typeList = typeList;
 	}
+/*
+	public TextBox getNameBox() {
+		return nameBox;
+	}
 
+	public void setNameBox(TextBox nameBox) {
+		this.nameBox = nameBox;
+	}
+
+	public TextBox getEmailBox() {
+		return emailBox;
+	}
+
+	public void setEmailBox(TextBox emailBox) {
+		this.emailBox = emailBox;
+	}
+*/
 	public TextArea getDescriptionArea() {
 		return descriptionArea;
 	}
