@@ -10,7 +10,7 @@ import org.dselent.course_load_scheduler.client.errorstring.InvalidEmptyStrings;
 import org.dselent.course_load_scheduler.client.event.AddSectionEvent;
 import org.dselent.course_load_scheduler.client.event.DeleteSectionEvent;
 import org.dselent.course_load_scheduler.client.event.GoToEditInstanceEvent;
-import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
+import org.dselent.course_load_scheduler.client.event.GoToEditSectionEvent;
 import org.dselent.course_load_scheduler.client.exceptions.EmptyParameterException;
 import org.dselent.course_load_scheduler.client.presenter.AddSectionPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
@@ -50,8 +50,8 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 	{
 		HandlerRegistration registration;
 
-		registration = eventBus.addHandler(InvalidLoginEvent.TYPE, this);
-		eventBusRegistration.put(InvalidLoginEvent.TYPE, registration);
+		registration = eventBus.addHandler(GoToEditSectionEvent.TYPE, this);
+		eventBusRegistration.put(GoToEditSectionEvent.TYPE, registration);
 	}
 
 	@Override
@@ -215,12 +215,10 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 		}
 	}
 	
-	
+	@Override
 	//Bascially the Back Button
 	public void goToInstanceEdit() {
 
-		//How to implement this method???
-		//server side or client side 
 		if(!backClickInProgress) {
 			saveClickInProgress = false;
 			view.getSaveButton().setEnabled(false);
@@ -232,5 +230,10 @@ public class AddSectionPresenterImpl extends BasePresenterImpl implements AddSec
 			GoToEditInstanceEvent eie = new GoToEditInstanceEvent(eia, container);
 			eventBus.fireEvent(eie);
 		}
+	}
+	
+	//
+	public void onGoToAddSection(GoToEditSectionEvent evt) {
+		this.go(evt.getContainer());
 	}
 }
