@@ -2,10 +2,9 @@ package org.dselent.course_load_scheduler.client.action;
 
 public class SendUpdateAccountInfoAction extends Action {
 	
-	// TODO need to add confirmed new password, or get rid of it server side
-	
 	private String oldPassword;
 	private String newPassword;
+	private String repeatPassword;
 	private String newEmail;
 	private Integer newPhoneNum;
 	
@@ -13,6 +12,7 @@ public class SendUpdateAccountInfoAction extends Action {
 		this.oldPassword = oldPassword;
 		this.newEmail = newEmail;
 		this.newPassword = newPassword;
+		this.repeatPassword = newPassword;
 		this.newPhoneNum = newPhoneNum;
 	}
 
@@ -32,9 +32,16 @@ public class SendUpdateAccountInfoAction extends Action {
 		return oldPassword;
 	}
 
+	public String getRepeatPassword() {
+		return repeatPassword;
+	}
+
 	@Override
 	public String toString() {
-		return "UpdateAccountAction [oldPassword=" + oldPassword + ", newPassword=" + newPassword + ", newEmail="
-				+ newEmail + ", newPhoneNum=" + newPhoneNum + "]";
+		return "SendUpdateAccountInfoAction [oldPassword=" + oldPassword + ", newPassword=" + newPassword
+				+ ", repeatPassword=" + repeatPassword + ", newEmail=" + newEmail + ", newPhoneNum=" + newPhoneNum
+				+ "]";
 	}
+	
+	
 }

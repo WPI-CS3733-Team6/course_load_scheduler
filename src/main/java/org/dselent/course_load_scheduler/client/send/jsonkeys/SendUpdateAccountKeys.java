@@ -4,5 +4,6 @@ public enum SendUpdateAccountKeys {
 	OLD_PASSWORD,
 	NEW_PASSWORD,
 	NEW_EMAIL,
-	NEW_PHONE_NUM;
+	NEW_PHONE_NUM,
+	REPEAT_PASSWORD;
 }

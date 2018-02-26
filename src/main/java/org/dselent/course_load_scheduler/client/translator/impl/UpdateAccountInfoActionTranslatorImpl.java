@@ -24,6 +24,7 @@ public class UpdateAccountInfoActionTranslatorImpl
 		//helpers, to put strings in necessary fields
 		JSONHelper.putStringValue(jsonObject, JSONHelper.convertKeyName(SendUpdateAccountKeys.OLD_PASSWORD), action.getOldPassword());
 		JSONHelper.putStringValue(jsonObject, JSONHelper.convertKeyName(SendUpdateAccountKeys.NEW_PASSWORD), action.getNewPassword());
+		JSONHelper.putStringValue(jsonObject, JSONHelper.convertKeyName(SendUpdateAccountKeys.REPEAT_PASSWORD), action.getRepeatPassword());
 		JSONHelper.putStringValue(jsonObject, JSONHelper.convertKeyName(SendUpdateAccountKeys.NEW_EMAIL), action.getNewEmail());
 		JSONHelper.putIntValue(jsonObject, JSONHelper.convertKeyName(SendUpdateAccountKeys.NEW_PHONE_NUM), action.getNewPhoneNum());
 		
