@@ -34,6 +34,10 @@ public class InstructorHomepageViewImpl extends BaseViewImpl<InstructorHomepageP
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 
+	public static InstructorHomepageUiBinder getUiBinder() {
+		return uiBinder;
+	}
+	
 	@Override
 	public void setPresenter(InstructorHomepagePresenter presenter) {
 		this.presenter = presenter;
@@ -92,7 +96,10 @@ public class InstructorHomepageViewImpl extends BaseViewImpl<InstructorHomepageP
 	public Button getAccountInfoButton() {
 		return accountInfoButton;
 	}
-
+	
+	public void setAccountInfoButton(Button accountInfoButton) {
+		this.accountInfoButton = accountInfoButton;
+	}
 	/**
 	 * @return the courseCartButton
 	 */

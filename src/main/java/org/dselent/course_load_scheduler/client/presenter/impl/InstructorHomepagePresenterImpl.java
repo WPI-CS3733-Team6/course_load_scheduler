@@ -29,7 +29,7 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 	private IndexPresenter parentPresenter;
 	private InstructorHomepageView view;
 	private boolean clickInProgress;
-	private HasWidgets container = parentPresenter.getView().getMiddlePanel();
+	private HasWidgets container;
 
 	/**
 	 * 
@@ -39,7 +39,9 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 		this.view = view;
 		this.parentPresenter = parentPresenter;
 		view.setPresenter(this);
+		container = parentPresenter.getView().getMiddlePanel();
 		clickInProgress = false;
+		
 	}
 
 	@Override
@@ -61,7 +63,8 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 	 * @see org.dselent.course_load_scheduler.client.presenter.BasePresenter#go(com.google.gwt.user.client.ui.HasWidgets)
 	 */
 	@Override
-	public void go(HasWidgets container) {
+	public void go(HasWidgets container)
+	{
 		container.clear();
 		container.add(view.getWidgetContainer());
 	}

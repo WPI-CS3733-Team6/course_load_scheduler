@@ -36,25 +36,25 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 	public IndexPresenterImpl(IndexView view, GlobalData globalData)
 	{
 		this.view = view;
-		//this.parentPresenter = parentPresenter;
+		this.parentPresenter = parentPresenter;
 		view.setPresenter(this);
 		viewCurrentClassesClickInProgress = false;
 		homeClickInProgress = false;
 		logoutClickInProgress = false;
 		reportAProblemClickInProgress = false;
 		this.globalData = globalData;	//TODO make sure I got this right
-		if (globalData.getUserInfo().getUserRole() == 2) {
-			HasWidgets container = parentPresenter.getView().getMiddlePanel();
-			GoToInstructorHomeAction giha = new GoToInstructorHomeAction();
-			GoToInstructorHomeEvent gihe = new GoToInstructorHomeEvent(giha,container);
-			eventBus.fireEvent(gihe);
-		}
-		else {
-			HasWidgets container = parentPresenter.getView().getMiddlePanel();
-			GoToAdminHomeAction gaha = new GoToAdminHomeAction();
-			GoToAdminHomeEvent gahe = new GoToAdminHomeEvent(gaha,container);
-			eventBus.fireEvent(gahe);
-		}
+//		if (globalData.getUserInfo().getUserRole() == 2) {
+//			HasWidgets container = parentPresenter.getView().getMiddlePanel();
+//			GoToInstructorHomeAction giha = new GoToInstructorHomeAction();
+//			GoToInstructorHomeEvent gihe = new GoToInstructorHomeEvent(giha,container);
+//			eventBus.fireEvent(gihe);
+//		}
+//		else {
+//			HasWidgets container = parentPresenter.getView().getMiddlePanel();
+//			GoToAdminHomeAction gaha = new GoToAdminHomeAction();
+//			GoToAdminHomeEvent gahe = new GoToAdminHomeEvent(gaha,container);
+//			eventBus.fireEvent(gahe);
+//		}
 	}
 
 	@Override
