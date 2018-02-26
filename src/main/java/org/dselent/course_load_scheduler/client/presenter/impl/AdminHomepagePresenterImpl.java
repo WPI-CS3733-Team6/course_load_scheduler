@@ -6,6 +6,7 @@ import org.dselent.course_load_scheduler.client.action.GoToAddEditUserAction;
 import org.dselent.course_load_scheduler.client.action.GoToCartAction;
 import org.dselent.course_load_scheduler.client.action.GoToClassSearchAction;
 import org.dselent.course_load_scheduler.client.action.GoToCurrentCoursesAction;
+import org.dselent.course_load_scheduler.client.action.GoToEditCourseAction;
 import org.dselent.course_load_scheduler.client.action.SendInboxInfoAction;
 import org.dselent.course_load_scheduler.client.event.GoToAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.GoToAddCourseEvent;
@@ -14,6 +15,7 @@ import org.dselent.course_load_scheduler.client.event.GoToAdminHomeEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCartEvent;
 import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
+import org.dselent.course_load_scheduler.client.event.GoToEditCourseEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveInboxInfoEvent;
 import org.dselent.course_load_scheduler.client.event.SendInboxInfoEvent;
 import org.dselent.course_load_scheduler.client.presenter.AdminHomepagePresenter;
@@ -161,12 +163,11 @@ public class AdminHomepagePresenterImpl extends BasePresenterImpl implements Adm
 			view.getModifyCourse().setEnabled(false);
 			parentPresenter.showLoadScreen();
 			
-			//TODO how to get course num
-			/*
-			GoToEditCourseAction gaeca = new GoToEditCourseAction( XXXX );
+			
+			GoToEditCourseAction gaeca = new GoToEditCourseAction(parentPresenter.getGlobalData().getCourseNum());
 			GoToEditCourseEvent gaece = new GoToEditCourseEvent(gaeca);
 			eventBus.fireEvent(gaece);
-			*/
+			
 		}
 	}
 	
