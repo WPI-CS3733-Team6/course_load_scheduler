@@ -4,6 +4,7 @@ import org.dselent.course_load_scheduler.client.action.SendCourseCartRemoveCours
 import org.dselent.course_load_scheduler.client.action.SendSubmitRegistrationCartAction;
 import org.dselent.course_load_scheduler.client.event.SendCourseCartRemoveCourseEvent;
 import org.dselent.course_load_scheduler.client.event.SendSubmitRegistrationCartEvent;
+import org.dselent.course_load_scheduler.client.event.GoToCartEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidLoginEvent;
 import org.dselent.course_load_scheduler.client.presenter.CourseRegistrationCartPresenter;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
@@ -38,8 +39,8 @@ public class CourseRegistrationCartPresenterImpl extends BasePresenterImpl imple
 	{
 		HandlerRegistration registration;
 		
-		registration = eventBus.addHandler(InvalidLoginEvent.TYPE, this);
-		eventBusRegistration.put(InvalidLoginEvent.TYPE, registration);
+		registration = eventBus.addHandler(GoToCartEvent.TYPE, this);
+		eventBusRegistration.put(GoToCartEvent.TYPE, registration);
 	}
 		
 	@Override
@@ -91,13 +92,17 @@ public class CourseRegistrationCartPresenterImpl extends BasePresenterImpl imple
 			
 			view.getRemoveCourse().setEnabled(false);
 			
-			//remove course.  should I take any arguments?
+			//remove course.  should I take any arguments have to text it once the server is working
 			HasWidgets container = parentPresenter.getView().getMiddlePanel();
 			SendCourseCartRemoveCourseAction cra = new SendCourseCartRemoveCourseAction();
 			SendCourseCartRemoveCourseEvent cre = new SendCourseCartRemoveCourseEvent(cra, container);
 			eventBus.fireEvent(cre);
 			
 		}
+	}
+	
+	public void onGoToCartEvent(GoToCartEvent evt) {
+		this.go(evt.getContainer());
 	}
 	
 }

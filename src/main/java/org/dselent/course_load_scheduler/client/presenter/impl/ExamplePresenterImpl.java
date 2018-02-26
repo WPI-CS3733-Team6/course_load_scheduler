@@ -34,9 +34,8 @@ public class ExamplePresenterImpl extends BasePresenterImpl implements ExamplePr
 	public void bind()
 	{
 		HandlerRegistration registration;
-		//TODO: fix this strange bug with addHandler.
-		//registration = eventBus.addHandler(ReceiveLoginEvent.TYPE, this);
-		//eventBusRegistration.put(ReceiveLoginEvent.TYPE, registration);
+		registration = eventBus.addHandler(ReceiveLoginEvent.TYPE, this);
+		eventBusRegistration.put(ReceiveLoginEvent.TYPE, registration);
 	}
 		
 	@Override

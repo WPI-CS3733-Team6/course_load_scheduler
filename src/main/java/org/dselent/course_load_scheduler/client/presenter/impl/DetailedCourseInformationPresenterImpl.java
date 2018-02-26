@@ -99,4 +99,8 @@ public class DetailedCourseInformationPresenterImpl extends BasePresenterImpl im
 		}
 	}
 	
+	public void onGoToDetailedCourseInformationEvent(GoToDetailedCourseInformationEvent evt) {
+		this.go(evt.getContainer());
+	}
+	
 }
