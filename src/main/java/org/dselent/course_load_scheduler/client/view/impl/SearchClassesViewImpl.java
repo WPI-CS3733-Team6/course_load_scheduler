@@ -39,39 +39,32 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 	public SearchClassesViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 		
-		term.addItem("A");
-		term.addItem("B");
-		term.addItem("C");
-		term.addItem("D");
-		term.addItem("E1");
-		term.addItem("E2");
+//		term.addItem("A");
+//		term.addItem("B");
+//		term.addItem("C");
+//		term.addItem("D");
+//		term.addItem("E1");
+//		term.addItem("E2");
+//		
+//		subject.addItem("Biology");
+//		subject.addItem("Computer Science");
+//		subject.addItem("Robotics");
+//		subject.addItem("Electrical & Computer Engineering");
+//		subject.addItem("Chemistry");
+//		subject.addItem("Physics");
+//		subject.addItem("Physical Education");
+//		
+//		level.addItem("Undergraduate");
+//		level.addItem("Graduate");
+	
+		String [] a = {"Select the specified term(s)","Terms A & B", "Terms C & D", "Terms E1 & E2", "Term A", "Term B", "Term C", "Term D", "Term E1", "Term E2"};
+		String [] b = {"Select the subject type","Biology", "Computer Science", "Electrical Engineering", "Physics", "Physical Education"};
+		String [] c = {"Select the level type","Undergraduate", "Graduate"};
+		for(String i:a){term.addItem(i);}
+		for(String i:b){subject.addItem(i);}
+		for(String i:c){level.addItem(i);}
 		
-		subject.addItem("Biology");
-		subject.addItem("Computer Science");
-		subject.addItem("Robotics");
-		subject.addItem("Electrical & Computer Engineering");
-		subject.addItem("Chemistry");
-		subject.addItem("Physics");
-		subject.addItem("Physical Education");
-		
-		level.addItem("Undergraduate");
-		level.addItem("Graduate");
-
-/*		This breaks the code and makes it not show up in the Google Chrome window		
-		String [] terms = {"Terms A & B", "Terms C & D", "Terms E1 & E2", "Term A", "Term B", "Term C", "Term D", "Term E1", "Term E2"};
-		String [] subjects = {"Biology", "Computer Science", "Electrical Engineering", "Physics", "Physical Education"};
-		String [] levels = {"Undergraduate", "Graduate"};
-		for (int i = 0; i < terms.length; i++) {
-			semester.setItemText(i, terms[i]);
-		}
-		for (int i = 0; i < subjects.length; i++) {
-			subject.setItemText(i, subjects[i]);
-		}
-		for (int i = 0; i < levels.length; i++) {
-			level.setItemText(i, levels[i]);
-		}
-		
-		RootPanel.get().add(semester);
+		RootPanel.get().add(term);
 		RootPanel.get().add(subject);
 		RootPanel.get().add(level);
 		
@@ -81,7 +74,7 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 				gridCourses.setText(i, j, text);
 				
 			}
-		}*/
+		}
 	} 
 
 	@Override

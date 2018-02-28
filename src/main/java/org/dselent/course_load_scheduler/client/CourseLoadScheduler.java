@@ -1,6 +1,7 @@
 package org.dselent.course_load_scheduler.client;
 
 import org.dselent.course_load_scheduler.client.gin.Injector;
+import org.dselent.course_load_scheduler.client.model.GlobalData;
 import org.dselent.course_load_scheduler.client.presenter.AccountInfoPresenter;
 import org.dselent.course_load_scheduler.client.presenter.impl.AccountInfoPresenterImpl;
 import org.dselent.course_load_scheduler.client.presenter.impl.AddCoursePresenterImpl;
@@ -72,6 +73,7 @@ public class CourseLoadScheduler implements EntryPoint
 		homeServiceImpl.init();
 		UserServiceImpl userServiceImpl = injector.getUserServiceImpl();
 		userServiceImpl.init();
+		GlobalData data = injector.getGlobalModel();
 
 		//Setup Index panel
 		IndexPresenterImpl indexPresenter = injector.getIndexPresenter(); // on-demand injection
