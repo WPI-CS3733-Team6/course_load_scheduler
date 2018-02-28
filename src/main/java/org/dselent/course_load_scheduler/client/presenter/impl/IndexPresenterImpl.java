@@ -41,19 +41,21 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 		homeClickInProgress = false;
 		logoutClickInProgress = false;
 		reportAProblemClickInProgress = false;
-		this.globalData = globalData;	//TODO make sure I got this right
-//		if (globalData.getUserInfo().getUserRole() == 2) {
-//			HasWidgets container = parentPresenter.getView().getMiddlePanel();
-//			GoToInstructorHomeAction giha = new GoToInstructorHomeAction();
-//			GoToInstructorHomeEvent gihe = new GoToInstructorHomeEvent(giha,container);
-//			eventBus.fireEvent(gihe);
-//		}
-//		else {
-//			HasWidgets container = parentPresenter.getView().getMiddlePanel();
-//			GoToAdminHomeAction gaha = new GoToAdminHomeAction();
-//			GoToAdminHomeEvent gahe = new GoToAdminHomeEvent(gaha,container);
-//			eventBus.fireEvent(gahe);
-//		}
+		this.globalData = globalData;
+		//JOSUE: This was already commented out 
+		//TODO make sure I got this right
+		//		if (globalData.getUserInfo().getUserRole() == 2) {
+		//			HasWidgets container = parentPresenter.getView().getMiddlePanel();
+		//			GoToInstructorHomeAction giha = new GoToInstructorHomeAction();
+		//			GoToInstructorHomeEvent gihe = new GoToInstructorHomeEvent(giha,container);
+		//			eventBus.fireEvent(gihe);
+		//		}
+		//		else {
+		//			HasWidgets container = parentPresenter.getView().getMiddlePanel();
+		//			GoToAdminHomeAction gaha = new GoToAdminHomeAction();
+		//			GoToAdminHomeEvent gahe = new GoToAdminHomeEvent(gaha,container);
+		//			eventBus.fireEvent(gahe);
+		//		}
 	}
 
 	@Override
@@ -71,10 +73,14 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 		eventBusRegistration.put(SendLoginEvent.TYPE, registration);
 		registration = eventBus.addHandler(GoToAdminHomeEvent.TYPE, this);
 		eventBusRegistration.put(GoToAdminHomeEvent.TYPE, registration);
-		registration = eventBus.addHandler(GoToInstructorHomeEvent.TYPE, this);
-		eventBusRegistration.put(GoToInstructorHomeEvent.TYPE, registration);
-		registration = eventBus.addHandler(GoToLogoutEvent.TYPE, this);
-		eventBusRegistration.put(GoToLogoutEvent.TYPE, registration);
+
+		//JOSUE: this makes the home button not work because the action and event are 
+		//overwritten in the home() method down below and something wierd happens
+		// You can either delete it or see for yourself
+		//registration = eventBus.addHandler(GoToInstructorHomeEvent.TYPE, this);
+		//eventBusRegistration.put(GoToInstructorHomeEvent.TYPE, registration);
+		//registration = eventBus.addHandler(GoToLogoutEvent.TYPE, this);
+		//eventBusRegistration.put(GoToLogoutEvent.TYPE, registration);
 	}
 
 	@Override
@@ -121,20 +127,23 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 			//parentPresenter.showLoadScreen();
 
 			HasWidgets container = view.getMiddlePanel();
-			//boolean isAdmin = this.getGlobalData().getIsAdmin();
 
-			boolean isAdmin = false;
-			
-			if(isAdmin) {
-				GoToAdminHomeAction aha = new GoToAdminHomeAction();
-				GoToAdminHomeEvent ahe = new GoToAdminHomeEvent(aha, container);
-				eventBus.fireEvent(ahe);
-			}
-			else {
-				GoToInstructorHomeAction iha = new GoToInstructorHomeAction();
-				GoToInstructorHomeEvent ihe = new GoToInstructorHomeEvent(iha, container);
-				eventBus.fireEvent(ihe);
-			}
+			GoToInstructorHomeAction ihaee = new GoToInstructorHomeAction();
+			GoToInstructorHomeEvent iheee = new GoToInstructorHomeEvent(ihaee, container);
+			eventBus.fireEvent(iheee);
+
+
+			// JOSUE: commented to make it work
+			//			if(isAdmin) {
+			//				GoToAdminHomeAction aha = new GoToAdminHomeAction();
+			//				GoToAdminHomeEvent ahe = new GoToAdminHomeEvent(aha, container);
+			//				eventBus.fireEvent(ahe);
+			//			}
+			//			else {
+			//				GoToInstructorHomeAction iha = new GoToInstructorHomeAction();
+			//				GoToInstructorHomeEvent ihe = new GoToInstructorHomeEvent(iha, container);
+			//				eventBus.fireEvent(ihe);
+			//			}
 		}
 	}
 
@@ -177,8 +186,8 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 
 		if(!viewCurrentClassesClickInProgress) 
 		{
-			viewCurrentClassesClickInProgress = true;
-			view.getViewCurrentClassesButton().setEnabled(false);
+			viewCurrentClassesClickInProgress = false;
+			view.getViewCurrentClassesButton().setEnabled(true);
 
 			HasWidgets container = view.getMiddlePanel();
 			GoToCurrentCoursesAction cca = new GoToCurrentCoursesAction();
@@ -188,17 +197,17 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 		}
 
 	}
-	
+
 	@Override
 	public void onGoToLogout(GoToLogoutEvent evt) {
 		this.go(evt.getContainer());
 	}
-	
+
 	@Override
 	public void onGoToAdminHome(GoToAdminHomeEvent evt) {
 		this.go(evt.getContainer());
 	}
-	
+
 	@Override
 	public void onGoToInstructorHome(GoToInstructorHomeEvent evt) {
 		this.go(evt.getContainer());

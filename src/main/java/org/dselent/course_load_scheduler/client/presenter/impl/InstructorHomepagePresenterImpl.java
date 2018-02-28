@@ -101,8 +101,8 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 	public void currentClasses() {
 		if(!clickInProgress) {
 			
-			clickInProgress = true;
-			view.getCurrentClassButton().setEnabled(false);
+			clickInProgress = false;
+			view.getCurrentClassButton().setEnabled(true);
 			//parentPresenter.showLoadScreen();
 			
 			GoToCurrentCoursesAction gcca = new GoToCurrentCoursesAction();
@@ -116,8 +116,8 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 	public void classSearch() {
 		if(!clickInProgress) {
 			
-			clickInProgress = true;
-			view.getClassSearchButton().setEnabled(false);
+			clickInProgress = false;
+			view.getClassSearchButton().setEnabled(true);
 			//parentPresenter.showLoadScreen();
 			
 			HasWidgets container = parentPresenter.getView().getViewRootPanel();
@@ -132,8 +132,8 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 	public void accountInfo() {
 		if(!clickInProgress) {
 			
-			clickInProgress = true;
-			view.getAccountInfoButton().setEnabled(false);
+			clickInProgress = false;
+			view.getAccountInfoButton().setEnabled(true);
 			//parentPresenter.showLoadScreen();
 			
 			HasWidgets container = parentPresenter.getView().getViewRootPanel();
@@ -148,8 +148,8 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 	public void courseCart() {
 		if(!clickInProgress) {
 			
-			clickInProgress = true;
-			view.getCourseCartButton().setEnabled(false);
+			clickInProgress = false;
+			view.getCourseCartButton().setEnabled(true);
 			//parentPresenter.showLoadScreen();
 			
 			HasWidgets container = parentPresenter.getView().getViewRootPanel();
@@ -164,8 +164,8 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 	public void facultyCourseMap() {
 		if(!clickInProgress) {
 			
-			clickInProgress = true;
-			view.getGenerateScheduleButton().setEnabled(false);
+			clickInProgress = false;
+			view.getGenerateScheduleButton().setEnabled(true);
 			//parentPresenter.showLoadScreen();
 			
 			HasWidgets container = parentPresenter.getView().getViewRootPanel();
