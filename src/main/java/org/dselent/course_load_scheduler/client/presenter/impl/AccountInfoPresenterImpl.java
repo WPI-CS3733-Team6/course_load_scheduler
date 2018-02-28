@@ -31,11 +31,11 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 		this.parentPresenter = parentPresenter;
 		view.setPresenter(this);
 		accountInfoClickInProgress = false;
-		Integer userId = parentPresenter.getGlobalData().getUserInfo().getId();
-		HasWidgets container = parentPresenter.getView().getMiddlePanel();
-		SendAccountInfoAction saia = new SendAccountInfoAction(userId);
-		SendAccountInfoEvent saie = new SendAccountInfoEvent(saia, container);
-		eventBus.fireEvent(saie);
+//		Integer userId = parentPresenter.getGlobalData().getUserInfo().getId();
+//		HasWidgets container = parentPresenter.getView().getMiddlePanel();
+//		SendAccountInfoAction saia = new SendAccountInfoAction(userId);
+//		SendAccountInfoEvent saie = new SendAccountInfoEvent(saia, container);
+//		eventBus.fireEvent(saie);
 	}
 	
 	@Override

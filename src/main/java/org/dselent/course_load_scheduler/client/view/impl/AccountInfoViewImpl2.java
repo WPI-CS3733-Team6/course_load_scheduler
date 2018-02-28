@@ -17,49 +17,14 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
-public class AccountInfoViewImplAlt extends BaseViewImpl<AccountInfoPresenter> implements AccountInfoView{
+public class AccountInfoViewImpl2 extends BaseViewImpl<AccountInfoPresenter> implements AccountInfoView{
 
 	private static AccountInfoUiBinder uiBinder = GWT.create(AccountInfoUiBinder.class);
 	
 	@UiField HTMLPanel rootPanel;
-	public PasswordTextBox getChangePassword() {
-		return changePassword;
-	}
-
-	public TextBox getCurrentPassword() {
-		return currentPassword;
-	}
-
-	public TextBox getFirstName() {
-		return firstName;
-	}
-
-	public TextBox getLastName() {
-		return lastName;
-	}
-
-	public TextBox getCourseReq() {
-		return courseReq;
-	}
-
-	public TextBox getPhoneNum() {
-		return phoneNum;
-	}
-
-	public TextBox getEmai() {
-		return emai;
-	}
-
 	@UiField TextBox AccountInfoPgTitle;
 	@UiField LayoutPanel AccountInfoBaseLayoutPanel;
 	@UiField Button submitChangesButton;
-	@UiField PasswordTextBox changePassword;
-	@UiField TextBox currentPassword;
-	@UiField TextBox firstName;
-	@UiField TextBox lastName;
-	@UiField TextBox courseReq;
-	@UiField TextBox phoneNum;
-	@UiField TextBox emai;
 	@UiField FlexTable AccountInfoFlexTable = new FlexTable();
 	@UiField HTMLPanel FlexPanel;
 	
@@ -114,10 +79,10 @@ public class AccountInfoViewImplAlt extends BaseViewImpl<AccountInfoPresenter> i
 		return phoneNumber;
 	}
 	
-	interface AccountInfoUiBinder extends UiBinder<Widget, AccountInfoViewImplAlt> {
+	interface AccountInfoUiBinder extends UiBinder<Widget, AccountInfoViewImpl> {
 	}
 	
-	public AccountInfoViewImplAlt() {
+	public AccountInfoViewImpl2() {
 		initWidget(uiBinder.createAndBindUi(this));
 	
 	    currPassword = new PasswordTextBox();
@@ -126,26 +91,26 @@ public class AccountInfoViewImplAlt extends BaseViewImpl<AccountInfoPresenter> i
 	    preferedEmail = new TextBox();
 	    phoneNumber = new IntegerBox();
 
-//	    // Create the text fields (This table is a 10x10)
-//	    AccountInfoFlexTable.setText(0, 0, "Your username is:");
-//	    AccountInfoFlexTable.setText(0, 1, userName);
-//	    AccountInfoFlexTable.setText(1, 0, "Your WPI email is:");
-//	    AccountInfoFlexTable.setText(1, 1, email);
-//	    AccountInfoFlexTable.setText(2, 0, "Your minimum teaching requirement (course hours) is:");
-//	    AccountInfoFlexTable.setText(6, 0, "Change password:");
-//	    AccountInfoFlexTable.setText(8, 0, "Prefered email (optional):");
-//	    AccountInfoFlexTable.setText(10, 0, "Phone number (optional):");
-//	    
-//	    // Create the widgets
-//	    AccountInfoFlexTable.setWidget(6, 2, currPassword);
-//	    AccountInfoFlexTable.setWidget(6, 3, newPassword);
-//	    AccountInfoFlexTable.setWidget(6, 4, repeatNewPassword);
-//	    
-//	    AccountInfoFlexTable.setWidget(8, 2, preferedEmail);
-//	    AccountInfoFlexTable.setWidget(10, 2, phoneNumber);
-//
-//	    //RootPanel.get().add(AccountInfoFlexTable);
-//	    //AccountInfoBaseLayoutPanel.add(AccountInfoFlexTable);
+	    // Create the text fields (This table is a 10x10)
+	    AccountInfoFlexTable.setText(0, 0, "Your username is:");
+	    AccountInfoFlexTable.setText(0, 1, userName);
+	    AccountInfoFlexTable.setText(1, 0, "Your WPI email is:");
+	    AccountInfoFlexTable.setText(1, 1, email);
+	    AccountInfoFlexTable.setText(2, 0, "Your minimum teaching requirement (course hours) is:");
+	    AccountInfoFlexTable.setText(6, 0, "Change password:");
+	    AccountInfoFlexTable.setText(8, 0, "Prefered email (optional):");
+	    AccountInfoFlexTable.setText(10, 0, "Phone number (optional):");
+	    
+	    // Create the widgets
+	    AccountInfoFlexTable.setWidget(6, 2, currPassword);
+	    AccountInfoFlexTable.setWidget(6, 3, newPassword);
+	    AccountInfoFlexTable.setWidget(6, 4, repeatNewPassword);
+	    
+	    AccountInfoFlexTable.setWidget(8, 2, preferedEmail);
+	    AccountInfoFlexTable.setWidget(10, 2, phoneNumber);
+
+	    //RootPanel.get().add(AccountInfoFlexTable);
+	    //AccountInfoBaseLayoutPanel.add(AccountInfoFlexTable);
 	}
 
 	@Override
@@ -185,7 +150,7 @@ public class AccountInfoViewImplAlt extends BaseViewImpl<AccountInfoPresenter> i
 	}
 
 	public static void setUiBinder(AccountInfoUiBinder uiBinder) {
-		AccountInfoViewImplAlt.uiBinder = uiBinder;
+		AccountInfoViewImpl.uiBinder = uiBinder;
 	}
 
 	public HTMLPanel getRootPanel() {
