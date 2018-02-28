@@ -86,7 +86,8 @@ public class SearchClassesPresenterImpl extends BasePresenterImpl implements Sea
 		}
 	}
 	
-	public void onGoToClassSearchEvent(GoToClassSearchEvent evt) {
+	@Override
+	public void onGoToClassSearch(GoToClassSearchEvent evt) {
 		this.go(evt.getContainer());
 	}
 }

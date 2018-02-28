@@ -133,7 +133,7 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 			eventBus.fireEvent(iheee);
 
 
-			// JOSUE: commented to make it work
+			// JOSUE: commented out
 			//			if(isAdmin) {
 			//				GoToAdminHomeAction aha = new GoToAdminHomeAction();
 			//				GoToAdminHomeEvent ahe = new GoToAdminHomeEvent(aha, container);
