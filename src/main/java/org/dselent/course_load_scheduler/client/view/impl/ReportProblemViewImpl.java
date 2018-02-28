@@ -1,5 +1,7 @@
 package org.dselent.course_load_scheduler.client.view.impl;
 
+import java.util.List;
+
 import org.dselent.course_load_scheduler.client.presenter.ReportProblemPresenter;
 import org.dselent.course_load_scheduler.client.view.ReportProblemView;
 
@@ -32,6 +34,11 @@ public class ReportProblemViewImpl extends BaseViewImpl<ReportProblemPresenter> 
 
 	public ReportProblemViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
+		String [] list = {"Select the type of problem","Some of the views are missing","I don't know?","Abusive Chat", "Griefing"};
+		for(String elt : list) {
+			typeList.addItem(elt);
+		}
+		
 	}
 
 	public ListBox getTypeList() {
