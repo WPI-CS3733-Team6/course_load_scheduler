@@ -4,24 +4,24 @@
 	<ui:style>
 	
 	</ui:style>
-	<g:HTMLPanel width="450" height="300" ui:field="rootPanel">
-		<g:LayoutPanel width="100%" height="100vh">
+	<g:HTMLPanel width="100%" height="100%" ui:field="rootPanel">
+		<g:LayoutPanel width="100%" height="100%">
 			<g:layer>
 				<g:TabPanel width="100%" height="100vh" animationEnabled="true">
 					<g:Tab text="Current Courses">
-						<g:LayoutPanel width="100%" height="100vh" ui:field="currentCourses">
+						<g:LayoutPanel width="100%" height="70vh" ui:field="currentCourses">
 							<g:layer>
 								<g:ScrollPanel width="100%" height="100%" ui:field="panelForScrollingCourseTable" alwaysShowScrollBars="true">
-									<g:FlexTable width="100%" height="100%" ui:field="tableDisplayCurrentCourses" borderWidth="1" cellPadding="1" cellSpacing="1"/>
+									<g:FlexTable width="100%" height="100%" ui:field="tableDisplayCurrentCourses"/>
 								</g:ScrollPanel>
 							</g:layer>
 						</g:LayoutPanel>
 					</g:Tab>
 					<g:Tab text="Detailed Schedule">
-						<g:LayoutPanel width="100%" height="100vh" ui:field="detailedSchedule">
+						<g:LayoutPanel width="100%" height="70vh" ui:field="detailedSchedule">
 							<g:layer>
 								<g:ScrollPanel ui:field="panelForScrollingDetailedSchedule" width="100%" height="100%" alwaysShowScrollBars="true">
-									<g:FlexTable width="100%" height="100%" ui:field="tableDisplayDetailedSchedule" borderWidth="1" cellSpacing="1" cellPadding="1"/>
+									<g:FlexTable width="100%" height="100%" ui:field="tableDisplayDetailedSchedule"/>
 								</g:ScrollPanel>
 							</g:layer>
 						</g:LayoutPanel>

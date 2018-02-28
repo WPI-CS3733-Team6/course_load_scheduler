@@ -10,7 +10,6 @@ import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.LayoutPanel;
-import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -57,9 +56,10 @@ public class ViewCurrentCoursesViewImpl extends BaseViewImpl<ViewCurrentCoursesP
 		tableDisplayDetailedSchedule.setText(10, 0, "6:00 PM");
 		tableDisplayDetailedSchedule.setText(11, 0, "7:00 PM");
 		tableDisplayDetailedSchedule.setText(12, 0, "8:00 PM");
+//		panelForScrollingCourseTable.add(tableDisplayCurrentCourses);
+//		panelForScrollingDetailedSchedule.add(tableDisplayDetailedSchedule);
+
 		
-	    RootPanel.get().add(tableDisplayCurrentCourses);
-	    RootPanel.get().add(tableDisplayDetailedSchedule);
 	}
 
 	@Override
