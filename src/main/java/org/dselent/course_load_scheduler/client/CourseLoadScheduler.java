@@ -81,10 +81,48 @@ public class CourseLoadScheduler implements EntryPoint
 		IndexView indexView = indexPresenter.getView();	
 		indexPresenter.go(root);
 
-		/* ACCOUNT INFO*/
-		//AccountInfoPresenterImpl accountInfoPresenter = injector.getAccountInfoPresenter();
-		//accountInfoPresenter.init();
 		
+		/*LOGIN*/
+		LoginPresenterImpl loginPresenter = injector.getLoginPresenter();
+		loginPresenter.init();
+		loginPresenter.go(indexView.getMiddlePanel());
+		
+		/* INSTRUCTOR HOM"E"PAGE	*/	 // TODO: Doesn't Work
+		InstructorHomepagePresenterImpl instructorHompagePresenter = injector.getInstructorHomepagePresenter();
+		instructorHompagePresenter.init();
+		//instructorHompagePresenter.go(indexView.getMiddlePanel());
+		
+		/* REPORT PROBLEM*/
+		ReportProblemPresenterImpl reportProblemPresenter = injector.getReportProblemPresenter();
+		reportProblemPresenter.init();
+		//reportProblemPresenter.go(indexView.getMiddlePanel());
+
+		/* SEARCH CLASSES*/
+		SearchClassesPresenterImpl searchClassesPresenterPresenter = injector.getSearchClassesPresenter();
+		searchClassesPresenterPresenter.init();
+		//searchClassesPresenterPresenter.go(indexView.getMiddlePanel());
+
+		/* VIEW CURRENT COURSES*/
+		ViewCurrentCoursesPresenterImpl viewCurrentCoursesPresenter = injector.getViewCurrentCoursesPresenter();
+		viewCurrentCoursesPresenter.init();
+		//viewCurrentCoursesPresenter.go(indexView.getMiddlePanel());
+		
+		/* ACCOUNT INFO*/
+		AccountInfoPresenterImpl accountInfoPresenter = injector.getAccountInfoPresenter();
+		accountInfoPresenter.init();
+		
+		/* REGISTRATION CART*/
+		CourseRegistrationCartPresenterImpl courseRegistrationCartPresenter = injector.getCourseRegistrationCartPresenter();
+		courseRegistrationCartPresenter.init();
+//		//courseRegistrationCartPresenter.go(indexView.getMiddlePanel());
+		
+		/* FACULTY */
+		FacultyCourseMapPresenterImpl facultyCourseMapPresenter = injector.getFacultyCourseMapPresenter();
+		facultyCourseMapPresenter.init();
+//		//facultyCourseMapPresenter.go(indexView.getMiddlePanel());
+		
+		
+		//JOSUE: ADMINISTRATOR SIDE (needs work)
 //		/* ADD COURSE*/
 //		AddCoursePresenterImpl addCoursePresenter = injector.getAddCoursePresenter(); 
 //		addCoursePresenter.init();
@@ -110,44 +148,12 @@ public class CourseLoadScheduler implements EntryPoint
 //		adminHomepagePresenter.init();
 //		//adminHomepagePresenter.go(indexView.getMiddlePanel());
 //
-//		/* REGISTRATION CART*/
-//		CourseRegistrationCartPresenterImpl courseRegistrationCartPresenter = injector.getCourseRegistrationCartPresenter();
-//		courseRegistrationCartPresenter.init();
-//		//courseRegistrationCartPresenter.go(indexView.getMiddlePanel());
 //
 //		/* COURSE INFROMATION*/
 //		DetailedCourseInformationPresenterImpl detailedCourseInformationPresenter = injector.getDetailedCourseInformationPresenter();
 //		detailedCourseInformationPresenter.init();
 //		//detailedCourseInformationPresenter.go(indexView.getMiddlePanel());
 //
-//		/* FACULTY */
-//		FacultyCourseMapPresenterImpl facultyCourseMapPresenter = injector.getFacultyCourseMapPresenter();
-//		facultyCourseMapPresenter.init();
-//		//facultyCourseMapPresenter.go(indexView.getMiddlePanel());
 //
-//		/* INSTRUCTOR HOM"E"PAGE	*/	 // TODO: Doesn't Work
-		InstructorHomepagePresenterImpl instructorHompagePresenter = injector.getInstructorHomepagePresenter();
-		instructorHompagePresenter.init();
-		//instructorHompagePresenter.go(indexView.getMiddlePanel());
-
-		/*LOGIN*/
-		LoginPresenterImpl loginPresenter = injector.getLoginPresenter();
-		loginPresenter.init();
-		loginPresenter.go(indexView.getMiddlePanel());
-
-		/* REPORT PROBLEM*/
-		ReportProblemPresenterImpl reportProblemPresenter = injector.getReportProblemPresenter();
-		reportProblemPresenter.init();
-		//reportProblemPresenter.go(indexView.getMiddlePanel());
-
-		/* SEARCH CLASSES*/
-		SearchClassesPresenterImpl searchClassesPresenterPresenter = injector.getSearchClassesPresenter();
-		searchClassesPresenterPresenter.init();
-		//searchClassesPresenterPresenter.go(indexView.getMiddlePanel());
-//
-//		/* VIEW CURRENT COURSES*/
-//		ViewCurrentCoursesPresenterImpl viewCurrentCoursesPresenter = injector.getViewCurrentCoursesPresenter();
-//		viewCurrentCoursesPresenter.init();
-//		//viewCurrentCoursesPresenter.go(indexView.getMiddlePanel());
 	}
 }
