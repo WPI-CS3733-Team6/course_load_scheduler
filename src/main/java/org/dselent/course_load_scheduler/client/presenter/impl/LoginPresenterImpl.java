@@ -79,7 +79,7 @@ public class LoginPresenterImpl extends BasePresenterImpl implements LoginPresen
 		{
 			loginClickInProgress = true;
 			view.getLoginButton().setEnabled(false);
-			parentPresenter.showLoadScreen();
+			//parentPresenter.showLoadScreen();
 			
 			String userName = view.getNameTextBox().getText();
 			String password = view.getPasswordTextBox().getText();

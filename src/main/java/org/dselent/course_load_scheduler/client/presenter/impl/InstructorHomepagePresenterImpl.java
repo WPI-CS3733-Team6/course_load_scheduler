@@ -176,7 +176,7 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 		}
 	}
 	
-	public void onLoginEvent(ReceiveLoginEvent evt) {
+	public void onReceiveLogin(ReceiveLoginEvent evt) {
 		this.go(evt.getContainer());
 	}
 	
