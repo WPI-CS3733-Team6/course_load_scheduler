@@ -6,9 +6,11 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.dselent.course_load_scheduler.client.action.GoToInstructorHomeAction;
 import org.dselent.course_load_scheduler.client.action.InvalidReportAction;
 import org.dselent.course_load_scheduler.client.action.SendReportAction;
 import org.dselent.course_load_scheduler.client.errorstring.InvalidReportStrings;
+import org.dselent.course_load_scheduler.client.event.GoToInstructorHomeEvent;
 import org.dselent.course_load_scheduler.client.event.GoToReportAProblemEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidReportEvent;
 import org.dselent.course_load_scheduler.client.event.SendReportEvent;
@@ -75,51 +77,67 @@ public class ReportProblemPresenterImpl extends BasePresenterImpl implements Rep
 		return null;
 	}
 	*/
+	
 	@Override
 	public void submitReport() {
 		if(!submitClickInProgress) {
-			submitClickInProgress = true;
-			view.getSubmitButton().setEnabled(false);
+			submitClickInProgress = false;
+			view.getSubmitButton().setEnabled(true);
 			
-			parentPresenter.showLoadScreen();
+			HasWidgets container = parentPresenter.getView().getMiddlePanel();
+			GoToInstructorHomeAction ihaee = new GoToInstructorHomeAction();
+			GoToInstructorHomeEvent iheee = new GoToInstructorHomeEvent(ihaee, container);
+			eventBus.fireEvent(iheee);
 			
-			String typeList = view.getTypeList().getItemText(view.getTypeList().getSelectedIndex());
-			//String nameBox = view.getNameBox().getText();
-			//String emailBox = view.getEmailBox().getText();
-			String description = view.getDescriptionArea().getText();
-			
-			boolean validType = true;
-			boolean validDescription = true;
-			
-			List<String> invalidReasonList = new ArrayList<>();
-			
-			try {
-				validateReportType(typeList);
-			}
-			catch(EmptyStringException e) {
-				invalidReasonList.add(InvalidReportStrings.NULL_TYPE);
-				validType = false;
-			}
-			
-			try {
-				validateReportDesc(description);
-			}
-			catch(EmptyStringException e) {
-				invalidReasonList.add(InvalidReportStrings.NULL_DESC);
-				validDescription = false;
-			}
-			
-			if(validType && validDescription) {
-				sendReport(typeList, description);
-				submitClickInProgress = false;
-			} else {
-				InvalidReportAction ira = new InvalidReportAction(invalidReasonList);
-				InvalidReportEvent ire = new InvalidReportEvent(ira);
-				eventBus.fireEvent(ire);
-				submitClickInProgress = false;
-			}
 		}
 	}
+	
+	//JOSUE: commented out
+//	@Override
+//	public void submitReport() {
+//		if(!submitClickInProgress) {
+//			submitClickInProgress = false;
+//			view.getSubmitButton().setEnabled(true);
+//			
+//			parentPresenter.showLoadScreen();
+//			
+//			String typeList = view.getTypeList().getItemText(view.getTypeList().getSelectedIndex());
+//			//String nameBox = view.getNameBox().getText();
+//			//String emailBox = view.getEmailBox().getText();
+//			String description = view.getDescriptionArea().getText();
+//			
+//			boolean validType = true;
+//			boolean validDescription = true;
+//			
+//			List<String> invalidReasonList = new ArrayList<>();
+//			
+//			try {
+//				validateReportType(typeList);
+//			}
+//			catch(EmptyStringException e) {
+//				invalidReasonList.add(InvalidReportStrings.NULL_TYPE);
+//				validType = false;
+//			}
+//			
+//			try {
+//				validateReportDesc(description);
+//			}
+//			catch(EmptyStringException e) {
+//				invalidReasonList.add(InvalidReportStrings.NULL_DESC);
+//				validDescription = false;
+//			}
+//			
+//			if(validType && validDescription) {
+//				sendReport(typeList, description);
+//				submitClickInProgress = false;
+//			} else {
+//				InvalidReportAction ira = new InvalidReportAction(invalidReasonList);
+//				InvalidReportEvent ire = new InvalidReportEvent(ira);
+//				eventBus.fireEvent(ire);
+//				submitClickInProgress = false;
+//			}
+//		}
+//	}
 	
 	private void sendReport(String type, String desc) {
 		//write in actions and event handling gubbins

@@ -130,6 +130,7 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 
 			GoToInstructorHomeAction ihaee = new GoToInstructorHomeAction();
 			GoToInstructorHomeEvent iheee = new GoToInstructorHomeEvent(ihaee, container);
+			
 			eventBus.fireEvent(iheee);
 
 

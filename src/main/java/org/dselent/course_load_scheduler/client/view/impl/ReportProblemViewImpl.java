@@ -78,7 +78,6 @@ public class ReportProblemViewImpl extends BaseViewImpl<ReportProblemPresenter> 
 	
 	@UiHandler("submitButton")
 	void onSubmitButtonClicked(ClickEvent evt) {
-		//add to this during event handling stage
 		presenter.submitReport();
 	}
 }

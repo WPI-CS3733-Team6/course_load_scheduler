@@ -39,42 +39,55 @@ public class SearchClassesViewImpl extends BaseViewImpl<SearchClassesPresenter> 
 	public SearchClassesViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
 		
-//		term.addItem("A");
-//		term.addItem("B");
-//		term.addItem("C");
-//		term.addItem("D");
-//		term.addItem("E1");
-//		term.addItem("E2");
-//		
-//		subject.addItem("Biology");
-//		subject.addItem("Computer Science");
-//		subject.addItem("Robotics");
-//		subject.addItem("Electrical & Computer Engineering");
-//		subject.addItem("Chemistry");
-//		subject.addItem("Physics");
-//		subject.addItem("Physical Education");
-//		
-//		level.addItem("Undergraduate");
-//		level.addItem("Graduate");
+		term.addItem("A");
+		term.addItem("B");
+		term.addItem("C");
+		term.addItem("D");
+		term.addItem("E1");
+		term.addItem("E2");
+		
+		subject.addItem("Biology");
+		subject.addItem("Computer Science");
+		subject.addItem("Robotics");
+		subject.addItem("Electrical & Computer Engineering");
+		subject.addItem("Chemistry");
+		subject.addItem("Physics");
+		subject.addItem("Physical Education");
+		
+		level.addItem("Undergraduate");
+		level.addItem("Graduate");
 	
-		String [] a = {"Select the specified term(s)","Terms A & B", "Terms C & D", "Terms E1 & E2", "Term A", "Term B", "Term C", "Term D", "Term E1", "Term E2"};
-		String [] b = {"Select the subject type","Biology", "Computer Science", "Electrical Engineering", "Physics", "Physical Education"};
-		String [] c = {"Select the level type","Undergraduate", "Graduate"};
-		for(String i:a){term.addItem(i);}
-		for(String i:b){subject.addItem(i);}
-		for(String i:c){level.addItem(i);}
+//		String [] a = {"Select the specified term(s)","Terms A & B", "Terms C & D", "Terms E1 & E2", "Term A", "Term B", "Term C", "Term D", "Term E1", "Term E2"};
+//		String [] b = {"Select the subject type","Biology", "Computer Science", "Electrical Engineering", "Physics", "Physical Education"};
+//		String [] c = {"Select the level type","Undergraduate", "Graduate"};
+//		for(String i:a){term.addItem(i);}
+//		for(String i:b){subject.addItem(i);}
+//		for(String i:c){level.addItem(i);}
+//		
+//		RootPanel.get().add(term);
+//		RootPanel.get().add(subject);
+//		RootPanel.get().add(level);
+//		
+//		for (int i = 0; i < gridCourses.getRowCount(); i++) {
+//			for (int j=0; j < 5; j++){
+//				String text = "";
+//				gridCourses.setText(i, j, text);
+//				
+//			}
+//		}
 		
-		RootPanel.get().add(term);
-		RootPanel.get().add(subject);
-		RootPanel.get().add(level);
-		
-		for (int i = 0; i < gridCourses.getRowCount(); i++) {
-			for (int j=0; j < 5; j++){
-				String text = "";
-				gridCourses.setText(i, j, text);
-				
-			}
-		}
+		//JOSUE: hard coded
+//		
+//		for (int i = 0; i < 1; i++) {
+//			for (int j=0; j < 5; j++){
+//				
+//				int s = i+j;
+//					String text[] = {"Object Oriented Design Concepts","registered","2102","MTRF","300"};
+//				
+//				gridCourses.setText(i, j, text[s]);
+//				
+//			}
+//		}
 	} 
 
 	@Override

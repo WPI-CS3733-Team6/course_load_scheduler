@@ -75,6 +75,25 @@ public class SearchClassesPresenterImpl extends BasePresenterImpl implements Sea
 			searchClickInProgress = true;
 			view.getSearchButton().setEnabled(false);
 			
+			//JOSUE: Hard Coded
+			view.getGridCourses().setText(0, 0, "OBJECT-ORIENTED DESIGN CONCEPTS");
+			view.getGridCourses().setText(0, 1, "registered");
+			view.getGridCourses().setText(0, 2, "2102");
+			view.getGridCourses().setText(0, 3, "MTRF");
+			view.getGridCourses().setText(0, 4, "300");
+			view.getGridCourses().setText(1, 0, "ALGORITHMS");
+			view.getGridCourses().setText(1, 1, "registered");
+			view.getGridCourses().setText(1, 2, "2223");
+			view.getGridCourses().setText(1, 3, "MTRF");
+			view.getGridCourses().setText(1, 4, "100");
+			view.getGridCourses().setText(2, 0, "SYSTEMS PROGRAMMING CONCEPTS");
+			view.getGridCourses().setText(2, 1, "not registered");
+			view.getGridCourses().setText(2, 2, "2303");
+			view.getGridCourses().setText(2, 3, "MTRF");
+			view.getGridCourses().setText(2, 4, "50");
+			
+			
+			
 			String term = view.getTerm().getItemText(view.getTerm().getSelectedIndex());
 			String department = view.getSubject().getItemText(view.getSubject().getSelectedIndex());
 			String level = view.getLevel().getItemText(view.getLevel().getSelectedIndex());
