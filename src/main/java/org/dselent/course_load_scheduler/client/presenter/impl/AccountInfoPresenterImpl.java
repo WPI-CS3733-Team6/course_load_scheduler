@@ -49,11 +49,11 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 	{
 		HandlerRegistration registration;
 		
-		registration = eventBus.addHandler(InvalidAccountInfoEvent.TYPE, this);
+		//registration = eventBus.addHandler(InvalidAccountInfoEvent.TYPE, this);
 		registration = eventBus.addHandler(GoToAccountInfoEvent.TYPE, this);
-		registration = eventBus.addHandler(ReceiveAccountInfoEvent.TYPE, this);
-		eventBusRegistration.put(ReceiveAccountInfoEvent.TYPE, registration);
-		eventBusRegistration.put(InvalidAccountInfoEvent.TYPE, registration);
+		//registration = eventBus.addHandler(ReceiveAccountInfoEvent.TYPE, this);
+		//eventBusRegistration.put(ReceiveAccountInfoEvent.TYPE, registration);
+		//eventBusRegistration.put(InvalidAccountInfoEvent.TYPE, registration);
 		eventBusRegistration.put(GoToAccountInfoEvent.TYPE, registration);
 	}
 		
@@ -153,6 +153,11 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 			return true;
 		else
 			return false;
+	}
+	
+	@Override
+	public void onGoToAccountInfo(GoToAccountInfoEvent evt) {
+		this.go(evt.getContainer());
 	}
 	
 	public void onReceiveAccountInfo(ReceiveAccountInfoEvent evt) {

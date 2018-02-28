@@ -22,34 +22,6 @@ public class AccountInfoViewImpl extends BaseViewImpl<AccountInfoPresenter> impl
 	private static AccountInfoUiBinder uiBinder = GWT.create(AccountInfoUiBinder.class);
 	
 	@UiField HTMLPanel rootPanel;
-	public PasswordTextBox getChangePassword() {
-		return changePassword;
-	}
-
-	public TextBox getCurrentPassword() {
-		return currentPassword;
-	}
-
-	public TextBox getFirstName() {
-		return firstName;
-	}
-
-	public TextBox getLastName() {
-		return lastName;
-	}
-
-	public TextBox getCourseReq() {
-		return courseReq;
-	}
-
-	public TextBox getPhoneNum() {
-		return phoneNum;
-	}
-
-	public TextBox getEmai() {
-		return emai;
-	}
-
 	@UiField TextBox AccountInfoPgTitle;
 	@UiField LayoutPanel AccountInfoBaseLayoutPanel;
 	@UiField Button submitChangesButton;
@@ -246,5 +218,34 @@ public class AccountInfoViewImpl extends BaseViewImpl<AccountInfoPresenter> impl
 
 	public void setPhoneNumber(IntegerBox phoneNumber) {
 		this.phoneNumber = phoneNumber;
-	}	
+	}
+	
+	public PasswordTextBox getChangePassword() {
+		return changePassword;
+	}
+
+	public TextBox getCurrentPassword() {
+		return currentPassword;
+	}
+
+	public TextBox getFirstName() {
+		return firstName;
+	}
+
+	public TextBox getLastName() {
+		return lastName;
+	}
+
+	public TextBox getCourseReq() {
+		return courseReq;
+	}
+
+	public TextBox getPhoneNum() {
+		return phoneNum;
+	}
+
+	public TextBox getEmai() {
+		return emai;
+	}
+
 }

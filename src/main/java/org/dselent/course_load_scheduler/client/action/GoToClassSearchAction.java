@@ -4,5 +4,10 @@ public class GoToClassSearchAction extends Action {
 
 	public GoToClassSearchAction() {
 	}
+	
+	@Override
+	public String toString() {
+		return "GoToClassSearchAction []";
+	}
 
 }
