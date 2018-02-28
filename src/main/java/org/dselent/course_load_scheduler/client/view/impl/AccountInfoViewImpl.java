@@ -4,8 +4,10 @@ import org.dselent.course_load_scheduler.client.presenter.AccountInfoPresenter;
 import org.dselent.course_load_scheduler.client.view.AccountInfoView;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HTMLPanel;
@@ -246,6 +248,11 @@ public class AccountInfoViewImpl extends BaseViewImpl<AccountInfoPresenter> impl
 
 	public TextBox getEmai() {
 		return emai;
+	}
+	
+	@UiHandler("submitChangesButton")
+	void onfacultyCourseMapButtonClicked(ClickEvent evt) {
+		presenter.submitChanges();
 	}
 
 }

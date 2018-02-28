@@ -7,4 +7,5 @@ public interface AccountInfoPresenter extends BasePresenter{
 	void setParentPresenter(IndexPresenter parentPresenter);
 	void changeAccountInfo();
 	void onReceiveAccountInfo(ReceiveAccountInfoEvent evt);
+	void submitChanges();
 }

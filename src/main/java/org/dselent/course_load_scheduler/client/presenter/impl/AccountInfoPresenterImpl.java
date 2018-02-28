@@ -2,10 +2,12 @@ package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import java.util.ArrayList;
 
+import org.dselent.course_load_scheduler.client.action.GoToInstructorHomeAction;
 import org.dselent.course_load_scheduler.client.action.InvalidAccountInfoAction;
 import org.dselent.course_load_scheduler.client.action.SendAccountInfoAction;
 import org.dselent.course_load_scheduler.client.action.SendUpdateAccountInfoAction;
 import org.dselent.course_load_scheduler.client.event.GoToAccountInfoEvent;
+import org.dselent.course_load_scheduler.client.event.GoToInstructorHomeEvent;
 import org.dselent.course_load_scheduler.client.event.InvalidAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.ReceiveAccountInfoEvent;
 import org.dselent.course_load_scheduler.client.event.SendAccountInfoEvent;
@@ -153,6 +155,20 @@ public class AccountInfoPresenterImpl extends BasePresenterImpl implements Accou
 			return true;
 		else
 			return false;
+	}
+	
+	public void submitChanges() {
+
+		if(!accountInfoClickInProgress) {
+			accountInfoClickInProgress = false;
+			view.getSubmitChangesButton().setEnabled(true);
+			
+			HasWidgets container = parentPresenter.getView().getMiddlePanel();
+			GoToInstructorHomeAction ihaee = new GoToInstructorHomeAction();
+			GoToInstructorHomeEvent iheee = new GoToInstructorHomeEvent(ihaee, container);
+			eventBus.fireEvent(iheee);
+			
+		}
 	}
 	
 	@Override
