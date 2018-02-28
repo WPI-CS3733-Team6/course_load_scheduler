@@ -101,7 +101,8 @@ public class CourseRegistrationCartPresenterImpl extends BasePresenterImpl imple
 		}
 	}
 	
-	public void onGoToCartEvent(GoToCartEvent evt) {
+	@Override
+	public void onGoToCart(GoToCartEvent evt) {
 		this.go(evt.getContainer());
 	}
 	
