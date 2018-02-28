@@ -34,10 +34,9 @@ public class ReportProblemViewImpl extends BaseViewImpl<ReportProblemPresenter> 
 
 	public ReportProblemViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
-		String [] list = {"Select the type of problem","Some of the views are missing","I don't know?","Abusive Chat", "Griefing"};
-		for(String elt : list) {
-			typeList.addItem(elt);
-		}
+		String [] list = {"Select the type of problem","Some of the views are missing","I don't know?","Abusive Chat", "Griefing",
+				"Course Problems", "Request a Suggestion"};
+		for(String i:list){typeList.addItem(i);}
 		
 	}
 
