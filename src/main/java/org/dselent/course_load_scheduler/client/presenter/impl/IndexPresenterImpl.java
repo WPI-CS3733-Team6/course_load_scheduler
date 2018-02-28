@@ -135,15 +135,6 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 			}
 		}
 	}
-	
-	
-	public void onGoToAdminHomeEvent(GoToAdminHomeEvent evt) {
-		this.go(evt.getContainer());
-	}
-	
-	public void onGoToInstructorHomeEvent(GoToInstructorHomeEvent evt) {
-		this.go(evt.getContainer());
-	}
 
 	@Override
 	public void logout() {
@@ -167,8 +158,8 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 
 		if(!reportAProblemClickInProgress) 
 		{
-			reportAProblemClickInProgress = true;
-			view.getReportAProblemButton().setEnabled(false);
+			reportAProblemClickInProgress = false;
+			view.getReportAProblemButton().setEnabled(true);
 			//parentPresenter.showLoadScreen();
 
 			HasWidgets container = view.getMiddlePanel();
@@ -198,6 +189,16 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 	
 	@Override
 	public void onGoToLogout(GoToLogoutEvent evt) {
+		this.go(evt.getContainer());
+	}
+	
+	@Override
+	public void onGoToAdminHome(GoToAdminHomeEvent evt) {
+		this.go(evt.getContainer());
+	}
+	
+	@Override
+	public void onGoToInstructorHome(GoToInstructorHomeEvent evt) {
 		this.go(evt.getContainer());
 	}
 }

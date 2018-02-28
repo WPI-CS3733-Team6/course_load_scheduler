@@ -2,6 +2,7 @@ package org.dselent.course_load_scheduler.client.presenter.impl;
 
 import org.dselent.course_load_scheduler.client.action.GetCurrentCoursesAction;
 import org.dselent.course_load_scheduler.client.event.GetCurrentCoursesEvent;
+import org.dselent.course_load_scheduler.client.event.GoToClassSearchEvent;
 import org.dselent.course_load_scheduler.client.event.GoToCurrentCoursesEvent;
 import org.dselent.course_load_scheduler.client.presenter.IndexPresenter;
 import org.dselent.course_load_scheduler.client.presenter.ViewCurrentCoursesPresenter;
@@ -74,5 +75,10 @@ public class ViewCurrentCoursesPresenterImpl extends BasePresenterImpl implement
 		GetCurrentCoursesEvent cce = new GetCurrentCoursesEvent(cca, container);
 		eventBus.fireEvent(cce);
 		
+	}
+	
+	@Override
+	public void onGoToCurrentCourses(GoToCurrentCoursesEvent evt) {
+		this.go(evt.getContainer());
 	}
 }
