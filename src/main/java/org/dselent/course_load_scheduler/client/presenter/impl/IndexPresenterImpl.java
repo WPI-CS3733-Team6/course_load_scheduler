@@ -19,6 +19,7 @@ import org.dselent.course_load_scheduler.client.view.IndexView;
 
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.event.shared.HandlerRegistration;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.HasWidgets;
 
 
@@ -72,6 +73,8 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 		eventBusRegistration.put(GoToAdminHomeEvent.TYPE, registration);
 		registration = eventBus.addHandler(GoToInstructorHomeEvent.TYPE, this);
 		eventBusRegistration.put(GoToInstructorHomeEvent.TYPE, registration);
+		registration = eventBus.addHandler(GoToLogoutEvent.TYPE, this);
+		eventBusRegistration.put(GoToLogoutEvent.TYPE, registration);
 	}
 
 	@Override
@@ -191,5 +194,10 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 
 		}
 
+	}
+	
+	@Override
+	public void onGoToLogout(GoToLogoutEvent evt) {
+		this.go(evt.getContainer());
 	}
 }
