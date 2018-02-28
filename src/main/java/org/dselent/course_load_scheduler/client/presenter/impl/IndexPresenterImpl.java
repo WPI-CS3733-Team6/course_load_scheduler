@@ -116,13 +116,15 @@ public class IndexPresenterImpl extends BasePresenterImpl implements IndexPresen
 	public void home() {
 		if(!homeClickInProgress) 
 		{
-			homeClickInProgress = true;
-			view.getHomeButton().setEnabled(false);
+			homeClickInProgress = false;
+			view.getHomeButton().setEnabled(true);
 			//parentPresenter.showLoadScreen();
 
 			HasWidgets container = view.getMiddlePanel();
-			boolean isAdmin = this.getGlobalData().getIsAdmin();
+			//boolean isAdmin = this.getGlobalData().getIsAdmin();
 
+			boolean isAdmin = false;
+			
 			if(isAdmin) {
 				GoToAdminHomeAction aha = new GoToAdminHomeAction();
 				GoToAdminHomeEvent ahe = new GoToAdminHomeEvent(aha, container);

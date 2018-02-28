@@ -176,11 +176,13 @@ public class InstructorHomepagePresenterImpl extends BasePresenterImpl implement
 		}
 	}
 	
+	@Override
 	public void onReceiveLogin(ReceiveLoginEvent evt) {
 		this.go(evt.getContainer());
 	}
 	
-	public void onGoToInstructorHomeEvent(GoToInstructorHomeEvent evt) {
+	@Override
+	public void onGoToInstructorHome(GoToInstructorHomeEvent evt) {
 		this.go(evt.getContainer());
 	}
 }
